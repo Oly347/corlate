@@ -1,0 +1,539 @@
+
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+
+#regForm {
+  background-color: #ffffff;
+  
+  font-family: Raleway;
+  padding: 10px;
+  width: 100%;
+  min-width: 300px;
+}
+.edit_row{
+padding: 10px;
+
+}
+h1 {
+  text-align: center;  
+}
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+
+select {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+
+option {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+.tab1{
+  padding: 50px;
+  background: #F2994A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-weight: bold;
+color: #581845    ;
+  
+  
+}
+.navbar-laravel
+{
+    box-shadow: 0 2px 4px rgba(0,0,0,.04);
+}
+
+.navbar-brand , .nav-link, .my-form, .login-form
+{
+    font-family: Raleway, sans-serif;
+}
+
+.my-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-top: 50px;
+}
+
+.my-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.login-form
+{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.login-form .row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
+.edit_btn{
+margin-top: 10px;
+
+}
+.tab2{
+  padding: 50px;
+
+background-color: lightblue;
+}
+.tab3{
+  padding: 50px;
+
+background-color: lightpink;
+}
+.tab4{
+  padding: 50px;
+
+background-color:honeydew;
+}
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+.radiotext {
+    margin: 10px 10px 0px 0px;
+}
+
+.table-responsive tbody tr {
+  cursor: pointer;
+}
+.table-responsive .table thead tr th {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.table-responsive .table tbody tr td {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+
+*{font-family: 'Roboto', sans-serif;}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 100px;
+    width: 100px;
+    margin-left: -35px;
+    margin-top: -40px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: -13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input:checked {
+  background: #581845;
+}
+.option-input:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #581845;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 20%;
+}
+.option-input.radio::after {
+  border-radius: 20%;
+}
+.img_d{
+  border-radius: 8px;
+  padding:5px ;
+}
+.img_d:hover {
+  transform: scale(2.0); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 400px) {
+
+.success-message {
+  text-align: center;
+  max-width: 100px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+}
+
+.success-message {
+  text-align: center;
+  max-width: 500px;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.success-message__icon {
+  max-width: 75px;
+}
+
+
+
+@media only screen and (max-width: 400px) {
+  .success-message__icon {
+    max-width: 30px;
+  }
+
+}
+.success-message__title {
+  color: #3DC480;
+  transform: translateY(25px);
+  opacity: 0;
+  transition: all 200ms ease;
+}
+.active .success-message__title {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.success-message__content {
+  color: #B8BABB;
+  transform: translateY(25px);
+  opacity: 0;
+  transition: all 200ms ease;
+  transition-delay: 50ms;
+}
+.active .success-message__content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.icon-checkmark circle {
+  fill: #3DC480;
+  transform-origin: 50% 50%;
+  transform: scale(0);
+  transition: transform 200ms cubic-bezier(0.22, 0.96, 0.38, 0.98);
+}
+.icon-checkmark path {
+  transition: stroke-dashoffset 350ms ease;
+  transition-delay: 100ms;
+}
+.active .icon-checkmark circle {
+  transform: scale(1);
+}
+.banner_success{
+color: white;
+padding: 60px;
+width: 100%;
+
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+
+/* background-image: url('../andrew-small-126502-unsplash.jpg'); */
+
+
+background-image: linear-gradient( to right bottom, rgba(13, 111, 107, 0.8), rgba(140, 180, 131, 0.8)), url(../andrew-small-126502-unsplash.jpg);
+    
+}
+
+.custome_alert{
+
+margin-top: 30px;
+}
+
+
+.center-outer {
+  display: table;
+  width: 100%;
+  height: 100%;
+  }
+  
+  .center-inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  }
+  
+  /* Essential CSS - Makes the effect work */
+  
+  
+  
+  .bubbles {
+  display: inline-block;
+  font-family: arial;
+  position: relative;
+  }
+  
+  .bubbles h1 {
+  position: relative;
+  margin: 1em 0 0;
+  font-family: 'Luckiest Guy', cursive;
+  color: #fff;
+  z-index: 2;
+  font-weight: bold;
+  }
+  
+  .individual-bubble {
+  position: absolute;
+  border-radius: 100%;
+  bottom: 10px;
+  background-color: #fff;
+  z-index: 1;
+  }
+  .button_custome{
+ margin-top: 50px;
+
+
+
+  }
+  .cont{
+    position: relative;
+    width: 25%;
+    height: 450px;
+    padding: 10px 25px;
+    margin: 10vh auto;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid black;
+  }
+  .cont_r{
+    position: relative;
+    width: 25%;
+    height: 650px;
+    padding: 10px 25px;
+    margin: 10vh auto;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid black;
+  }
+  .form{ width: 100%; height: 100%; }
+  
+  h1, h2, .user, .pass{ 
+    text-align: center;
+    display: block;
+  }
+  
+  h1{ 
+    color: #606060;
+    font-weight: bold;
+    font-size: 40px;
+    margin: 30px auto;
+  }
+  
+  .user, .pass, .login{
+    width: 100%;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+  }
+  
+  .user, .pass{ background: #ecf0f1; }
+  
+  .login{
+    color: #fff;
+    cursor: pointer;
+    margin-top: 20px;
+    background: #3598dc;
+    transition: background 0.4s ease;
+  }
+  
+  .login:hover{ background: #3570dc; }
+  
+  @media only screen and (min-width : 280px) {
+    .cont{ width: 90% }
+  }
+  
+  @media only screen and (min-width : 480px) {
+    .cont{ width: 60% }
+  }
+  
+  @media only screen and (min-width : 768px) {
+    .cont{ width: 40% }
+  }
+  
+  @media only screen and (min-width : 992px) {
+    .cont{ width: 30% }
+  }
+  
+  h2{ color: black; margin-top: 25px; 
+}
+
+
+.btn-outline {
+    background-color: transparent;
+    color: inherit;
+    transition: all .5s;
+    margin-top: 10px;
+}
+
+.btn-primary.btn-outline {
+    color: #428bca;
+}
+
+.btn-success.btn-outline {
+    color: #5cb85c;
+}
+
+.btn-info.btn-outline {
+    color: #5bc0de;
+}
+
+.btn-warning.btn-outline {
+    color: #f0ad4e;
+}
+
+.btn-danger.btn-outline {
+    color: #d9534f;
+}
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+/* body {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: box;
+  background: #e8ebee;
+  color: #9faab7;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  text-align: center;
+}
+body div {
+  padding: 5rem;
+}
+body label {
+  display: block;
+  line-height: 40px;
+} */
