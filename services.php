@@ -25,6 +25,7 @@ if (!isset($_SESSION['user']))
 
  $_SESSION['temp_user'] = $insert;
  $_SESSION['userName']= "Guest";
+ 
 
 
 
@@ -128,10 +129,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                                 <li><a href="#"><i class="fa fa-skype"></i></a></li>
                             </ul>
                             <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                                    <i class="fa fa-search"></i>
-                                </form>
+                            <?php echo $_SESSION['userName']; ?> 
                             </div>
                         </div>
                     </div>
@@ -195,8 +193,8 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
   
   <div class="tab tab1" style="overflow-x:auto;" >Choose Your CPU
     
-    <div class="table-responsive">
-        <table class="table  table-borderless " style="border-top:none !importent;" >
+    <div class="table-responsive edit_table" style="padding: 10px;">
+        <table class="table  table-borderless  " style="margin-top:10px" >
           <thead>
             <tr>
               <th>CPU Name</th>

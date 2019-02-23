@@ -24,7 +24,7 @@ foreach ($loginUser as $key => $value) {
 }
 $l=count($loginUser);
 if ($l>0) {
-        
+  $_SESSION['loggedin'] = true;     
   header('Location:home.php');
 }
 

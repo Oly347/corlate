@@ -31,13 +31,13 @@ $insert_array=  array(
 
 $insert= $obj_emp->InsertIntoEmployees($insert_array);
      if ($insert) {
-        
+        //$_SESSION['view'] = true;
         header('Location:product_view.php');
         exit();
 
        
     }else {
-        header('Location:services.php');
+        header('Location:services.php?msg=please choose all option');
        
         exit();
 

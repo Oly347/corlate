@@ -35,8 +35,12 @@ $rowCPUComponent = $obj_comp->getComponentDetailsCPU();
 
 //$cpuRow = $obj_comp->getCPUById($rowEmployee['CPU']);
 
-
-
+if (isset($_SESSION['view']) && $_SESSION['view'] ==true) {
+  
+} 
+else {
+  header('Location:services.php');
+ }
 // $rowEmployee = $obj_emp->getEmployee();
 // $rowEmployee = $obj_emp->getEmployeeById($_GET['id']);
 // echo $_GET['id'];

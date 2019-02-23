@@ -319,6 +319,15 @@ input.search-form:hover {
     color: #fff;
 }
 
+
+
+.navbar-inverse .navbar-nav>.login>a,
+.navbar-inverse .navbar-nav>.login>a:hover,
+.navbar-inverse .navbar-nav>.login>a:focus {
+    background-color:  #00c785 ;
+    color: #fff;
+    text-transform: uppercase;
+}
 .navbar-inverse .navbar-nav .dropdown-menu {
     background-color: rgba(0, 0, 0, .85);
     -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.125);
@@ -343,7 +352,9 @@ input.search-form:hover {
 
 .navbar-inverse .navbar-nav .dropdown-menu>li:hover>a,
 .navbar-inverse .navbar-nav .dropdown-menu>li:focus>a,
-.navbar-inverse .navbar-nav .dropdown-menu>li.active>a {
+.navbar-inverse .navbar-nav .dropdown-menu>li.active>a,
+.navbar-inverse .navbar-nav .dropdown-menu>li.login>a
+ {
     background-color: #EC5538;
     color: #fff;
 }
@@ -1029,6 +1040,44 @@ a.accordion-toggle i {
 }
 
 .partners ul li {
+    display: inline-block;
+    float: left;
+    width: 20%;
+}
+#contact_section {
+    background-image: url(../images/slider/slide1.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+
+#contact_section {
+    color: #fff;
+    text-align: center;
+}
+
+#contact_section h2
+ {
+    color: #fff;
+}
+
+#contact_section h3
+ {
+    color: black;
+}
+
+.contact_section ul li a img{
+    margin: 0 auto;
+}
+
+.contact_section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact_section ul li {
     display: inline-block;
     float: left;
     width: 20%;

@@ -25,6 +25,12 @@ h1 {
 .table-borderless > thead > tr > th {
     border: none;
 }
+
+
+.edit_table{
+ padding: 30px;
+  background: rgba(224, 187, 221, 0.3)
+}
 input {
   padding: 10px;
   width: 100%;
@@ -63,7 +69,7 @@ input.invalid {
 }
 
 button {
-  background-color: #4CAF50;
+  background-color: #C70039 ;
   color: #ffffff;
   border: none;
   margin-top: 20px;
@@ -71,6 +77,7 @@ button {
   font-size: 17px;
   font-family: Raleway;
   cursor: pointer;
+  border-radius: 10px;
 }
 .tab1{
   padding: 50px;
@@ -120,27 +127,56 @@ color: #581845    ;
 margin-top: 10px;
 
 }
+
+
+
+.tab1{
+  padding: 50px;
+  background: #F2994A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #F2C94C, #F2994A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #F2C94C, #F2994A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-weight: bold;
+color: #581845    ;
+  
+  
+}
 .tab2{
   padding: 50px;
 
-background-color: lightblue;
+  background: #2193b0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+font-weight: bold;
+color: #581845    ;
 }
 .tab3{
   padding: 50px;
 
-background-color: lightpink;
+  background: #ee9ca7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ffdde1, #ee9ca7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+font-weight: bold;
+color: #581845    ;
 }
 .tab4{
   padding: 50px;
 
-background-color:honeydew;
+  background: #FFEFBA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+font-weight: bold;
+color: #581845    ;
 }
 button:hover {
   opacity: 0.8;
 }
 
 #prevBtn {
-  background-color: #bbbbbb;
+  background-color:  #18d6d6 ;
+  border-radius: 10px;
 }
 
 /* Make circles that indicate the steps of the form: */
@@ -162,6 +198,7 @@ button:hover {
 /* Mark the steps that are finished and valid: */
 .step.finish {
   background-color: #4CAF50;
+  
 }
 .radiotext {
     margin: 10px 10px 0px 0px;
@@ -485,7 +522,32 @@ margin-top: 30px;
   h2{ color: black; margin-top: 25px; 
 }
 
+.row0{
 
+padding-bottom: 30px;
+}
+
+.edit_home_icon i{
+font-size: 30px;
+
+}
+.row1{
+
+  padding-top: 30px;
+  }
+
+.face_rec_img{
+margin-top: 20px;
+
+}
+.edit_page_title{
+  background-attachment: fixed;
+}
+
+/* .edit_row1{
+
+background-color: #f7f7f7;
+} */
 .btn-outline {
     background-color: transparent;
     color: inherit;
@@ -519,6 +581,14 @@ margin-top: 30px;
 .btn-warning.btn-outline:hover,
 .btn-danger.btn-outline:hover {
     color: #fff;
+}
+
+
+
+.contact_button_chat{
+
+margin-top: 100px;
+
 }
 /* body {
   display: -webkit-box;
