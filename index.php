@@ -98,15 +98,15 @@ session_start();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo" width="150"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="150"></a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="#">Assemble PC</a></li>
-                        <li><a href="#">Smart Home security</a></li>
+                        <li><a href="smart_security_home.php">Smart Home security</a></li>
                         <li><a href="#">Make your Home smart</a></li>
                         <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
@@ -117,7 +117,7 @@ session_start();
                             </ul>
                         </li> -->
                         <!-- <li><a href="blog.html">Blog</a></li> -->
-                        <li><a href="contact-us.html">Contact</a></li>
+                        <li><a href="#">Contact</a></li>
                        
                     </ul>
                 </div>
