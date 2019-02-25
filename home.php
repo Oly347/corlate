@@ -101,7 +101,7 @@ $rowCPUComponent = $obj_comp->getComponentDetailsCPU();
 <div class="alert custome_alert alert-info" >
   <strong>Info!</strong> You Can choose only one configuration setep at a time
 </div>
-<div class="row"  style="display: none;" >
+<div class="row"  >
   <h2>Basic Table</h2>
             
   <table class='table table-bordered table-striped'>

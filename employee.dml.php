@@ -9,6 +9,15 @@ session_start();
 // }
 
 
+if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+    $userID=$_SESSION['userName'];
+    }
+    else{
+    $userID=$_SESSION['temp_user'];
+
+} 
+    
+
 $obj_emp = new employee_inc ;
 
 $insert_array=  array(
@@ -23,7 +32,7 @@ $insert_array=  array(
 
     'Total' => $_POST['MB']+$_POST['SMPS']+$_POST['CAB']+$_POST['CPU'],
     // 'email_id' => $_POST['email_id'],
-    'temp_id' => $_SESSION['temp_user'],
+    'temp_id' => $userID,
     
 
 );

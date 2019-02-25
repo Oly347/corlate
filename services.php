@@ -543,8 +543,8 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
     <span class="step"></span>
     <span class="step"></span>
     <span class="step"></span>
-
     <span class="step"></span>
+    <!-- <span class="step"></span> -->
     
   </div>
 </form>
