@@ -8,7 +8,13 @@
 
 session_start();
 
-
+if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+    $userID=$_SESSION['userName'];
+    }
+    else{
+    $userID=$_SESSION['temp_user'];
+    
+    } 
 //print session
 // print($_SESSION['session_id']);
 //remove/destroy particular session or
@@ -25,8 +31,9 @@ include ('admin/employee.cls.php');
 
 $obj_emp = new employee_inc ;
 
+$rowEmployee = $obj_emp->getEmployeeById($userID);
 
-$rowEmployee = $obj_emp->getEmployeeById($_SESSION['temp_user']);
+
 
 
 $obj_comp = new component_inc ;
@@ -258,7 +265,7 @@ $graphicCardRow = $obj_comp->getGCARDById($row_employee['GCARD']);
 ?>
 
 
-<div style="display: none;" >
+<div style="display:none" >
 
 <div class="row" style="overflow-x:auto;" >
   <h2>CPU Choose</h2>
@@ -590,111 +597,140 @@ $row_graphic_card_component['component_price'];
 
 </div>
 </div>
-                        <div class="card-body">
-                            <form name="my-form"  action="user.dml.php" method="post" enctype="multipart/form-data">
+                        <div class="card-body col-md-18 col-md-offset-2 ">
+                            <form name="my-form"  action="save_product.dml.php" method="post" enctype="multipart/form-data">
+
+                            <div class="form-group row">
+                                
+                                    <div class="col-md-10">
+                                        User name<input type="text" id="user_name" class="form-control" name="user_name" value="<?php echo $userID ?>" readonly>
+                                    </div>
+                                </div>
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU NAME<input type="text" id="cpu_model" class="form-control" name="cpu_model" value="<?php echo $row_cpu_component['component_name'];?> " disabled>
+                                    <div class="col-md-10">
+                                        CPU Name<input type="text" id="cpu_model" class="form-control" name="cpu_model" value="<?php echo $row_cpu_component['component_name'];?> " readonly>
                                     </div>
                                 </div>
 
 
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU Price<input type="text" id="cpu_price" class="form-control" name="cpu_price" value="<?php echo $row_cpu_component['component_price'];?> " disabled>
+                                    <div class="col-md-10">
+                                        CPU Price<input type="text" id="cpu_price" class="form-control" name="cpu_price" value="<?php echo $row_cpu_component['component_price'];?> " readonly>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU NAME<input type="text" id="cpu_model" class="form-control" name="cpu_model" value="<?php echo $row_cpu_component['component_name'];?> " disabled>
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group row">
-                                
-                                    <div class="col-md-6">
-                                        CPU Price<input type="text" id="cpu_price" class="form-control" name="cpu_price" value="<?php echo $row_cpu_component['component_price'];?> " disabled>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                
-                                    <div class="col-md-6">
-                                        CPU NAME<input type="text" id="cpu_model" class="form-control" name="cpu_model" value="<?php echo $row_cpu_component['component_name'];?> " disabled>
+                                    <div class="col-md-10">
+                                        Cabinet Name<input type="text" id="cab_model" class="form-control" name="cab_model" value="<?php echo $row_cab_component['component_name'];?> " readonly>
                                     </div>
                                 </div>
 
 
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU Price<input type="text" id="cpu_price" class="form-control" name="cpu_price" value="<?php echo $row_cpu_component['component_price'];?> " disabled>
+                                    <div class="col-md-10">
+                                        Cabinet Price<input type="text" id="cab_price" class="form-control" name="cab_price" value="<?php echo $row_cab_component['component_price'];?> " readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU NAME<input type="text" id="cpu_model" class="form-control" name="cpu_model" value="<?php echo $row_cpu_component['component_name'];?> " disabled>
+                                    <div class="col-md-10">
+                                        SMPS Name<input type="text" id="smps_model" class="form-control" name="smps_model" value="<?php echo $row_smps_component['component_name'];?> " readonly>
                                     </div>
                                 </div>
 
 
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU Price<input type="text" id="cpu_price" class="form-control" name="cpu_price" value="<?php echo $row_cpu_component['component_price'];?> " disabled>
+                                    <div class="col-md-10">
+                                        SMPS Price<input type="text" id="smps_price" class="form-control" name="smps_price" value="<?php echo $row_smps_component['component_price'];?> " readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU NAME<input type="text" id="cpu_model" class="form-control" name="cpu_model" value="<?php echo $row_cpu_component['component_name'];?> " disabled>
+                                    <div class="col-md-10">
+                                        MotherBoard Name<input type="text" id="mboard_model" class="form-control" name="mboard_model" value="<?php echo $row_mother_board_component['component_name'];?> " readonly>
                                     </div>
                                 </div>
 
 
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU Price<input type="text" id="cpu_price" class="form-control" name="cpu_price" value="<?php echo $row_cpu_component['component_price'];?> " disabled>
+                                    <div class="col-md-10">
+                                    MotherBoard Price<input type="text" id="mboard_price" class="form-control" name="mboard_price" value="<?php echo $row_mother_board_component['component_price'];?> " readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU NAME<input type="text" id="cpu_model" class="form-control" name="cpu_model" value="<?php echo $row_cpu_component['component_name'];?> " disabled>
+                                    <div class="col-md-10">
+                                        Hard Drive Name<input type="text" id="hdrive_model" class="form-control" name="hdrive_model" value="<?php echo $row_hard_drive_component['component_name'];?> " readonly>
                                     </div>
                                 </div>
 
 
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU Price<input type="text" id="cpu_price" class="form-control" name="cpu_price" value="<?php echo $row_cpu_component['component_price'];?> " disabled>
+                                    <div class="col-md-10">
+                                    Hard Drive Price<input type="text" id="hdrive_price" class="form-control" name="hdrive_price" value="<?php echo $row_hard_drive_component['component_price'];?> " readonly>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU NAME<input type="text" id="cpu_model" class="form-control" name="cpu_model" value="<?php echo $row_cpu_component['component_name'];?> " disabled>
+                                    <div class="col-md-10">
+                                        Memory Name(RAM)<input type="text" id="memory_model" class="form-control" name="memory_model" value="<?php echo $row_memory_component['component_name'];?> " readonly>
                                     </div>
                                 </div>
 
 
                                 <div class="form-group row">
                                 
-                                    <div class="col-md-6">
-                                        CPU Price<input type="text" id="cpu_price" class="form-control" name="cpu_price" value="<?php echo $row_cpu_component['component_price'];?> " disabled>
+                                    <div class="col-md-10">
+                                        Memory Price<input type="text" id="memory_price" class="form-control" name="memory_price" value="<?php echo $row_memory_component['component_price'];?> " readonly>
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                
+                                    <div class="col-md-10">
+                                        Graphic Card NAME<input type="text" id="gcard_model" class="form-control" name="gcard_model" value="<?php echo $row_graphic_card_component['component_name'];?> " readonly>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                
+                                    <div class="col-md-10">
+                                    Graphic Card Price<input type="text" id="gcard_price" class="form-control" name="gcard_price" value="<?php echo $row_graphic_card_component['component_price'];?> " readonly>
+                                    </div>
+                                </div>
+
+
+                                
+
+
+                                <div class="form-group row">
+                                
+                                    <div class="col-md-10">
+                                        Total Price<input type="text" id="total" class="form-control" name="total" value="<?php echo $total; ?>" readonly>
+                                    </div>
+                                </div>
+
+
+
+                                <?php
+                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+                            echo '<button type="submit" class="btn btn-success btn-outline" >
+                            Save to Buy <i class="fa fa-sign-in"></i>
+                            </button>';
+                            
+                        } else {
+                            echo '<a href="user_login.php" class="btn btn-success btn-outline" role="button" aria-pressed="true">Login</a>';
+                        }
+                        ?>
                                
-                                        <button type="submit" class="btn btn-success btn-outline" >
-                                        save <i class="fa fa-sign-in"></i>
-                                        </button>
+                                        
                                         <!-- <a href="user_login.php"  class="btn btn-warning btn-outline" style="float:right">I have an account <i class="fa fa-user"></i></i> -->
 
 
@@ -702,17 +738,17 @@ $row_graphic_card_component['component_price'];
                                     
                                 
                             </form>
-                        </div>
+                        
 
 
 
 
 
 
-<a class="btn  btn-default edit_btn" href="user_login.php">Buy CPU Now <i class="fa fa-shopping-cart"></i></a>
-<a class="btn  btn-default edit_btn" href="#">Buy with Monitor & Accessories <i class="fa fa-desktop"></i></a>
+<!-- <a class="btn  btn-default edit_btn" href="user_login.php">Buy CPU Now <i class="fa fa-shopping-cart"></i></a>
+<a class="btn  btn-default edit_btn" href="#">Buy with Monitor & Accessories <i class="fa fa-desktop"></i></a> -->
 </div>
-            </div>
+</div>          </div>
             <!--/.row-->
         </div>
         <!--/.container-->

@@ -259,15 +259,20 @@ $obj_comp = new component_inc ;
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Add Product(without monitor & accessories)</h1>
+          <h1 class="h3 mb-4 text-gray-800">Add Product=>PC(without monitor & accessories)</h1>
 
 
           <div class="container">
   <h2>Component Details</h2>
-  <form action="monitor.dml.php" method="post" enctype="multipart/form-data">
+  <form action="add_pc.dml.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="product_no">Product Number</label>
-      <input type="text" class="form-control" id="product_no" placeholder="Enter Product Nuber" name="product_no">
+      <input type="text" class="form-control" id="product_no" placeholder="Enter Product Number" name="product_no">
+    </div>
+
+    <div class="form-group">
+      <label for="product_price">Product Image</label>
+      <input type="text" class="form-control" id="product_price" placeholder="Enter Product Price" name="product_price">
     </div>
     <div class="form-group">
       <label for="product_img">Product Image</label>
@@ -294,28 +299,33 @@ $obj_comp = new component_inc ;
       <input type="text" class="form-control" id="processor_type" placeholder="Enter Processor Type" name="processor_type">
     </div>
     <div class="form-group">
-      <label for="product_no">Product Number</label>
-      <input type="text" class="form-control" id="product_no" placeholder="Enter Product Nuber" name="product_no">
+      <label for="product_no">RAM Size</label>
+      <input type="ram_size" class="form-control" id="ram_size" placeholder="Enter RAM size" name="ram_size">
     </div>
     <div class="form-group">
-      <label for="product_no">Product Number</label>
-      <input type="text" class="form-control" id="product_no" placeholder="Enter Product Nuber" name="product_no">
+      <label for="ram_type">RAM Type</label>
+      <input type="text" class="form-control" id="ram_type" placeholder="Enter RAM Type" name="ram_type">
     </div>
     <div class="form-group">
-      <label for="product_no">Product Number</label>
-      <input type="text" class="form-control" id="product_no" placeholder="Enter Product Nuber" name="product_no">
+      <label for="hard_disk_size">Hard Drive Size</label>
+      <input type="text" class="form-control" id="hard_disk_size" placeholder="Enter Hard Drive Size" name="hard_disk_size">
     </div>
     <div class="form-group">
-      <label for="product_no">Product Number</label>
-      <input type="text" class="form-control" id="product_no" placeholder="Enter Product Nuber" name="product_no">
+      <label for="hard_disk_tech">Hard Disk Technology</label>
+      <input type="text" class="form-control" id="hard_disk_tech" placeholder="Ennter Hard Disk Technology" name="hard_disk_tech">
     </div>
     <div class="form-group">
-      <label for="product_no">Product Number</label>
-      <input type="text" class="form-control" id="product_no" placeholder="Enter Product Nuber" name="product_no">
+      <label for="operating_system">Operating System</label>
+      <input type="text" class="form-control" id="operating_system" placeholder="Enter Operating sytem" name="operating_system">
     </div>
     <div class="form-group">
-      <label for="product_no">Product Number</label>
-      <input type="text" class="form-control" id="product_no" placeholder="Enter Product Nuber" name="product_no">
+      <label for="g_card">Graphic Card</label>
+      <input type="text" class="form-control" id="g_card" placeholder="Enter Graphic card Details" name="g_card">
+    </div>
+
+    <div class="form-group">
+      <label for="additional_information">Additional Information</label>
+      <input type="text" class="form-control" id="additional_information" placeholder="Enter Additional Information" name="additional_information">
     </div>
     
 

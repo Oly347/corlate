@@ -302,6 +302,28 @@ function component_inc()
         return $rows;
    } 
 
+   function getProductPCList(){
+    $sSql = "SELECT * FROM add_product_pc";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+   } 
+
+
+
+   function getUserSavedItem($id){
+    $sSql="SELECT * FROM save_product WHERE user_name ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+
+
+  function getProductPCById($id){
+    $sSql="SELECT * FROM add_product_pc WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+   }
+
 
 
 
@@ -587,6 +609,40 @@ function component_inc()
         }
                 
     } 
+
+
+
+    public function InsertIntoPCProduct($post_fileds)
+      {
+      $sSql="SELECT * FROM add_product_pc WHERE id=-1";
+      $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+      if($insrt==0)
+       {
+        return false;
+        }
+        else
+        {
+        return true;
+        }
+                
+    } 
+
+
+
+    public function InsertIntoSaveProduct($post_fileds)
+      {
+      $sSql="SELECT * FROM save_product WHERE id=-1";
+      $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+      if($insrt==0)
+       {
+        return false;
+        }
+        else
+        {
+        return true;
+        }
+                
+    } 
    
     }// class end component
 
@@ -649,6 +705,14 @@ function component_inc()
                     $rows = $this->db_con->GetAllRows($sSql);
                     return $rows;
                 } 
+
+
+
+                function getUserById($id){
+                    $sSql="SELECT * FROM user WHERE email_id='".$id."' ";
+                    $rows = $this->db_con->GetAllRows($sSql);
+                    return $rows;
+                }
                 
                 
 

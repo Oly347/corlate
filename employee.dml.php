@@ -10,10 +10,10 @@ session_start();
 
 
 if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-    $userID=$_SESSION['userName'];
-    }
-    else{
-    $userID=$_SESSION['temp_user'];
+$userID=$_SESSION['userName'];
+}
+else{
+$userID=$_SESSION['temp_user'];
 
 } 
     
@@ -46,7 +46,7 @@ $insert= $obj_emp->InsertIntoEmployees($insert_array);
 
        
     }else {
-        header('Location:services.php?msg=please choose all option');
+        header('Location:services.php?msg=something went wrong');
        
         exit();
 

@@ -124,6 +124,17 @@ body>section {
     padding-bottom: 55px;
 }
 
+
+.center p {
+    text-align: left;
+    
+}
+
+.center ul {
+    text-align: left;
+    
+}
+
 .scaleIn {
     -webkit-animation-name: scaleIn;
     animation-name: scaleIn;
@@ -167,7 +178,7 @@ body>section {
 }
 
 .page-title{
-    padding: 60px 0;
+    padding: 80px 0;
 }
 
 .page-title h1{
@@ -177,7 +188,15 @@ body>section {
     font-size: 64px;
 }
 
+.dashboard_banner{
+    background: url(../images/lucian-novosel-7248661-unsplash.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 100px;
 
+}
 /*************************
 *******Header******
 **************************/
@@ -1051,7 +1070,9 @@ a.accordion-toggle i {
     background-attachment: fixed;
 }
 
-
+.edit_product_container{
+width:100% !important ;
+}
 #contact_section {
     color: #fff;
     text-align: center;
@@ -1472,13 +1493,20 @@ a.accordion-toggle i {
     -webkit-transition: none;
     transition: none;
 }
+.product_view_image{
+    border:1px solid black;
+}
 
+.product_view_image:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
 
 /**************************
 ********* Pricing Table CSS *
 **************************/
 section.pricing{
     background-color: #FAFAFA;
+    
 }
 .single-pricing{
     display: inline-block;
@@ -1486,7 +1514,8 @@ section.pricing{
     border: 1px solid #E4EBF0;
     padding: 50px;
     text-align: center;
-    margin: 50px 0;
+    margin: 50px 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .single-pricing span{
@@ -1499,15 +1528,14 @@ section.pricing{
     font-size: 80px;
     position: relative;
     display: inline-block;
-    padding: 0 50px 0 15px;
+    /* padding: 0 50px 0 15px; */
 }
 
 .single-pricing h1 span{
-    position: absolute;
-    top: 10px;
-    font-size: 26px;
-    left: 0;
-    text-transform: lowercase;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    font-size: 30px
 }
 
 .single-pricing h1 span:last-child{
@@ -2389,4 +2417,17 @@ shortcodes page css
 #footer ul>li {
     display: inline-block;
     margin-left: 15px;
+}
+
+
+.banner_smart_home{
+    margin-top: 30px;
+}
+.lead p{
+text-align: justify;
+}
+
+
+.edit_dashboard_container{
+width: 100% !important;
 }

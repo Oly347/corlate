@@ -55,10 +55,13 @@ foreach ($loginUser as $key => $value) {
  $_SESSION['user_loggedin'] = true;   //logintrue
 }
 }
+
+//$url=$_SERVER['HTTP_REFERER'];
+
 $l=count($loginUser);
 if ($l==1) {
     
-  header('Location:index.php');
+    echo "<script>history.go(-2);</script>";
 }
 else {
   $_SESSION['errMsg'] = "Invalid username or password";

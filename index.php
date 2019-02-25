@@ -75,6 +75,7 @@ session_start();
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
                             echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
                             echo   $_SESSION['userName'];
+                            echo '<a href="#" class="btn btn-imfo   active" role="button" aria-pressed="true">Dash Board</a>';
                         } else {
                             echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
                         }
