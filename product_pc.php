@@ -174,12 +174,14 @@ $rowProductPCList = $obj_comp->getProductPCList()
                         </div>
 
                         
-                        <a href="buy.php?id=<?php echo $row_product_pc_list['id'];?>" role="button">BUY</a>
-                    </div>
-                    <?php
-                       }
-                
-                      ?>
+
+                        
+                        <a href="buy_product.php?id=<?php echo $row_product_pc_list['id'];?>" role="button">BUY</a>
+                       </div>
+                        <?php
+                        }
+                    
+                        ?>
 
                     <!-- product -->
                    

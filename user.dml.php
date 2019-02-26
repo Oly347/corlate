@@ -39,7 +39,7 @@ $insert_array=  array(
 $insert= $obj_user->InsertIntoUserDetails($insert_array);
      if ($insert) {
         
-        header('Location:welcome.php');
+        header('Location:logout.php');
         exit();
 
        

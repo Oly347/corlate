@@ -28,11 +28,10 @@ $insert_array=  array(
     'Harddrive' => $_POST['HDD'],
     'RAM' => $_POST['RAM'],
     'GCARD' => $_POST['GCARD'],
+    'temp_id' => $userID,
     
 
-    'Total' => $_POST['MB']+$_POST['SMPS']+$_POST['CAB']+$_POST['CPU'],
-    // 'email_id' => $_POST['email_id'],
-    'temp_id' => $userID,
+    
     
 
 );

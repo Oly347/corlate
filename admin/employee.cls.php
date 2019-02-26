@@ -113,6 +113,23 @@ class employee_inc{
 
 
 
+       public function InsertIntoOrderCheck($post_fileds)
+       {
+       $sSql="SELECT * FROM product_order WHERE id=-1";
+       $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+       if($insrt==0)
+       {
+           return false;
+       }
+       else
+       {
+           return true;
+       }
+       
+       }    
+
+
+
 
 
 }//end of classs
@@ -326,10 +343,43 @@ function component_inc()
 
 
 
+   function getSavedProductByID($id){
+    $sSql="SELECT * FROM save_product WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+   }
 
 
 
 
+
+   function getPCProductByID($id){
+    $sSql="SELECT * FROM add_product_pc WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+   }
+
+
+
+
+
+
+
+   function SetUpdatePCProduct($post_fields,$id)
+   {
+       $sSql="SELECT * FROM add_product_pc WHERE id='".$id."' ";
+       
+       
+       echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+       if($update==0)
+       {
+           return false;
+       }
+       else
+       {
+           return true;
+       }
+    }
 
 
    

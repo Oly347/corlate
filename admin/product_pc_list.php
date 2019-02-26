@@ -284,6 +284,7 @@ $rowProductPCList = $obj_comp->getProductPCList()
                       <th>Operating System</th>
                       <th>Graphic Card</th>
                       <th>Additional Information</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -304,6 +305,7 @@ $rowProductPCList = $obj_comp->getProductPCList()
                       <th>Operating System</th>
                       <th>Graphic Card</th>
                       <th>Additional Information</th>
+                      <th>Action</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -331,7 +333,13 @@ $rowProductPCList = $obj_comp->getProductPCList()
                       <td><?php echo $row_product_pc_list['operating_system'];?></td>
                       <td><?php echo $row_product_pc_list['g_card'];?></td>
                       <td><?php echo $row_product_pc_list['additional_information'];?></td>
-                      
+                      <td>
+        <a class="btn btn-danger" href="delete.php?id=<?php echo $row_product_pc_list['id'];?>" role="button">Delete</a>
+        <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
+
+
+        <a class="btn btn-info" href="edit_pc.php?id=<?php echo $row_product_pc_list['id'];?>" role="button">Update</a>
+        </td>
                       
                     </tr>
                     

@@ -1,29 +1,49 @@
 <?php
-//    include("config.php");
-//    session_start();
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
-session_start();
 
-if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+session_start();
+$obj_comp = new component_inc ;
+$obj_emp = new employee_inc ;
+
+if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) 
+{
+$userID=$_SESSION['userName'];
+}
+else{
+$userID=$_SESSION['temp_user'];
     
 } 
-else {
-header('Location:user_login.php');
+
+//$rowPrice = $obj_emp->getPrice();
+
+//$rowEmployee = $obj_emp->getEmployee();
+//echo $_GET['id'];
+
+$rowProductPC = $obj_comp->getProductPCById($_GET['id']);
+//  echo "<pre>";
+//  print_r($rowProductPC);
+// echo "</pre>";
+// exit;
+foreach ($rowProductPC as $key => $value) {
+    $product_no=$value['product_no'];
+    $cabinet=$value['cabinet'];
+    $product_weight=$value['product_weight'];
+    $product_dimensions=$value['product_dimensions'];
+    $processor_brand=$value['processor_brand'];
+    $processor_type=$value['processor_type'];
+    $ram_size=$value['ram_size'];
+    $ram_type=$value['ram_type'];
+    $hard_disk_size=$value['hard_disk_size'];
+    $hard_disk_tech=$value['hard_disk_tech'];
+    $operating_system=$value['operating_system'];
+    $g_card=$value['g_card'];
+    $additional_information=$value['additional_information'];
+    $product_price=$value['product_price'];
+
 }
-    
-$obj_user = new user_inc ;
-$userDetailsById = $obj_user->getUserById($_SESSION['userName']);
-
-
-
-$obj_comp = new component_inc ;
-$userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
-
-
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -120,7 +140,7 @@ $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                    
+                    <ul class="nav navbar-nav">
                     <li ><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="#">Assemble PC</a></li>
@@ -129,7 +149,7 @@ $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
                         <li><a href="#">Contact</a></li>
                         
                     </ul>                      
-                    
+                    </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
@@ -137,172 +157,125 @@ $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
     </header><!--/header-->
 
 
-    <div class="page-title dashboard_banner">
-        <h1>User Dashboard</h1>
+    <div class="page-title" style="background-image: url(images/page-title.png)">
+        <h1>Product Buy</h1>
     </div>
     
-    <section id="content">
-        <div class="container edit_dashboard_container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 fadeInDown">
-                    <div class="tab-wrap">
-                        <div class="media">
-                            <div class="parrent pull-left">
-                                <ul class="nav nav-tabs nav-stacked">
-                                    <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Dashboard</a></li>
-                                    <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Order</a></li>
-                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Download</a></li>
-                                    <!-- <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Address</a></li> -->
-                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Account Details</a></li>
-                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Saved Item</a></li>
-                                    <!-- <li class=""><a href="logout.php" data-toggle="tab" class="tehnical">Logout</a></li> -->
-                                </ul>
-                            </div>
+    <section class="pricing">
+    <div class="container">
+    <form  action="checkout.php" method="post" id="employeeForm" >
 
-                            <div class="parrent media-body">
-                                <div class="tab-content">
-                                    <div class="tab-pane fade" id="tab4">
-                                        <div class="media">
+                    <div class="form-group">
+                                            <label>User Name</label>
+                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $userID?>" readonly>
+                            <input type="hidden" name="product_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
                                             
-                                            <?php
-
-                                            foreach ($userDetailsById as  $user_details_by_id) {
-                                                            
-                                            ?>
-                                            <div class="media-body">
-                                                <h2>Name:<?php echo $user_details_by_id['name'];?> </h2>
-                                                <p>address:<?php echo $user_details_by_id['address'];?> </p>
-                                                <p>Phone Number:<?php echo $user_details_by_id['phone_number'];?> </p>
-                                                <p>EmailID:<?php echo $user_details_by_id['email_id'];?> </p>
-                                            </div>
-
-
-                                            <?php
-                                            }
-
-                                            ?>
                                         </div>
-                                    </div>
-
-                                    <div class="tab-pane fade active in text-right" id="tab1">
-                                        <div class="video-box">
-                                            <img src="images/tab-video-bg.png" alt="video">
-                                            <a class="video-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" rel="prettyPhoto"><i class="fa fa-play"></i></a>
-                                        </div>
-                                    </div>
-
-                    <div class="tab-pane fade" id="tab5" style="overflow-x:auto;">
-                    <table class='table table-bordered table-striped'>
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Total</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                
-                    foreach ($userSavedItem as  $user_saved_item) {
-                                       
-                    ?>
-                      <tr>
-                        <td><?php echo $user_saved_item['id'];?></td>
-                        <td><?php echo $user_saved_item['cpu_model'];?></td>
-                        <td><?php echo $user_saved_item['cpu_price'];?></td>
-                        <td><?php echo $user_saved_item['cab_model'];?></td>
-                        <td><?php echo $user_saved_item['cab_price'];?></td>
-                        <td><?php echo $user_saved_item['smps_model'];?></td>
-                        <td><?php echo $user_saved_item['smps_price'];?></td>
-                        <td><?php echo $user_saved_item['mboard_model'];?></td>
-                        <td><?php echo $user_saved_item['mboard_price'];?></td>
-                        <td><?php echo $user_saved_item['hdrive_model'];?></td>
-                        <td><?php echo $user_saved_item['hdrive_price'];?></td>
-                        <td><?php echo $user_saved_item['memory_model'];?></td>
-                        <td><?php echo $user_saved_item['memory_price'];?></td>
-                        <td><?php echo $user_saved_item['gcard_model'];?></td>
-                        <td><?php echo $user_saved_item['gcard_price'];?></td>
-                        <td><?php echo $user_saved_item['total'];?></td>
-                        <td>
-                        
-                        <a class="btn btn-info" href="buy_custome_product.php?id=<?php echo $user_saved_item['id'];?>" role="button">Buy</a>
-                        </td>
-                        <!-- <td>
-                        <a class="btn btn-danger" href="" role="button">Delete</a>
-                        <a class="btn btn-info" href="" role="button">Update</a>
-                        </td> -->
-                      </tr>
-                 
-                      <?php
-                       }
-                
-                      ?>
-                      
-                    </tbody>
-                  </table>
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    </div>
-
-                                    <div class="tab-pane fade" id="tab3">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words</p>
-                                    </div>
-
-                                    <div class="tab-pane fade" id="tab2">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,</p>
-                                    </div>
-                                </div>
-                                <!--/.tab-content-->
-                            </div>
-                            <!--/.media-body-->
+                        <div class="form-group">
+                            <label>Product Number</label>
+            <input type="text" name="product_no" id="product_no" class="form-control" value="<?php echo $product_no; ?>" readonly>
+            
+                            
                         </div>
-                        <!--/.media-->
+                        
+                        <div class="form-group">
+                            <label>Cabinet</label>
+                            <input type="text" name="cabinet" class="form-control" value="<?php echo $cabinet; ?>" readonly>
+                            
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Product Weight</label>
+                            <input type="text" name="product_weight" class="form-control" value="<?php echo $product_weight; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Product Dimensions</label>
+                            <input type="text" name="product_dimensions" class="form-control" value="<?php echo $product_dimensions; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Processor Brand</label>
+                            <input type="text" name="processor_brand" class="form-control" value="<?php echo $processor_brand; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Processor type</label>
+                            <input type="text" name="processor_type" class="form-control" value="<?php echo $processor_type; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>RAM Size</label>
+                            <input type="text" name="ram_size" class="form-control" value="<?php echo $ram_size; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>RAM Type</label>
+                            <input type="text" name="ram_type" class="form-control" value="<?php echo $ram_type; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Hard Disk size</label>
+                            <input type="text" name="hard_disk_size" class="form-control" value="<?php echo $hard_disk_size; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Hard Disk Technology</label>
+                            <input type="text" name="hard_disk_tech" class="form-control" value="<?php echo $hard_disk_tech; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Operating system</label>
+                            <input type="text" name="operating_system" class="form-control" value="<?php echo $operating_system; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Graphic Card</label>
+                            <input type="text" name="g_card" class="form-control" value="<?php echo $g_card; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Additional Information</label>
+                            <input type="text" name="additional_information" class="form-control" value="<?php echo $additional_information; ?>" readonly>
+                            
+                        </div>
+                        <div class="form-group">
+                            <label>Product Price</label>
+                            <input type="text" name="product_price" class="form-control" value="<?php echo $product_price; ?>" readonly>
+                            
+                        </div>
+
+
+                     </div>
+
+
+    
+                        
+                     <div class="form-actions">
+                     <a href="index.php" class="btn btn-info btn-outline">Cancel</a>
+                     <?php
+                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+                            echo '<button type="submit" class="btn btn-success btn-outline" >
+                            Buy <i class="fa fa-sign-in"></i>
+                            </button>';
+                            
+                        } else {
+                            echo '<a href="user_login.php" class="btn btn-success btn-outline" style="float:center" role="button" aria-pressed="true">Login To Buy</a>';
+                        }
+                        ?>
+
+                        </div>
+                    </form>
                     </div>
-                    <!--/.tab-wrap-->
-                </div>
-                <!--/.col-sm-6-->
-
-            </div>
-            <!--/.row-->
-        </div>
-        <!--/.container-->
     </section>
-
+<style>
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+</style>
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
