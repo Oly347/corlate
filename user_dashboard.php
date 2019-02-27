@@ -215,7 +215,7 @@ overflow-x: hidden;
                       <tr>
                       <th>Check</th>
                         <th>ID</th>
-                        <th> User Name</th>
+                        
                         
                         <th>Transaction Id</th>
                         <th>Deatils</th>
@@ -239,7 +239,7 @@ overflow-x: hidden;
                       <td><input type="checkbox" name="id[]" value="<?php echo $user_cart_item['id'];?>" >
   </td>
                         <td><?php echo $user_cart_item['id'];?></td>
-                        <td><?php echo $user_cart_item['username'];?></td>
+                       
                         <td><?php echo $user_cart_item['txn_id'];?></td>
                         <td><?php echo $user_cart_item['details'];?></td>
                         <td><?php echo $user_cart_item['product_no'];?></td>
