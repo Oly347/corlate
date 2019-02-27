@@ -9,9 +9,8 @@ $obj_emp = new employee_inc ;
 $today = date("Ymd");
 $rand = strtoupper(substr(uniqid(sha1(time())),0,4));
 $transaction = 'TS' . $today . $rand ;
-$product_number = 'C-PC' . $today . $rand ;
+$details=$_POST['component_name']."=>".$_POST['component_details'] ;
 
-$details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",   ".$_POST['d5']."=>".$_POST['d6'].",   ".$_POST['d7']."=>".$_POST['d8'].",   ".$_POST['d9']."=>".$_POST['d10'].",   ".$_POST['d11']."=>".$_POST['d12'].",   ".$_POST['d13']."=>".$_POST['d14'];
 // if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) 
 // {
 //     $userID=$_SESSION['userName'];
@@ -173,7 +172,7 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
 
                     <div class="form-group">
                                             <label>User Name</label>
-                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $_POST["user_name"]; ?>" readonly>
+                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $_POST["username"]; ?>" readonly>
                             
                                             
                                         </div>
@@ -188,18 +187,17 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
 
 
                                         
-                        
-
-
                         <div class="form-group">
-                      <label for="comment">Product Details</label>
-              <textarea class="form-control" name="details"  id="details" readonly><?php echo $details ?></textarea>
-                         </div> 
+                            <label>Product Details</label>
+            <input type="text" name="details" id="details" class="form-control" value="<?php echo $details ?>" readonly>
+            
+                            
+                        </div>
 
 
                         <div class="form-group">
                             <label>Product Number</label>
-            <input type="text" name="product_no" id="product_no" class="form-control" value="<?php echo $product_number ?>" readonly>
+            <input type="text" name="product_no" id="product_no" class="form-control" value="<?php echo $_POST["product_id"]; ?>" readonly>
             
                             
                         </div>
@@ -210,7 +208,7 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
                        
                         <div class="form-group">
                             <label>Product Price</label>
-                            <input type="text" name="product_price" class="form-control" value="<?php echo $_POST["total"]; ?>" readonly>
+                            <input type="text" name="product_price" class="form-control" value="<?php echo $_POST["component_price"]; ?>" readonly>
                             
                         </div>
 

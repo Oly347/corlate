@@ -6,48 +6,34 @@ session_start();
 $obj_comp = new component_inc ;
 $obj_emp = new employee_inc ;
 
-$today = date("Ymd");
-$rand = strtoupper(substr(uniqid(sha1(time())),0,4));
-$transaction = 'TS' . $today . $rand ;
-$product_number = 'C-PC' . $today . $rand ;
-
-$details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",   ".$_POST['d5']."=>".$_POST['d6'].",   ".$_POST['d7']."=>".$_POST['d8'].",   ".$_POST['d9']."=>".$_POST['d10'].",   ".$_POST['d11']."=>".$_POST['d12'].",   ".$_POST['d13']."=>".$_POST['d14'];
-// if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) 
-// {
-//     $userID=$_SESSION['userName'];
-//     }
-//     else{
-//     $userID=$_SESSION['temp_user'];
+if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) 
+{
+$userID=$_SESSION['userName'];
+}
+else{
+$userID=$_SESSION['temp_user'];
     
-// } 
+} 
 
-// //$rowPrice = $obj_emp->getPrice();
+//$rowPrice = $obj_emp->getPrice();
 
-// //$rowEmployee = $obj_emp->getEmployee();
-// //echo $_GET['id'];
+//$rowEmployee = $obj_emp->getEmployee();
+//echo $_GET['id'];
 
-// $rowProductPC = $obj_comp->getProductPCById($_GET['id']);
-// //  echo "<pre>";
-// //  print_r($rowProductPC);
-// // echo "</pre>";
-// // exit;
-// foreach ($rowProductPC as $key => $value) {
-//     $product_no=$value['product_no'];
-//     $cabinet=$value['cabinet'];
-//     $product_weight=$value['product_weight'];
-//     $product_dimensions=$value['product_dimensions'];
-//     $processor_brand=$value['processor_brand'];
-//     $processor_type=$value['processor_type'];
-//     $ram_size=$value['ram_size'];
-//     $ram_type=$value['ram_type'];
-//     $hard_disk_size=$value['hard_disk_size'];
-//     $hard_disk_tech=$value['hard_disk_tech'];
-//     $operating_system=$value['operating_system'];
-//     $g_card=$value['g_card'];
-//     $additional_information=$value['additional_information'];
-//     $product_price=$value['product_price'];
+$rowProductKeyboardMouse = $obj_comp->getProductKeyboardMouse($_GET['id']);
+//  echo "<pre>";
+//  print_r($rowProductMonitor);
+// echo "</pre>";
+// exit;
+foreach ($rowProductKeyboardMouse as $key => $value) {
+    $id=$value['id'];
+    $component_name=$value['component_name'];
+    $component_details=$value['component_details'];
+    $component_price=$value['component_price'];
+    
+    
 
-// }
+}
 
 ?>
 
@@ -164,55 +150,39 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
 
 
     <div class="page-title" style="background-image: url(images/page-title.png)">
-        <h1>Product Buy</h1>
+        <h1>Monitor Buy</h1>
     </div>
     
     <section class="pricing">
     <div class="container">
-    <form  action="cart_product.dml.php" method="post" id="employeeForm" >
+    <form  action="checkout_accessories.php" method="post" id="employeeForm" >
 
                     <div class="form-group">
                                             <label>User Name</label>
-                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $_POST["user_name"]; ?>" readonly>
-                            
+                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $userID?>" readonly>
+                            <input type="hidden" name="product_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
                                             
                                         </div>
-
-
-                                        <div class="form-group">
-                                            <label>Transaction ID</label>
-                            <input type="text" name="txn_id" id="txn_id" class="form-control" value="<?php echo $transaction ?>" readonly>
-                            
-                                            
-                                        </div>                
-
-
-                                        
-                        
-
-
                         <div class="form-group">
-                      <label for="comment">Product Details</label>
-              <textarea class="form-control" name="details"  id="details" readonly><?php echo $details ?></textarea>
-                         </div> 
-
-
-                        <div class="form-group">
-                            <label>Product Number</label>
-            <input type="text" name="product_no" id="product_no" class="form-control" value="<?php echo $product_number ?>" readonly>
+                            <label>Monitor Name</label>
+            <input type="text" name="component_name" id="component_name" class="form-control" value="<?php echo $component_name; ?>" readonly>
             
                             
                         </div>
                         
-                        
-
-
-                       
                         <div class="form-group">
-                            <label>Product Price</label>
-                            <input type="text" name="product_price" class="form-control" value="<?php echo $_POST["total"]; ?>" readonly>
+                            <label>Monitor Details</label>
+                            <input type="text" name="component_details" class="form-control" value="<?php echo $component_details; ?>" readonly>
                             
                         </div>
+
+
+                        <div class="form-group">
+                            <label>Monitor Price</label>
+                            <input type="text" name="component_price" class="form-control" value="<?php echo $component_price; ?>" readonly>
+                            
+                        </div>
+                        
 
 
                      </div>
@@ -225,7 +195,7 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
                      <?php
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
                             echo '<button type="submit" class="btn btn-success btn-outline" >
-                            Add To Cart<i class="fa fa-sign-in"></i>
+                            Buy <i class="fa fa-sign-in"></i>
                             </button>';
                             
                         } else {

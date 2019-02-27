@@ -598,7 +598,7 @@ $row_graphic_card_component['component_price'];
 </div>
 </div>
                         <div class="card-body col-md-18 col-md-offset-2 ">
-                            <form name="my-form"  action="save_product.dml.php" method="post" enctype="multipart/form-data">
+                            <form name="my-form"  action="confirm_custome_pc.php" method="post" enctype="multipart/form-data">
 
                             <div class="form-group row">
                                 
@@ -719,16 +719,11 @@ $row_graphic_card_component['component_price'];
 
 
 
-                                <?php
-                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<button type="submit" class="btn btn-success btn-outline" >
+                          <button type="submit" class="btn btn-success btn-outline" >
                             Save to Buy <i class="fa fa-sign-in"></i>
-                            </button>';
+                            </button>
                             
-                        } else {
-                            echo '<a href="user_login.php" class="btn btn-success btn-outline" role="button" aria-pressed="true">Login</a>';
-                        }
-                        ?>
+                        
                                
                                         
                                         <!-- <a href="user_login.php"  class="btn btn-warning btn-outline" style="float:right">I have an account <i class="fa fa-user"></i></i> -->

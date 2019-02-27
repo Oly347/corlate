@@ -20,6 +20,11 @@ $userDetailsById = $obj_user->getUserById($_SESSION['userName']);
 $obj_comp = new component_inc ;
 $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
 
+$userCartItem = $obj_comp->getUserCartItem($_SESSION['userName']);
+
+// print_r($userCartItem);
+
+// exit;
 
 
 ?>
@@ -56,6 +61,13 @@ $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <style>
+    body {
+overflow-x: hidden;
+}  
+
+
+    </style>
 </head>
 <!--/head-->
 
@@ -154,7 +166,7 @@ $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
                                     <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Download</a></li>
                                     <!-- <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Address</a></li> -->
                                     <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Account Details</a></li>
-                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Saved Item</a></li>
+                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Saved (Cart) Item</a></li>
                                     <!-- <li class=""><a href="logout.php" data-toggle="tab" class="tehnical">Logout</a></li> -->
                                 </ul>
                             </div>
@@ -184,70 +196,57 @@ $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
                                         </div>
                                     </div>
 
-                                    <div class="tab-pane fade active in text-right" id="tab1">
-                                        <div class="video-box">
+                                    <div class="tab-pane fade active in " id="tab1">
+                                   
+                                    <a class="btn btn-info" href="#" role="button" style="margin:30px">Buy Monitor & Accessories</a>
+                                    <a class="btn btn-info" href="#tab5" data-toggle="tab" class="tehnical" style="margin:30px">Buy PC From Cart</a>
+
+                                        <!-- <div class="video-box">
                                             <img src="images/tab-video-bg.png" alt="video">
                                             <a class="video-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" rel="prettyPhoto"><i class="fa fa-play"></i></a>
-                                        </div>
+                                        </div> -->
                                     </div>
 
                     <div class="tab-pane fade" id="tab5" style="overflow-x:auto;">
+                    <form id="regForm" action="value.php" method="post">
+                   
                     <table class='table table-bordered table-striped'>
                     <thead>
                       <tr>
+                      <th>Check</th>
                         <th>ID</th>
-                        <th>Name</th>
+                        <th> User Name</th>
                         
-                        <th>Price</th>
-                        <th>Name</th>
+                        <th>Transaction Id</th>
+                        <th>Deatils</th>
                         
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Name</th>
-                        
-                        <th>Price</th>
-                        <th>Total</th>
+                        <th>Product No</th>
+                        <th>Product Price</th>
                         <th>Action</th>
+                        
+                       
+                        
+                       
                       </tr>
                     </thead>
                     <tbody>
                     <?php
                 
-                    foreach ($userSavedItem as  $user_saved_item) {
+                    foreach ($userCartItem as  $user_cart_item) {
                                        
                     ?>
                       <tr>
-                        <td><?php echo $user_saved_item['id'];?></td>
-                        <td><?php echo $user_saved_item['cpu_model'];?></td>
-                        <td><?php echo $user_saved_item['cpu_price'];?></td>
-                        <td><?php echo $user_saved_item['cab_model'];?></td>
-                        <td><?php echo $user_saved_item['cab_price'];?></td>
-                        <td><?php echo $user_saved_item['smps_model'];?></td>
-                        <td><?php echo $user_saved_item['smps_price'];?></td>
-                        <td><?php echo $user_saved_item['mboard_model'];?></td>
-                        <td><?php echo $user_saved_item['mboard_price'];?></td>
-                        <td><?php echo $user_saved_item['hdrive_model'];?></td>
-                        <td><?php echo $user_saved_item['hdrive_price'];?></td>
-                        <td><?php echo $user_saved_item['memory_model'];?></td>
-                        <td><?php echo $user_saved_item['memory_price'];?></td>
-                        <td><?php echo $user_saved_item['gcard_model'];?></td>
-                        <td><?php echo $user_saved_item['gcard_price'];?></td>
-                        <td><?php echo $user_saved_item['total'];?></td>
-                        <td>
+                      <td><input type="checkbox" name="id[]" value="<?php echo $user_cart_item['id'];?>" >
+  </td>
+                        <td><?php echo $user_cart_item['id'];?></td>
+                        <td><?php echo $user_cart_item['username'];?></td>
+                        <td><?php echo $user_cart_item['txn_id'];?></td>
+                        <td><?php echo $user_cart_item['details'];?></td>
+                        <td><?php echo $user_cart_item['product_no'];?></td>
+                        <td><?php echo $user_cart_item['product_price'];?></td>
+                        <td><a class="btn btn-info" href="delete.php?id=<?php echo $user_cart_item['id'];?>" role="button">Delete</a></td>
                         
-                        <a class="btn btn-info" href="buy_custome_product.php?id=<?php echo $user_saved_item['id'];?>" role="button">Buy</a>
-                        </td>
+                        
                         <!-- <td>
                         <a class="btn btn-danger" href="" role="button">Delete</a>
                         <a class="btn btn-info" href="" role="button">Update</a>
@@ -261,8 +260,10 @@ $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
                       
                     </tbody>
                   </table>
+                  <button class="btn btn-primary" type="submit">Product Checkout</button>
+                  </form>
                   
-
+                  
 
 
 

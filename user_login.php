@@ -61,7 +61,7 @@ foreach ($loginUser as $key => $value) {
 $l=count($loginUser);
 if ($l==1) {
     
-    echo "<script>history.go(-2);</script>";
+    echo "<script>history.go(-3);</script>";
 }
 else {
   $_SESSION['errMsg'] = "Invalid username or password";

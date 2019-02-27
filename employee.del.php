@@ -1,19 +1,20 @@
 <?php
-// Include config file
+
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
 
 session_start();
-$obj_emp = new employee_inc ;  
+$obj_comp = new component_inc ;
 
-$delete= $obj_emp->DeleteFrom($_POST['emp_id']);
-     
 
-if ($delete) {
-        
-header('Location:home.php');
+
+
+$delete= $obj_comp->DeleteCartItem($_POST['cart_id']);
+if ($delete) {        
+header('Location:user_dashboard.php');
+exit();
 }
 else{
-header('Location:home.php');
+header('Location:user_dashboard.php');
 }
 ?>

@@ -169,11 +169,11 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
     
     <section class="pricing">
     <div class="container">
-    <form  action="cart_product.dml.php" method="post" id="employeeForm" >
+    <form  action="new.php" method="post" id="employeeForm" >
 
                     <div class="form-group">
                                             <label>User Name</label>
-                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $_POST["user_name"]; ?>" readonly>
+                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $_POST["username"]; ?>" readonly>
                             
                                             
                                         </div>
@@ -210,7 +210,7 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
                        
                         <div class="form-group">
                             <label>Product Price</label>
-                            <input type="text" name="product_price" class="form-control" value="<?php echo $_POST["total"]; ?>" readonly>
+                            <input type="text" name="product_price" class="form-control" value="<?php echo $_POST["product_price"]; ?>" readonly>
                             
                         </div>
 
@@ -225,7 +225,7 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
                      <?php
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
                             echo '<button type="submit" class="btn btn-success btn-outline" >
-                            Add To Cart<i class="fa fa-sign-in"></i>
+                            Pay<i class="fa fa-sign-in"></i>
                             </button>';
                             
                         } else {

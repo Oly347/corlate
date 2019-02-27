@@ -325,6 +325,17 @@ function component_inc()
         return $rows;
    } 
 
+  function getProductKeyboardMouse($id){
+    $sSql="SELECT * FROM component_details_keyboardmouse WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+  function getProductMonitor($id){
+    $sSql="SELECT * FROM component_details_monitor WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
 
 
    function getUserSavedItem($id){
@@ -332,7 +343,11 @@ function component_inc()
     $rows = $this->db_con->GetAllRows($sSql);
     return $rows;
   }
-
+  function getUserCartItem($id){
+    $sSql="SELECT * FROM cart_item WHERE username ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
 
 
   function getProductPCById($id){
@@ -358,7 +373,20 @@ function component_inc()
     $rows = $this->db_con->GetAllRows($sSql);
     return $rows;
    }
+   function DeleteCartItem($id)
+       {
+        $del_sql="DELETE FROM cart_item WHERE id=".$id;
+        $delete=$this->db_con->deleteRow($del_sql);
 
+        if($delete)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+       }
 
 
 
@@ -693,6 +721,23 @@ function component_inc()
         }
                 
     } 
+
+
+
+    public function InsertIntoCartProduct($post_fileds)
+    {
+    $sSql="SELECT * FROM cart_item WHERE id=-1";
+    $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+    if($insrt==0)
+     {
+      return false;
+      }
+      else
+      {
+      return true;
+      }
+              
+  } 
    
     }// class end component
 

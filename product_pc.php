@@ -5,7 +5,10 @@ session_start();
 
 $obj_comp = new component_inc ;
 
-$rowProductPCList = $obj_comp->getProductPCList()
+$rowProductPCList = $obj_comp->getProductPCList();
+$rowMonitorList = $obj_comp->getComponentDetailsMonitor();
+
+$rowKeyBoardMouseList = $obj_comp->getComponentDetailsKeyboardMouse();
 
 
 
@@ -131,6 +134,63 @@ $rowProductPCList = $obj_comp->getProductPCList()
     
     <section class="pricing">
         <div class="large-title text-center">        
+            <h2>Monitor list</h2>
+            <!-- <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p> -->
+        </div> 
+        <div class="container edit_product_container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                <?php
+                
+                foreach ($rowMonitorList as  $row_monitor_list) {
+                                   
+                ?>
+                    <div class="single-pricing">
+                    
+                        <span>ID<?php echo $row_monitor_list['id'];?></span>
+                        
+                        <h1>
+                            <span>&#x20b9;<?php echo $row_monitor_list['component_price'];?></span>
+                            
+                            
+                        </h1>
+                        <div class="clearfix">
+                            <ul>
+                                <li><img  src ="admin/upload/<?php echo $row_monitor_list['component_image'];?>" height=100 width=100 /> </li>
+                                <li>Monitor Name<?php echo $row_monitor_list['component_name'];?></li>
+                                <li>Monitor Details<?php echo $row_monitor_list['component_details'];?></li>
+                                
+                                
+                                <!-- <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li> -->
+                            </ul>
+                        </div>
+
+                        
+
+                        
+                        <a href="buy_monitor.php?id=<?php echo $row_monitor_list['id'];?>" role="button">BUY</a>
+                       </div>
+                        <?php
+                        }
+                    
+                        ?>
+
+                    <!-- product -->
+                   
+                </div>
+            </div>
+        </div>
+         <!-- container -->
+    </section>
+
+
+
+    <section class="pricing">
+        <div class="large-title text-center">        
             <h2>Product List(PC)</h2>
             <!-- <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p> -->
         </div> 
@@ -177,6 +237,62 @@ $rowProductPCList = $obj_comp->getProductPCList()
 
                         
                         <a href="buy_product.php?id=<?php echo $row_product_pc_list['id'];?>" role="button">BUY</a>
+                       </div>
+                        <?php
+                        }
+                    
+                        ?>
+
+                    <!-- product -->
+                   
+                </div>
+            </div>
+        </div>
+         <!-- container -->
+    </section>
+
+
+
+    <section class="pricing">
+        <div class="large-title text-center">        
+            <h2>Key Board & Mouse</h2>
+            <!-- <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p> -->
+        </div> 
+        <div class="container edit_product_container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1 text-center">
+                <?php
+                
+                foreach ($rowKeyBoardMouseList as  $row_keyboard_mouse_list) {
+                                   
+                ?>
+                    <div class="single-pricing">
+                    
+                        <span><?php echo $row_keyboard_mouse_list['id'];?></span>
+                        
+                        <h1>
+                            <span>&#x20b9;<?php echo $row_keyboard_mouse_list['component_price'];?></span>
+                            
+                            
+                        </h1>
+                        <div class="clearfix">
+                            <ul>
+                                <li><img  src ="admin/upload/<?php echo $row_keyboard_mouse_list['component_image'];?>" height=100 width=100 /> </li>
+                                <li>Name-<?php echo $row_keyboard_mouse_list['component_name'];?></li>
+                                <li>Keyboard & mouse-<?php echo $row_keyboard_mouse_list['component_details'];?></li>
+                                
+                                <!-- <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li> -->
+                            </ul>
+                        </div>
+
+                        
+
+                        
+                        <a href="buy_keyboardmouse.php?id=<?php echo $row_keyboard_mouse_list['id'];?>" role="button">BUY</a>
                        </div>
                         <?php
                         }

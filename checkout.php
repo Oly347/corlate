@@ -168,7 +168,7 @@ $details=$_POST['cabinet'].",".$_POST['product_weight'].",".$_POST['product_dime
     
     <section class="pricing">
     <div class="container">
-    <form  action="new.php" method="post" id="employeeForm" >
+    <form  action="cart_product.dml.php" method="post" id="employeeForm" >
 
                     <div class="form-group">
                                             <label>User Name</label>
@@ -223,7 +223,7 @@ $details=$_POST['cabinet'].",".$_POST['product_weight'].",".$_POST['product_dime
                      <?php
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
                             echo '<button type="submit" class="btn btn-success btn-outline" >
-                            Pay<i class="fa fa-sign-in"></i>
+                            Add To Cart<i class="fa fa-sign-in"></i>
                             </button>';
                             
                         } else {

@@ -6,25 +6,19 @@ session_start();
 $obj_comp = new component_inc ;
 $obj_emp = new employee_inc ;
 
-$today = date("Ymd");
-$rand = strtoupper(substr(uniqid(sha1(time())),0,4));
-$transaction = 'TS' . $today . $rand ;
-$product_number = 'C-PC' . $today . $rand ;
-
-$details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",   ".$_POST['d5']."=>".$_POST['d6'].",   ".$_POST['d7']."=>".$_POST['d8'].",   ".$_POST['d9']."=>".$_POST['d10'].",   ".$_POST['d11']."=>".$_POST['d12'].",   ".$_POST['d13']."=>".$_POST['d14'];
-// if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) 
-// {
-//     $userID=$_SESSION['userName'];
-//     }
-//     else{
-//     $userID=$_SESSION['temp_user'];
+if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) 
+{
+$userID=$_SESSION['userName'];
+}
+else{
+$userID=$_SESSION['temp_user'];
     
-// } 
+} 
 
-// //$rowPrice = $obj_emp->getPrice();
+//$rowPrice = $obj_emp->getPrice();
 
-// //$rowEmployee = $obj_emp->getEmployee();
-// //echo $_GET['id'];
+//$rowEmployee = $obj_emp->getEmployee();
+//echo $_GET['id'];
 
 // $rowProductPC = $obj_comp->getProductPCById($_GET['id']);
 // //  echo "<pre>";
@@ -49,7 +43,7 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
 
 // }
 
-?>
+// ?>
 
 
 <!DOCTYPE html>
@@ -169,53 +163,125 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
     
     <section class="pricing">
     <div class="container">
-    <form  action="cart_product.dml.php" method="post" id="employeeForm" >
+    <form  action="custome_product_checkout.php" method="post" id="employeeForm" >
 
-                    <div class="form-group">
-                                            <label>User Name</label>
-                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $_POST["user_name"]; ?>" readonly>
+    <div class="form-group row">
+                                
+                                <div class="col-md-10">
+                                    User name<input type="text" id="user_name" class="form-control" name="user_name" value="<?php echo $userID ?>" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                             
-                                            
-                                        </div>
+                                <div class="col-md-10">
+                                    CPU Name<input type="text" id="cpu_model" class="form-control" name="d1" value="<?php echo $_POST["cpu_model"] ;?> " readonly>
+                                </div>
+                            </div>
 
 
-                                        <div class="form-group">
-                                            <label>Transaction ID</label>
-                            <input type="text" name="txn_id" id="txn_id" class="form-control" value="<?php echo $transaction ?>" readonly>
+                            <div class="form-group row">
                             
-                                            
-                                        </div>                
+                                <div class="col-md-10">
+                                    CPU Price<input type="text" id="cpu_price" class="form-control" name="d2" value="<?php echo $_POST["cpu_price"];?> " readonly>
+                                </div>
+                            </div>
 
-
-                                        
-                        
-
-
-                        <div class="form-group">
-                      <label for="comment">Product Details</label>
-              <textarea class="form-control" name="details"  id="details" readonly><?php echo $details ?></textarea>
-                         </div> 
-
-
-                        <div class="form-group">
-                            <label>Product Number</label>
-            <input type="text" name="product_no" id="product_no" class="form-control" value="<?php echo $product_number ?>" readonly>
-            
+                            <div class="form-group row">
                             
-                        </div>
-                        
-                        
+                                <div class="col-md-10">
+                                    Cabinet Name<input type="text" id="cab_model" class="form-control" name="d3" value="<?php echo $_POST["cab_model"];?> " readonly>
+                                </div>
+                            </div>
 
 
-                       
-                        <div class="form-group">
-                            <label>Product Price</label>
-                            <input type="text" name="product_price" class="form-control" value="<?php echo $_POST["total"]; ?>" readonly>
+                            <div class="form-group row">
                             
-                        </div>
+                                <div class="col-md-10">
+                                    Cabinet Price<input type="text" id="cab_price" class="form-control" name="d4" value="<?php echo $_POST["cab_price"];?> " readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                    SMPS Name<input type="text" id="smps_model" class="form-control" name="d5" value="<?php echo $_POST["smps_model"];?> " readonly>
+                                </div>
+                            </div>
 
 
-                     </div>
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                    SMPS Price<input type="text" id="smps_price" class="form-control" name="d6" value="<?php echo $_POST["smps_price"];?> " readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                    MotherBoard Name<input type="text" id="mboard_model" class="form-control" name="d7" value="<?php echo $_POST["mboard_model"];?> " readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                MotherBoard Price<input type="text" id="mboard_price" class="form-control" name="d8" value="<?php echo $_POST["mboard_price"];?> " readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                    Hard Drive Name<input type="text" id="hdrive_model" class="form-control" name="d9" value="<?php echo $_POST["hdrive_model"];?> " readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                Hard Drive Price<input type="text" id="hdrive_price" class="form-control" name="d10" value="<?php echo $_POST["hdrive_price"];?> " readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                    Memory Name(RAM)<input type="text" id="memory_model" class="form-control" name="d11" value="<?php echo $_POST["memory_model"];?> " readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                    Memory Price<input type="text" id="memory_price" class="form-control" name="d12" value="<?php echo $_POST["memory_price"];?> " readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                    Graphic Card NAME<input type="text" id="gcard_model" class="form-control" name="d13" value="<?php echo $_POST["gcard_model"];?> " readonly>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                Graphic Card Price<input type="text" id="gcard_price" class="form-control" name="d14" value="<?php echo $_POST["gcard_price"];?> " readonly>
+                                </div>
+                            </div>
+
+
+                            
+
+
+                            <div class="form-group row">
+                            
+                                <div class="col-md-10">
+                                    Total Price<input type="text" id="total" class="form-control" name="total" value="<?php echo $_POST["total"]; ?>" readonly>
+                                </div>
+                            </div>
+
 
 
     
@@ -225,7 +291,7 @@ $details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",
                      <?php
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
                             echo '<button type="submit" class="btn btn-success btn-outline" >
-                            Add To Cart<i class="fa fa-sign-in"></i>
+                            Buy <i class="fa fa-sign-in"></i>
                             </button>';
                             
                         } else {

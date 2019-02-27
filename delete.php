@@ -49,13 +49,13 @@ $obj_emp = new employee_inc ;
                     </div>
                     <form  action="employee.del.php" method="post" id="employeeForm" >
 
-                    <input type="hidden" name="emp_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
+                    <input type="hidden" name="cart_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
                         <div class="alert alert-danger fade in">
                             <input type="hidden" name="id" value=""/>
                             <p>Are you sure you want to delete this record?</p><br>
                             <p>
                                 <input type="submit"  class="btn btn-danger" value="Submit" >
-                                <a href="home.php" class="btn btn-default">No</a>
+                                <a href="user_dashboard.php" class="btn btn-default">No</a>
                             </p>
                         </div>
                     </form>
