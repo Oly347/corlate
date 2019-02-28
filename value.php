@@ -5,18 +5,36 @@
 
 
 // echo "<pre>";
-// var_dump($_POST);
-// exit;
-if(!empty($_POST['id']))
-    {
-        foreach($_POST['id'] as $id) {
+// var_dump($_POST);include ('admin/system/database.php');
+include ('admin/system/database.php');
+include ('admin/employee.cls.php');
+session_start();
 
 
-        echo '<p>' .$id. '<p>';
+    
 
-     }
-    }
-    else{
 
-        echo 'please select your choice';
-    }
+
+
+$obj_comp = new component_inc ;
+//$userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
+
+//$userCartItem = $obj_comp->getUserCartItemByID($_POST['id']);
+
+// print_r($userCartItem);
+//$userCartItem = $obj_comp->getUserCartItemByID($_POST['id']);
+
+
+//exit;
+foreach($_POST['id'] as $id) {
+
+$userCartItem = $obj_comp->getUserCartItemByID($id);
+
+
+
+print_r($userCartItem);
+
+
+ }
+ exit;
+     

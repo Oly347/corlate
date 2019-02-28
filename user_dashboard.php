@@ -231,9 +231,10 @@ overflow-x: hidden;
                     </thead>
                     <tbody>
                     <?php
-                
+                $total=0;
+            
                     foreach ($userCartItem as  $user_cart_item) {
-                                       
+                              $total+= $user_cart_item['product_price'];        
                     ?>
                       <tr>
                       <td><input type="checkbox" name="id[]" value="<?php echo $user_cart_item['id'];?>" >
@@ -260,6 +261,10 @@ overflow-x: hidden;
                       
                     </tbody>
                   </table>
+                  <?php
+                 echo $total;
+
+                  ?>
                   <button class="btn btn-primary" type="submit">Product Checkout</button>
                   </form>
                   

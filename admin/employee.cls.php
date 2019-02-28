@@ -350,6 +350,16 @@ function component_inc()
   }
 
 
+
+  function getUserCartItemByID($id){
+    $sSql="SELECT * FROM cart_item WHERE id ='".$id."' ";
+
+    //echo "$sSql" ;
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+
   function getProductPCById($id){
     $sSql="SELECT * FROM add_product_pc WHERE id ='".$id."' ";
     $rows = $this->db_con->GetAllRows($sSql);
