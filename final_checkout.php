@@ -1,34 +1,49 @@
 <?php
-//    include("config.php");
-//    session_start();
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
-session_start();
 
-if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-    
-} 
-else {
-header('Location:user_login.php');
-}
-    
-$obj_user = new user_inc ;
-$userDetailsById = $obj_user->getUserById($_SESSION['userName']);
+session_start();
 
 
 
 $obj_comp = new component_inc ;
-$userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
+$obj_emp = new employee_inc ;
 
-$userCartItem = $obj_comp->getUserCartItem($_SESSION['userName']);
+$today = date("Ymd");
+$rand = strtoupper(substr(uniqid(sha1(time())),0,4));
+$transaction = 'TS' . $today . $rand ;
 
-// print_r($userCartItem);
 
+if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) 
+{
+    $userID=$_SESSION['userName'];
+    }
+    else{
+    $userID=$_SESSION['temp_user'];
+    
+} 
+
+// //$rowPrice = $obj_emp->getPrice();
+
+// //$rowEmployee = $obj_emp->getEmployee();
+// //echo $_GET['id'];
+
+$cartItemByid = $obj_comp->getUserCartItemByID($_GET['id']);
+// echo "<pre>";
+// print_r($cartItemByid);
+// echo "</pre>";
 // exit;
+foreach ($cartItemByid as $key => $value) {
+    $username=$value['username'];
+    $txn_id=$value['txn_id'];
+    $details=$value['details'];
+    $product_no=$value['product_no'];
+    $product_price=$value['product_price'];
+    
 
+}
 
 ?>
-
 
 
 <!DOCTYPE html>
@@ -56,19 +71,11 @@ $userCartItem = $obj_comp->getUserCartItem($_SESSION['userName']);
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-    <style>
-    body {
-overflow-x: hidden;
-}  
-
-
-    </style>
 </head>
 <!--/head-->
 
@@ -133,7 +140,7 @@ overflow-x: hidden;
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                    
+                    <ul class="nav navbar-nav">
                     <li ><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="#">Assemble PC</a></li>
@@ -142,7 +149,7 @@ overflow-x: hidden;
                         <li><a href="#">Contact</a></li>
                         
                     </ul>                      
-                    
+                    </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
@@ -150,169 +157,86 @@ overflow-x: hidden;
     </header><!--/header-->
 
 
-    <div class="page-title dashboard_banner">
-        <h1>User Dashboard</h1>
+    <div class="page-title" style="background-image: url(images/page-title.png)">
+        <h1>Product Checkout</h1>
     </div>
     
-    <section id="content">
-        <div class="container edit_dashboard_container">
-            <div class="row">
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 fadeInDown">
-                    <div class="tab-wrap">
-                        <div class="media">
-                            <div class="parrent pull-left">
-                                <ul class="nav nav-tabs nav-stacked">
-                                    <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Dashboard</a></li>
-                                    <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Order</a></li>
-                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Download</a></li>
-                                    <!-- <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Address</a></li> -->
-                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Account Details</a></li>
-                                    <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">Saved (Cart) Item</a></li>
-                                    <!-- <li class=""><a href="logout.php" data-toggle="tab" class="tehnical">Logout</a></li> -->
-                                </ul>
-                            </div>
+    <section class="pricing">
+    <div class="container">
+    <form  action="#" method="post" id="employeeForm" >
 
-                            <div class="parrent media-body">
-                                <div class="tab-content">
-                                    <div class="tab-pane fade" id="tab4">
-                                        <div class="media">
+                    <div class="form-group">
+                                            <label>User Name</label>
+                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $username ?>" readonly>
+                            
                                             
-                                            <?php
-
-                                            foreach ($userDetailsById as  $user_details_by_id) {
-                                                            
-                                            ?>
-                                            <div class="media-body">
-                                                <h2>Name:<?php echo $user_details_by_id['name'];?> </h2>
-                                                <p>address:<?php echo $user_details_by_id['address'];?> </p>
-                                                <p>Phone Number:<?php echo $user_details_by_id['phone_number'];?> </p>
-                                                <p>EmailID:<?php echo $user_details_by_id['email_id'];?> </p>
-                                            </div>
-
-
-                                            <?php
-                                            }
-
-                                            ?>
                                         </div>
-                                    </div>
 
-                                    <div class="tab-pane fade active in " id="tab1">
-                                   
-                                    <a class="btn btn-info" href="product_pc.php" role="button" style="margin:30px">Buy Monitor & Accessories</a>
-                                    <a class="btn btn-info" href="#tab5" data-toggle="tab" class="tehnical" style="margin:30px">Buy PC From Cart</a>
 
-                                        <!-- <div class="video-box">
-                                            <img src="images/tab-video-bg.png" alt="video">
-                                            <a class="video-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" rel="prettyPhoto"><i class="fa fa-play"></i></a>
-                                        </div> -->
-                                    </div>
+                                        <div class="form-group">
+                                            <label>Process ID</label>
+                            <input type="text" name="txn_id" id="txn_id" class="form-control" value="<?php echo $txn_id ?>" readonly>
+                            
+                                            
+                                        </div>                
 
-                    <div class="tab-pane fade" id="tab5" style="overflow-x:auto;">
-                    <form id="regForm" action="new_value.php" method="post">
-                   
-                    <table class='table table-bordered '>
-                    <thead>
-                      <tr>
-                     
-                        <th style="display:none">ID</th>
-                        
-                        
-                        <th>Process ID</th>
-                        <th>Deatils</th>
-                        
-                       
-                        <th>Product Price</th>
-                        <th>Action</th>
-                        
-                       
-                        
-                       
-                      </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                $total=0;
-                //$product=NULL;
 
+                                        
+                        <div class="form-group">
+                            <label>Product Details</label>
             
-                    foreach ($userCartItem as  $user_cart_item) {
-                              $total+= $user_cart_item['product_price'];
-                              
-                              //$product+=$user_cart_item['details'];
-                    ?>
-                      <tr>
-                      
-                        <td style="display:none"><?php echo $user_cart_item['id'];?></td>
-                        <td> <input class="form-control" type="text"  name="process[]" value="<?php echo $user_cart_item['txn_id'];?>" readonly></td>
-                        <td> <input class="form-control" type="text"  name="details[]" value="<?php echo $user_cart_item['details'];?>" readonly></td>
-                        
-                        <td> <input class="form-control" type="text"  name="price[]" value="<?php echo $user_cart_item['product_price'];?>" readonly></td>
-                        
-                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $user_cart_item['id'];?>" role="button">Delete&nbsp;<i class="far fa-trash-alt"></i>
-</a>
-                        <a class="btn btn-info" href="final_checkout.php?id=<?php echo $user_cart_item['id'];?>" role="button">Checkout<i class="fas fa-shopping-cart"></i></a>
-                        </td>
-                        
-                        
-                        <!-- <td>
-                        <a class="btn btn-danger" href="" role="button">Delete</a>
-                        <a class="btn btn-info" href="" role="button">Update</a>
-                        </td> -->
-                      </tr>
-                 
-                      <?php
-                       }
-                
-                      ?>
-                      
-                    </tbody>
-                  </table>
-                  Total cart value:<input class="form-control" type="text"   name="total" value="<?php echo $total ?>" readonly>
-                  <!-- <button class="btn btn-primary" type="submit">Product Checkout</button> -->
-                  </form>
-
-                  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    </div>
-
-                                    <div class="tab-pane fade" id="tab3">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words</p>
-                                    </div>
-
-                                    <div class="tab-pane fade" id="tab2">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,</p>
-                                    </div>
-                                </div>
-                                <!--/.tab-content-->
-                            </div>
-                            <!--/.media-body-->
+            <textarea class="form-control" name="details"  id="details" readonly><?php echo $details ?></textarea>
+                            
                         </div>
-                        <!--/.media-->
+
+
+                        <div class="form-group">
+                            <label>Product Number</label>
+            <input type="text" name="product_no" id="product_no" class="form-control" value="<?php echo $product_no ?>" readonly>
+            
+                            
+                        </div>
+                        
+                        
+
+
+                       
+                        <div class="form-group">
+                            <label>Product Price</label>
+                            <input type="text" name="product_price" class="form-control" value="<?php echo $product_price ?>" readonly>
+                            
+                        </div>
+
+
+                     </div>
+
+
+    
+                        
+                     <div class="form-actions">
+                     <a href="index.php" class="btn btn-info btn-outline">Cancel</a>
+                     <?php
+                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+                            echo '<button type="submit" class="btn btn-success btn-outline" >
+                            Continue To Pay<i class="fa fa-sign-in"></i>
+                            </button>';
+                            
+                        } else {
+                            echo '<a href="user_login.php" class="btn btn-success btn-outline" style="float:center" role="button" aria-pressed="true">Login To Buy</a>';
+                        }
+                        ?>
+
+                        </div>
+                    </form>
                     </div>
-                    <!--/.tab-wrap-->
-                </div>
-                <!--/.col-sm-6-->
-
-            </div>
-            <!--/.row-->
-        </div>
-        <!--/.container-->
     </section>
-
+<style>
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+</style>
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
