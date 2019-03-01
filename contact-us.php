@@ -1,3 +1,8 @@
+<?php
+
+
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,16 +36,16 @@
 
 <body>
 
-    <header id="header">
-        <div class="top-bar">
+<header id="header">
+    <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-xs-12">
+                    <div class="col-sm-4 col-xs-12">
                         <div class="top-number">
                             <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xs-12">
+                    <div class="col-sm-4 col-xs-12">
                         <div class="social">
                             <ul class="social-share">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -48,18 +53,34 @@
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                                 <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                <!-- <li><a class="btn-slide animation animated-item-3" href="#">Learn More</a><li> -->
                             </ul>
                             <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                                    <i class="fa fa-search"></i>
-                                </form>
+                            <!-- <a href="#" class="btn btn-primary  active" role="button" aria-pressed="true">Primary link</a> -->
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-4 col-xs-12" >
+                        <div class="top-number " style="float:right">
+
+
+                        <?php
+                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+                            echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
+                            echo   $_SESSION['userName'];
+                            echo '<a href="#" class="btn btn-imfo   active" role="button" aria-pressed="true">Dash Board</a>';
+                            
+                        } else {
+                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
+                        }
+                        ?>
+                        <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <!--/.container-->
+            
         </div>
         <!--/.top-bar-->
 
@@ -72,29 +93,25 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo"  width="130"></a>
                 </div>
-                
+
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
+                    <li ><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="blog.html">Blog</a></li> 
-                        <li class="active"><a href="contact-us.html">Contact</a></li>                        
+                        <li><a href="services.php">Assemble PC</a></li>
+                        <li ><a href="smart_security_home.php">Smart Home security</a></li>
+                        <li ><a href="#">Make your Home smart</a></li>
+                        <li class="active"><a href="contact-us.php">Contact</a></li>
+                        
                     </ul>
                 </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
+            </div>
+            <!--/.container-->
+        </nav>
+        <!--/nav-->
+
     </header><!--/header-->
 
 
@@ -108,9 +125,11 @@
                 <h2>Drop Your Message</h2>
                 <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p>
             </div> 
+
+            <p id="demo"></p>
             <div class="row contact-wrap"> 
-                <div class="status alert alert-success" style="display: none"></div>
-                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                <!-- <div class="status alert alert-success" style="display: none"></div> -->
+                <form  action="contact_us.dml.php"  class="contact-form"  method="post"  enctype="multipart/form-data" >
                     <div class="col-sm-5 col-sm-offset-1">
                         <div class="form-group">
                             <label>Name *</label>
@@ -121,12 +140,12 @@
                             <input type="email" name="email" class="form-control" required="required">
                         </div>
                         <div class="form-group">
-                            <label>Phone</label>
-                            <input type="number" class="form-control">
+                            <label>Phone Number *</label>
+                            <input type="text" name="phone_number" class="form-control" required="required">
                         </div>
                         <div class="form-group">
                             <label>Company Name</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="company_name" class="form-control">
                         </div>                        
                     </div>
                     <div class="col-sm-5">
@@ -139,14 +158,18 @@
                             <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
                         </div>                        
                         <div class="form-group">
-                            <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Submit Message</button>
+                            <button type="submit" name="submit" onclick="myFunction()" class="btn btn-primary btn-lg">Submit Message</button>
                         </div>
                     </div>
                 </form> 
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#contact-page-->
-
+    <script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Thankyou for submit";
+}
+</script>
 
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">

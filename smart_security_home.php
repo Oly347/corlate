@@ -1,3 +1,10 @@
+<?php
+
+
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,6 +72,7 @@
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
                             echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
                             echo   $_SESSION['userName'];
+                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Dash Board</a>';
                         } else {
                             echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
                         }
@@ -95,10 +103,10 @@
                     <ul class="nav navbar-nav">
                     <li ><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#">Assemble PC</a></li>
+                        <li><a href="services.php">Assemble PC</a></li>
                         <li class="active"><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="#">Make your Home smart</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="smart_home.php">Make your Home smart</a></li>
+                        <li><a href="contact-us.php">Contact</a></li>
                         
                     </ul>
                 </div>

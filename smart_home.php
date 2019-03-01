@@ -1,3 +1,10 @@
+
+<?php
+
+
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,10 +104,10 @@
                     <ul class="nav navbar-nav">
                     <li ><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#">Assemble PC</a></li>
-                        <li class="active"><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="#">Make your Home smart</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="services.php">Assemble PC</a></li>
+                        <li ><a href="smart_security_home.php">Smart Home security</a></li>
+                        <li class="active"><a href="#">Make your Home smart</a></li>
+                        <li><a href="contact-us.php">Contact</a></li>
                         
                     </ul>
                 </div>

@@ -291,7 +291,7 @@ $userID=$_SESSION['temp_user'];
                      <?php
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
                             echo '<button type="submit" class="btn btn-success btn-outline" >
-                            Buy <i class="fa fa-sign-in"></i>
+                            Next <i class="fa fa-sign-in"></i>
                             </button>';
                             
                         } else {

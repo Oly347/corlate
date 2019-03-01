@@ -139,9 +139,9 @@ $_SESSION['userName']= "Guest";
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#">Assemble PC</a></li>
+                        <li><a href="services.php">Assemble PC</a></li>
                         <li><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="#">Make your Home smart</a></li>
+                        <li><a href="smart_home.php">Make your Home smart</a></li>
                         <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">

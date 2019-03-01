@@ -2,27 +2,25 @@
 // Include config file
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
-//session_start();
-// $total_price=0;
-// foreach ($_POST['price'] as $price) {
-//     $total_price+= $price;
-// }
+session_start();
+
 
 
 $obj_user = new user_inc ;
 
+$checkEmailUnique = $obj_user->checkEmailRegister($_POST['email_address']);
 
-// $email = $_POST['email_address'];
-// if($email != "") {
-//     $result = mysql_query("SELECT * FROM emails where email='".$email."'");
-//     $num_rows = mysql_num_rows($result);
-//     if($num_rows >= 1){
-//         echo "email exist";
-//     }else{
-//         $sql = mysql_query ("INSERT INTO emails (email) VALUES ('$email')");
-//         echo "Thank you for Submitting. Redirecting back to Home Page";
-//     }
-// }
+
+
+$l=count($checkEmailUnique);
+if ($l>0) {
+    echo "<script type='text/javascript'>alert('Email id already register! Try another email');
+    window.location='user_register.php';
+    </script>";
+
+}
+else
+{
 $insert_array=  array(
     'name' => $_POST['full_name'],
     'password' => $_POST['password'],
@@ -39,17 +37,20 @@ $insert_array=  array(
 $insert= $obj_user->InsertIntoUserDetails($insert_array);
      if ($insert) {
         
-        header('Location:logout.php');
-        exit();
+        echo "<script type='text/javascript'>alert('Registration Successfully');
+        window.location='index.php';
+        </script>";
 
        
     }else {
-        header('Location:index.php');
+        echo "<script type='text/javascript'>alert('Something Went wrong');
+        window.location='index.php';
+        </script>";
         exit();
 
 
+}
 }// class end
-
 
 
 

@@ -1,76 +1,26 @@
 <?php
-//    include("config.php");
-//    session_start();
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
+
 session_start();
-// $total_price=0;
-// foreach ($_POST['price'] as $price) {
-//     $total_price+= $price;
-// }
 
 
-$obj_user = new user_inc ;
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-//       // username and password sent from form 
-      
-//       $myusername = mysqli_real_escape_string($db,$_POST['email_id']);
-//       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      
-//       $sql = "SELECT id FROM user WHERE email_id = '$myusername' and password = '$mypassword'";
-//       $result = mysqli_query($db,$sql);
-//       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-//       //$active = $row['active'];
-      
-//       $count = mysqli_num_rows($result);
-      
-//       // If result matched $myusername and $mypassword, table row must be 1 row
-//        print_r($row);
-       
-//        exit;
-//       if($count == 1) {
-//          //session_register("myusername");
-
-//          $_SESSION['user'] = $row;
-         
-//          header("location: welcome.php");
-//          //echo $_GET[id];
-//       }else {
-//         $_SESSION['errMsg'] = "Invalid username or password";
-
-
-
-//  }
-
-
-
-$loginUser = $obj_user->checkLogin($_POST['email_id'],$_POST['password']);
-$l=count($loginUser);
-if ($l==1) {
-foreach ($loginUser as $key => $value) {
-
- 
- $_SESSION['user'] = $value['id'];  // user id from table
- $_SESSION['userName']= $value['email_id'];  // email or name
- $_SESSION['user_loggedin'] = true;   //logintrue
-}
-}
-
-//$url=$_SERVER['HTTP_REFERER'];
-
-$l=count($loginUser);
-if ($l==1) {
-//echo "<script>history.go(-2);</script>";
-
-header('Location:index.php');
-}
+if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+    
+} 
 else {
-  $_SESSION['errMsg'] = "Invalid username or password";
+header('Location:user_login.php');
 }
-//header("Location: login.php");
 
 
-}
+$obj_comp = new component_inc ;
+$obj_emp = new employee_inc ;
+
+$cartItemByid = $obj_comp->getUserCartItemByUserName($_SESSION['userName']);
+
+// print_r($cartItemByid);
+
+// exit;
 
 
 
@@ -191,34 +141,75 @@ else {
 
 
     <div class="page-title" style="background-image: url(images/page-title.png)">
-        <h1>User Login</h1>
+        <h1>Product Checkout</h1>
     </div>
     
     <section class="pricing">
-    <div class="login-card" ><img src="assets/img/avatar_2x.png" class="profile-img-card">
-        <p class="profile-name-card"> </p>
-        <form class="form-signin" action = "" method = "post" enctype="multipart/form-data"><span class="reauth-email"> </span>
-        <input class="form-control" type="email"  name="email_id" required="" placeholder="Email address" autofocus="" id="inputEmail">
-        <input class="form-control" type="password" name="password" required="" placeholder="Password" id="inputPassword">
-            <!-- <div class="checkbox">
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"></div>
-    </div> -->
-    <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Login</button>
-    <div id="errMsg">
-            <?php if(!empty($_SESSION['errMsg'])) { echo $_SESSION['errMsg']; } ?>
-        </div>
-        <?php unset($_SESSION['errMsg']); ?>
-  </form>
-  <a href="user_register.php"  class="btn btn-primary btn-outline" >I'm New <i class="fa fa-user-plus"></i></a>
+    <div class="container">
+    <form  action="#" method="post" id="employeeForm" >
 
- <a href="forget_login.php"  class="btn btn-success btn-outline" style="float:right">forget Password <i class="fa fa-key" aria-hidden="true"></i></a>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <table class='table table-bordered '>
+                    <thead>
+                      <tr>
+                     
+                        
+                        
+                        
+                        <th>Process ID</th>
+                       
+                        
+                       
+                        <th>Product Price</th>
+                        
+                        
+                       
+                        
+                       
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                 $total=0;
 
+            
+                    foreach ($cartItemByid as  $user_cart_item) {
+                        $total+= $user_cart_item['product_price'];
+                              
+                              
+                    ?>
+                      <tr>
+                      
+                        
+                        <td> <?php echo $user_cart_item['txn_id'];?></td>
+                        <td><?php echo $user_cart_item['product_price'];?> </td>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                      </tr>
+                 
+                      <?php
+                       }
+                
+                      ?>
+                      
+                    </tbody>
+                  </table>
 
-</div>
+                  Total cart value:<input class="form-control" type="text"   name="total" value="<?php echo $total ?>" readonly>
+                    </form>
+                    </div>
     </section>
-
+<style>
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+</style>
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">

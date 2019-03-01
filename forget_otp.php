@@ -1,79 +1,8 @@
 <?php
-//    include("config.php");
-//    session_start();
+
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
 session_start();
-// $total_price=0;
-// foreach ($_POST['price'] as $price) {
-//     $total_price+= $price;
-// }
-
-
-$obj_user = new user_inc ;
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-//       // username and password sent from form 
-      
-//       $myusername = mysqli_real_escape_string($db,$_POST['email_id']);
-//       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      
-//       $sql = "SELECT id FROM user WHERE email_id = '$myusername' and password = '$mypassword'";
-//       $result = mysqli_query($db,$sql);
-//       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-//       //$active = $row['active'];
-      
-//       $count = mysqli_num_rows($result);
-      
-//       // If result matched $myusername and $mypassword, table row must be 1 row
-//        print_r($row);
-       
-//        exit;
-//       if($count == 1) {
-//          //session_register("myusername");
-
-//          $_SESSION['user'] = $row;
-         
-//          header("location: welcome.php");
-//          //echo $_GET[id];
-//       }else {
-//         $_SESSION['errMsg'] = "Invalid username or password";
-
-
-
-//  }
-
-
-
-$loginUser = $obj_user->checkLogin($_POST['email_id'],$_POST['password']);
-$l=count($loginUser);
-if ($l==1) {
-foreach ($loginUser as $key => $value) {
-
- 
- $_SESSION['user'] = $value['id'];  // user id from table
- $_SESSION['userName']= $value['email_id'];  // email or name
- $_SESSION['user_loggedin'] = true;   //logintrue
-}
-}
-
-//$url=$_SERVER['HTTP_REFERER'];
-
-$l=count($loginUser);
-if ($l==1) {
-//echo "<script>history.go(-2);</script>";
-
-header('Location:index.php');
-}
-else {
-  $_SESSION['errMsg'] = "Invalid username or password";
-}
-//header("Location: login.php");
-
-
-}
-
-
-
 
 ?>
 
@@ -100,6 +29,7 @@ else {
     <link href="css/responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/Google-Style-Login.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -173,7 +103,7 @@ else {
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                    <ul class="nav navbar-nav">
+                    
                     <li ><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="#">Assemble PC</a></li>
@@ -182,7 +112,7 @@ else {
                         <li><a href="#">Contact</a></li>
                         
                     </ul>                      
-                    </ul>
+                    
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
@@ -194,31 +124,71 @@ else {
         <h1>User Login</h1>
     </div>
     
+<script type="text/javascript">
+ $(document).ready(function() {
+  setTimeout(function() {
+    $("#proceed").show();
+  }, 5000);
+}); 
+</script>
     <section class="pricing">
-    <div class="login-card" ><img src="assets/img/avatar_2x.png" class="profile-img-card">
-        <p class="profile-name-card"> </p>
+    <div class="login-card" >
+    <!-- <img src="assets/img/avatar_2x.png" class="profile-img-card"> -->
+        <p class="profile-name-card"> We send OTP to your registered phone number <?php echo $_SESSION['phonenumber'] ?> </p>
+        <div id="timer">2:00</div>
         <form class="form-signin" action = "" method = "post" enctype="multipart/form-data"><span class="reauth-email"> </span>
-        <input class="form-control" type="email"  name="email_id" required="" placeholder="Email address" autofocus="" id="inputEmail">
-        <input class="form-control" type="password" name="password" required="" placeholder="Password" id="inputPassword">
+        <input class="form-control" type="text"  name="otp_login" required="" placeholder="Enter OTP" autofocus="" id="inputEmail">
+
+       
+        <!-- <input class="form-control" type="password" name="password" required="" placeholder="Password" id="inputPassword"> -->
             <!-- <div class="checkbox">
                 <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"></div>
     </div> -->
-    <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Login</button>
+    <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Submit</button>
+    <button class="btn btn-info btn-block btn-lg btn-signin" type="button" id="proceed" style="display: none;">Resend OTP</button>
     <div id="errMsg">
             <?php if(!empty($_SESSION['errMsg'])) { echo $_SESSION['errMsg']; } ?>
         </div>
         <?php unset($_SESSION['errMsg']); ?>
   </form>
-  <a href="user_register.php"  class="btn btn-primary btn-outline" >I'm New <i class="fa fa-user-plus"></i></a>
+  <!-- <a href="user_register.php"  class="btn btn-primary btn-outline" >I'm New <i class="fa fa-user-plus"></i></a>
 
- <a href="forget_login.php"  class="btn btn-success btn-outline" style="float:right">forget Password <i class="fa fa-key" aria-hidden="true"></i></a>
+ <a href="#"  class="btn btn-success btn-outline" style="float:right">forget Password <i class="fa fa-key" aria-hidden="true"></i></a> -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
 
 </div>
     </section>
+    <script type="text/javascript">
+var timeoutHandle;
+function countdown(minutes) {
+    var seconds = 60;
+    var mins = minutes
+    function tick() {
+        var counter = document.getElementById("timer");
+        var current_minutes = mins-1
+        seconds--;
+        counter.innerHTML =
+        current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        if( seconds > 0 ) {
+            timeoutHandle=setTimeout(tick, 1000);
+        } else {
 
+            if(mins > 1){
+
+               // countdown(mins-1);   never reach “00″ issue solved:Contributed by Victor Streithorst
+               setTimeout(function () { countdown(mins - 1); }, 1000);
+
+            }
+        }
+    }
+    tick();
+}
+
+countdown(2);
+
+</script>
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">

@@ -22,6 +22,8 @@ $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
 
 $userCartItem = $obj_comp->getUserCartItem($_SESSION['userName']);
 
+
+
 // print_r($userCartItem);
 
 // exit;
@@ -183,10 +185,13 @@ overflow-x: hidden;
                                                             
                                             ?>
                                             <div class="media-body">
+                                            <h2 style="display:none">Name:<?php echo $user_details_by_id['id'];?> </h2>
                                                 <h2>Name:<?php echo $user_details_by_id['name'];?> </h2>
                                                 <p>address:<?php echo $user_details_by_id['address'];?> </p>
                                                 <p>Phone Number:<?php echo $user_details_by_id['phone_number'];?> </p>
                                                 <p>EmailID:<?php echo $user_details_by_id['email_id'];?> </p>
+
+                                                <a class="btn btn-info" href="change_password.php?id=<?php echo $user_details_by_id['id'];?>" role="button">Password Change</a>
                                             </div>
 
 
@@ -268,8 +273,8 @@ overflow-x: hidden;
                       
                     </tbody>
                   </table>
-                  Total cart value:<input class="form-control" type="text"   name="total" value="<?php echo $total ?>" readonly>
-                  <!-- <button class="btn btn-primary" type="submit">Product Checkout</button> -->
+                 
+                  <a class="btn btn-info" href="confirm_checkout.php?id=<?php echo $_SESSION['userName'];?>" role="button">Checkout<i class="fas fa-shopping-cart"></i></a>
                   </form>
 
                   

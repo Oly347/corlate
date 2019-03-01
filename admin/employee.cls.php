@@ -360,6 +360,16 @@ function component_inc()
   }
 
 
+
+  function getUserCartItemByUserName($id){
+    $sSql="SELECT * FROM cart_item WHERE username ='".$id."' ";
+
+    //echo "$sSql" ;
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+
   function getProductPCById($id){
     $sSql="SELECT * FROM add_product_pc WHERE id ='".$id."' ";
     $rows = $this->db_con->GetAllRows($sSql);
@@ -374,7 +384,142 @@ function component_inc()
     return $rows;
    }
 
+   function SetUpdateProcessor($post_fields,$id)
+   {
+   $sSql="SELECT * FROM component_details_cpu WHERE id='".$id."' ";
+       
+       
+    echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+    if($update==0)
+    {
+           return false;
+    }
+       else
+       {
+           return true;
+       }
+    }
+    function SetUpdateMotherBoard($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_mboard WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+    }
 
+
+
+
+
+
+
+
+    function SetUpdateCabinet($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_cab WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+     }
+
+
+
+
+     function SetUpdateSMPS($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_smps WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+     }
+
+
+
+
+     function SetUpdateHardDrive($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_hdd WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+     }
+
+
+
+
+     function SetUpdateMemory($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_memory WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+     }
+
+
+     function SetUpdateGraphic($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_graphic_card WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+     }
+
+
+
+
+     
+
+
+
+        
 
 
 
@@ -813,14 +958,56 @@ function component_inc()
 
 
 
+                function checkEmailRegister($email_id){
+                    $sSql="SELECT * FROM user WHERE email_id='".$email_id."' " ;
+                    $rows = $this->db_con->GetAllRows($sSql);
+                    return $rows;
+                }
+
+
+                function forgetLogin($email_id){
+                    $sSql="SELECT * FROM user WHERE email_id='".$email_id."' " ;
+                    $rows = $this->db_con->GetAllRows($sSql);
+                    return $rows;
+                }
+
+
+                function OTPCHECK($otp){
+                    $sSql="SELECT * FROM OTP_server WHERE otp='".$otp."' " ;
+                    $rows = $this->db_con->GetAllRows($sSql);
+                    return $rows;
+                }
+
+
+
+                
+
+
+
                 function getUserById($id){
                     $sSql="SELECT * FROM user WHERE email_id='".$id."' ";
                     $rows = $this->db_con->GetAllRows($sSql);
                     return $rows;
                 }
                 
-                
 
+
+                
+                function SetUpdateUserPassword($post_fields,$id)
+                {
+                $sSql="SELECT * FROM user WHERE id='".$id."' ";
+                    
+                    
+                 echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+                 if($update==0)
+                 {
+                        return false;
+                 }
+                    else
+                    {
+                        return true;
+                    }
+                 }
 
 
 
@@ -883,6 +1070,22 @@ function component_inc()
                     
             }    
             
+
+
+            public function InsertIntoContactUS($post_fileds)
+          {
+          $sSql="SELECT * FROM contact_us WHERE id=-1";
+          $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+          if($insrt==0)
+           {
+            return false;
+            }
+            else
+            {
+            return true;
+            }
+                    
+            }  
          
            
            
