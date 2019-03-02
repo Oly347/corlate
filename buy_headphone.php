@@ -6,33 +6,31 @@ session_start();
 $obj_comp = new component_inc ;
 $obj_emp = new employee_inc ;
 
+if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) 
+{
+$userID=$_SESSION['userName'];
+}
+else{
+$userID=$_SESSION['temp_user'];
+    
+} 
 
+//$rowPrice = $obj_emp->getPrice();
 
-// $rand = strtoupper(substr(uniqid(sha1(time())),0,4));
-// $product_no = CPC. $rand;
-$rowSavedProductPC = $obj_comp->getSavedProductByID($_GET['id']);
+//$rowEmployee = $obj_emp->getEmployee();
+//echo $_GET['id'];
+
+$rowProductHeadPhone = $obj_comp->getProductHeadPhone($_GET['id']);
 //  echo "<pre>";
-//  print_r($rowSavedProductPC);
+//  print_r($rowProductMonitor);
 // echo "</pre>";
 // exit;
-foreach ($rowSavedProductPC as $key => $value) {
-    $user_name=$value['user_name'];
-    $cpu_model=$value['cpu_model'];
-    $cpu_price=$value['cpu_price'];
-    $cab_model=$value['cab_model'];
-    $cab_price=$value['cab_price'];
-    $smps_model=$value['smps_model'];
-    $smps_price=$value['smps_price'];
-    $mboard_model=$value['mboard_model'];
-    $mboard_price=$value['mboard_price'];
-    $hdrive_model=$value['hdrive_model'];
-    $hdrive_price=$value['hdrive_price'];
-    $memory_model=$value['memory_model'];
-    $memory_price=$value['memory_price'];
-    $gcard_model=$value['gcard_model'];
-    $gcard_price=$value['gcard_price'];
-    $total=$value['total'];
-
+foreach ($rowProductHeadPhone as $key => $value) {
+    $id=$value['id'];
+    $component_name=$value['component_name'];
+    $component_details=$value['component_details'];
+    $component_price=$value['component_price'];
+    
     
 
 }
@@ -152,103 +150,39 @@ foreach ($rowSavedProductPC as $key => $value) {
 
 
     <div class="page-title" style="background-image: url(images/page-title.png)">
-        <h1>Product Buy</h1>
+        <h1>Monitor Buy</h1>
     </div>
     
     <section class="pricing">
     <div class="container">
-    <form  action="custome_product_checkout.php" method="post" id="employeeForm" >
+    <form  action="checkout_accessories.php" method="post" id="employeeForm" >
 
                     <div class="form-group">
                                             <label>User Name</label>
-                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $user_name?>" readonly>
-                            
+                            <input type="text" name="username" id="username" class="form-control" value="<?php echo $userID?>" readonly>
+                            <input type="hidden" name="product_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
                                             
                                         </div>
                         <div class="form-group">
-                            <label>CPU Model</label>
-                            <input type="text" name="d1" id="d1" class="form-control" value="<?php echo $cpu_model; ?>" readonly>
+                            <label>Monitor Name</label>
+            <input type="text" name="component_name" id="component_name" class="form-control" value="<?php echo $component_name; ?>" readonly>
             
                             
-                           </div>
-
-
-                       
+                        </div>
                         
                         <div class="form-group">
-                            <label>CPU PRICE</label>
-                            <input type="text" name="d2" class="form-control" value="<?php echo $cpu_price; ?>" readonly>
+                            <label>Monitor Details</label>
+                            <input type="text" name="component_details" class="form-control" value="<?php echo $component_details; ?>" readonly>
                             
                         </div>
 
 
                         <div class="form-group">
-                            <label>Cabinet Model</label>
-                            <input type="text" name="d3" class="form-control" value="<?php echo $cab_model; ?>" readonly>
+                            <label>Monitor Price</label>
+                            <input type="text" name="component_price" class="form-control" value="<?php echo $component_price; ?>" readonly>
                             
                         </div>
-                        <div class="form-group">
-                            <label>Cabinet Price</label>
-                            <input type="text" name="d4" class="form-control" value="<?php echo $cab_price; ?>" readonly>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>SMPS Model</label>
-                            <input type="text" name="d5" class="form-control" value="<?php echo $smps_model; ?>" readonly>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>SMPS Price</label>
-                            <input type="text" name="d6" class="form-control" value="<?php echo $smps_price; ?>" readonly>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>Motherboard Model</label>
-                            <input type="text" name="d7" class="form-control" value="<?php echo $mboard_model; ?>" readonly>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>Motherboard Price</label>
-                            <input type="text" name="d8" class="form-control" value="<?php echo $mboard_price; ?>" readonly>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>Hard Drive model</label>
-                            <input type="text" name="d9" class="form-control" value="<?php echo $hdrive_model; ?>" readonly>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>Hard Drive price</label>
-                            <input type="text" name="d10" class="form-control" value="<?php echo $hdrive_price; ?>" readonly>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>Memory Model</label>
-                            <input type="text" name="d11" class="form-control" value="<?php echo $memory_model; ?>" readonly>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>Momory Price</label>
-                            <input type="text" name="d12" class="form-control" value="<?php echo $memory_price; ?>" readonly>
-                            
-                        </div>
-
-
-                        <div class="form-group">
-                            <label>GraphiC Card Model</label>
-                            <input type="text" name="d13" class="form-control" value="<?php echo $gcard_model; ?>" readonly>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>Graphic Card Price</label>
-                            <input type="text" name="d14" class="form-control" value="<?php echo $gcard_price; ?>" readonly>
-                            
-                        </div>
-                        <div class="form-group">
-                            <label>Product Price</label>
-                            <input type="text" name="product_price" class="form-control" value="<?php echo $total; ?>" readonly>
-                            
-                        </div>
+                        
 
 
                      </div>

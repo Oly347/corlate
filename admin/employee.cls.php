@@ -338,6 +338,52 @@ function component_inc()
   }
 
 
+  function getProductSSD($id){
+    $sSql="SELECT * FROM component_details_ssd WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+
+
+  function getProductSoundCard($id){
+    $sSql="SELECT * FROM component_details_sound_card WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+
+  function getProductWirelessAdaptor($id){
+    $sSql="SELECT * FROM component_details_wireless_adapter WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+
+
+  function getProductDvdDrive($id){
+    $sSql="SELECT * FROM component_details_dvd_drive WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+
+
+
+  function getProductSpeaker($id){
+    $sSql="SELECT * FROM component_details_speaker WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+
+  function getProductHeadPhone($id){
+    $sSql="SELECT * FROM component_details_headphone WHERE id ='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+
    function getUserSavedItem($id){
     $sSql="SELECT * FROM save_product WHERE user_name ='".$id."' ";
     $rows = $this->db_con->GetAllRows($sSql);
