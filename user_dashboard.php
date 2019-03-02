@@ -58,7 +58,7 @@ $userCartItem = $obj_comp->getUserCartItem($_SESSION['userName']);
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
     <link rel="shortcut icon" href="images/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -257,7 +257,8 @@ overflow-x: hidden;
                         
                         <td> <input class="form-control" type="text"  name="price[]" value="<?php echo $user_cart_item['product_price'];?>" readonly></td>
                         
-                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $user_cart_item['id'];?>" role="button">Delete&nbsp;<i class="far fa-trash-alt"></i>
+                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $user_cart_item['id'];?>" role="button">Delete&nbsp;<i class="fa fa-trash" aria-hidden="true"></i>
+
 </a>
                         <!-- <a class="btn btn-info" href="final_checkout.php?id=<?php echo $user_cart_item['id'];?>" role="button">Checkout<i class="fas fa-shopping-cart"></i></a> -->
                         </td>
@@ -278,7 +279,8 @@ overflow-x: hidden;
                   </table>
                   Total cart value:<input class="form-control" type="text"   name="total" value="<?php echo $total ?>" readonly>
                   <button type="submit" class="btn btn-success btn-outline" >
-                            Checkout<i class="fas fa-shopping-cart"></i>
+                            Checkout<i class="fa fa-shopping-cart"></i>
+
                             </button>
                   </form>
 

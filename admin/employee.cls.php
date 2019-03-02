@@ -561,6 +561,75 @@ function component_inc()
 
 
 
+     function SetUpdateSoundCard($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_sound_card WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+     }
+
+
+
+     function SetUpdateDvdDrive($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_dvd_drive WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+     }
+
+
+
+     function SetUpdateWireLess($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_wireless_adapter WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+     }
+     function SetUpdateSSD($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_ssd WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+     }
+
+
+
      
 
 

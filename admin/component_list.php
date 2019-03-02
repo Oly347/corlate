@@ -670,7 +670,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
-                        <a class="btn btn-info" href="" role="button">Update</a>
+                        <a class="btn btn-info" href="soundcard_update.php?id=<?php echo $row_sound_component['id'];?>" role="button">Update</a>
                         </td>
                       </tr>
                  
@@ -723,7 +723,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
-                        <a class="btn btn-info" href="" role="button">Update</a>
+                        <a class="btn btn-info" href="dvd_update.php?id=<?php echo $row_dvd_component['id'];?>" role="button">Update</a>
                         </td>
                       </tr>
                  
@@ -775,7 +775,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
-                        <a class="btn btn-info" href="" role="button">Update</a>
+                        <a class="btn btn-info" href="wireless_update.php?id=<?php echo $row_wireless_adapter_component['id'];?>" role="button">Update</a>
                         </td>
                       </tr>
                  
@@ -829,7 +829,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
-                        <a class="btn btn-info" href="" role="button">Update</a>
+                        <a class="btn btn-info" href="ssd_update.php?id=<?php echo $row_ssd_component['id'];?>" role="button">Update</a>
                         </td>
                       </tr>
                  

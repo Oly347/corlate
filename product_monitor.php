@@ -190,7 +190,7 @@ $rowSpeakerList = $obj_comp->getComponentDetailsSpeaker();
          <!-- container -->
     </section>
 
-
+    <hr>
 
     
 
@@ -250,7 +250,7 @@ $rowSpeakerList = $obj_comp->getComponentDetailsSpeaker();
          <!-- container -->
     </section>
 
-
+    <hr>
     <section class="pricing">
         <div class="large-title text-center">        
             <h2>Headphone</h2>
@@ -305,7 +305,7 @@ $rowSpeakerList = $obj_comp->getComponentDetailsSpeaker();
          <!-- container -->
     </section>
 
-
+<hr>
 
     <section class="pricing">
         <div class="large-title text-center">        
