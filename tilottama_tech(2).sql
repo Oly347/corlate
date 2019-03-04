@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2019 at 03:18 PM
+-- Generation Time: Mar 04, 2019 at 01:47 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 5.6.40
 
@@ -97,12 +97,18 @@ CREATE TABLE `cart_item` (
 
 INSERT INTO `cart_item` (`id`, `username`, `txn_id`, `details`, `product_no`, `product_price`) VALUES
 (17, 'kabir@gmail.com', 'TS20190227ADF6', 'AMD Ryzen 5 2600  =>17253.00  ,   NZXT H500i (Black)  =>20624.00  ,   Corsair CX550M  =>9586.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC20190227ADF6', 259150.00),
-(20, 'hassanoly7444@gmail.com', 'TS20190228D1E2', 'AMD Ryzen 5 2600  =>17253.00  ,   NZXT H500i (Black)  =>20624.00  ,   EVGA SuperNOVA 750  =>15853.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC20190228D1E2', 265417.00),
-(21, 'hassanoly7444@gmail.com', 'TS2019022814EB', 'Intel Core i5-9600K  =>27500.00  ,   NZXT H500 (Black)  =>16249.00  ,   EVGA SuperNOVA 750  =>15853.00  ,   MSI B450 TOMAHAWK  =>11197.00  ,   Western Digital WD10EZEX  =>3249.00  ,   Corsair Vengeance LPX  =>12500.00  ,   MSI RX 580 ARMOR 8G OC  =>27899.00  ', 'C-PC2019022814EB', 114447.00),
-(22, 'hassanoly7444@gmail.com', 'TS201902271A00', 'Asus VP228H=>1920 x 1080	21.5', '1', 8645.00),
-(23, 'hassanoly7444@gmail.com', 'TS2019022805C6', 'Intel Core i5-9600K  =>27500.00  ,   NZXT H500 (Black)  =>16249.00  ,   EVGA SuperNOVA 750  =>15853.00  ,   MSI B450 TOMAHAWK  =>11299.00  ,   Western Digital WD10EZEX  =>3249.00  ,   Corsair Vengeance LPX  =>12500.00  ,   MSI RX 580 ARMOR 8G OC  =>27899.00  ', 'C-PC2019022805C6', 114549.00),
-(25, 'hassanoly7444@gmail.com', 'TS20190228C264', 'AMD Threadripper 2990WX  =>173000.00  ,   NZXT H500i (Black)  =>20624.00  ,   Corsair CX550M  =>9586.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC20190228C264', 414897.00),
-(26, 'hasan@gmail.com', 'TS2019030154C3', 'Asus VP228H=>1920 x 1080	21.5', '1', 8645.00);
+(26, 'hasan@gmail.com', 'TS2019030154C3', 'Asus VP228H=>1920 x 1080	21.5', '1', 8645.00),
+(38, 'hassanoly7444@gmail.com', 'TS20190302D3AC', 'Intel Core i7-8700K  =>44500.00  ,   NZXT H500i (Black)  =>20624.00  ,   EVGA SuperNOVA 750  =>15835.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC20190302D3AC', 292646.00),
+(39, 'hassanoly7444@gmail.com', 'TS201903025ED3', 'Seagate 250 GB Barracuda=>SATA Internal Solid State Drive', '1', 4193.00),
+(40, 'hassanoly7444@gmail.com', 'TS20190302EB42', 'HT Omega eClaro=>C-Media CMI8788', '2', 28270.00),
+(41, 'hassanoly7444@gmail.com', 'TS20190302C785', 'TP-Link Archer T6E AC1300=>PCI-Express x1-802.11a/b/g/n/ac', '2', 3299.00),
+(42, 'hassanoly7444@gmail.com', 'TS2019030272AF', 'Asus Internal DVD Writer=>DRW-24D5MT-DDR3 SDRAM', '3', 999.00),
+(43, 'hassanoly7444@gmail.com', 'TS201903021622', 'Asus VP228H=>1920 x 1080	21.5', '1', 8645.00),
+(44, 'hassanoly7444@gmail.com', 'TS20190302F1FF', 'Dell USB Wired Keyboard & Mouse =>item model number-KB212-B', '3', 869.00),
+(45, 'hassanoly7444@gmail.com', 'TS201903028336', 'Corsair VOID PRO RGB (Black)=>Circumaural-Yes(microphone)-Yes(wireless)	', '1', 11308.00),
+(46, 'hassanoly7444@gmail.com', 'TS20190302EFE4', 'Creative Labs Sound BlasterX Katana=>2.1(Configuration)	500 W	35 Hz - 20 kHz	', '2', 32000.00),
+(47, 'hassanoly7444@gmail.com', 'TS201903044B3B', 'Intel Core i7-8700K  =>44500.00  ,   NZXT H500i (Black)  =>20624.00  ,   EVGA SuperNOVA 750  =>15835.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC201903044B3B', 292646.00),
+(48, 'hassanoly7444@gmail.com', 'TS2019030410E6', 'AMD Ryzen 5 2600  =>17250.00  ,   NZXT H500i (Black)  =>20624.00  ,   Corsair CX550M  =>9586.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC2019030410E6', 259147.00);
 
 -- --------------------------------------------------------
 
@@ -170,7 +176,7 @@ CREATE TABLE `component_details_dvd_drive` (
 --
 
 INSERT INTO `component_details_dvd_drive` (`id`, `component_name`, `component_details`, `component_price`, `component_image`) VALUES
-(2, 'LG GH24NSB0', 'DVD Writer 24X SATA Internal OEM', 1161.00, '1550750641index.jpg'),
+(2, 'Asus Internal DVD Writer', 'DRW-24D5MT-DDR3 SDRAM', 999.00, '1551526993index.jpg'),
 (3, 'Asus Internal DVD Writer', 'DRW-24D5MT-DDR3 SDRAM', 999.00, '1550750771814w4gmM2VL._SL1500_.jpg');
 
 -- --------------------------------------------------------
@@ -193,7 +199,7 @@ CREATE TABLE `component_details_graphic_card` (
 
 INSERT INTO `component_details_graphic_card` (`id`, `component_name`, `component_details`, `component_price`, `component_image`) VALUES
 (1, 'MSI RX 580 ARMOR 8G OC', 'ARMOR OC-Radeon RX 580-8 GB', 7899.00, '1551431662d53db7190559b6287a4ff549f3bf5904.256p.jpg'),
-(2, 'Asus ROG-STRIX-RTX2080TI-O11G-GAMING', 'ROG Strix-Gaming OC-GeForce RTX 2080 Ti	11 GB', 168699.00, '15507486610174f5005fe9f34decdf2d379bfe7221.256p.jpg');
+(2, 'Asus ROG-STRIX-RTX2080TI-O11G-GAMING', 'ROG Strix-Gaming OC-GeForce RTX 2080 Ti	11 GB', 168699.00, '15515251040174f5005fe9f34decdf2d379bfe7221.256p.jpg');
 
 -- --------------------------------------------------------
 
@@ -371,7 +377,7 @@ CREATE TABLE `component_details_sound_card` (
 
 INSERT INTO `component_details_sound_card` (`id`, `component_name`, `component_details`, `component_price`, `component_image`) VALUES
 (1, 'Asus Essence STX II', 'ASUS AV100', 21299.00, '15507497836ab2119d580c39340adadd1441ede095.256p.jpg'),
-(2, 'HT Omega eClaro', 'C-Media CMI8788', 28270.00, '155074989751Ik9nwG5xL.jpg');
+(2, 'HT Omega eClaro', 'C-Media CMI8788', 70.00, '155152569241u5ApTrH+L.jpg');
 
 -- --------------------------------------------------------
 
@@ -414,7 +420,7 @@ CREATE TABLE `component_details_ssd` (
 --
 
 INSERT INTO `component_details_ssd` (`id`, `component_name`, `component_details`, `component_price`, `component_image`) VALUES
-(1, 'Seagate 250 GB Barracuda', 'SATA Internal Solid State Drive', 4193.00, '155075317881ba0kFYusL._SL1500_.jpg'),
+(1, 'Seagate 250 GB Barracuda', 'SATA Internal Solid State Drive', 4193.00, '155152729041aB2hM0meL.jpg'),
 (2, 'Western Digital WDS240G2G0A 240GB SATA ', '6GB/s 2.5 7mm Internal SSD', 2993.00, '155075336261z5rHB5-pL._SL1000_.jpg');
 
 -- --------------------------------------------------------
@@ -436,7 +442,7 @@ CREATE TABLE `component_details_wireless_adapter` (
 --
 
 INSERT INTO `component_details_wireless_adapter` (`id`, `component_name`, `component_details`, `component_price`, `component_image`) VALUES
-(1, 'Gigabyte GC-WB867D-I', 'PCI-Express x1-802.11a/b/g/n/ac', 4900.00, '155075179741u5ApTrH+L.jpg'),
+(1, 'Gigabyte GC-WB867D-I', 'PCI-Express x1-802.11a/b/g/n/ac', 14900.00, '1551526891ba4eb62607c5e51ccdf3a5af422d050c.1600.jpg'),
 (2, 'TP-Link Archer T6E AC1300', 'PCI-Express x1-802.11a/b/g/n/ac', 3299.00, '1550752055a1175f03aa1364f265d58329836e436d.256p.jpg');
 
 -- --------------------------------------------------------
@@ -484,6 +490,34 @@ INSERT INTO `contact_us` (`id`, `name`, `email`, `phone_number`, `company_name`,
 (3, 'Hasan', 'hassanoly444@gmail.com', '9563585351', '', 'g', 'ggggg'),
 (4, 'Hasanh', 'hhh@gmail.com', '9563585351', 'hhh', 'hhhh', 'hhhhh'),
 (5, 'hasan', '6290548121@gmail.com', '9563585351', 'kkk', 'my', 'hhhh');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_review`
+--
+
+CREATE TABLE `customer_review` (
+  `id` int(50) NOT NULL,
+  `time` datetime NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `review` text NOT NULL,
+  `star` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer_review`
+--
+
+INSERT INTO `customer_review` (`id`, `time`, `name`, `review`, `star`) VALUES
+(1, '0000-00-00 00:00:00', 'Hasan', 'Mmmm', 0),
+(2, '0000-00-00 00:00:00', 'oly', 'kakaka', 0),
+(4, '0000-00-00 00:00:00', 'ami oly', 'aaaa', 3),
+(5, '0000-00-00 00:00:00', 'amit', 'this is a nice site', 5),
+(6, '1970-08-22 17:25:04', 'sdasw', 'df', 4),
+(7, '2019-03-04 00:00:00', 'my name', 'my review', 3),
+(8, '2019-03-04 12:03:00', 'sss', 'sssss', 2),
+(9, '2019-03-04 12:37:01', 'xxx', 'xxxxx', 5);
 
 -- --------------------------------------------------------
 
@@ -567,7 +601,14 @@ INSERT INTO `login_id` (`id`, `login_time`) VALUES
 (64, '2019-03-01 00:00:00'),
 (65, '2019-03-01 00:00:00'),
 (66, '2019-03-01 00:00:00'),
-(67, '2019-03-01 00:00:00');
+(67, '2019-03-01 00:00:00'),
+(68, '2019-03-02 00:00:00'),
+(69, '2019-03-02 00:00:00'),
+(70, '2019-03-02 00:00:00'),
+(71, '2019-03-02 00:00:00'),
+(72, '2019-03-02 00:00:00'),
+(73, '2019-03-04 00:00:00'),
+(74, '2019-03-04 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -710,7 +751,10 @@ INSERT INTO `price_list` (`id`, `CPU`, `CAB`, `SMPS`, `Morherboard`, `Harddrive`
 (144, '27', '3', '2', '2', 2, 2, 2, 0, '59'),
 (145, '27', '3', '2', '2', 2, 2, 2, 0, 'hassanoly7444@gmail.com'),
 (146, '25', '3', '1', '2', 2, 2, 1, 0, '63'),
-(147, '26', '3', '2', '2', 2, 2, 2, 0, 'hassanoly7444@gmail.com');
+(147, '26', '3', '2', '2', 2, 2, 2, 0, 'hassanoly7444@gmail.com'),
+(148, '24', '3', '1', '2', 2, 2, 2, 0, 'hassanoly7444@gmail.com'),
+(149, '21', '3', '2', '2', 2, 2, 2, 0, '73'),
+(150, '21', '3', '2', '2', 2, 2, 2, 0, 'hassanoly7444@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -915,6 +959,12 @@ ALTER TABLE `contact_us`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `customer_review`
+--
+ALTER TABLE `customer_review`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `login_id`
 --
 ALTER TABLE `login_id`
@@ -965,7 +1015,7 @@ ALTER TABLE `admin_details`
 -- AUTO_INCREMENT for table `cart_item`
 --
 ALTER TABLE `cart_item`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `component_details_cab`
@@ -1070,16 +1120,22 @@ ALTER TABLE `contact_us`
   MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `customer_review`
+--
+ALTER TABLE `customer_review`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `login_id`
 --
 ALTER TABLE `login_id`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT for table `price_list`
 --
 ALTER TABLE `price_list`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT for table `product_order`
