@@ -190,6 +190,7 @@ overflow-x: hidden;
                                                 <p>address:<?php echo $user_details_by_id['address'];?> </p>
                                                 <p>Phone Number:<?php echo $user_details_by_id['phone_number'];?> </p>
                                                 <p>EmailID:<?php echo $user_details_by_id['email_id'];?> </p>
+                                                <a class="btn btn-success" href="customer_review.php" role="button">Write a Review</a>
 
                                                 <a class="btn btn-info" href="change_password.php?id=<?php echo $user_details_by_id['id'];?>" role="button">Password Change</a>
                                             </div>

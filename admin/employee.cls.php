@@ -1051,6 +1051,12 @@ function component_inc()
                  $rows = $this->db_con->GetAllRows($sSql);
                  return $rows;
              }
+
+             function getReviewList(){
+                $sSql = "SELECT * FROM customer_review";
+                 $rows = $this->db_con->GetAllRows($sSql);
+                 return $rows;
+             }
            
            
                function getEmployeeById($id){
@@ -1190,6 +1196,22 @@ function component_inc()
             public function InsertIntoContactUS($post_fileds)
           {
           $sSql="SELECT * FROM contact_us WHERE id=-1";
+          $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+          if($insrt==0)
+           {
+            return false;
+            }
+            else
+            {
+            return true;
+            }
+                    
+            }  
+
+
+            public function InsertIntoReviewList($post_fileds)
+          {
+          $sSql="SELECT * FROM customer_review WHERE id=-1";
           $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
           if($insrt==0)
            {
