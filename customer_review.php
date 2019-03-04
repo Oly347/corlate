@@ -22,7 +22,70 @@ session_start();
     <link href="css/icomoon.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <style>
+        #div_create_event {
+            margin: 17px 0;
+        }
 
+        #img_preview_td {
+            /* outline: 1px solid red; */
+            width: auto;
+            margin:10px;
+        }
+
+        img {
+            height: 200px;
+            width: 200px;
+        }
+    </style>
+    <script>
+    $(document).ready(function(){
+        var i = 0;
+        $("#add_more_img").click(function(e){
+            i++;
+            $("#dynamic_table_field").append('<tr id=row'+i+'><td><button name="remove" id="'+i
+            +'" class="btn btn-danger btn-remove">X</button></td><td><input type="file" onchange="myfn(this)" name="event_images[]" id="event_images'+i
+            +'" data-panelid="event_images'+i+'" class="form-control images_list" accept="image/gif, image/png, image/jpeg, image/pjpeg" />'
+            +'</td><td id="img_preview_td"><img id="img_preview'+i+'" /></td></tr>');
+            e.preventDefault();
+        });
+
+        $(document).on("click",".btn-remove",function(){
+             var button_id = $(this).attr("id");
+             $("#row"+button_id+"").remove();
+        });
+    });
+
+      function myfn(myinput) {
+            var name = $(myinput).attr("name");
+            var id = $(myinput).attr("id");
+            var val = $(myinput).val();
+            debugger;
+            switch(val.substring(val.lastIndexOf('.') + 1).toLowerCase()){
+                case 'gif': case 'jpg': case 'png': case 'jpeg':
+                    readURL(myinput);
+                    break;
+                default:
+                    $(this).val('');
+                    break;
+            }
+        }
+
+
+        function readURL(myinput) {
+           debugger;
+            if (myinput.files && myinput.files[0]) {
+                  var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#img_preview' + $(myinput).attr("id").replace('event_images','') ).attr('src', e.target.result);
+                }
+                reader.readAsDataURL(myinput.files[0]);
+            }
+        }
+
+
+    </script>
    
     <style>
 @import url(http://fonts.googleapis.com/css?family=Roboto:500,100,300,700,400);
@@ -251,6 +314,13 @@ label.star:before {
   ga('send', 'pageview');
 
 </script>
+
+
+<table id="dynamic_table_field">
+            <tr>
+                <td><button name="add_more_img" id="add_more_img" class="btn btn-success">Add fields</button></td>
+            </tr>
+        </table>
     
                         <div class="form-group">
                             <button type="submit" name="submit"  class="btn btn-primary btn-lg">Submit Review</button>
