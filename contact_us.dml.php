@@ -30,10 +30,10 @@ $insert_array=  array(
 $insert= $obj_user->InsertIntoContactUS($insert_array);
      if ($insert) {
         
-    header('Location:contact-us.php');
-    echo '<script language="javascript">';
-    echo 'alert(message successfully sent)';  //not showing an alert box.
-    echo '</script>';
+        echo "<script type='text/javascript'>alert('Thanks For Contact us , We will contact with you soon !!');
+        window.location='index.php';
+        </script>";
+
     exit;
 
        

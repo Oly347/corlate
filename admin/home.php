@@ -112,7 +112,7 @@ header('Location:index.php');
       <li class="nav-item">
         <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Component</span>
+          <span>Add Component </span>
         </a>
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -132,10 +132,10 @@ header('Location:index.php');
             <!-- <a class="collapse-item" href="#">Bluetooth Reciver</a> -->
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Monitor and accessories</h6>
-            <a class="collapse-item" href="#">Monitor</a>
-            <a class="collapse-item" href="#">Mouse & Keyboard</a>
-            <a class="collapse-item" href="#">Speaker</a>
-            <a class="collapse-item" href="#">Headphone</a>
+            <a class="collapse-item" href="monitor.php">Monitor</a>
+            <a class="collapse-item" href="mouse_keyboard.php">Mouse & Keyboard</a>
+            <a class="collapse-item" href="speaker.php">Speaker</a>
+            <a class="collapse-item" href="headphone.php">Headphone</a>
           </div>
         </div>
       </li>
@@ -152,6 +152,21 @@ header('Location:index.php');
   <a class="nav-link" href="user_list.php">
     <i class="fas fa-fw fa-table"></i>
     <span>User List</span></a>
+</li>
+
+
+
+<li class="nav-item">
+  <a class="nav-link" href="review_list.php">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Review List</span></a>
+</li>
+
+
+<li class="nav-item">
+  <a class="nav-link" href="contact_us_list.php">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Contact us List</span></a>
 </li>
 
       <!-- Divider -->

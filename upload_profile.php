@@ -1,81 +1,29 @@
 <?php
-//    include("config.php");
-//    session_start();
+
+
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
-session_start();
-// $total_price=0;
-// foreach ($_POST['price'] as $price) {
-//     $total_price+= $price;
-// }
 
 
 $obj_user = new user_inc ;
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-//       // username and password sent from form 
-      
-//       $myusername = mysqli_real_escape_string($db,$_POST['email_id']);
-//       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      
-//       $sql = "SELECT id FROM user WHERE email_id = '$myusername' and password = '$mypassword'";
-//       $result = mysqli_query($db,$sql);
-//       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-//       //$active = $row['active'];
-      
-//       $count = mysqli_num_rows($result);
-      
-//       // If result matched $myusername and $mypassword, table row must be 1 row
-//        print_r($row);
-       
-//        exit;
-//       if($count == 1) {
-//          //session_register("myusername");
-
-//          $_SESSION['user'] = $row;
-         
-//          header("location: welcome.php");
-//          //echo $_GET[id];
-//       }else {
-//         $_SESSION['errMsg'] = "Invalid username or password";
+$userProfileUpdate = $obj_user->getUserUpdateById($_GET['id']);
 
 
 
-//  }
+// print_r($userProfileUpdate);
 
-
-
-$loginUser = $obj_user->checkLogin($_POST['email_id'],$_POST['password']);
-$l=count($loginUser);
-if ($l==1) {
-foreach ($loginUser as $key => $value) {
-
- 
- $_SESSION['user'] = $value['id'];  // user id from table
- $_SESSION['userName']= $value['email_id'];  // email or name
- $_SESSION['user_loggedin'] = true;   //logintrue
+foreach ($userProfileUpdate as $key => $value) {
+    $name=$value['name'];
+    $phone_number=$value['phone_number'];
+    $address=$value['address'];
+    $profile_pic=$value['profile_pic'];
+    
+  
 }
-}
-
-//$url=$_SERVER['HTTP_REFERER'];
-
-$l=count($loginUser);
-if ($l==1) {
-//echo "<script>history.go(-2);</script>";
-
-header('Location:index.php');
-}
-else {
-  $_SESSION['errMsg'] = "Invalid username or password";
-}
-//header("Location: login.php");
-
-
-}
-
-
-
-
+  
 ?>
+
+
 
 
 
@@ -98,8 +46,13 @@ else {
     <link href="css/icomoon.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link href="css/style_edit.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/Google-Style-Login.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+   
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -109,6 +62,13 @@ else {
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <style>
+    body {
+overflow-x: hidden;
+}  
+
+
+    </style>
 </head>
 <!--/head-->
 
@@ -168,21 +128,21 @@ else {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="160"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="120" hight="80"></a>
                 </div>
                 
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                   
+                    <ul class="nav navbar-nav">
                     <li ><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
                         <li><a href="#">Assemble PC</a></li>
-                        <li ><a href="smart_home_security.php">Smart Home security</a></li>
+                        <li ><a href="smart_security_home.php">Smart Home security</a></li>
                         <li><a href="#">Make your Home smart</a></li>
                         <li><a href="#">Contact</a></li>
                         
                     </ul>                      
-                   
+                    </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
@@ -191,34 +151,137 @@ else {
 
 
     <div class="page-title" style="background-image: url(images/page-title.png)">
-        <h1>User Login</h1>
+        <h1>User Register</h1>
     </div>
     
+    
     <section class="pricing">
-    <div class="login-card" ><img src="assets/img/avatar_2x.png" class="profile-img-card">
-        <p class="profile-name-card"> </p>
-        <form class="form-signin" action = "" method = "post" enctype="multipart/form-data"><span class="reauth-email"> </span>
-        <input class="form-control" type="email"  name="email_id" required="" placeholder="Email address" autofocus="" id="inputEmail">
-        <input class="form-control" type="password" name="password" required="" placeholder="Password" id="inputPassword">
-            <!-- <div class="checkbox">
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"></div>
-    </div> -->
-    <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Login</button>
-    <div id="errMsg">
-            <?php if(!empty($_SESSION['errMsg'])) { echo $_SESSION['errMsg']; } ?>
-        </div>
-        <?php unset($_SESSION['errMsg']); ?>
-  </form>
-  <a href="user_register.php"  class="btn btn-primary btn-outline" >I'm New <i class="fa fa-user-plus"></i></a>
+    <div class="cotainer">
+        
+        <div class="row justify-content-center ">
+            <div class="col-md-6 col-md-offset-3 edit_register_div" style="padding: 40px;">
+                    <div class="card">
+                        
+                        <div class="card-body">
+                            <form name="my-form" onsubmit="return validform()" action="user_update.dml.php" method="post" enctype="multipart/form-data">
+                                <div class="form-group row">
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="full_name" class="form-control" name="full_name" value="<?php echo $name; ?>">
+                                        <input type="hidden" name="user_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
+                                    </div>
+                                </div>
 
- <a href="forget_login.php"  class="btn btn-success btn-outline" style="float:right">forget Password <i class="fa fa-key" aria-hidden="true"></i></a>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+                                
+
+                               
+
+                                <div class="form-group row">
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="phone_number" class="form-control" name="phone_number" value="<?php echo $phone_number; ?>">
+                                    </div>
+                                </div>
+
+                                <!-- <div class="form-group row">
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Present Address</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="present_address" class="form-control">
+                                    </div>
+                                </div> -->
+
+                                <div class="form-group row">
+                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Address</label>
+                                    <div class="col-md-6">
+                                    <textarea id="permanent_address" class="form-control" name="permanent_address"  ><?php echo $address; ?></textarea>
+                                    </div>
+                                </div>
 
 
+                               
+                                <div class="form-group row">
+                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right"></label>
+                                    <div class="col-md-6">
+                                    <img id="blah" src="admin/upload/<?php echo $profile_pic; ?>" style="box-sizing: content-box; 
+        width: 150px; height: 200px; align-content: center; border: 1px;">
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label for="profile_pic" class="col-md-4 col-form-label text-md-right" >Profile Picture</label>
+                                    <div class="upload-btn-wrapper">
+  <button class="btn edit_button">Upload Profile Picture</button>
+  <input type="file" name="profile_pic" id="profile_pic" onchange="readURL(this);" />
 </div>
-    </section>
+                                </div>
+<style>
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
 
+.edit_button {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+</style>
+                                
+
+                                
+<div class="form-actions">
+                                        <button type="submit" class="btn btn-success btn-outline" >
+                                        Update Profile<i class="fa fa-sign-in"></i>
+                                        </button>
+                                        
+</div>
+                                        
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+                    </section>
+                    <script type="text/javascript">
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+
+<style>
+        .form-actions {
+            margin: 0;
+            background-color: transparent;
+            text-align: center;
+        }
+        </style>
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
@@ -319,13 +382,48 @@ else {
         </div>
     </footer>
     <!--/#footer-->
+    <script>
+        
 
+        function validform() {
+        
+        var a = document.forms["my-form"]["full_name"].value;
+        
+       
+        var d = document.forms["my-form"]["phone_number"].value;
+        var e = document.forms["my-form"]["permanent_address"].value;
+        var f = document.forms["my-form"]["profile_pic"].value;
+        
+        
+        
+        if (a==null || a=="")
+        {
+            sweetAlert("Oops...", "Please enter your Name!", "error");
+            return false;
+        }else if (d==null || d=="")
+        {
+            sweetAlert("Oops...", "Please enter your Phone number!", "error");
+            return false;
+        }else if (e==null || e=="")
+        {
+            sweetAlert("Oops...", "Please enter your Address!", "error");
+            return false;
+        }else if (f==null || f=="")
+        {
+            sweetAlert("Oops...", "Please Upload Profile picture", "error");
+            return false;
+        }
+        
+        }
+        
+        </script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.isotope.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+    
 </body>
 
 </html>

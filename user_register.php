@@ -187,21 +187,64 @@ overflow-x: hidden;
                                 <div class="form-group row">
                                     <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Address</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="permanent_address" class="form-control" name="permanent_address">
+                                    <textarea id="permanent_address" class="form-control" name="permanent_address"></textarea>
                                     </div>
                                 </div>
 
+
+                               
+                                <div class="form-group row">
+                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right"></label>
+                                    <div class="col-md-6">
+                                    <img id="blah" src="images/no-image-icon-23494.png" style="box-sizing: content-box; 
+        width: 150px; height: 200px; align-content: center; border: 1px;">
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group row">
+                                    <label for="profile_pic" class="col-md-4 col-form-label text-md-right">Profile Picture</label>
+                                    <div class="upload-btn-wrapper">
+  <button class="btn edit_button">Upload Profile Picture</button>
+  <input type="file" name="profile_pic" id="profile_pic" onchange="readURL(this);"/>
+</div>
+                                </div>
+<style>
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.edit_button {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+</style>
                                 
 
                                 
-
-                                    
+<div class="form-actions">
                                         <button type="submit" class="btn btn-success btn-outline" >
                                         Register <i class="fa fa-sign-in"></i>
                                         </button>
-                                        <a href="user_login.php"  class="btn btn-warning btn-outline" style="float:right">I have an account <i class="fa fa-user"></i></i>
+                                        <a href="user_login.php"  class="btn btn-warning btn-outline">I have an account <i class="fa fa-user"></i></i>
 </a>
-
+</div>
                                         
                                     
                                 </div>
@@ -212,7 +255,28 @@ overflow-x: hidden;
         </div>
     </div>
                     </section>
+                    <script type="text/javascript">
+    function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+
+<style>
+        .form-actions {
+            margin: 0;
+            background-color: transparent;
+            text-align: center;
+        }
+        </style>
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
@@ -323,6 +387,7 @@ overflow-x: hidden;
         var c = document.forms["my-form"]["password"].value;
         var d = document.forms["my-form"]["phone_number"].value;
         var e = document.forms["my-form"]["permanent_address"].value;
+        var f = document.forms["my-form"]["profile_pic"].value;
         
         
         
@@ -345,6 +410,10 @@ overflow-x: hidden;
         }else if (e==null || e=="")
         {
             sweetAlert("Oops...", "Please enter your Address!", "error");
+            return false;
+        }else if (f==null || f=="")
+        {
+            sweetAlert("Oops...", "Please Upload Profile picture", "error");
             return false;
         }
         

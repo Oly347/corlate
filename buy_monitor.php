@@ -207,13 +207,13 @@ foreach ($rowProductMonitor as $key => $value) {
                     </form>
                     </div>
     </section>
-<style>
-.form-actions {
-    margin: 0;
-    background-color: transparent;
-    text-align: center;
-}
-</style>
+        <style>
+        .form-actions {
+            margin: 0;
+            background-color: transparent;
+            text-align: center;
+        }
+        </style>
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">

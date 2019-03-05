@@ -1052,6 +1052,14 @@ function component_inc()
                  return $rows;
              }
 
+
+
+             function getContactList(){
+                $sSql = "SELECT * FROM contact_us";
+                 $rows = $this->db_con->GetAllRows($sSql);
+                 return $rows;
+             }
+
              function getReviewList(){
                 $sSql = "SELECT * FROM customer_review";
                  $rows = $this->db_con->GetAllRows($sSql);
@@ -1101,7 +1109,11 @@ function component_inc()
 
 
 
-                
+                function getUserUpdateById($id){
+                    $sSql="SELECT * FROM user WHERE id='".$id."' ";
+                    $rows = $this->db_con->GetAllRows($sSql);
+                    return $rows;
+                }
 
 
 
@@ -1111,6 +1123,24 @@ function component_inc()
                     return $rows;
                 }
                 
+
+
+
+                function SetUpdateProfile($post_fields,$id)
+                {
+                $sSql="SELECT * FROM user WHERE id='".$id."' ";
+                    
+                    
+                 echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+                 if($update==0)
+                 {
+                        return false;
+                 }
+                    else
+                    {
+                        return true;
+                    }
+                 }
 
 
                 

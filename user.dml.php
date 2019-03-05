@@ -21,13 +21,22 @@ if ($l>0) {
 }
 else
 {
+
+
+$f1=$_FILES['profile_pic']['name'];
+$randomFileName = time().$f1;
+$path='admin/upload/'.$randomFileName;
+$t=$_FILES['profile_pic']['tmp_name'];
+move_uploaded_file($t,$path);
+
+
 $insert_array=  array(
     'name' => $_POST['full_name'],
     'password' => $_POST['password'],
     'phone_number' => $_POST['phone_number'],
     'email_id' => $_POST['email_address'],
     'address' => $_POST['permanent_address'],
-    
+    'profile_pic' => $randomFileName,
 	
     
 

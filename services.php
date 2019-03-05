@@ -8,7 +8,17 @@ include ('admin/employee.cls.php');
 $obj_emp = new employee_inc ;
 session_start();
 
-// echo isset($_SESSION['user']);
+if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+    
+} 
+else {
+  echo "<script type='text/javascript'>alert('Please Login To Continue!!!');
+  window.location='user_login.php';
+  </script>";
+}
+
+
+
 if (!isset($_SESSION['user']))
  {
   if(!isset($_SESSION['temp_user']))
@@ -551,13 +561,13 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
   </div>
   <!-- Circles which indicates the steps of the form: -->
   <div style="text-align:center;margin-top:40px;">
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
+    <span class="step">1</span>
+    <span class="step">2</span>
+    <span class="step">3</span>
+    <span class="step">4</span>
+    <span class="step">5</span>
+    <span class="step">6</span>
+    <span class="step">7</span>
     <!-- <span class="step"></span> -->
     
   </div>
@@ -570,77 +580,6 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
     </section>
     <!--/#services-->
 
-
-    <!-- <section id="testimonial">
-        <div class="container">
-            <div class="center fadeInDown">
-                <h2>Testimonials</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
-            </div>
-            <div class="testimonial-slider owl-carousel">
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client2.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client3.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client2.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client3.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 
     <section id="partner">

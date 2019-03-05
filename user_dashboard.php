@@ -185,14 +185,16 @@ overflow-x: hidden;
                                                             
                                             ?>
                                             <div class="media-body">
+                                            <h1><img src ="admin/upload/<?php echo $user_details_by_id['profile_pic'];?>" height=100px width=80px /> </h1>
                                             <h2 style="display:none">Name:<?php echo $user_details_by_id['id'];?> </h2>
                                                 <h2>Name:<?php echo $user_details_by_id['name'];?> </h2>
                                                 <p>address:<?php echo $user_details_by_id['address'];?> </p>
                                                 <p>Phone Number:<?php echo $user_details_by_id['phone_number'];?> </p>
                                                 <p>EmailID:<?php echo $user_details_by_id['email_id'];?> </p>
                                                 <a class="btn btn-success" href="customer_review.php" role="button">Write a Review</a>
+                                                <a class="btn btn-info" href="upload_profile.php?id=<?php echo $user_details_by_id['id'];?>" role="button">Profile Update</a>
 
-                                                <a class="btn btn-info" href="change_password.php?id=<?php echo $user_details_by_id['id'];?>" role="button">Password Change</a>
+                                                <a class="btn btn-success" href="change_password.php?id=<?php echo $user_details_by_id['id'];?>" role="button">Password Change</a>
                                             </div>
 
 
@@ -203,18 +205,31 @@ overflow-x: hidden;
                                         </div>
                                     </div>
 
-                                    <div class="tab-pane fade active in " id="tab1">
                                    
-                                    <a class="btn btn-info" href="product_monitor.php" role="button" style="margin:30px">Buy Monitor & Accessories</a>
-                                    <a class="btn btn-info" href="product_pc.php" role="button" style="margin:30px">Buy Pre Assemble PC</a>
 
-                                    <a class="btn btn-info" href="product_pc_item.php" role="button" style="margin:30px">Buy Additional PC item</a>
-                                    <a class="btn btn-info" href="#tab5" data-toggle="tab" class="tehnical" style="margin:30px">Buy PC From Cart</a>
 
-                                        <!-- <div class="video-box">
-                                            <img src="images/tab-video-bg.png" alt="video">
-                                            <a class="video-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" rel="prettyPhoto"><i class="fa fa-play"></i></a>
-                                        </div> -->
+                                    <div class="tab-pane fade active in hero-bkg-animated" id="tab1" >
+
+                                    <div class="col-md-6" style="border-right:1px solid #000; height:100px">
+                                    <!-- <a class="btn btn-info edit_button" href="product_pc_item.php" role="button" style="margin:30px">Additional PC item</a> -->
+                                    <a class="btn btn-info edit_button" href="#tab5" data-toggle="tab" class="tehnical" style="margin:30px; ">Buy PC From Cart</a>
+
+                                        </div>
+                                        <!-- <div style="border-left:1px solid #000; height:100px"></div> -->
+                                        <div class="col-md-6" style="margin-top:-30px">
+                                    <div class="wrapper">
+  <a href="product_pc_item.php"> By Additional PC item<span class="arrow"><span></span></span></a>
+
+  
+</div>
+
+
+<div class="wrapper" >
+  <a href="product_monitor.php">Buy Monitor & Accessories<span class="arrow"><span></span></span></a>
+
+  
+</div>
+                                        </div> 
                                     </div>
 
                     <div class="tab-pane fade" id="tab5" style="overflow-x:auto;">

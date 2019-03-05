@@ -7,8 +7,12 @@ include ('employee.cls.php');
 
 $obj_user = new user_inc ;
 
-$userDetails = $obj_user->getUserDetails();
+//$userReview = $obj_user->getReviewList();
 
+$contactList = $obj_user->getContactList();
+
+// print_r($contactList);
+// exit;
 ?>
 
 
@@ -31,7 +35,7 @@ $userDetails = $obj_user->getUserDetails();
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Custom styles for this template -->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -249,50 +253,54 @@ $userDetails = $obj_user->getUserDetails();
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">All User</h1>
+          <h1 class="h3 mb-2 text-gray-800">Contact us List</h1>
           
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Register User list</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Contact us list</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
-                    <tr>
-                      <th>Name</th>
+                  <tr>
+                    <th>Name</th>
+                      <th>Email ID</th>
                       <th>Phone Number</th>
-                      <th>Email Id</th>
-                      <th>Address</th>
-                      <th>Profile Picture</th>
+                      <th>Company Name</th>
+                      <th>Subject</th>
+                      <th>Message</th>
                     </tr>
                   </thead>
                   <tfoot>
-                    <tr>
+                  <tr>
                     <th>Name</th>
+                      <th>Email ID</th>
                       <th>Phone Number</th>
-                      <th>Email Id</th>
-                      <th>Address</th>
-                      <th>Profile Picture</th>
+                      <th>Company Name</th>
+                      <th>Subject</th>
+                      <th>Message</th>
                     </tr>
                   </tfoot>
                   <tbody>
                   <?php
                 
-                foreach ($userDetails as  $row_smps_component) {
+                foreach ($contactList as  $contact_list) {
                                    
                 ?>
 
 
                     <tr>
-                      <td><?php echo $row_smps_component['name'];?></td>
-                      <td><?php echo $row_smps_component['phone_number'];?></td>
-                      <td><?php echo $row_smps_component['email_id'];?></td>
-                      <td><?php echo $row_smps_component['address'];?></td>
+                      <td><?php echo $contact_list['name'];?></td>
+                      <td><?php echo $contact_list['email'];?></td>
+                      <td><?php echo $contact_list['phone_number'];?></td>
+                      <td><?php echo $contact_list['company_name'];?></td>
+                      <td><?php echo $contact_list['subject'];?></td>
+                      <td><?php echo $contact_list['message'];?></td>
                       
-                      <td><img src ="upload/<?php echo $row_smps_component['profile_pic'];?>" height=50 width=80 /> </td>
+                      
                     </tr>
                     
                     <?php

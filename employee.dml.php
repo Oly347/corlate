@@ -45,7 +45,9 @@ $insert= $obj_emp->InsertIntoEmployees($insert_array);
 
        
     }else {
-        header('Location:services.php?msg=something went wrong');
+        echo "<script type='text/javascript'>alert('Something Went Wrong or you have to choose all mandatory option !!!');
+        window.location='services.php';
+        </script>";
        
         exit();
 

@@ -158,18 +158,18 @@ session_start();
                             <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
                         </div>                        
                         <div class="form-group">
-                            <button type="submit" name="submit" onclick="myFunction()" class="btn btn-primary btn-lg">Submit Message</button>
+                            <button type="submit" name="submit"  class="btn btn-primary btn-lg">Submit Message</button>
                         </div>
                     </div>
                 </form> 
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#contact-page-->
-    <script>
+    <!-- <script>
 function myFunction() {
   document.getElementById("demo").innerHTML = "Thankyou for submit";
 }
-</script>
+</script> -->
 
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">

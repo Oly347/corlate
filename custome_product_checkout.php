@@ -11,43 +11,8 @@ $rand = strtoupper(substr(uniqid(sha1(time())),0,4));
 $transaction = 'TS' . $today . $rand ;
 $product_number = 'C-PC' . $today . $rand ;
 
-$details=$_POST['d1']."=>".$_POST['d2'].",   ".$_POST['d3']."=>".$_POST['d4'].",   ".$_POST['d5']."=>".$_POST['d6'].",   ".$_POST['d7']."=>".$_POST['d8'].",   ".$_POST['d9']."=>".$_POST['d10'].",   ".$_POST['d11']."=>".$_POST['d12'].",   ".$_POST['d13']."=>".$_POST['d14'];
-// if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) 
-// {
-//     $userID=$_SESSION['userName'];
-//     }
-//     else{
-//     $userID=$_SESSION['temp_user'];
-    
-// } 
+$details=$_POST['cpu_model']."=>".$_POST['cpu_price'].",   ".$_POST['cab_model']."=>".$_POST['cab_price'].",   ".$_POST['smps_model']."=>".$_POST['smps_price'].",   ".$_POST['mboard_model']."=>".$_POST['mboard_price'].",   ".$_POST['hdrive_model']."=>".$_POST['hdrive_price'].",   ".$_POST['memory_model']."=>".$_POST['memory_price'].",   ".$_POST['gcard_model']."=>".$_POST['gcard_price'];
 
-// //$rowPrice = $obj_emp->getPrice();
-
-// //$rowEmployee = $obj_emp->getEmployee();
-// //echo $_GET['id'];
-
-// $rowProductPC = $obj_comp->getProductPCById($_GET['id']);
-// //  echo "<pre>";
-// //  print_r($rowProductPC);
-// // echo "</pre>";
-// // exit;
-// foreach ($rowProductPC as $key => $value) {
-//     $product_no=$value['product_no'];
-//     $cabinet=$value['cabinet'];
-//     $product_weight=$value['product_weight'];
-//     $product_dimensions=$value['product_dimensions'];
-//     $processor_brand=$value['processor_brand'];
-//     $processor_type=$value['processor_type'];
-//     $ram_size=$value['ram_size'];
-//     $ram_type=$value['ram_type'];
-//     $hard_disk_size=$value['hard_disk_size'];
-//     $hard_disk_tech=$value['hard_disk_tech'];
-//     $operating_system=$value['operating_system'];
-//     $g_card=$value['g_card'];
-//     $additional_information=$value['additional_information'];
-//     $product_price=$value['product_price'];
-
-// }
 
 ?>
 

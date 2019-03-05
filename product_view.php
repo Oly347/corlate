@@ -1,11 +1,4 @@
 <?php
-// Include config file
-
-//echo  $_SESSION['session_id'];
-
-//create a session and assign a value
-//$_SESSION['session_id'] =rand(10,1000);
-
 session_start();
 
 if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
@@ -598,7 +591,7 @@ $row_graphic_card_component['component_price'];
 </div>
 </div>
                         <div class="card-body col-md-18 col-md-offset-2 ">
-                            <form name="my-form"  action="confirm_custome_pc.php" method="post" enctype="multipart/form-data">
+                            <form name="my-form"  action="custome_product_checkout.php" method="post" enctype="multipart/form-data">
 
                             <div class="form-group row">
                                 
@@ -722,6 +715,9 @@ $row_graphic_card_component['component_price'];
                           <button type="submit" class="btn btn-success btn-outline" >
                             Save to Buy <i class="fa fa-sign-in"></i>
                             </button>
+
+                            <a href="services.php"  class="btn btn-warning btn-outline">Reset PC <i class="fa fa-user"></i></i>
+</a>
                             
                         
                                
