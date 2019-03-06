@@ -198,7 +198,7 @@ $('#myCarousel').carousel({
             </ol>
             <div class="carousel-inner">
 
-                <div class="item active" style="background-image: url(images/slider/slide1.jpg)">
+                <div class="item active" style="background-image: url(images/slider/kevin-bhagat-461951-unsplash.jpg)">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-7">
@@ -235,7 +235,7 @@ $('#myCarousel').carousel({
                         </div>
                     </div>
                 </div>
-                <div class="item" style="background-image: url(images/slider/thomas-kolnowski-723280-unsplash.jpg)">
+                <div class="item" style="background-image: url(images/slider/ben-kolde-408308-unsplash.jpg)">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-7">
