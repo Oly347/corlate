@@ -68,19 +68,32 @@ $userReview = $obj_user->getReviewList();
     <link href="css/icomoon.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" href="images/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<!--/head-->
 
 <body class="homepage">
+
+<div id="preloader">
+  <div id="status"></div>
+</div>
+<script>
+$(window).on('load', function() { // makes sure the whole site is loaded 
+  $('#status').fadeOut(); // will first fade out the loading animation 
+  $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+  $('body').delay(350).css({'overflow':'visible'});
+})
+    </script>
 
     <header id="header">
          <div class="top-bar">
@@ -139,13 +152,13 @@ $userReview = $obj_user->getReviewList();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="150"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
                 </div>
 
-                <div class="collapse navbar-collapse navbar-right">
+                <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
                         <li><a href="services.php">Assemble PC</a></li>
                         <li><a href="smart_security_home.php">Smart Home security</a></li>
                         <li><a href="smart_home.php">Make your Home smart</a></li>
@@ -190,7 +203,7 @@ $('#myCarousel').carousel({
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Help Finding Information Online</h1>
+                                    <h1 class="animation animated-item-1">Smart Home <span class="edit_heading"> Security</span></h1>
                                     <div class="animation animated-item-2">
                                         Every new computer that’s brought home from the store has an operating system installed onto it.
                                     </div>
@@ -209,7 +222,7 @@ $('#myCarousel').carousel({
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Help Finding Information Online</h1>
+                                    <h1 class="animation animated-item-1">Custome<span class="edit_heading"> Assamble</span> your personal computer</h1>
                                     <div class="animation animated-item-2">
                                         Every new computer that’s brought home from the store has an operating system installed onto it.
                                     </div>
@@ -227,7 +240,7 @@ $('#myCarousel').carousel({
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Help Finding Information Online</h1>
+                                    <h1 class="animation animated-item-1">Make Your Home <span class="edit_heading">Smart</span></h1>
                                     <div class="animation animated-item-2">
                                         Every new computer that’s brought home from the store has an operating system installed onto it.
                                     </div>
@@ -297,10 +310,10 @@ $('#myCarousel').carousel({
                     <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <div class="icon">
-                                <i class="fa fa-arrows"></i>
+                            <i class="fa fa-edit"></i>
                             </div>
-                            <h2>Editable</h2>
-                            <p>A Pocket PC is a handheld computer, which features many</p>
+                            <h2>Customizable</h2>
+                            <p>You Can cuntome you pc here, with easy steps</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -316,7 +329,7 @@ $('#myCarousel').carousel({
     <section id="recent-works">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Recent Works</h2>
+                <h2>Our Smart Gedgets</h2>
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
 
@@ -410,11 +423,11 @@ $('#myCarousel').carousel({
                 <div class="col-sm-6 col-md-4">
                     <div class="media services-wrap fadeInDown">
                         <div class="pull-left">
-                            <img class="img-responsive" src="images/services/ux.svg">
+                            <img class="img-responsive" src="images/services/web-app.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">UI/UX Design</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Custome Assamble PC</h3>
+                            <p>You Can custome assamble your PC Easy & Affordable</p>
                         </div>
                     </div>
                 </div>
@@ -425,8 +438,8 @@ $('#myCarousel').carousel({
                             <img class="img-responsive" src="images/services/web.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Web Design</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Smart Home Configuration</h3>
+                            <p>Make your home smart & smartest With gedgets</p>
                         </div>
                     </div>
                 </div>
@@ -434,16 +447,16 @@ $('#myCarousel').carousel({
                 <div class="col-sm-6 col-md-4">
                     <div class="media services-wrap fadeInDown">
                         <div class="pull-left">
-                            <img class="img-responsive" src="images/services/motion.svg">
+                            <img class="img-responsive" src="images/services/ux.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Motion Graphics</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <h3 class="media-heading">Smart Security Configuration</h3>
+                            <p>Enable latest security configuration in your home</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-sm-6 col-md-4">
+                <!-- <div class="col-sm-6 col-md-4">
                     <div class="media services-wrap fadeInDown">
                         <div class="pull-left">
                             <img class="img-responsive" src="images/services/mobile-ui.svg">
@@ -477,73 +490,14 @@ $('#myCarousel').carousel({
                             <p>Hydroderm is the highly desired anti-aging cream on</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
             <!--/.row-->
         </div>
         <!--/.container-->
     </section>
-    <!--/#services-->
-
-    <section id="middle" class="skill-area" style="background-image: url(images/skill-bg.png)">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 fadeInDown">
-                    <div class="skill">
-                        <h2>Our Skills</h2>
-                        <p>All users on MySpace will know that there are millions of people out there. Every <br> day besides so many people joining this community.</p>
-                    </div>
-                </div>
-                <!--/.col-sm-6-->
-
-                <div class="col-sm-6">
-                    <div class="progress-wrap">
-                        <h3>Graphic Design</h3>
-                        <div class="progress">
-                            <div class="progress-bar  color1" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                                <span class="bar-width">85%</span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="progress-wrap">
-                        <h3>HTML</h3>
-                        <div class="progress">
-                            <div class="progress-bar color2" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                                <span class="bar-width">95%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="progress-wrap">
-                        <h3>CSS</h3>
-                        <div class="progress">
-                            <div class="progress-bar color3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                <span class="bar-width">80%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="progress-wrap">
-                        <h3>Wordpress</h3>
-                        <div class="progress">
-                            <div class="progress-bar color4" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                <span class="bar-width">90%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!--/.row-->
-        </div>
-        <!--/.container-->
-    </section>
-    <!--/#middle-->
+   
 
     <section id="content">
         <div class="container">
@@ -554,7 +508,7 @@ $('#myCarousel').carousel({
                             <div class="parrent pull-left">
                                 <ul class="nav nav-tabs nav-stacked">
                                     <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Responsive Web Design</a></li>
-                                    <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">Premium Plugin Included</a></li>
+                                    <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Premium Plugin Included</a></li>
                                     <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Predefine Layout</a></li>
                                     <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Our Philosopy</a></li>
                                     <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">What We Do?</a></li>
@@ -611,6 +565,8 @@ $('#myCarousel').carousel({
     </section>
     <!--/#content-->
 
+    
+
     <section id="testimonial">
         <div class="container">
             <div class="center fadeInDown">
@@ -650,25 +606,25 @@ $('#myCarousel').carousel({
         <div class="container">
             <div class="center fadeInDown">
                 <h2>Our Partners</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <p class="lead edit_p_partner" style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
 
             <div class="partners">
                 <ul>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/brand-1.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/400px-Dell_logo.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/brand-2.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/Amazon Alexa_0.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/brand-3.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/TPLINK.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/brand-4.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/Nvidia_logo.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/brand-5.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/58568d224f6ae202fedf2720.png"></a>
                     </li>
                 </ul>
             </div>
@@ -683,7 +639,7 @@ $('#myCarousel').carousel({
             <div class="row">
                 <div class="col-md-2">
                     <a href="#" class="footer-logo">
-                        <img src="images/logo-black.png" alt="logo">
+                        <img src="images/tech_logo_dark.jpg" alt="logo" width="100">
                     </a>
                 </div>
                 <div class="col-md-10">
@@ -764,7 +720,8 @@ $('#myCarousel').carousel({
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2013 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                    &copy; 2019 <a  href="#" title="Free Twitter Bootstrap WordPress Themes and HTML templates"><b>Tilottama.Tech</b></a> All Rights Reserved
+                    | Developed By <a  href="#" title="Free Twitter Bootstrap WordPress Themes and HTML templates"><i>Tilottama.Online</i></a>
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

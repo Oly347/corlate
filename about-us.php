@@ -1,3 +1,52 @@
+<?php
+include ('admin/system/database.php');
+include ('admin/employee.cls.php');
+
+
+$obj_emp = new employee_inc ;
+
+session_start();
+if (!isset($_SESSION['user']))
+{
+ if(!isset($_SESSION['temp_user']))
+ {
+   $obj_emp = new employee_inc ;
+
+  $insert_array=  array(
+    'login_time' => date('Y-m-d'),
+   );
+    
+
+$insert= $obj_emp->InsertIntotempUser($insert_array);
+
+
+$_SESSION['temp_user'] = $insert;
+$_SESSION['userName']= "Guest";
+
+
+
+
+
+
+
+}
+}
+
+
+$obj_user = new user_inc ;
+
+$userReview = $obj_user->getReviewList();
+
+// print_r($userReview);
+// exit;
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,11 +66,13 @@
     <link href="css/icomoon.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -32,16 +83,16 @@
 
 <body>
 
-    <header id="header">
-        <div class="top-bar">
+<header id="header">
+         <div class="top-bar">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-xs-12">
+                    <div class="col-sm-4 col-xs-12">
                         <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p>
+                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xs-12">
+                    <div class="col-sm-4 col-xs-12">
                         <div class="social">
                             <ul class="social-share">
                                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -49,18 +100,35 @@
                                 <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                                 <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                <!-- <li><a class="btn-slide animation animated-item-3" href="#">Learn More</a><li> -->
                             </ul>
                             <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                                    <i class="fa fa-search"></i>
-                                </form>
+                            <!-- <a href="#" class="btn btn-primary  active" role="button" aria-pressed="true">Primary link</a> -->
                             </div>
                         </div>
                     </div>
+                    <div class="col-sm-4 col-xs-12" >
+
+                    <div class="top-number " style="float:right">
+
+
+                        <?php
+                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+                            echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
+                            
+                        } else {
+                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
+                            
+                        }
+                        ?>
+                        <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
+                        </div>
+                        
+                    </div>
+
                 </div>
             </div>
-            <!--/.container-->
+            
         </div>
         <!--/.top-bar-->
 
@@ -73,31 +141,26 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
                 </div>
 
-                <div class="collapse navbar-collapse navbar-right">
+                <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><a href="about-us.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact-us.html">Contact</a></li>
+                        <li ><a href="index.php">Home</a></li>
+                        <li class="active"><a href="about-us.php">About Us</a></li>
+                        <li><a href="services.php">Assemble PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home security</a></li>
+                        <li><a href="smart_home.php">Make your Home smart</a></li>
+                        
+                        <li><a href="contact-us.php">Contact</a></li>
+                       
                     </ul>
                 </div>
             </div>
             <!--/.container-->
         </nav>
         <!--/nav-->
+
     </header>
     <!--/header-->
     
@@ -124,63 +187,44 @@
     </section>
 
 
-    <section id="middle" class="skill-area" style="background-image: url(images/skill-bg.png)">
+
+
+    <section id="about-us">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 fadeInDown">
-                    <div class="skill">
-                        <h2>Our Skills</h2>
-                        <p>All users on MySpace will know that there are millions of people out there. Every <br> day besides so many people joining this community.</p>
+            <div class="col-md-5">
+                    <div class="about-content">
+                        <h2>What we are</h2>
+                        <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
                     </div>
                 </div>
-                <!--/.col-sm-6-->
-
-                <div class="col-sm-6">
-                    <div class="progress-wrap">
-                        <h3>Graphic Design</h3>
-                        <div class="progress">
-                            <div class="progress-bar  color1" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                                <span class="bar-width">85%</span>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="progress-wrap">
-                        <h3>HTML</h3>
-                        <div class="progress">
-                            <div class="progress-bar color2" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                                <span class="bar-width">95%</span>
-                            </div>
-                        </div>
+                <div class="col-md-7">
+                    <div class="about-img">
+                        <img src="images/about-img.png" alt="">
                     </div>
                 </div>
-
-                <div class="col-sm-6">
-                    <div class="progress-wrap">
-                        <h3>CSS</h3>
-                        <div class="progress">
-                            <div class="progress-bar color3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                <span class="bar-width">80%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="progress-wrap">
-                        <h3>Wordpress</h3>
-                        <div class="progress">
-                            <div class="progress-bar color4" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                <span class="bar-width">90%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
-            <!--/.row-->
         </div>
-        <!--/.container-->
     </section>
+
+    <section id="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="about-img">
+                        <img src="images/about-img.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="about-content">
+                        <h2>Why we are</h2>
+                        <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!--/#middle-->
     
     <section id="team-area">
@@ -190,7 +234,7 @@
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 single-team">
+                <!-- <div class="col-md-4 col-sm-6 single-team">
                     <div class="inner">
                         <div class="team-img">
                             <img src="images/team1.png" alt="">
@@ -206,8 +250,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 single-team">
+                </div> -->
+                <!-- <div class="col-md-4 col-sm-6 single-team">
                     <div class="inner">
                         <div class="team-img">
                             <img src="images/team2.png" alt="">
@@ -223,8 +267,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 single-team">
+                </div> -->
+                <!-- <div class="col-md-4 col-sm-6 single-team">
                     <div class="inner">
                         <div class="team-img">
                             <img src="images/team3.png" alt="">
@@ -240,20 +284,20 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-md-4 col-sm-6 single-team">
                     <div class="inner">
                         <div class="team-img">
-                            <img src="images/team4.png" alt="">
+                            <img src="images/team5.png" alt="">
                         </div>
                         <div class="team-content">
-                            <h4>Edwin Gross</h4>
-                            <span class="desg">UI/UX Designer</span>
+                            <h4>Custome PC Assamble</h4>
+                            <span class="desg">Buy PC & Accessories  </span>
                             <div class="team-social">
-                                <a class="fa fa-facebook" href="#"></a>
-                                <a class="fa fa-twitter" href="#"></a>
-                                <a class="fa fa-linkedin" href="#"></a>
-                                <a class="fa fa-pinterest" href="#"></a>
+                                <a class="fa fa-shopping-cart" href="#"></a>
+                                <a class="fa fa-plus" href="#"></a>
+                                <a class="fa fa-phone" href="#"></a>
+                                
                             </div>
                         </div>
                     </div>
@@ -261,16 +305,15 @@
                 <div class="col-md-4 col-sm-6 single-team">
                     <div class="inner">
                         <div class="team-img">
-                            <img src="images/team5.png" alt="">
+                            <img src="images/team1.jpg" alt="">
                         </div>
                         <div class="team-content">
-                            <h4>Mable Schwartz</h4>
-                            <span class="desg">UI/UX Designer</span>
+                            <h4>Your Smart Home</h4>
+                            <span class="desg">Smart Home Configuration</span>
                             <div class="team-social">
-                                <a class="fa fa-facebook" href="#"></a>
-                                <a class="fa fa-twitter" href="#"></a>
-                                <a class="fa fa-linkedin" href="#"></a>
-                                <a class="fa fa-pinterest" href="#"></a>
+                            <a class="fa fa-shopping-cart" href="#"></a>
+                                <a class="fa fa-plus" href="#"></a>
+                                <a class="fa fa-phone" href="#"></a>
                             </div>
                         </div>
                     </div>
@@ -281,13 +324,12 @@
                             <img src="images/team6.png" alt="">
                         </div>
                         <div class="team-content">
-                            <h4>Adele Washington</h4>
-                            <span class="desg">UI/UX Designer</span>
+                            <h4>Smart Home security</h4>
+                            <span class="desg">Install Home Security</span>
                             <div class="team-social">
-                                <a class="fa fa-facebook" href="#"></a>
-                                <a class="fa fa-twitter" href="#"></a>
-                                <a class="fa fa-linkedin" href="#"></a>
-                                <a class="fa fa-pinterest" href="#"></a>
+                            <a class="fa fa-shopping-cart" href="#"></a>
+                                <a class="fa fa-plus" href="#"></a>
+                                <a class="fa fa-phone" href="#"></a>
                             </div>
                         </div>
                     </div>

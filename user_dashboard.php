@@ -24,9 +24,27 @@ $userCartItem = $obj_comp->getUserCartItem($_SESSION['userName']);
 
 
 
-// print_r($userCartItem);
+foreach ($userDetailsById as $key => $value) {
+    $name=$value['name'];
+    $phone_number=$value['phone_number'];
+    $address=$value['address'];
+    $profile_pic=$value['profile_pic'];
+    $email_id=$value['email_id'];
+    $id=$value['id'];
 
-// exit;
+    
+  
+}
+
+
+
+// echo "$name" ;
+
+// echo "$phone_number" ;
+
+// echo "$address"
+
+
 
 
 ?>
@@ -54,12 +72,14 @@ $userCartItem = $obj_comp->getUserCartItem($_SESSION['userName']);
     <link href="css/responsive.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/Google-Style-Login.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+    <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -77,13 +97,13 @@ overflow-x: hidden;
 
 <body>
 
-    <header id="header">
-    <div class="top-bar">
+<header id="header">
+         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4 col-xs-12">
                         <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p>
+                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-12">
@@ -102,16 +122,28 @@ overflow-x: hidden;
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-12" >
-                        <div class="top-number " style="float:right">
+                        <div class="top-number" >
 
 
-                        <?php
-                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-info   active" role="button" aria-pressed="true">Logout</a>';
-                        } else {
-                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
-                        }
-                        ?>
+                        
+
+                   
+                            <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Account
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                            <li>&nbsp; &nbsp;<img src ="admin/upload/<?php echo $profile_pic ?>" height=50px width=50px  style=" border-radius: 50%; border: 1px solid black; padding:1px"/> </li>
+                            <li><a href="#"><?php echo $_SESSION['userName']; ?></a></li>
+
+                            
+                            
+                            <li><a href="logout.php">logout.php</a></li>
+                            </ul>
+                            </div>
+                        
+
+
+                        
                         <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
                         </div>
                     </div>
@@ -121,6 +153,7 @@ overflow-x: hidden;
             
         </div>
         <!--/.top-bar-->
+
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -130,25 +163,34 @@ overflow-x: hidden;
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="160"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
                 </div>
-                
-                <div class="collapse navbar-collapse navbar-right">
+
+                <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
-                    
-                    <li ><a href="index.php">Home</a></li>
+                        <li ><a href="index.php">Home</a></li>
                         <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#">Assemble PC</a></li>
-                        <li ><a href="smart_home_security.php">Smart Home security</a></li>
-                        <li><a href="#">Make your Home smart</a></li>
-                        <li><a href="#">Contact</a></li>
-                        
-                    </ul>                      
-                    
+                        <li ><a href="services.php">Assemble PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home security</a></li>
+                        <li><a href="smart_home.php">Make your Home smart</a></li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-item.html">Blog Single</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="404.html">404</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                        <li><a href="contact-us.php">Contact</a></li>
+                       
+                    </ul>
                 </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
-        
+            </div>
+            <!--/.container-->
+        </nav>
+        <!--/nav-->
+
     </header><!--/header-->
 
 
@@ -179,29 +221,22 @@ overflow-x: hidden;
                                     <div class="tab-pane fade" id="tab4">
                                         <div class="media">
                                             
-                                            <?php
-
-                                            foreach ($userDetailsById as  $user_details_by_id) {
-                                                            
-                                            ?>
+                                            
                                             <div class="media-body">
-                                            <h1><img src ="admin/upload/<?php echo $user_details_by_id['profile_pic'];?>" height=100px width=80px /> </h1>
-                                            <h2 style="display:none">Name:<?php echo $user_details_by_id['id'];?> </h2>
-                                                <h2>Name:<?php echo $user_details_by_id['name'];?> </h2>
-                                                <p>address:<?php echo $user_details_by_id['address'];?> </p>
-                                                <p>Phone Number:<?php echo $user_details_by_id['phone_number'];?> </p>
-                                                <p>EmailID:<?php echo $user_details_by_id['email_id'];?> </p>
+                                            <h1><img src ="admin/upload/<?php echo $profile_pic ?>" height=100px width=80px /> </h1>
+                                            <h2 style="display:none">Name:<?php echo $id ?> </h2>
+                                                <h2>Name:<?php echo $name ?> </h2>
+                                                <p>address:<?php echo $address ?> </p>
+                                                <p>Phone Number:<?php echo $phone_number ?> </p>
+                                                <p>EmailID:<?php echo $email_id ?> </p>
                                                 <a class="btn btn-success" href="customer_review.php" role="button">Write a Review</a>
-                                                <a class="btn btn-info" href="upload_profile.php?id=<?php echo $user_details_by_id['id'];?>" role="button">Profile Update</a>
+                                                <a class="btn btn-info" href="upload_profile.php?id=<?php echo $id ?>" role="button">Profile Update</a>
 
-                                                <a class="btn btn-success" href="change_password.php?id=<?php echo $user_details_by_id['id'];?>" role="button">Password Change</a>
+                                                <a class="btn btn-success" href="change_password.php?id=<?php echo $id ?>" role="button">Password Change</a>
                                             </div>
 
 
-                                            <?php
-                                            }
-
-                                            ?>
+                                            
                                         </div>
                                     </div>
 

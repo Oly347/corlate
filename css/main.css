@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
 
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+
 /*************************
 *******Typography******
 **************************/
@@ -11,8 +13,8 @@ body {
     line-height: 22px;
 }
 
-h1,
-h2,
+
+
 h3,
 h4,
 h5,
@@ -24,11 +26,12 @@ h6 {
 
 h1 {
     font-size: 36px;
-/*    color: #fff;*/
+font-family: 'Orbitron';
 }
 
 h2 {
     font-size: 20px;
+    font-family: 'Orbitron';
 }
 
 h3 {
@@ -47,14 +50,14 @@ h4 {
 }
 
 a {
-    color: #EC5538;
+    color: #95d819;
     -webkit-transition: color 300ms, background-color 300ms;
     transition: color 300ms, background-color 300ms;
 }
 
 a:hover,
 a:focus {
-    color: #EC5538;
+    color: #95d819;
 }
 
 hr {
@@ -64,7 +67,7 @@ hr {
 
 .btn-primary {
     padding: 8px 20px;
-    background: #EC5538;
+    background: #95d819;
     color: #fff;
     border-radius: 4px;
     border: none;
@@ -73,7 +76,7 @@ hr {
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background: #EC5538;
+    background: #95d819;
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -251,7 +254,7 @@ ul.social-share li a {
 }
 
 ul.social-share li a:hover {
-    background: #EC5538;
+    background: #95d819;
     color: #fff;
 }
 
@@ -306,15 +309,18 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav>li>a {
     padding: 5px 12px;
     margin: 0;
+    font-size: 15px;
     border-radius: 3px;
     color: #fff;
     line-height: 24px;
-    display: inline-block;
-    font-weight: 900;
+    /* display: inline-block; */
+    font-weight: bold;
+    /* text-transform: uppercase; */
+    /* font-family: 'Orbitron'; */
 }
 
 .navbar-inverse .navbar-nav>li>a:hover {
-    background-color: #EC5538;
+    background-color: #95d819;
     color: #fff;
 }
 
@@ -334,7 +340,7 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav>.open>a,
 .navbar-inverse .navbar-nav>.open>a:hover,
 .navbar-inverse .navbar-nav>.open>a:focus {
-    background-color: #EC5538;
+    background-color:#95d819;
     color: #fff;
 }
 
@@ -374,7 +380,7 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav .dropdown-menu>li.active>a,
 .navbar-inverse .navbar-nav .dropdown-menu>li.login>a
  {
-    background-color: #EC5538;
+    background-color: #95d819;
     color: #fff;
 }
 
@@ -422,19 +428,25 @@ input.search-form:hover {
     font-weight: 700;
     margin: 0 0 20px;
     color: #fff;
+    font-family: 'Orbitron';
 }
 
+
+.edit_heading{
+color:  #95d819;
+
+}
 #main-slider .carousel .btn-slide {
     padding: 0 30px;
     line-height: 42px;
-    background: #EC5538;
+    background: #95d819;
     color: #fff;
     border-radius: 4px;
     margin-top: 40px;
     display: inline-block;
     font-size: 14px;
     margin-right: 10px;
-    border: 1px solid #EC5538;
+    border: 1px solid #95d819;
 }
 
 #main-slider .carousel .btn-slide.white {
@@ -489,7 +501,7 @@ input.search-form:hover {
 #main-slider .next {
     position: absolute;
     top: 50%;
-    background-color: #EC5538;
+    background-color: #95d819;
     color: #fff;
     display: inline-block;
     margin-top: -25px;
@@ -532,8 +544,8 @@ input.search-form:hover {
 }
 
 #main-slider .carousel-indicators li.active {
-    background-color: #EC5538;
-    border: 1px solid #EC5538
+    background-color: #95d819;
+    border: 1px solid #95d819
 }
 
 #main-slider .active .animation.animated-item-1 {
@@ -580,8 +592,8 @@ input.search-form:hover {
 
 .features .feature-wrap:hover .icon {
     color: #ffffff;
-    border: 1px solid #EC5538;
-    background-color: #EC5538;
+    border: 1px solid #95d819;
+    background-color: #95d819;
 }
 
 .features .feature-wrap h2 {
@@ -659,7 +671,7 @@ input.search-form:hover {
     color: #fff;
     height: 50px;
     width: 50px;
-    background-color: #EC5538;
+    background-color: #95d819;
     border-radius: 50%;
     display: inline-block;
     line-height: 50px;
@@ -912,12 +924,12 @@ a.accordion-toggle i {
 }
 
 .panel-heading.active a.accordion-toggle i {
-    background: #EC5538;
+    background: #95d819;
     color: #fff;
 }
 
 .panel-heading.active a.accordion-toggle.collapsed i {
-    background: #EC5538;
+    background: #95d819;
     color: #fff;
 }
 
@@ -929,7 +941,7 @@ a.accordion-toggle i {
 #content .nav-tabs>li.active>a,
 #content .nav-tabs>li.active>a:hover,
 #content .nav-tabs>li.active>a:focus {
-    color: #EC5538;
+    color: #95d819;
     background-color: #F9FAFB;
     border: 1px solid #E9EFF4;
     font-weight: 500;
@@ -950,7 +962,7 @@ a.accordion-toggle i {
     position: absolute;
     width: 80px;
     height: 80px;
-    background-color: #EC5538;
+    background-color: #95d819;
     top: 50%;
     left: 50%;
     color: #fff;
@@ -1016,7 +1028,10 @@ a.accordion-toggle i {
     padding-right: 15px;
     position: relative;
 }
+.edit_imgs{
 
+padding: 20px;
+}
 .testimonial-inner .pull-left:after {
     content: "";
     position: absolute;
@@ -1033,9 +1048,10 @@ a.accordion-toggle i {
 }
 
 #partner {
-    background-image: url(../images/partner-bg.png);
+    background-image: url(../images/kevin-bhagat-461951-unsplash.jpg);
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
 }
 
 #partner {
@@ -1045,9 +1061,14 @@ a.accordion-toggle i {
 
 #partner h2,
 #partner h3 {
-    color: #fff;
+    color: black;
+	font-family: Ubuntu; 
 }
+.edit_p_partner{
+    color: black;
+	font-family: Ubuntu; 
 
+}
 .partners ul li a img{
     margin: 0 auto;
 }
@@ -1173,10 +1194,10 @@ width:100% !important ;
     display: inline-block;
     margin: 0 5px;
     border-radius: 50%;
-    border: 1px solid #EC5538;
+    border: 1px solid #95d819;
 }
 .testimonial-slider .owl-dot.active{
-    background-color: #EC5538;
+    background-color: #95d819;
 }
 
 /*************************
@@ -1250,7 +1271,7 @@ width:100% !important ;
 }
 
 .single-team .team-social a:hover{
-    color: #EC5538;
+    color: #95d819;
 }
 
 
@@ -1291,7 +1312,7 @@ width:100% !important ;
 }
 
 .request h4 a {
-    background: #EC5538;
+    background: #95d819;
     color: #fff;
     font-size: 14px;
     font-weight: normal;
@@ -1300,7 +1321,7 @@ width:100% !important ;
 }
 
 .request h4:after {
-    border-color: #EC5538 transparent transparent;
+    border-color: #95d819 transparent transparent;
     border-style: solid;
     border-width: 12px;
     bottom: -18px;
@@ -1312,7 +1333,7 @@ width:100% !important ;
 }
 
 .request h4:before {
-    border-color: #EC5538 transparent transparent;
+    border-color: #95d819 transparent transparent;
     border-style: solid;
     border-width: 12px;
     bottom: -18px;
@@ -1364,7 +1385,7 @@ width:100% !important ;
 
 .footer {
     background: none repeat scroll 0 0 #2E2E2E;
-    border-top: 5px solid #EC5538;
+    border-top: 5px solid #95d819;
     height: 84px;
     margin-top: 110px;
 }
@@ -1418,8 +1439,8 @@ width:100% !important ;
 .portfolio-filter>li a:hover,
 .portfolio-filter>li a.active {
     color: #fff;
-    background: #EC5538;
-    border: 1px solid #EC5538;
+    background: #95d819;
+    border: 1px solid #95d819;
     box-shadow: none;
     -webkit-box-shadow: none;
 }
@@ -1575,7 +1596,7 @@ section.pricing{
 }
 
 .single-pricing.featured a{
-    background-color: #EC5538;
+    background-color: #95d819;
     color: #fff;
 }
 
@@ -1708,12 +1729,12 @@ aside .widget {
 }
 
 .blog_category li a:hover {
-    background: #EC5538;
+    background: #95d819;
     color: #fff;
 }
 
 .badge:before {
-    border-color: transparent transparent transparent #EC5538;
+    border-color: transparent transparent transparent #95d819;
     border-style: solid;
     border-width: 10px;
     bottom: -8px;
@@ -1725,7 +1746,7 @@ aside .widget {
 }
 
 .badge {
-    background-color: #EC5538;
+    background-color: #95d819;
     border-radius: 5px;
     color: #fff;
     padding: 8px;
@@ -1907,7 +1928,7 @@ ul.faq li>div h3 {
 }
 
 .publish_date {
-    background: #EC5538;
+    background: #95d819;
     border-bottom: 5px solid #4e4e4e;
     color: #fff;
     padding: 5px 0;
@@ -1950,7 +1971,7 @@ ul.pagination>li>a i {
 
 ul.pagination>li.active>a,
 ul.pagination>li:hover>a {
-    background-color: #EC5538 ;
+    background-color: #95d819 ;
     color: #fff;
 }
 
@@ -1965,7 +1986,7 @@ ul.pagination>li:last-child > a{
 ul.pagination>li:first-child > a:hover, 
 ul.pagination>li:last-child > a:hover{
     background-color: transparent;
-    color: #EC5538;
+    color: #95d819;
 }
 
 
@@ -2001,7 +2022,7 @@ ul.pagination>li:last-child > a{
     background-color: transparent;
 }
 .widget.search form button i{
-    color: #EC5538;
+    color: #95d819;
 }
 
 .search_box {
@@ -2042,7 +2063,7 @@ ul.sidebar-gallery {
 }
 
 .tag-cloud li a:hover {
-    background: #EC5538;
+    background: #95d819;
     color: #fff;
 }
 
@@ -2097,7 +2118,7 @@ ul.sidebar-gallery{
 }
 
 .widget.social_icon a:hover{
-    background-color: #EC5538;
+    background-color: #95d819;
     color: #fff;
 }
 
@@ -2117,7 +2138,7 @@ ul.sidebar-gallery{
     color: #989898;
 }
 .post-meta p i{
-    color: #EC5538;
+    color: #95d819;
 }
 .post-meta p a{
     color: #989898;
@@ -2125,7 +2146,7 @@ ul.sidebar-gallery{
     transition: .4s;
 }
 .post-meta p a:hover{
-    color: #EC5538;
+    color: #95d819;
 }
 .post-meta p a.fa{
     padding: 0 6px;
@@ -2156,7 +2177,7 @@ ul.sidebar-gallery{
 }
 
 .inner-meta .social-btns a{
-    background-color: #EC5538;
+    background-color: #95d819;
     color: #fff;
     display: inline-block;
     line-height: 30px;
@@ -2238,7 +2259,7 @@ ul.sidebar-gallery{
 }
 
 .comment-count a:last-child i{
-    color: #EC5538;
+    color: #95d819;
 }
 
 .comments .single-comment .comment-content h5{
@@ -2271,7 +2292,7 @@ ul.sidebar-gallery{
     border: none;
     line-height: 42px;
     padding: 0 35px;
-    background-color: #EC5538;
+    background-color: #95d819;
     border-radius: 3px;
     margin-left: auto;
     margin-top: 15px;
@@ -2354,7 +2375,7 @@ shortcodes page css
 }
 #bottom {
     background: #f5f5f5;
-    border-bottom: 5px solid #EC5538;
+    border-bottom: 5px solid #95d819;
     font-size: 14px;
 }
 
@@ -2384,7 +2405,7 @@ shortcodes page css
 }
 
 #bottom ul li a:hover {
-    color: #EC5538;
+    color: #95d819;
 }
 
 #bottom .widget {
@@ -2405,7 +2426,7 @@ shortcodes page css
 }
 
 #footer a:hover {
-    color: #EC5538;
+    color: #95d819;
 }
 
 #footer ul {
@@ -2617,4 +2638,30 @@ width: 100% !important;
   }
 
 
+  #preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    /* change if the mask should have another color then white */
+    z-index: 99;
+    /* makes sure it stays on top */
+  }
   
+  #status {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    /* centers the loading animation horizontally one the screen */
+    top: 50%;
+    /* centers the loading animation vertically one the screen */
+    background-image: url("../images/plug_that_shit_in.gif");
+    /* path to your loading animation */
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: -100px 0 0 -100px;
+    /* is width and height divided by two */
+  }

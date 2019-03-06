@@ -65,7 +65,7 @@ foreach ($rowProductSoundCard as $key => $value) {
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -76,13 +76,13 @@ foreach ($rowProductSoundCard as $key => $value) {
 
 <body>
 
-    <header id="header">
-    <div class="top-bar">
+<header id="header">
+         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4 col-xs-12">
                         <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p>
+                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-12">
@@ -106,9 +106,12 @@ foreach ($rowProductSoundCard as $key => $value) {
 
                         <?php
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-info   active" role="button" aria-pressed="true">Logout</a>';
+                            echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
+                            echo   $_SESSION['userName'];
+                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Dash Board</a>';
                         } else {
                             echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
+                            
                         }
                         ?>
                         <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
@@ -120,6 +123,7 @@ foreach ($rowProductSoundCard as $key => $value) {
             
         </div>
         <!--/.top-bar-->
+
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -129,30 +133,39 @@ foreach ($rowProductSoundCard as $key => $value) {
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="160"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
                 </div>
-                
-                <div class="collapse navbar-collapse navbar-right">
+
+                <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
-                    <ul class="nav navbar-nav">
-                    <li ><a href="index.php">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#">Assemble PC</a></li>
-                        <li ><a href="smart_home_security.php">Smart Home security</a></li>
-                        <li><a href="#">Make your Home smart</a></li>
-                        <li><a href="#">Contact</a></li>
-                        
-                    </ul>                      
+                        <li ><a href="index.php">Home</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
+                        <li><a href="services.php">Assemble PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home security</a></li>
+                        <li><a href="smart_home.php">Make your Home smart</a></li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-item.html">Blog Single</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="404.html">404</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                        <li><a href="contact-us.php">Contact</a></li>
+                       
                     </ul>
                 </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
-        
+            </div>
+            <!--/.container-->
+        </nav>
+        <!--/nav-->
+
     </header><!--/header-->
 
 
     <div class="page-title" style="background-image: url(images/page-title.png)">
-        <h1>Monitor Buy</h1>
+        <h1>Sound Card Buy</h1>
     </div>
     
     <section class="pricing">
@@ -166,21 +179,21 @@ foreach ($rowProductSoundCard as $key => $value) {
                                             
                                         </div>
                         <div class="form-group">
-                            <label>Monitor Name</label>
+                            <label> Name</label>
             <input type="text" name="component_name" id="component_name" class="form-control" value="<?php echo $component_name; ?>" readonly>
             
                             
                         </div>
                         
                         <div class="form-group">
-                            <label>Monitor Details</label>
+                            <label>Details</label>
                             <input type="text" name="component_details" class="form-control" value="<?php echo $component_details; ?>" readonly>
                             
                         </div>
 
 
                         <div class="form-group">
-                            <label>Monitor Price</label>
+                            <label> Price</label>
                             <input type="text" name="component_price" class="form-control" value="<?php echo $component_price; ?>" readonly>
                             
                         </div>
@@ -197,7 +210,7 @@ foreach ($rowProductSoundCard as $key => $value) {
                      <?php
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
                             echo '<button type="submit" class="btn btn-success btn-outline" >
-                            Buy <i class="fa fa-sign-in"></i>
+                            Next <i class="fa fa-sign-in"></i>
                             </button>';
                             
                         } else {
