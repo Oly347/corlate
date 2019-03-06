@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 05, 2019 at 02:43 PM
+-- Generation Time: Mar 06, 2019 at 02:45 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 5.6.40
 
@@ -98,27 +98,21 @@ CREATE TABLE `cart_item` (
 INSERT INTO `cart_item` (`id`, `username`, `txn_id`, `details`, `product_no`, `product_price`) VALUES
 (17, 'kabir@gmail.com', 'TS20190227ADF6', 'AMD Ryzen 5 2600  =>17253.00  ,   NZXT H500i (Black)  =>20624.00  ,   Corsair CX550M  =>9586.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC20190227ADF6', 259150.00),
 (26, 'hasan@gmail.com', 'TS2019030154C3', 'Asus VP228H=>1920 x 1080	21.5', '1', 8645.00),
-(38, 'hassanoly7444@gmail.com', 'TS20190302D3AC', 'Intel Core i7-8700K  =>44500.00  ,   NZXT H500i (Black)  =>20624.00  ,   EVGA SuperNOVA 750  =>15835.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC20190302D3AC', 292646.00),
 (39, 'hassanoly7444@gmail.com', 'TS201903025ED3', 'Seagate 250 GB Barracuda=>SATA Internal Solid State Drive', '1', 4193.00),
-(40, 'hassanoly7444@gmail.com', 'TS20190302EB42', 'HT Omega eClaro=>C-Media CMI8788', '2', 28270.00),
 (41, 'hassanoly7444@gmail.com', 'TS20190302C785', 'TP-Link Archer T6E AC1300=>PCI-Express x1-802.11a/b/g/n/ac', '2', 3299.00),
-(42, 'hassanoly7444@gmail.com', 'TS2019030272AF', 'Asus Internal DVD Writer=>DRW-24D5MT-DDR3 SDRAM', '3', 999.00),
 (43, 'hassanoly7444@gmail.com', 'TS201903021622', 'Asus VP228H=>1920 x 1080	21.5', '1', 8645.00),
-(44, 'hassanoly7444@gmail.com', 'TS20190302F1FF', 'Dell USB Wired Keyboard & Mouse =>item model number-KB212-B', '3', 869.00),
-(45, 'hassanoly7444@gmail.com', 'TS201903028336', 'Corsair VOID PRO RGB (Black)=>Circumaural-Yes(microphone)-Yes(wireless)	', '1', 11308.00),
-(46, 'hassanoly7444@gmail.com', 'TS20190302EFE4', 'Creative Labs Sound BlasterX Katana=>2.1(Configuration)	500 W	35 Hz - 20 kHz	', '2', 32000.00),
-(47, 'hassanoly7444@gmail.com', 'TS201903044B3B', 'Intel Core i7-8700K  =>44500.00  ,   NZXT H500i (Black)  =>20624.00  ,   EVGA SuperNOVA 750  =>15835.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC201903044B3B', 292646.00),
 (48, 'hassanoly7444@gmail.com', 'TS2019030410E6', 'AMD Ryzen 5 2600  =>17250.00  ,   NZXT H500i (Black)  =>20624.00  ,   Corsair CX550M  =>9586.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC2019030410E6', 259147.00),
-(49, 'hassanoly7444@gmail.com', 'TS201903058E05', 'AMD Ryzen 5 2600  =>17250.00  ,   NZXT H500 (Black)  =>16849.00  ,   Corsair CX550M  =>9586.00  ,   Asus Prime Z370-A  =>22100.00  ,   Seagate - Barracuda   =>5790.00  ,   G.Skill Trident Z RGB  =>15098.00  ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING  =>168699.00  ', 'C-PC201903058E05', 255372.00),
-(50, 'hassanoly7444@gmail.com', 'TS20190305B760', '=>,   =>,   =>,   =>,   =>,   =>,   =>', 'C-PC20190305B760', 259147.00),
-(51, 'hassanoly7444@gmail.com', 'TS20190305F641', 'AMD Threadripper 2990WX =>173000.00 ,   NZXT H500 (Black) =>16849.00 ,   EVGA SuperNOVA 750 =>15835.00 ,   MSI B450 TOMAHAWK =>11299.00 ,   Western Digital WD10EZEX =>3289.00 ,   Corsair Vengeance LPX =>11500.00 ,   MSI RX 580 ARMOR 8G OC =>7899.00 ', 'C-PC20190305F641', 239671.00),
 (52, 'hassanoly7444@gmail.com', 'TS201903056AB2', 'AMD Threadripper 2990WX =>173000.00 ,   NZXT H500i (Black) =>20624.00 ,   Corsair CX550M =>9586.00 ,   Asus Prime Z370-A =>22100.00 ,   Seagate - Barracuda  =>5790.00 ,   G.Skill Trident Z RGB =>15098.00 ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING =>168699.00 ', 'C-PC201903056AB2', 414897.00),
-(53, 'hassanoly7444@gmail.com', 'TS20190305D1A7', 'AMD Ryzen 5 2600 =>17250.00 ,   NZXT H500i (Black) =>20624.00 ,   Corsair CX550M =>9586.00 ,   Asus Prime Z370-A =>22100.00 ,   Seagate - Barracuda  =>5790.00 ,   G.Skill Trident Z RGB =>15098.00 ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING =>168699.00 ', 'C-PC20190305D1A7', 259147.00),
-(54, 'hassanoly7444@gmail.com', 'TS20190305F5FF', 'no =>0.00 ,   NZXT H500i (Black) =>20624.00 ,   Corsair CX550M =>9586.00 ,   Asus Prime Z370-A =>22100.00 ,   Seagate - Barracuda  =>5790.00 ,   G.Skill Trident Z RGB =>15098.00 ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING =>168699.00 ', 'C-PC20190305F5FF', 241897.00),
-(55, 'hassanoly7444@gmail.com', 'TS2019030585C6', 'no =>0.00 ,   NZXT H500i (Black) =>20624.00 ,   Corsair CX550M =>9586.00 ,   Asus Prime Z370-A =>22100.00 ,   Seagate - Barracuda  =>5790.00 ,   G.Skill Trident Z RGB =>15098.00 ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING =>168699.00 ', 'C-PC2019030585C6', 241897.00),
 (56, 'hassanoly7444@gmail.com', 'TS20190305C64D', 'AMD Ryzen 5 2600 =>17250.00 ,   NZXT H500 (Black) =>16849.00 ,   EVGA SuperNOVA 750 =>15835.00 ,   MSI B450 TOMAHAWK =>11299.00 ,   Western Digital WD10EZEX =>3289.00 ,   G.Skill Trident Z RGB =>15098.00 ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING =>168699.00 ', 'C-PC20190305C64D', 248319.00),
-(57, 'hassanoly7444@gmail.com', 'TS201903056968', 'AMD Ryzen 5 2600 =>17250.00 ,   NZXT H500 (Black) =>16849.00 ,   EVGA SuperNOVA 750 =>15835.00 ,   Asus Prime Z370-A =>22100.00 ,   Western Digital WD10EZEX =>3289.00 ,   Corsair Vengeance LPX =>11500.00 ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING =>168699.00 ', 'C-PC201903056968', 255522.00),
-(58, 'hassanoly7444@gmail.com', 'TS20190305184B', 'AMD Ryzen 5 2600 =>17250.00 ,   NZXT H500 (Black) =>16849.00 ,   EVGA SuperNOVA 750 =>15835.00 ,   Asus Prime Z370-A =>22100.00 ,   Western Digital WD10EZEX =>3289.00 ,   Corsair Vengeance LPX =>11500.00 ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING =>168699.00 ', 'C-PC20190305184B', 255522.00);
+(59, 'hassanoly7444@gmail.com', 'TS201903065330', 'Western Digital WDS240G2G0A 240GB SATA =>6GB/s 2.5 7mm Internal SSD', '2', 2993.00),
+(60, 'hassanoly7444@gmail.com', 'TS201903064E13', 'AMD Ryzen 5 2600 =>17250.00 ,   NZXT H500i (Black) =>20624.00 ,   Corsair CX550M =>9586.00 ,   Asus Prime Z370-A =>22100.00 ,   Seagate - Barracuda  =>5790.00 ,   G.Skill Trident Z RGB =>15098.00 ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING =>168699.00 ', 'C-PC201903064E13', 259147.00),
+(61, 'hassanoly7444@gmail.com', 'TS20190306E674', 'AMD Ryzen 5 2600 =>17250.00 ,   NZXT H500i (Black) =>20624.00 ,   Corsair CX550M =>9586.00 ,   Asus Prime Z370-A =>22100.00 ,   Seagate - Barracuda  =>5790.00 ,   G.Skill Trident Z RGB =>15098.00 ,   Asus ROG-STRIX-RTX2080TI-O11G-GAMING =>168699.00 ', 'C-PC20190306E674', 259147.00),
+(62, 'hassanoly7444@gmail.com', 'TS201903069050', 'Asus VP228H=>1920 x 1080	21.5', '1', 8645.00),
+(63, 'hassanoly7444@gmail.com', 'TS2019030649BA', 'GAMDIAS ARES Gaming=>Membrane Keyboard and 4000DPI Mouse', '1', 2364.00),
+(64, 'hassanoly7444@gmail.com', 'TS20190306D4CF', 'Logitech Z906=>5.1(Configuration)	500 W	35 Hz - 20 kHz	', '1', 97247.32),
+(65, 'hassanoly7444@gmail.com', 'TS2019030666B1', 'Asus Internal DVD Writer=>DRW-24D5MT-DDR3 SDRAM', '2', 999.00),
+(66, 'hassanoly7444@gmail.com', 'TS20190306CD1B', 'Gigabyte GC-WB867D-I=>PCI-Express x1-802.11a/b/g/n/ac', '1', 14900.00),
+(67, 'hassanoly7444@gmail.com', 'TS20190306FDC7', 'Zebronics,6 Kg,44 x 20 x 35 cm,Intel,Core i5-650,8 GB,DDR3 SDRAM,500 GB,Seagate,Windows 10,2GB nvidia Geforce GT 710 graphics card,No any information', 'B07J5L9821', 21300.00);
 
 -- --------------------------------------------------------
 
@@ -622,7 +616,13 @@ INSERT INTO `login_id` (`id`, `login_time`) VALUES
 (76, '2019-03-05 00:00:00'),
 (77, '2019-03-05 00:00:00'),
 (78, '2019-03-05 00:00:00'),
-(79, '2019-03-05 00:00:00');
+(79, '2019-03-05 00:00:00'),
+(80, '2019-03-06 00:00:00'),
+(81, '2019-03-06 00:00:00'),
+(82, '2019-03-06 00:00:00'),
+(83, '2019-03-06 00:00:00'),
+(84, '2019-03-06 00:00:00'),
+(85, '2019-03-06 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -781,7 +781,9 @@ INSERT INTO `price_list` (`id`, `CPU`, `CAB`, `SMPS`, `Morherboard`, `Harddrive`
 (160, '27', '3', '2', '2', 2, 2, 2, 0, 'hassanoly7444@gmail.com'),
 (161, '21', '2', '1', '1', 1, 2, 2, 0, 'hassanoly7444@gmail.com'),
 (162, '21', '2', '1', '2', 1, 1, 1, 0, 'hassanoly7444@gmail.com'),
-(163, '21', '2', '1', '2', 1, 1, 2, 0, 'hassanoly7444@gmail.com');
+(163, '21', '2', '1', '2', 1, 1, 2, 0, 'hassanoly7444@gmail.com'),
+(164, '21', '3', '2', '2', 2, 2, 2, 0, 'hassanoly7444@gmail.com'),
+(165, '21', '3', '2', '2', 2, 2, 2, 0, 'hassanoly7444@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -1047,7 +1049,7 @@ ALTER TABLE `admin_details`
 -- AUTO_INCREMENT for table `cart_item`
 --
 ALTER TABLE `cart_item`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `component_details_cab`
@@ -1161,13 +1163,13 @@ ALTER TABLE `customer_review`
 -- AUTO_INCREMENT for table `login_id`
 --
 ALTER TABLE `login_id`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `price_list`
 --
 ALTER TABLE `price_list`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 
 --
 -- AUTO_INCREMENT for table `product_order`
