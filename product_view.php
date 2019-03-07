@@ -81,6 +81,17 @@ $rowCPUComponent = $obj_comp->getComponentDetailsCPU();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+
+   <?php
+ 
+ echo '<script type="text/javascript">';
+  
+ echo 'setTimeout(function () { swal("Congrats!!","Your PC is Ready!","success");';
+  
+ echo '}, 500);</script>';
+  
+ ?>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>

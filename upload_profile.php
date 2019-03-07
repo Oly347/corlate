@@ -3,10 +3,10 @@
 
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
-
+session_start();
 
 $obj_user = new user_inc ;
-$userProfileUpdate = $obj_user->getUserUpdateById($_GET['id']);
+$userProfileUpdate = $obj_user->getUserUpdateById($_SESSION['userName']);
 
 
 
@@ -168,7 +168,7 @@ overflow-x: hidden;
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
                                     <div class="col-md-6">
                                         <input type="text" id="full_name" class="form-control" name="full_name" value="<?php echo $name; ?>">
-                                        <input type="hidden" name="user_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
+                                        <input type="text" name="user_id"  class="form-control" value="<?php echo $_SESSION['userName']; ?>">
                                     </div>
                                 </div>
 

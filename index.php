@@ -35,7 +35,7 @@ $_SESSION['userName']= "Guest";
 
 $obj_user = new user_inc ;
 
-$userReview = $obj_user->getReviewList();
+$userReview = $obj_user->getReviewListFinal();
 
 // print_r($userReview);
 // exit;
@@ -91,7 +91,7 @@ $userReview = $obj_user->getReviewList();
 $(window).on('load', function() { // makes sure the whole site is loaded 
   $('#status').fadeOut(); // will first fade out the loading animation 
   $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-  $('body').delay(350).css({'overflow':'visible'});
+  $('body').delay(3500).css({'overflow':'visible'});
 })
     </script>
 
@@ -271,7 +271,7 @@ $('#myCarousel').carousel({
     <section id="feature">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Features</h2>
+                <h2>We offer</h2>
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
 
@@ -585,7 +585,14 @@ $('#myCarousel').carousel({
                         <img src="images/client1.jpg" alt="">
                     </div> -->
                     <div class="content">
-                       <h2><?php echo $row_monitor_list['star'];?></h2>
+
+                    
+                       <h2><?php $rating = $row_monitor_list['star'];
+for($i=0; $i<$rating; $i++) {
+    echo '<i class="fa fa-star" aria-hidden="true"></i>';
+}
+
+?></h2>
                         <p><?php echo $row_monitor_list['review'];?></p>
                         <h4>-<?php echo $row_monitor_list['name'];?></h4>
                     </div>
@@ -725,10 +732,10 @@ $('#myCarousel').carousel({
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
                         <li><a href="#">Faq</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="contact-us.php">Contact Us</a></li>
                     </ul>
                 </div>
             </div>

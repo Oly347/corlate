@@ -1,79 +1,47 @@
 <?php
-session_start();
+// Include config file
+
+
+ session_start();
+
+// //create a session and assign a value
+// $_SESSION['session_id'] =rand(10,1000);
+
+
+
+//print session
+// print($_SESSION['session_id']);
+//remove/destroy particular session or
+// unset($_SESSION['session_name']);
+// //destroy all the sessions'
+// // remove all session variables
+// session_unset();
+// // destroy the session
+// session_destroy();
 
 include ('system/database.php');
 include ('employee.cls.php');
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ==true) {
-//echo "Welcome to the member's area, " . $_SESSION['userName'] . "!";
-} 
-else {
-header('Location:index.php');
-}
-
-
-
-
 
 
 $obj_user = new user_inc ;
 
-$obj_comp = new component_inc ;
-
-$userlistDetails = $obj_user->getTotalUserList();
-
-
-
-// $CPUlistDetails = $obj_comp->getComponentDetailsCPUByList();
-// $CABlistDetails = $obj_comp->getComponentDetailsCBByList();
-// $SMPSlistDetails = $obj_comp->getComponentDetailsSMPSByList();
-// $HDDlistDetails = $obj_comp->getComponentDetailsHDDByList();
-// $RAMlistDetails = $obj_comp->getComponentDetailRAMByList();
-// $GCARDlistDetails = $obj_comp->getComponentDetailGCByList();
-// $SCARDlistDetails = $obj_comp->getComponentDetailSCByList();
+//$motherBoardRow = $obj_comp->getMotherBoardById($_GET['id']);
+$reviewRow = $obj_user->getReviewById($_GET['id']);
+// print_r($reviewRow);
+// exit;
 
 
+foreach ($reviewRow as $key => $value) {
+  $component_name=$value['time'];
+  $component_details=$value['name'];
+  $component_price=$value['review'];
+  $component_image=$value['star'];
+  $component_status=$value['status'];
+  
 
-foreach ($userlistDetails as $key => $value) {
-  $total_user=$value['COUNT(id)'];
 }
 
-
-
-
-// foreach ($CPUlistDetails as $key => $value) {
-//   $total_CPU=$value['COUNT(id)'];
-// }
-// foreach ($CABlistDetails as $key => $value) {
-//   $total_CAB=$value['COUNT(id)'];
-// }
-
-// foreach ($SMPSlistDetails as $key => $value) {
-//   $total_SMPS=$value['COUNT(id)'];
-// }
-// foreach ($HDDlistDetails as $key => $value) {
-//   $total_HDD=$value['COUNT(id)'];
-// }
-// foreach ($RAMlistDetails as $key => $value) {
-//   $total_RAM=$value['COUNT(id)'];
-// }
-// foreach ($GCARDlistDetails as $key => $value) {
-//   $total_gcard=$value['COUNT(id)'];
-// }
-// foreach ($SCARDlistDetails as $key => $value) {
-//   $total_scard=$value['COUNT(id)'];
-// }
-
-
-
-// $total_product=$total_CPU+$total_CAB+$total_SMPS+$total_HDD+$total_RAM+$total_gcard+$total_gcard  ;
-
-
-//echo $total_product ;
-// echo $total_SMPS
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,12 +58,10 @@ foreach ($userlistDetails as $key => $value) {
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -137,13 +103,13 @@ foreach ($userlistDetails as $key => $value) {
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components List</span>
+          <span>Components</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
+          <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">List Components:</h6>
             <a class="collapse-item" href="component_list.php">System Unit:</a>
-            <a class="collapse-item" href="accessories.php">Monitor and accessories:</a>
+            <a class="collapse-item" href="cards.html">Monitor and accessories:</a>
           </div>
         </div>
       </li>
@@ -174,10 +140,10 @@ foreach ($userlistDetails as $key => $value) {
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
-          <span>Add Component </span>
+          <span>Component</span>
         </a>
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -188,7 +154,7 @@ foreach ($userlistDetails as $key => $value) {
             <a class="collapse-item" href="smps.php">SMPS</a>
             <a class="collapse-item" href="harddrive.php">Hard Disk Drive</a>
             <a class="collapse-item" href="memory.php">Memory</a>
-            <a class="collapse-item" href="ssd">SSD</a>
+            <a class="collapse-item" href="ssd.php">SSD</a>
             <a class="collapse-item" href="graphic_card.php">Graphic Card</a>
             <!-- <a class="collapse-item" href="#">Video Card</a> -->
             <a class="collapse-item" href="sound_card.php">Sound Card</a>
@@ -197,10 +163,10 @@ foreach ($userlistDetails as $key => $value) {
             <!-- <a class="collapse-item" href="#">Bluetooth Reciver</a> -->
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Monitor and accessories</h6>
-            <a class="collapse-item" href="monitor.php">Monitor</a>
-            <a class="collapse-item" href="mouse_keyboard.php">Mouse & Keyboard</a>
-            <a class="collapse-item" href="speaker.php">Speaker</a>
-            <a class="collapse-item" href="headphone.php">Headphone</a>
+            <a class="collapse-item" href="#">Monitor</a>
+            <a class="collapse-item" href="#">Mouse & Keyboard</a>
+            <a class="collapse-item" href="#">Speaker</a>
+            <a class="collapse-item" href="#">Headphone</a>
           </div>
         </div>
       </li>
@@ -214,25 +180,10 @@ foreach ($userlistDetails as $key => $value) {
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-  <a class="nav-link" href="user_list.php">
-    <i class="fas fa-fw fa-table"></i>
-    <span>User List</span></a>
-</li>
-
-
-
-<li class="nav-item">
-  <a class="nav-link" href="review_list.php">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Pending Review</span></a>
-</li>
-
-
-<li class="nav-item">
-  <a class="nav-link" href="contact_us_list.php">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Contact us List</span></a>
-</li>
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -323,129 +274,63 @@ foreach ($userlistDetails as $key => $value) {
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-          </div>
+          <h1 class="h3 mb-4 text-gray-800">Review approved Pannel</h1>
 
+
+          <div class="container">
+  <h2>Review  Details</h2>
+  <form action="final_review.upl.php" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="c_name">Review Time</label>
+      <input type="text" class="form-control" id="time" placeholder="Enter Model Name" name="time" value="<?php echo $component_name; ?>" readonly>
+
+      <input type="hidden" name="review_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
+    </div>
+
+
+    <div class="form-group">
+      <label for="c_dis">Customer Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Discription" name="name" value="<?php echo $component_details; ?>" readonly>
+    </div>
+
+
+    <div class="form-group">
+      <label for="c_price">Review</label>
+      <input type="text" class="form-control" id="review" placeholder="Enter Price" name="review" value="<?php echo $component_price; ?>" readonly>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="c_price">Star</label>
+      <input type="text" class="form-control" id="star" placeholder="Enter Price" name="star" value="<?php echo $component_image; ?>" readonly>
+    </div>
+
+
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="status" >
+      <option value="approved" >Approved</option>
+      <option value="not_approved">Denay</option>
       
-        <div class="row">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total User</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $total_user ?></div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-user fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1"> Total Earnings</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-rupee fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-4 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Successfully completed delivered</div>
-                      <div class="row no-gutters align-items-center">
-                        <div class="col-auto">
-                          <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">100+</div>
-                        </div>
-                        <!-- <div class="col">
-                          <div class="progress progress-sm mr-2">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
-                        </div> -->
-                      </div>
-                    </div>
-                    <div class="col-auto">
-                    <i class="fa fa-check fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Pending Requests Card Example -->
-            <!-- <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Successfully completed delivered </div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fa fa-check fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-
-         
-
-
-      
-
-          </div>
-      </div>
-
-
-      <div class='calendar'>
-  <div class='day'></div>
-  <div class='month'>
-    <div class='month-name'></div>
+    </select>
   </div>
-  <div class='number'></div>
+    
+
+
+    
+    
+    
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
-<div class='contain'>
-  <div class='caltwo'>
-    <div class='daytwo'></div>
-    <div class='monthtwo'></div>
-    <div class='numtwo'></div>
-  </div>
-  <div class='clock'>
-    <div class='hour time'></div>
-    <div class='min time'></div>
-    <div class='sec time'></div>
-  </div>
-</div>
-<!-- <div class='meter'>
-  <div class='hours timer'></div>
-  <div class='minutes timer'></div>
-  <div class='seconds timer'></div>
-</div> -->
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-  <script  src="js/index.js"></script>
+
+
+
+        </div>
+        <!-- /.container-fluid -->
+
       </div>
       <!-- End of Main Content -->
 
@@ -498,13 +383,6 @@ foreach ($userlistDetails as $key => $value) {
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
-
-  <!-- Page level plugins -->
-  <script src="vendor/chart.js/Chart.min.js"></script>
-
-  <!-- Page level custom scripts -->
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

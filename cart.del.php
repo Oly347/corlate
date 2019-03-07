@@ -9,15 +9,15 @@ $obj_comp = new component_inc ;
 
 
 
-$delete= $obj_comp->DeleteCartItem($_POST['cart_id']);
+$delete= $obj_comp->DeleteCartItemByUser($_SESSION['userName']);
 
-// print_r($delete);
-// exit;
+
+
 if ($delete) {        
-header('Location:user_dashboard.php');
-exit();
+header('Location:user_dashboard.php#tab5');
+exit;
 }
 else{
-header('Location:user_dashboard.php');
+    header('Location:user_dashboard.php');
 }
 ?>

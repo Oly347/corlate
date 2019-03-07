@@ -230,9 +230,9 @@ overflow-x: hidden;
                                                 <p>Phone Number:<?php echo $phone_number ?> </p>
                                                 <p>EmailID:<?php echo $email_id ?> </p>
                                                 <a class="btn btn-success" href="customer_review.php" role="button">Write a Review</a>
-                                                <a class="btn btn-info" href="upload_profile.php?id=<?php echo $id ?>" role="button">Profile Update</a>
+                                                <a class="btn btn-info" href="upload_profile.php?id=<?php echo $email_id?>" role="button">Profile Update</a>
 
-                                                <a class="btn btn-success" href="change_password.php?id=<?php echo $id ?>" role="button">Password Change</a>
+                                                <a class="btn btn-success" href="change_password.php?id=<?php echo $email_id?>" role="button">Password Change</a>
                                             </div>
 
 
@@ -332,7 +332,9 @@ overflow-x: hidden;
                   <button type="submit" class="btn btn-success btn-outline" >
                             Checkout<i class="fa fa-shopping-cart"></i>
 
-                            </button>
+                            </button><a class="btn btn-danger btn-outline" href="empty_cart.php?id=<?php echo $email_id?>"  style="margin-left:10px;" role="button">Empty cart&nbsp;<i class="fa fa-trash" aria-hidden="true"></i>
+
+</a>
                   </form>
 
                   

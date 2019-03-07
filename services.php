@@ -51,7 +51,7 @@ $obj_comp = new component_inc ;
 
 //$rowPrice = $obj_emp->getPrice();
 
-$rowCPUComponent = $obj_comp->getComponentDetailsCPU();
+$rowCPUComponent = $obj_comp->getComponentDetailsCPUForUser();
 $rowMBComponent = $obj_comp->getComponentDetailsMB();
 $rowCABComponent = $obj_comp->getComponentDetailsCB();
 $rowSMPSComponent = $obj_comp->getComponentDetailsSMPS();
@@ -215,7 +215,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
     </div>
     
     <section id="services" class="service-item">
-        <div class="container">
+        <div class="container edit_pc_assable_container ">
             <!-- <div class="center fadeInDown">
                 <h2>Our Service</h2>
                 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
@@ -228,7 +228,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
   
   <div class="tab tab1" style="overflow-x:auto;" >Choose Your CPU
     
-    <div class="table-responsive edit_table" style="padding: 10px;">
+    <div class="table-responsive" style="padding: 10px;">
         <table class="table  table-borderless  " style="margin-top:10px" >
           <thead>
             <tr>
@@ -275,7 +275,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
     
       
     </div>
-    <div class="tab tab2" style="overflow-x:auto;" >Choose Your Cabenet
+    <div class="tab tab1" style="overflow-x:auto;" >Choose Your Cabenet
       <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
       <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
       <div class="table-responsive">
@@ -329,7 +329,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 
 
    
-      <div class="tab tab3" style="overflow-x:auto;" >Choose Your SMPS
+      <div class="tab tab1" style="overflow-x:auto;" >Choose Your SMPS
           <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
           <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
           <div class="table-responsive">
@@ -376,7 +376,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 
 
 
-          <div class="tab tab4" style="overflow-x:auto;" >Choose Your Motherboard
+          <div class="tab tab1" style="overflow-x:auto;" >Choose Your Motherboard
               <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
               <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
               <div class="table-responsive">
@@ -597,25 +597,25 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
         <div class="container">
             <div class="center fadeInDown">
                 <h2>Our Partners</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <p class="lead edit_p_partner" style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
             </div>
 
             <div class="partners">
                 <ul>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/brand-1.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/400px-Dell_logo.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/brand-2.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/Amazon Alexa_0.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/brand-3.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/TPLINK.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/brand-4.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/Nvidia_logo.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/brand-5.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/58568d224f6ae202fedf2720.png"></a>
                     </li>
                 </ul>
             </div>

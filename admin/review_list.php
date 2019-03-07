@@ -7,7 +7,8 @@ include ('employee.cls.php');
 
 $obj_user = new user_inc ;
 
-$userReview = $obj_user->getReviewList();
+$userReview = $obj_user->getReviewListPending();
+$userFinalReview = $obj_user->getReviewListFinal();
 
 ?>
 
@@ -253,9 +254,73 @@ $userReview = $obj_user->getReviewList();
           
 
           <!-- DataTales Example -->
+          
+
+
+
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">User Review list</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Customer Review list</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                  <tr>
+                    <th>Name</th>
+                      <th>Review</th>
+                      <th>Star</th>
+                      <th>time</th>
+                      
+                    </tr>
+                  </thead>
+                  <tfoot>
+                  <tr>
+                    <th>Name</th>
+                      <th>Review</th>
+                      <th>Star</th>
+                      <th>time</th>
+                      
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                  <?php
+                
+                foreach ($userFinalReview as  $row_review) {
+                                   
+                ?>
+
+
+                    <tr>
+                      <td><?php echo $row_review['name'];?></td>
+                      <td><?php echo $row_review['review'];?></td>
+                      <td><?php $rating = $row_review['star'];
+for($i=0; $i<$rating; $i++) {
+    echo '<i class="fa fa-star" aria-hidden="true"></i>';
+}
+
+?></td>
+                      <td><?php echo $row_review['time'];?></td>
+                      
+                      
+                      <!-- <a class="btn btn-danger" href="#" role="button">Delete <i class="fa fa-remove"></i></a></td> -->
+                    </tr>
+                    
+                    <?php
+                       }
+                
+                      ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Customer Review Pendding</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -289,11 +354,16 @@ $userReview = $obj_user->getReviewList();
                     <tr>
                       <td><?php echo $row_review['name'];?></td>
                       <td><?php echo $row_review['review'];?></td>
-                      <td><?php echo $row_review['star'];?></td>
+                      <td><?php $rating = $row_review['star'];
+for($i=0; $i<$rating; $i++) {
+    echo '<i class="fa fa-star" aria-hidden="true"></i>';
+}
+
+?></td>
                       <td><?php echo $row_review['time'];?></td>
                       
-                      <td><a class="btn btn-success" href="#" role="button">Approve <i class="fa fa-check" aria-hidden="true"></i></a>
-                      <a class="btn btn-danger" href="#" role="button">Delete <i class="fa fa-remove"></i></a></td>
+                      <td><a class="btn btn-success" href="review_approved.php?id=<?php echo $row_review['id'];?>" role="button">Approve <i class="fa fa-check" aria-hidden="true"></i></a>
+                      <!-- <a class="btn btn-danger" href="#" role="button">Delete <i class="fa fa-remove"></i></a></td> -->
                     </tr>
                     
                     <?php
@@ -307,6 +377,9 @@ $userReview = $obj_user->getReviewList();
           </div>
 
         </div>
+
+
+        
         <!-- /.container-fluid -->
 
       </div>

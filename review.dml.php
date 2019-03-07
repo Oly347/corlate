@@ -14,6 +14,7 @@ $insert_array=  array(
 'review' => $_POST['review'],
 'star' => $_POST['star'],
 'time' => date('Y-m-d H:i:s'),
+'status' => $_POST['status'],
 
 
    

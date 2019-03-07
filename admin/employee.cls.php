@@ -176,6 +176,24 @@ function component_inc()
                 $rows = $this->db_con->GetAllRows($sSql);
                 return $rows;
         }    
+
+
+        function getComponentDetailsCPUForUser(){
+            $sSql = "SELECT * FROM component_details_cpu WHERE status = '1' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+        }  
+
+
+
+        function getComponentDetailsCPUByList(){
+            $sSql = "SELECT COUNT(id) FROM component_details_cpu";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+        }  
+
+
+
         function getCPUById($id){
             $sSql="SELECT * FROM component_details_cpu WHERE id='".$id."' ";
             $rows = $this->db_con->GetAllRows($sSql);
@@ -233,7 +251,11 @@ function component_inc()
                         return $rows;
         }  
 
-
+        function getComponentDetailsCBByList(){
+            $sSql = "SELECT COUNT(id) FROM component_details_cab";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+        }  
 
         function getComponentDetailsSMPS(){
             $sSql = "SELECT * FROM component_details_smps";
@@ -242,11 +264,26 @@ function component_inc()
      }  
 
 
+
+     function getComponentDetailsSMPSByList(){
+        $sSql = "SELECT COUNT(id) FROM component_details_smps";
+            $rows = $this->db_con->GetAllRows($sSql);
+            return $rows;
+    }  
+
+
      function getComponentDetailsHDD(){
         $sSql = "SELECT * FROM component_details_hdd";
             $rows = $this->db_con->GetAllRows($sSql);
             return $rows;
      }  
+
+
+     function getComponentDetailsHDDByList(){
+        $sSql = "SELECT COUNT(id) FROM component_details_hdd";
+            $rows = $this->db_con->GetAllRows($sSql);
+            return $rows;
+    }  
 
 
 
@@ -258,11 +295,28 @@ function component_inc()
 
 
 
+   function getComponentDetailRAMByList(){
+    $sSql = "SELECT COUNT(id) FROM component_details_memory";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+   }  
+
+
+
+
    function getComponentDetailsGraphicCard(){
     $sSql = "SELECT * FROM component_details_graphic_card";
         $rows = $this->db_con->GetAllRows($sSql);
         return $rows;
    }
+
+
+
+   function getComponentDetailGCByList(){
+    $sSql = "SELECT COUNT(id) FROM component_details_graphic_card";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+   }  
    
    
    function getComponentDetailsSoundCard(){
@@ -271,7 +325,13 @@ function component_inc()
         return $rows;
    } 
    
-   
+   function getComponentDetailSCByList(){
+    $sSql = "SELECT COUNT(id) FROM component_details_sound_card";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+   }  
+
+
    function getComponentDetailsDvdDrive(){
     $sSql = "SELECT * FROM component_details_dvd_drive";
         $rows = $this->db_con->GetAllRows($sSql);
@@ -643,6 +703,8 @@ function component_inc()
     $rows = $this->db_con->GetAllRows($sSql);
     return $rows;
    }
+
+
    function DeleteCartItem($id)
        {
         $del_sql="DELETE FROM cart_item WHERE id=".$id;
@@ -657,6 +719,31 @@ function component_inc()
             return false;
         }
        }
+
+
+
+
+       function DeleteCartItemByUser($id)
+       {
+        $del_sql="DELETE  FROM cart_item WHERE username='".$id."' ";
+
+        //echo "$del_sql" ;
+        $delete=$this->db_con->deleteRow($del_sql);
+
+        // echo "$delete" ;
+        // exit;
+
+        if($delete)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+       }
+
+
 
 
 
@@ -1060,11 +1147,34 @@ function component_inc()
                  return $rows;
              }
 
-             function getReviewList(){
-                $sSql = "SELECT * FROM customer_review";
+
+
+             function getTotalUserList(){
+                $sSql = "SELECT COUNT(id) FROM user";
                  $rows = $this->db_con->GetAllRows($sSql);
                  return $rows;
              }
+
+             function getReviewListPending(){
+                $sSql = "SELECT * FROM customer_review WHERE status = 'not_approved' ";
+                 $rows = $this->db_con->GetAllRows($sSql);
+                 return $rows;
+             }
+
+
+             function getReviewListFinal(){
+                $sSql = "SELECT * FROM customer_review WHERE status = 'approved' ";
+                 $rows = $this->db_con->GetAllRows($sSql);
+                 return $rows;
+             }
+
+
+
+             function getReviewById($id){
+                $sSql="SELECT * FROM customer_review WHERE id='".$id."' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+            }
            
            
                function getEmployeeById($id){
@@ -1072,6 +1182,9 @@ function component_inc()
                    $rows = $this->db_con->GetAllRows($sSql);
                    return $rows;
                }
+
+
+               
            
                function getComponentDetails(){
                 $sSql = "SELECT * FROM component_details";
@@ -1110,7 +1223,7 @@ function component_inc()
 
 
                 function getUserUpdateById($id){
-                    $sSql="SELECT * FROM user WHERE id='".$id."' ";
+                    $sSql="SELECT * FROM user WHERE email_id='".$id."' ";
                     $rows = $this->db_con->GetAllRows($sSql);
                     return $rows;
                 }
@@ -1128,10 +1241,10 @@ function component_inc()
 
                 function SetUpdateProfile($post_fields,$id)
                 {
-                $sSql="SELECT * FROM user WHERE id='".$id."' ";
+                $sSql="SELECT * FROM user WHERE email_id='".$id."' ";
                     
                     
-                 echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+                 $update=$this->db_con->RowUpdate($post_fields,$sSql);
                  if($update==0)
                  {
                         return false;
@@ -1143,13 +1256,32 @@ function component_inc()
                  }
 
 
+
+
+                 function SetUpdateReview($post_fields,$id)
+                 {
+                 $sSql="SELECT * FROM customer_review WHERE id='".$id."' ";
+                     
+                     
+                $update=$this->db_con->RowUpdate($post_fields,$sSql);
+                  if($update==0)
+                  {
+                         return false;
+                  }
+                     else
+                     {
+                         return true;
+                     }
+                  } 
+
+
                 
                 function SetUpdateUserPassword($post_fields,$id)
                 {
-                $sSql="SELECT * FROM user WHERE id='".$id."' ";
+                $sSql="SELECT * FROM user WHERE email_id='".$id."' ";
                     
                     
-                 echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+                  $update=$this->db_con->RowUpdate($post_fields,$sSql);
                  if($update==0)
                  {
                         return false;
@@ -1177,7 +1309,7 @@ function component_inc()
                                    $sSql="SELECT * FROM employees WHERE id='".$id."' ";
                                    
                                    
-                                   echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+                                    $update=$this->db_con->RowUpdate($post_fields,$sSql);
                                    if($update==0)
                                    {
                                        return false;
@@ -1242,6 +1374,23 @@ function component_inc()
             public function InsertIntoReviewList($post_fileds)
           {
           $sSql="SELECT * FROM customer_review WHERE id=-1";
+          $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+          if($insrt==0)
+           {
+            return false;
+            }
+            else
+            {
+            return true;
+            }
+                    
+            }  
+
+
+
+        public function InsertIntoFinalReviewList($post_fileds)
+          {
+          $sSql="SELECT * FROM final_review_list WHERE id=-1";
           $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
           if($insrt==0)
            {

@@ -289,7 +289,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -299,13 +299,22 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                     foreach ($rowCPUComponent as  $row_cpu_component) {
                                        
                     ?>
+
+<?php $status = $row_cpu_component['status'];?>
+
+
+
                       <tr>
                         <td><?php echo $row_cpu_component['id'];?></td>
                         <td><?php echo $row_cpu_component['component_name'];?></td>
                         <td><?php echo $row_cpu_component['component_details'];?></td>
                         <td><?php echo $row_cpu_component['component_price'];?></td>
-                        <td><img src ="upload/<?php echo $row_cpu_component['component_image'];?>" height=50 width=80 /> </td>
                         
+                        <td><img src ="upload/<?php echo $row_cpu_component['component_image'];?>" height=50 width=80 /> </td>
+                        <td><?php echo $status ?>
+                      
+                      
+                      </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="processor_update.php?id=<?php echo $row_cpu_component['id'];?>" role="button">Update</a>

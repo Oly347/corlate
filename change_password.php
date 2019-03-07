@@ -143,7 +143,7 @@ $obj_user = new user_inc ;
         <p class="profile-name-card"> </p>
         <form name="my-form" class="form-signin" onsubmit="return validform()" action = "password.upl.php" method = "post" enctype="multipart/form-data"><span class="reauth-email"> </span>
         <input class="form-control" type="password"  id="password" name="password" placeholder="New Password" >
-        <input type="hidden" name="user_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
+        <input type="hidden" name="user_id"  class="form-control" value="<?php echo $_SESSION['userName']; ?>">
         <input class="form-control" type="text" id="confirm_password" name="confirm_password" placeholder="Confirm Password">
        
     <button type="submit" class="btn btn-success btn-outline" >
