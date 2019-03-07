@@ -52,9 +52,9 @@ $obj_comp = new component_inc ;
 //$rowPrice = $obj_emp->getPrice();
 
 $rowCPUComponent = $obj_comp->getComponentDetailsCPUForUser();
-$rowMBComponent = $obj_comp->getComponentDetailsMB();
-$rowCABComponent = $obj_comp->getComponentDetailsCB();
-$rowSMPSComponent = $obj_comp->getComponentDetailsSMPS();
+$rowMBComponent = $obj_comp->getComponentDetailsMBForUser();
+$rowCABComponent = $obj_comp->getComponentDetailsCABForUser();
+$rowSMPSComponent = $obj_comp->getComponentDetailsSMPSForUser();
 $rowHDDComponent = $obj_comp->getComponentDetailsHDD();
 $rowMemoryComponent = $obj_comp->getComponentDetailsMemory();
 $rowGraphicComponent = $obj_comp->getComponentDetailsGraphicCard();
@@ -383,7 +383,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                   <table class="table table-borderless">
                     <thead>
                       <tr>
-                        <th>RAM Name</th>
+                        <th>Mother Board Name</th>
                         <th>Discription</th>
                         <th>Image</th>
                         <th>Price</th>

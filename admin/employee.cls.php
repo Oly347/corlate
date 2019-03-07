@@ -206,17 +206,38 @@ function component_inc()
             return $rows;
           }
 
+
+          function getComponentDetailsCABForUser(){
+            $sSql = "SELECT * FROM component_details_cab WHERE status = '1' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+        }  
+
           function getSMPSById($id){
             $sSql="SELECT * FROM component_details_smps WHERE id='".$id."' ";
             $rows = $this->db_con->GetAllRows($sSql);
             return $rows;
           }
 
+
+          function getComponentDetailsSMPSForUser(){
+            $sSql = "SELECT * FROM component_details_smps WHERE status = '1' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+        }  
+
           function getMotherBoardById($id){
             $sSql="SELECT * FROM component_details_mboard WHERE id='".$id."' ";
             $rows = $this->db_con->GetAllRows($sSql);
             return $rows;
           }
+
+
+          function getComponentDetailsMBForUser(){
+            $sSql = "SELECT * FROM component_details_mboard WHERE status = '1' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+        }  
 
           function getHardDriveById($id){
             $sSql="SELECT * FROM component_details_hdd WHERE id='".$id."' ";
