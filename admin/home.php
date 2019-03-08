@@ -86,14 +86,14 @@ foreach ($userlistDetails as $key => $value) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>Tilottama.Tech Admin</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <link rel="shortcut icon" href="favicon.ico">
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
@@ -149,7 +149,7 @@ foreach ($userlistDetails as $key => $value) {
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Utilities</span>
@@ -163,7 +163,23 @@ foreach ($userlistDetails as $key => $value) {
             <a class="collapse-item" href="utilities-other.html">Other</a>
           </div>
         </div>
-      </li>
+      </li> -->
+
+
+
+      <li class="nav-item">
+  <a class="nav-link" href="product_pc_list.php">
+  <i class="fas fa-fw fa-wrench"></i>
+    <span>Full PC List</span></a>
+</li>
+
+
+
+<li class="nav-item">
+  <a class="nav-link" href="add_pc.php">
+  <i class="fas fa-fw fa-plus"></i>
+    <span>Add PC</span></a>
+</li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -176,7 +192,7 @@ foreach ($userlistDetails as $key => $value) {
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
+          <i class="fas fa-fw fa-plus"></i>
           <span>Add Component </span>
         </a>
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
@@ -206,11 +222,11 @@ foreach ($userlistDetails as $key => $value) {
       </li>
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
@@ -224,7 +240,7 @@ foreach ($userlistDetails as $key => $value) {
 <li class="nav-item">
   <a class="nav-link" href="review_list.php">
     <i class="fas fa-fw fa-table"></i>
-    <span>Pending Review</span></a>
+    <span>Review List</span></a>
 </li>
 
 

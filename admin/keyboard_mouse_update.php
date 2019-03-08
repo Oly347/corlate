@@ -2,7 +2,7 @@
 // Include config file
 
 
-session_start();
+ session_start();
 
 // //create a session and assign a value
 // $_SESSION['session_id'] =rand(10,1000);
@@ -25,39 +25,21 @@ include ('employee.cls.php');
 
 $obj_comp = new component_inc ;
 
-$rowProductPCList = $obj_comp->getPCProductByID($_GET['id']);
-// echo "<pre>";
-// print_r($rowProductPCList);
-// echo "</pre>";
-
-// exit;
+$monitorRow = $obj_comp->getKeyboardMouseById($_GET['id']);
+//print_r($motherBoardRow);
+//exit;
 
 
-
-foreach ($rowProductPCList as $key => $value) {
-  $product_no=$value['product_no'];
-  $product_price=$value['product_price'];
-  $product_img=$value['product_img'];
-  $cabinet=$value['cabinet'];
-  $product_weight=$value['product_weight'];
-  $product_dimensions=$value['product_dimensions'];
-  $processor_brand=$value['processor_brand'];
-  $processor_type=$value['processor_type'];
-  $ram_size=$value['ram_size'];
-  $ram_type=$value['ram_type'];
-  $hard_disk_size=$value['hard_disk_size'];
-  $hard_disk_tech=$value['hard_disk_tech'];
-  $operating_system=$value['operating_system'];
-  $g_card=$value['g_card'];
-  $additional_information=$value['additional_information'];
-
-
+foreach ($monitorRow as $key => $value) {
+  $component_name=$value['component_name'];
+  $component_details=$value['component_details'];
+  $component_price=$value['component_price'];
+  $component_image=$value['component_image'];
+  
 
 }
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -164,19 +146,19 @@ foreach ($rowProductPCList as $key => $value) {
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">System Unit:</h6>
-            <a class="collapse-item active" href="processor.php">Processor</a>
-            <a class="collapse-item" href="#">Motherboard</a>
-            <a class="collapse-item" href="#">Cabinet</a>
-            <a class="collapse-item" href="#">SMPS</a>
-            <a class="collapse-item" href="#">Hard Disk Drive</a>
-            <a class="collapse-item" href="#">Memory</a>
-            <a class="collapse-item" href="#">SSD</a>
-            <a class="collapse-item" href="#">Graphic Card</a>
-            <a class="collapse-item" href="#">Video Card</a>
-            <a class="collapse-item" href="#">Sound Card</a>
-            <a class="collapse-item" href="#">DVD DRIVE</a>
-            <a class="collapse-item" href="#">WIFI Reciver</a>
-            <a class="collapse-item" href="#">Bluetooth Reciver</a>
+            <a class="collapse-item" href="processor.php">Processor</a>
+            <a class="collapse-item" href="motherboard.php">Motherboard</a>
+            <a class="collapse-item" href="cabinet.php">Cabinet</a>
+            <a class="collapse-item" href="smps.php">SMPS</a>
+            <a class="collapse-item" href="harddrive.php">Hard Disk Drive</a>
+            <a class="collapse-item" href="memory.php">Memory</a>
+            <a class="collapse-item" href="ssd.php">SSD</a>
+            <a class="collapse-item" href="graphic_card.php">Graphic Card</a>
+            <!-- <a class="collapse-item" href="#">Video Card</a> -->
+            <a class="collapse-item" href="sound_card.php">Sound Card</a>
+            <a class="collapse-item" href="dvd_drive.php">DVD DRIVE</a>
+            <a class="collapse-item" href="wireless_adapter.php">Wireless Adapter</a>
+            <!-- <a class="collapse-item" href="#">Bluetooth Reciver</a> -->
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Monitor and accessories</h6>
             <a class="collapse-item" href="#">Monitor</a>
@@ -290,86 +272,45 @@ foreach ($rowProductPCList as $key => $value) {
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Edit Product=>PC(without monitor & accessories)</h1>
+          <h1 class="h3 mb-4 text-gray-800">Edit Keyboard Mouse</h1>
 
 
           <div class="container">
   <h2>Component Details</h2>
-  <form action="edit_pc.dml.php" method="post" enctype="multipart/form-data">
+  <form action="keyboard.upl.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="product_no">Product Number</label>
-      <input type="text" class="form-control" id="product_no" placeholder="Enter Product Number" name="product_no" value="<?php echo $product_no; ?>">
-      <input type="hidden" name="emp_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
+      <label for="c_name">Model name</label>
+      <input type="text" class="form-control" id="c_name" placeholder="Enter Model Name" name="c_name" value="<?php echo $component_name; ?>">
+
+      <input type="hidden" name="monitor_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
+    </div>
+
+
+    <div class="form-group">
+      <label for="c_dis">Discriptrion</label>
+      <input type="text" class="form-control" id="c_dis" placeholder="Enter Discription" name="c_dis" value="<?php echo $component_details; ?>">
+    </div>
+
+
+    <div class="form-group">
+      <label for="c_price">Price</label>
+      <input type="text" class="form-control" id="c_price" placeholder="Enter Price" name="c_price" value="<?php echo $component_price; ?>">
+    </div>
+    <div class="form-group">
+      <label for="c_price">Image of Component</label>
+      <input type="file" class="form-control" id="c_pic"  name="c_pic" value="<?php echo $component_image; ?>">
     </div>
 
     <div class="form-group">
-      <label for="product_price">Product price</label>
-      <input type="text" class="form-control" id="product_price" placeholder="Enter Product Price" name="product_price" value="<?php echo $product_price; ?>">
-    </div>
-    <div class="form-group">
-      <label for="product_img">Product Image</label>
-      <input type="text" class="form-control" value="old img- <?php echo $product_img; ?>" disabled> 
-      <input type="file" class="form-control" id="product_img"  name="product_img" value="<?php echo $product_img; ?>">
-    </div>
-    <div class="form-group">
-      <label for="cabinet">Cabinet</label>
-      <input type="text" class="form-control" id="cabinet" placeholder="Enter Cabinet Name" name="cabinet" value="<?php echo $cabinet; ?>">
-    </div>
-    <div class="form-group">
-      <label for="product_weight">Product Weight</label>
-      <input type="text" class="form-control" id="product_weight" placeholder="Enter Product Weight" name="product_weight" value="<?php echo $product_weight; ?>">
-    </div>
-    <div class="form-group">
-      <label for="product_dimensions">Product Dimensions</label>
-      <input type="text" class="form-control" id="product_dimensions" placeholder="Enter Product Dimensions" name="product_dimensions" value="<?php echo $product_dimensions; ?>">
-    </div>
-    <div class="form-group">
-      <label for="processor_brand">Processor Brand</label>
-      <input type="text" class="form-control" id="processor_brand" placeholder="Enter Processor Brand" name="processor_brand" value="<?php echo $processor_brand; ?>">
-    </div>
-    <div class="form-group">
-      <label for="processor_type">Processor Type</label>
-      <input type="text" class="form-control" id="processor_type" placeholder="Enter Processor Type" name="processor_type" value="<?php echo $processor_type; ?>">
-    </div>
-    <div class="form-group">
-      <label for="product_no">RAM Size</label>
-      <input type="ram_size" class="form-control" id="ram_size" placeholder="Enter RAM size" name="ram_size" value="<?php echo $ram_size; ?>">
-    </div>
-    <div class="form-group">
-      <label for="ram_type">RAM Type</label>
-      <input type="text" class="form-control" id="ram_type" placeholder="Enter RAM Type" name="ram_type" value="<?php echo $ram_type; ?>">
-    </div>
-    <div class="form-group">
-      <label for="hard_disk_size">Hard Drive Size</label>
-      <input type="text" class="form-control" id="hard_disk_size" placeholder="Enter Hard Drive Size" name="hard_disk_size" value="<?php echo $hard_disk_size; ?>">
-    </div>
-    <div class="form-group">
-      <label for="hard_disk_tech">Hard Disk Technology</label>
-      <input type="text" class="form-control" id="hard_disk_tech" placeholder="Ennter Hard Disk Technology" name="hard_disk_tech" value="<?php echo $hard_disk_tech; ?>">
-    </div>
-    <div class="form-group">
-      <label for="operating_system">Operating System</label>
-      <input type="text" class="form-control" id="operating_system" placeholder="Enter Operating sytem" name="operating_system" value="<?php echo $operating_system; ?>">
-    </div>
-    <div class="form-group">
-      <label for="g_card">Graphic Card</label>
-      <input type="text" class="form-control" id="g_card" placeholder="Enter Graphic card Details" name="g_card" value="<?php echo $g_card; ?>">
-    </div>
-
-    <div class="form-group">
-      <label for="additional_information">Additional Information</label>
-      <input type="text" class="form-control" id="additional_information" placeholder="Enter Additional Information" name="additional_information" value="<?php echo $additional_information; ?>">
-    </div>
-    
-
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Status</label>
+    <label for="exampleFormControlSelect1">Example select</label>
     <select class="form-control" id="exampleFormControlSelect1" name="status" >
       <option value="0" >Deactive</option>
       <option value="1">Active</option>
       
     </select>
   </div>
+
+
     
     
     

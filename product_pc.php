@@ -5,10 +5,7 @@ session_start();
 
 $obj_comp = new component_inc ;
 
-$rowProductPCList = $obj_comp->getProductPCList();
-$rowMonitorList = $obj_comp->getComponentDetailsMonitor();
-
-$rowKeyBoardMouseList = $obj_comp->getComponentDetailsKeyboardMouse();
+$rowProductPCList = $obj_comp->getComponentDetailsPCProductForUser();
 
 
 
@@ -173,17 +170,20 @@ $rowKeyBoardMouseList = $obj_comp->getComponentDetailsKeyboardMouse();
                         <div class="clearfix">
                             <ul>
                                 <li><img class="product_view_image" src ="admin/upload/<?php echo $row_product_pc_list['product_img'];?>" height=100 width=100 /> </li>
-                                <li>Cabinet-<?php echo $row_product_pc_list['cabinet'];?></li>
-                                <li>Weight-<?php echo $row_product_pc_list['product_weight'];?></li>
-                                <li>Dimensions-<?php echo $row_product_pc_list['product_dimensions'];?></li>
-                                <li>Processor Brand-<?php echo $row_product_pc_list['processor_brand'];?></li>
-                                <li>Processor Type-<?php echo $row_product_pc_list['processor_type'];?></li>
-                                <li>RAM Size-<?php echo $row_product_pc_list['ram_size'];?></li>
-                                <li>RAM Type-<?php echo $row_product_pc_list['ram_type'];?></li>
-                                <li>Hard Drive Size-<?php echo $row_product_pc_list['hard_disk_size'];?></li>
-                                <li>Hard Drive Technology-<?php echo $row_product_pc_list['hard_disk_tech'];?></li>
-                                <li>Operating system-<?php echo $row_product_pc_list['operating_system'];?></li>
-                                <li>Graphic Card-<?php echo $row_product_pc_list['g_card'];?></li>
+                                <li class="product_li">Cabinet-- <?php echo $row_product_pc_list['cabinet'];?></li>
+                                
+                                <li class="product_li">Processor Type-- <?php echo $row_product_pc_list['processor_type'];?></li>
+                                <li class="product_li">RAM Size-- <?php echo $row_product_pc_list['ram_size'];?></li>
+                                <li class="product_li">Hard Drive Size-- <?php echo $row_product_pc_list['hard_disk_size'];?></li>
+                                <li class="product_li">Graphic Card-- <?php echo $row_product_pc_list['g_card'];?></li>
+                                <li class="product_li">Operating system-- <?php echo $row_product_pc_list['operating_system'];?></li>
+                                <li class="product_li">Graphic Card-- <?php echo $row_product_pc_list['g_card'];?></li>
+                                <li>Processor Brand-- <?php echo $row_product_pc_list['processor_brand'];?></li>
+                                <li>RAM Type-- <?php echo $row_product_pc_list['ram_type'];?></li>
+                                <li>Weight-- <?php echo $row_product_pc_list['product_weight'];?></li>
+                                <li>Hard Drive Technology-- <?php echo $row_product_pc_list['hard_disk_tech'];?></li>
+                                <li>Dimensions-- <?php echo $row_product_pc_list['product_dimensions'];?></li>
+                                <li>Additional Information-- <?php echo $row_product_pc_list['additional_information'];?></li>
                                 <!-- <li></li>
                                 <li></li>
                                 <li></li>

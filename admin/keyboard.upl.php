@@ -33,12 +33,12 @@ $update_array=  array(
 
    
 	
-$update= $obj_comp->SetUpdateSoundCard($update_array,$_POST['sound_id']);
+$update= $obj_comp->SetUpdateKeyboardMouse($update_array,$_POST['monitor_id']);
      
 
 if ($update) {
         
-    header('Location:component_list.php');
+    header('Location:accessories.php');
         exit();
 
        

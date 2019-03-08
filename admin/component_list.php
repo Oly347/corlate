@@ -352,6 +352,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <th>Price</th>
                         <th>Image of Component</th>
                         <th>Status</th>
+                        <th>Attribute</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -368,6 +369,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_mb_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_mb_component['component_image'];?>" height=50 width=80 /> </td>
                         <td><?php echo $row_mb_component['status'];?> </td>
+                        <td><?php echo $row_mb_component['atribute'];?> </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="motherboard_update.php?id=<?php echo $row_mb_component['id'];?>" role="button">Update</a>
@@ -504,7 +506,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -520,7 +522,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_hdd_component['component_details'];?></td>
                         <td><?php echo $row_hdd_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_hdd_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_hdd_component['status'];?></td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="harddrive_update.php?id=<?php echo $row_hdd_component['id'];?>" role="button">Update</a>
@@ -555,7 +557,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -571,7 +573,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_memory_component['component_details'];?></td>
                         <td><?php echo $row_memory_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_memory_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_memory_component['status'];?></td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="memory_update.php?id=<?php echo $row_memory_component['id'];?>" role="button">Update</a>
@@ -606,7 +608,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -622,7 +624,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_graphic_component['component_details'];?></td>
                         <td><?php echo $row_graphic_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_graphic_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_graphic_component['status'];?></td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="graphiccard_update.php?id=<?php echo $row_graphic_component['id'];?>" role="button">Update</a>
@@ -660,7 +662,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -676,7 +678,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_sound_component['component_details'];?></td>
                         <td><?php echo $row_sound_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_sound_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_sound_component['status'];?></td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="soundcard_update.php?id=<?php echo $row_sound_component['id'];?>" role="button">Update</a>
@@ -713,7 +715,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -729,7 +731,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_dvd_component['component_details'];?></td>
                         <td><?php echo $row_dvd_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_dvd_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_dvd_component['status'];?></td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="dvd_update.php?id=<?php echo $row_dvd_component['id'];?>" role="button">Update</a>
@@ -765,7 +767,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -781,7 +783,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_wireless_adapter_component['component_details'];?></td>
                         <td><?php echo $row_wireless_adapter_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_wireless_adapter_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_wireless_adapter_component['status'];?></td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="wireless_update.php?id=<?php echo $row_wireless_adapter_component['id'];?>" role="button">Update</a>
@@ -819,7 +821,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -835,7 +837,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_ssd_component['component_details'];?></td>
                         <td><?php echo $row_ssd_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_ssd_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_ssd_component['status'];?></td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="ssd_update.php?id=<?php echo $row_ssd_component['id'];?>" role="button">Update</a>

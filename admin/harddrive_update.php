@@ -303,7 +303,14 @@ foreach ($hardDriveRow as $key => $value) {
     </div>
 
 
-    
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="status" >
+      <option value="0" >Deactive</option>
+      <option value="1">Active</option>
+      
+    </select>
+  </div>
     
     
   <button type="submit" class="btn btn-primary">Submit</button>

@@ -302,7 +302,14 @@ foreach ($rowProductDvdDrive as $key => $value) {
       <input type="file" class="form-control" id="c_pic"  name="c_pic" value="<?php echo $component_image; ?>">
     </div>
 
-
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="status" >
+      <option value="0" >Deactive</option>
+      <option value="1">Active</option>
+      
+    </select>
+  </div>
     
     
     

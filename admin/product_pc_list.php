@@ -269,6 +269,7 @@ $rowProductPCList = $obj_comp->getProductPCList()
                   <thead>
                   <tr>
                       <th>Id</th>
+                      <th>Status</th>
                       <th>Product No</th>
                       <th>Product Price</th>
                       <th>Product Image</th>
@@ -290,6 +291,7 @@ $rowProductPCList = $obj_comp->getProductPCList()
                   <tfoot>
                     <tr>
                       <th>Id</th>
+                      <th>Status</th>
                       <th>Product No</th>
                       <th>Product Price</th>
                       <th>Product Image</th>
@@ -318,6 +320,7 @@ $rowProductPCList = $obj_comp->getProductPCList()
 
                     <tr>
                       <td><?php echo $row_product_pc_list['id'];?></td>
+                      <td><?php echo $row_product_pc_list['status'];?></td>
                       <td><?php echo $row_product_pc_list['product_no'];?></td>
                       <td><?php echo $row_product_pc_list['product_price'];?></td>
                       <td><img src ="upload/<?php echo $row_product_pc_list['product_img'];?>" height=50 width=80 /> </td>

@@ -576,7 +576,7 @@ $graphicCardRow = $obj_comp->getGCARDById($row_employee['GCARD']);
 <?php
 $total=$row_cab_component['component_price']+$row_cpu_component['component_price']+
 $row_smps_component['component_price']+$row_mother_board_component['component_price']+
-$row_hard_drive_component['component_price']+$row_memory_component['component_price']+
+$row_hard_drive_component['component_price']+
 $row_graphic_card_component['component_price'];
 ?>
 
@@ -707,7 +707,17 @@ $row_graphic_card_component['component_price'];
                                         Memory Name(RAM)<input type="text" id="memory_model" class="form-control" name="memory_model" value="<?php echo $row_memory_component['component_name'];?> " readonly>
                                     </div>
                                 </div>
+                                <div class="form-group row">
 
+<div class="col-md-10">  
+Choose Ram Quantity
+<select class="form-control" name="ram_quanty" >
+<option value="1" >1</option>
+<option value="2">2</option>
+
+</select>
+</div>
+</div>
 
                                 <div class="form-group row">
                                 
@@ -715,6 +725,10 @@ $row_graphic_card_component['component_price'];
                                         Memory Price<input type="text" id="memory_price" class="form-control" name="memory_price" value="<?php echo $row_memory_component['component_price'];?> " readonly>
                                     </div>
                                 </div>
+
+
+                                                 
+                                     
                                 <div class="form-group row">
                                 
                                     <div class="col-md-10">
@@ -734,7 +748,7 @@ $row_graphic_card_component['component_price'];
                                 
 
 
-                                <div class="form-group row">
+                                <div class="form-group row" style="display:none">
                                 
                                     <div class="col-md-10">
                                         Total Price<input type="text" id="total" class="form-control" name="total" value="<?php echo $total; ?>" readonly>

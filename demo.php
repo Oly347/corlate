@@ -223,179 +223,20 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 
             <div class="row">
 
-                <form id="regForm" action="employee.dml.php" method="post">
-
-
-                <!-- <input class="form-control" id="myInput" type="text" placeholder="Search.." value="intel" readonly> -->
+                <form id="regForm" action="defult" method="post">
   <h1>Choose Your PC</h1>
   
-  <div class="tab tab1" style="overflow-x:auto;" >Choose Your CPU
-  <input class="form-control search_box" id="myInput" type="text" placeholder="Search..">
-    <div class="table-responsive" style="padding: 10px;">
-        <table class="table  table-borderless  " id="myTable" style="margin-top:10px" >
-          <thead>
-            <tr>
-              <th>CPU Name</th>
-              <th>DIscription</th>
-              <th>Image</th>
-              <th>Price</th>
-              <th >Choose your option</th>
-            </tr>
-          </thead>
-          <tbody>
+  
 
-          <?php
-                
-                    foreach ($rowCPUComponent as  $row_cpu_component) {
-                                       
-                    ?>
-            <tr>
-              <td><?php echo $row_cpu_component['component_name'];?></td>
-              <td><?php echo $row_cpu_component['component_details'];?></td>
-              
-              <td><img src ="admin/upload/<?php echo $row_cpu_component['component_image'];?>" height=50 width=80 /> </td>
-              <td><?php echo $row_cpu_component['component_price'];?></td>
-              <td><input type="radio" class="option-input radio" name="CPU"  value="<?php echo $row_cpu_component['id'];?>" /></td>
-            </tr>
-            <?php
-                       }
-                
-                      ?>
-            <!-- <tr>
-              <td>
-                <input type="radio" name="radios" id="radio2" value="2"/>
-                <input type="text"  disabled value="JNE">
-                <input type="radio" name="radios" id="radio2" value="2"/>
-               -- <label for="radio2">JNE</label> -->
-              
-            
-          </tbody>
-        </table>
-      </div>
-
-      <script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
+    
 
     
       
-    </div>
-    <div class="tab tab1" style="overflow-x:auto;" >Choose Your Cabenet
-      <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
-      <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
+    
 
-      <input class="form-control search_box" id="myInput1" type="text" placeholder="Search..">
-      <div class="table-responsive">
-          <table class="table table-borderless" id="myTable1">
-            <thead>
-              <tr>
-                <th>Cabinat Name</th>
-                <th>Discription</th>
-                <th>Image</th>
-                <th>Price</th>
-                <th >Choose your option</th>
-              </tr>
-            </thead>
-            <tbody>
-
-          <?php
-                
-                    foreach ($rowCABComponent as  $row_cpu_component) {
-                                       
-                    ?>
-            <tr>
-              <td><?php echo $row_cpu_component['component_name'];?></td>
-              <td><?php echo $row_cpu_component['component_details'];?></td>
-              
-              <td><img src ="admin/upload/<?php echo $row_cpu_component['component_image'];?>" height=50 width=80 /> </td>
-              <td><?php echo $row_cpu_component['component_price'];?></td>
-              <td><input type="radio" class="option-input radio" name="CAB"  value="<?php echo $row_cpu_component['id'];?>"  ></td>
-            </tr>
-            <?php
-                       }
-                
-                      ?>
-            <!-- <tr>
-              <td>
-                <input type="radio" name="radios" id="radio2" value="2"/>
-                <input type="text"  disabled value="JNE">
-                <input type="radio" name="radios" id="radio2" value="2"/>
-               -- <label for="radio2">JNE</label> -->
-              
-            
-          </tbody>
-          </table>
-        </div>
-        
-  
-      
-  
-      
-        
-      </div>
-      <script>
-$(document).ready(function(){
-  $("#myInput1").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable1 tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
 
    
-      <div class="tab tab1" style="overflow-x:auto;" >Choose Your SMPS
-          <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
-          <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
-          <div class="table-responsive">
-              <table class="table table-borderless">
-                <thead>
-                  <tr>
-                    <th>SMPS Name</th>
-                    <th>Discription</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th >Choose your option</th>
-                  </tr>
-                </thead>
-                                      <tbody>
-
-                      <?php
-                            
-                                foreach ($rowSMPSComponent as  $row_smps_component) {
-                                                  
-                                ?>
-                        <tr>
-                          <td><?php echo $row_smps_component['component_name'];?></td>
-                          <td><?php echo $row_smps_component['component_details'];?></td>
-                          
-                          <td><img src ="admin/upload/<?php echo $row_smps_component['component_image'];?>" height=50 width=80 /> </td>
-                          <td><?php echo $row_smps_component['component_price'];?></td>
-                          <td><input type="radio" class="option-input radio" name="SMPS"  value="<?php echo $row_smps_component['id'];?>" /></td>
-                        </tr>
-                        <?php
-                        }
-                            
-                        ?>
-                        
-                      </tbody>
-              </table>
-            </div>
       
-          
-      
-          
-            
-          </div>
-
 
 
 
@@ -444,167 +285,26 @@ $(document).ready(function(){
                 
               </div>
 
-              <div class="tab tab1" style="overflow-x:auto;" >Choose Your Hard Disk Drive
-              <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
-              <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
-              <div class="table-responsive">
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th>HDD Name</th>
-                        <th>Discription</th>
-                        <th>Image</th>
-                        <th>Price</th>
-                        <th >Choose your option</th>
-                      </tr>
-                    </thead>
-                    
-                      <tbody>
-
-                      <?php
-                            
-                      foreach ($rowHDDComponent as  $row_harddrive_component) {
-                                                  
-                      ?>
-                        <tr>
-                          <td><?php echo $row_harddrive_component['component_name'];?></td>
-                          <td><?php echo $row_harddrive_component['component_details'];?></td>
-                          
-                          <td><img src ="admin/upload/<?php echo $row_harddrive_component['component_image'];?>" height=50 width=80 /> </td>
-                          <td><?php echo $row_harddrive_component['component_price'];?></td>
-                          <td><input type="radio" class="option-input radio" name="HDD"  value="<?php echo $row_harddrive_component['id'];?>" /></td>
-                        </tr>
-                        <?php
-                        }
-                            
-                        ?>
-                        
-                      </tbody>
-                  </table>
-                </div>
           
               
           
               
                 
-              </div>
-              <div class="tab tab1" style="overflow-x:auto;" >Choose Your Memory(RAM) *  &nbsp; you can choose ram quantity in confirm page
-              <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
-              <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
-              <div class="table-responsive">
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th>RAM Name</th>
-                        <th>Discription</th>
-                        <th>Image</th>
-                        <th>Price</th>
-                        <th >Choose your option</th>
-                      </tr>
-                    </thead>
-                    
-                      <tbody>
-
-                      <?php
-                            
-                      foreach ($rowMemoryComponent as  $row_memory_component) {
-                                                  
-                      ?>
-                        <tr>
-                          <td><?php echo $row_memory_component['component_name'];?></td>
-                          <td><?php echo $row_memory_component['component_details'];?></td>
-                          
-                          <td><img src ="admin/upload/<?php echo $row_memory_component['component_image'];?>" height=50 width=80 /> </td>
-                          <td><?php echo $row_memory_component['component_price'];?></td>
-                          <td><input type="radio" class="option-input radio" name="RAM"  value="<?php echo $row_memory_component['id'];?>" /></td>
-                        </tr>
-                        <?php
-                        }
-                            
-                        ?>
-                        
-                      </tbody>
-                  </table>
-                </div>
-          
               
-          
               
-                
-              </div>
 
-              <div class="tab tab1" style="overflow-x:auto;" >Choose Your Graphic card
-              <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
-              <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
-              <div class="table-responsive">
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th>Graphic Card Name</th>
-                        <th>Discription</th>
-                        <th>Image</th>
-                        <th>Price</th>
-                        <th >Choose your option</th>
-                      </tr>
-                    </thead>
-                    
-                      <tbody>
+             
 
-                      <?php
-                            
-                      foreach ($rowGraphicComponent as  $row_graphic_component) {
-                                                  
-                      ?>
-                        <tr>
-                          <td><?php echo $row_graphic_component['component_name'];?></td>
-                          <td><?php echo $row_graphic_component['component_details'];?></td>
-                          
-                          <td><img src ="admin/upload/<?php echo $row_graphic_component['component_image'];?>" height=50 width=80 /> </td>
-                          <td><?php echo $row_graphic_component['component_price'];?></td>
-                          <td><input type="radio" class="option-input radio" name="GCARD"  value="<?php echo $row_graphic_component['id'];?>" /></td>
-                        </tr>
-                        <?php
-                        }
-                            
-                        ?>
-                        
-                      </tbody>
-                  </table>
-                </div>
-          
-              
-          
-              
-                
-              </div>
-
-              <!-- <div class="tab tab4" >User Name
-              <p><input placeholder="Username..." oninput="this.className = ''" name="email_id" ></p>
-              
-              </div> -->
-
-
-              <!-- <input type="hidden" name="temp_id"  class="form-control" value="<?php echo $_SESSION['session_id'];?>"></p> -->
-              
+            
               
   <div style="overflow:auto;">
     <div style="float:right; margin-top: 10px;">
-      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+       
+      <button type="button" >Submit</button>
     </div>
   </div>
   <!-- Circles which indicates the steps of the form: -->
-  <div style="text-align:center;margin-top:40px;">
-    <span class="step">1</span>
-    <span class="step">2</span>
-    <span class="step">3</span>
-    <span class="step">4</span>
-    <span class="step">5</span>
-    <span class="step">6</span>
-    <span class="step">7</span>
-    <!-- <span class="step"></span> -->
-    
-  </div>
+  
 </form>
 
             </div>

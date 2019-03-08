@@ -24,9 +24,8 @@ $update_array=  array(
 'component_name' => $_POST['c_name'],
 'component_details' => $_POST['c_dis'],
 'component_price' => $_POST['c_price'],
-'component_image' => $randomFileName,
-    
-
+'component_image' => $randomFileName, 
+'status' => $_POST['status'],
 );
      
 

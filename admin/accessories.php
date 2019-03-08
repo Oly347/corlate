@@ -293,7 +293,7 @@ $rowSpeakerComponent = $obj_comp->getComponentDetailsSpeaker();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -309,10 +309,10 @@ $rowSpeakerComponent = $obj_comp->getComponentDetailsSpeaker();
                         <td><?php echo $row_monitor_component['component_details'];?></td>
                         <td><?php echo $row_monitor_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_monitor_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_monitor_component['status'];?></td>
                         <td>
-                        <a class="btn btn-danger" href="" role="button">Delete</a>
-                        <a class="btn btn-info" href="" role="button">Update</a>
+                        <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
+                        <a class="btn btn-info" href="monitor_update.php?id=<?php echo $row_monitor_component['id'];?>" role="button">Update</a>
                         </td>
                       </tr>
                  
@@ -346,7 +346,7 @@ $rowSpeakerComponent = $obj_comp->getComponentDetailsSpeaker();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -362,10 +362,10 @@ $rowSpeakerComponent = $obj_comp->getComponentDetailsSpeaker();
                         <td><?php echo $row_mouse_keyboard_component['component_details'];?></td>
                         <td><?php echo $row_mouse_keyboard_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_mouse_keyboard_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_mouse_keyboard_component['status'];?></td>
                         <td>
-                        <a class="btn btn-danger" href="" role="button">Delete</a>
-                        <a class="btn btn-info" href="" role="button">Update</a>
+                        <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
+                        <a class="btn btn-info" href="keyboard_mouse_update.php?id=<?php echo $row_mouse_keyboard_component['id'];?>" role="button">Update</a>
                         </td>
                       </tr>
                  
@@ -399,7 +399,7 @@ $rowSpeakerComponent = $obj_comp->getComponentDetailsSpeaker();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -415,10 +415,10 @@ $rowSpeakerComponent = $obj_comp->getComponentDetailsSpeaker();
                         <td><?php echo $row_headphone_component['component_details'];?></td>
                         <td><?php echo $row_headphone_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_headphone_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_headphone_component['status'];?></td>
                         <td>
-                        <a class="btn btn-danger" href="" role="button">Delete</a>
-                        <a class="btn btn-info" href="" role="button">Update</a>
+                        
+                        <a class="btn btn-info" href="headphone_update.php?id=<?php echo $row_headphone_component['id'];?>" role="button">Update</a>
                         </td>
                       </tr>
                  
@@ -453,7 +453,7 @@ $rowSpeakerComponent = $obj_comp->getComponentDetailsSpeaker();
                         <th>Discriptrion</th>
                         <th>Price</th>
                         <th>Image of Component</th>
-                        
+                        <th>Status</th>
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -469,10 +469,10 @@ $rowSpeakerComponent = $obj_comp->getComponentDetailsSpeaker();
                         <td><?php echo $row_speaker_component['component_details'];?></td>
                         <td><?php echo $row_speaker_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_speaker_component['component_image'];?>" height=50 width=80 /> </td>
-                        
+                        <td><?php echo $row_speaker_component['status'];?></td>
                         <td>
-                        <a class="btn btn-danger" href="" role="button">Delete</a>
-                        <a class="btn btn-info" href="" role="button">Update</a>
+                        <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
+                        <a class="btn btn-info" href="speaker_update.php?id=<?php echo $row_speaker_component['id'];?>" role="button">Update</a>
                         </td>
                       </tr>
                  

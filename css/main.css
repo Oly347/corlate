@@ -273,7 +273,7 @@ input.search-form {
 }
 
 input.search-form::-webkit-input-placeholder {
-    color: transparent;
+    color: #fff;
 }
 
 input.search-form:hover::-webkit-input-placeholder {
@@ -933,6 +933,13 @@ a.accordion-toggle i {
     color: #fff;
 }
 
+
+.product_li{
+color: #95d819;
+font-weight: bold;
+text-transform: uppercase;
+
+}
 .nav-tabs>li {
     margin-bottom: 0px;
     border: 1px solid transparent;
@@ -949,6 +956,14 @@ a.accordion-toggle i {
     transition: .4s;
     border-radius: 5px;
 }
+.search_box{
+width: 25%;
+background-color: transparent;
+color: white;
+
+}
+
+
 
 /* #content .tab-pane{
     padding-left: 100px;
@@ -2027,15 +2042,30 @@ ul.pagination>li:last-child > a{
 
 .search_box {
     background-image: url("../images/search_icon.png");
-    background-position: 314px 15px;
+    background-position: 410px 15px;
     background-repeat: no-repeat;
-    border-color: #DEDEDE;
+    border-color: white;
     height: 48px;
     outline: medium none;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
 
+
+::-webkit-input-placeholder { /* Chrome */
+    color: white;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: white;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: white;
+    opacity: 1;
+  }
+  :-moz-placeholder { /* Firefox 4 - 18 */
+    color: white;
+    opacity: 1;
+  }
 .form-control:focus {
     -webkit-box-shadow: none;
     box-shadow: none;

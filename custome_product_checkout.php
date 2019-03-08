@@ -11,9 +11,13 @@ $rand = strtoupper(substr(uniqid(sha1(time())),0,4));
 $transaction = 'TS' . $today . $rand ;
 $product_number = 'C-PC' . $today . $rand ;
 
-$details=$_POST['cpu_model']."=>".$_POST['cpu_price'].",   ".$_POST['cab_model']."=>".$_POST['cab_price'].",   ".$_POST['smps_model']."=>".$_POST['smps_price'].",   ".$_POST['mboard_model']."=>".$_POST['mboard_price'].",   ".$_POST['hdrive_model']."=>".$_POST['hdrive_price'].",   ".$_POST['memory_model']."=>".$_POST['memory_price'].",   ".$_POST['gcard_model']."=>".$_POST['gcard_price'];
+
+$ram_price = $_POST['memory_price'] *$_POST['ram_quanty'];
+$total1 = $_POST["total"];
+$total_price = $ram_price + $total1 ;
 
 
+$details="Processer"."=>".$_POST['cpu_model']."=>".$_POST['cpu_price'].",  Cabinet"."=> ".$_POST['cab_model']."=>".$_POST['cab_price'].",  SMPS"."=>  ".$_POST['smps_model']."=>".$_POST['smps_price'].",  Mother Board"."=>  ".$_POST['mboard_model']."=>".$_POST['mboard_price'].",  Hard Drive"."=>  ".$_POST['hdrive_model']."=>".$_POST['hdrive_price'].",   Memory(RAM)"."=> ".$_POST['memory_model']."=>".$ram_price."=>".$_POST['ram_quanty'].",  Graphic card"."=>  ".$_POST['gcard_model']."=>".$_POST['gcard_price'];
 ?>
 
 
@@ -188,7 +192,7 @@ $details=$_POST['cpu_model']."=>".$_POST['cpu_price'].",   ".$_POST['cab_model']
                        
                         <div class="form-group">
                             <label>Product Price</label>
-                            <input type="text" name="product_price" class="form-control" value="<?php echo $_POST["total"]; ?>" readonly>
+                            <input type="text" name="product_price" class="form-control" value="<?php echo $total_price ?>" readonly>
                             
                         </div>
 

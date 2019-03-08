@@ -245,6 +245,13 @@ function component_inc()
             return $rows;
           }
 
+
+          function getComponentDetailsHDDForUser(){
+            $sSql = "SELECT * FROM component_details_hdd WHERE status = '1' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+        }  
+
           function getRAMById($id){
             $sSql="SELECT * FROM component_details_memory WHERE id='".$id."' ";
             $rows = $this->db_con->GetAllRows($sSql);
@@ -252,11 +259,25 @@ function component_inc()
           }
 
 
+          function getComponentDetailsRAMForUser(){
+            $sSql = "SELECT * FROM component_details_memory WHERE status = '1' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+        }  
+
+
           function getGCARDById($id){
             $sSql="SELECT * FROM component_details_graphic_card WHERE id='".$id."' ";
             $rows = $this->db_con->GetAllRows($sSql);
             return $rows;
           }
+
+
+          function getComponentDetailsGCARDForUser(){
+            $sSql = "SELECT * FROM component_details_graphic_card WHERE status = '1' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+        }  
             
         function getComponentDetailsMB(){
                 $sSql = "SELECT * FROM component_details_mboard";
@@ -380,11 +401,37 @@ function component_inc()
         return $rows;
    } 
 
+
+   function getComponentDetailsMonitorForUser(){
+    $sSql = "SELECT * FROM component_details_monitor WHERE status = '1' ";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+} 
+
+
+   function getMonitorById($id){
+    $sSql="SELECT * FROM component_details_monitor WHERE id='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
    function getComponentDetailsKeyboardMouse(){
     $sSql = "SELECT * FROM component_details_keyboardmouse";
         $rows = $this->db_con->GetAllRows($sSql);
         return $rows;
    } 
+
+   function getComponentDetailsKeyBoardmouseForUser(){
+    $sSql = "SELECT * FROM component_details_keyboardmouse WHERE status = '1' ";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+} 
+
+   function getKeyboardMouseById($id){
+    $sSql="SELECT * FROM component_details_keyboardmouse WHERE id='".$id."' ";
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
 
 
    function getComponentDetailsHeadphone(){
@@ -393,12 +440,24 @@ function component_inc()
         return $rows;
    } 
 
+   function getComponentDetailsHeadphoneForUser(){
+    $sSql = "SELECT * FROM component_details_headphone WHERE status = '1' ";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+} 
+
 
    function getComponentDetailsSpeaker(){
     $sSql = "SELECT * FROM component_details_speaker";
         $rows = $this->db_con->GetAllRows($sSql);
         return $rows;
    } 
+
+   function getComponentDetailsSpeakerForUser(){
+    $sSql = "SELECT * FROM component_details_speaker WHERE status = '1' ";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+} 
 
    function getProductPCList(){
     $sSql = "SELECT * FROM add_product_pc";
@@ -426,12 +485,25 @@ function component_inc()
   }
 
 
+  function getProductSSDForUser(){
+    $sSql = "SELECT * FROM component_details_ssd WHERE status = '1' ";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+} 
+
+
 
   function getProductSoundCard($id){
     $sSql="SELECT * FROM component_details_sound_card WHERE id ='".$id."' ";
     $rows = $this->db_con->GetAllRows($sSql);
     return $rows;
   }
+
+  function getProductSoundCardForUser(){
+    $sSql = "SELECT * FROM component_details_sound_card WHERE status = '1' ";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+} 
 
 
   function getProductWirelessAdaptor($id){
@@ -441,6 +513,13 @@ function component_inc()
   }
 
 
+  function getProductWirelessAdaptorForUser(){
+    $sSql = "SELECT * FROM component_details_wireless_adapter WHERE status = '1' ";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+} 
+
+
 
   function getProductDvdDrive($id){
     $sSql="SELECT * FROM component_details_dvd_drive WHERE id ='".$id."' ";
@@ -448,7 +527,11 @@ function component_inc()
     return $rows;
   }
 
-
+  function getProductDVDDRIVEForUser(){
+    $sSql = "SELECT * FROM component_details_dvd_drive WHERE status = '1' ";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+} 
 
 
   function getProductSpeaker($id){
@@ -502,6 +585,11 @@ function component_inc()
     $rows = $this->db_con->GetAllRows($sSql);
     return $rows;
    }
+   function getComponentDetailsPCProductForUser(){
+    $sSql = "SELECT * FROM add_product_pc WHERE status = '1' ";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+} 
 
 
 
@@ -529,6 +617,76 @@ function component_inc()
     function SetUpdateMotherBoard($post_fields,$id)
     {
     $sSql="SELECT * FROM component_details_mboard WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+    }
+
+
+
+    function SetUpdateMonitor($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_monitor WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+    }
+
+
+    function SetUpdateKeyboardMouse($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_keyboardmouse WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+    }
+
+
+    function SetUpdateHeadphone($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_headphone WHERE id='".$id."' ";
+        
+        
+     echo $update=$this->db_con->RowUpdate($post_fields,$sSql);
+     if($update==0)
+     {
+            return false;
+     }
+        else
+        {
+            return true;
+        }
+    }
+
+
+
+    function SetUpdateSpeaker($post_fields,$id)
+    {
+    $sSql="SELECT * FROM component_details_speaker WHERE id='".$id."' ";
         
         
      echo $update=$this->db_con->RowUpdate($post_fields,$sSql);

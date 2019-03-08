@@ -11,10 +11,10 @@ $obj_comp = new component_inc ;
 //$rowKeyBoardMouseList = $obj_comp->getComponentDetailsKeyboardMouse();
 
 
-$rowSSDList = $obj_comp->getComponentDetailsSSD();
-$rowSoundCardList = $obj_comp->getComponentDetailsSoundCard();
-$rowWirelessAdaptorList = $obj_comp->getComponentDetailsWirelessAdapter();
-$rowDvdDriveList = $obj_comp->getComponentDetailsDvdDrive();
+$rowSSDList = $obj_comp->getProductSSDForUser();
+$rowSoundCardList = $obj_comp->getProductSoundCardForUser();
+$rowWirelessAdaptorList = $obj_comp->getProductWirelessAdaptorForUser();
+$rowDvdDriveList = $obj_comp->getProductDVDDRIVEForUser();
 
 
 

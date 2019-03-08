@@ -6,12 +6,12 @@ session_start();
 $obj_comp = new component_inc ;
 
 $rowProductPCList = $obj_comp->getProductPCList();
-$rowMonitorList = $obj_comp->getComponentDetailsMonitor();
+$rowMonitorList = $obj_comp->getComponentDetailsMonitorForUser();
 
-$rowKeyBoardMouseList = $obj_comp->getComponentDetailsKeyboardMouse();
+$rowKeyBoardMouseList = $obj_comp->getComponentDetailsKeyBoardmouseForUser();
 
-$rowHeadPhoneList = $obj_comp->getComponentDetailsHeadphone();
-$rowSpeakerList = $obj_comp->getComponentDetailsSpeaker();
+$rowHeadPhoneList = $obj_comp->getComponentDetailsHeadphoneForUser();
+$rowSpeakerList = $obj_comp->getComponentDetailsSpeakerForUser();
 
 
 

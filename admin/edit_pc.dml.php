@@ -29,7 +29,7 @@ $update_array=  array(
 'operating_system' => $_POST['operating_system'],
 'g_card' => $_POST['g_card'],
 'additional_information' => $_POST['additional_information'],   
-
+'status' => $_POST['status'],
 );
      
 
