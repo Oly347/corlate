@@ -36,12 +36,7 @@ else {
 
 
 
-// $f1=$_FILES['c_pic']['name'];
-// $randomFileName = time().$f1;
-// $path='upload/'.$randomFileName;
-// $t=$_FILES['c_pic']['tmp_name'];
-// move_uploaded_file($t,$path);
-
+   
 
 if(!empty($_FILES['c_pic']['name'])) //new image uploaded
 {
@@ -68,10 +63,12 @@ else // no image uploaded
     'component_name' => $_POST['c_name'],
     'component_details' => $_POST['c_dis'],
     'component_price' => $_POST['c_price'],
-    
     'status' => $_POST['status'],  
     
     );
+
+
+    
 }
 
 // $update_array=  array(
@@ -98,8 +95,9 @@ if ($update) {
 
        
     }else {
-        // header('Location:update.php');
+        header('Location:component_list.php');
         exit();
+      
 
 
 }

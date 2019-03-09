@@ -1,7 +1,7 @@
 <?php
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
-
+require_once('config.php'); 
 session_start();
 
 
@@ -18,20 +18,26 @@ $today = date("Ymd");
 $rand = strtoupper(substr(uniqid(sha1(time())),0,4));
 $transaction = 'TS' . $today . $rand ;
 
+$orderId = 'ORD' . $today . $rand ;
 
-// if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) 
-// {
+
+
+$obj_user = new user_inc ;
+$userDetailsById = $obj_user->getUserById($_SESSION['userName']);
+
+
+
+foreach ($userDetailsById as $key => $value) {
+    $name=$value['name'];
+    $phone_number=$value['phone_number'];
+    $address=$value['address'];
+    $profile_pic=$value['profile_pic'];
     
-    
-// } 
-
-//if (!isset($_SESSION['user']) &&)
-
-
-
+  
+}
 
 $data = $_POST['process'];
-//print_r ($data) ;
+
 
 foreach ($data as $value) {
     
@@ -193,7 +199,14 @@ $priceListOfProduct = implode('--------and--------', $productPrice);
     
     <section class="pricing">
     <div class="container">
-    <form  action="#" method="post" id="employeeForm" >
+    <form  action="order.dml.php" method="post" id="employeeForm" >
+
+    <div class="form-group">
+                                            <label>Order Id</label>
+                            <input type="text" name="order_id" id="order_id" class="form-control" value="<?php echo $orderId ?>" readonly>
+                            
+                                            
+                                        </div>
 
                     <div class="form-group">
                                             <label>User Name</label>
@@ -234,11 +247,80 @@ $priceListOfProduct = implode('--------and--------', $productPrice);
 
 
                         <div class="form-group">
+                            <label>Billing Address</label>
+                            <textarea class="form-control" name="bill_addr"  id="bill_addr" readonly><?php echo $address ?></textarea>
+                            
+                        </div>
+
+                        <!-- <input type="checkbox" name="present" onclick="permanent(this.form)">
+                        <script language="JavaScript">
+    function permanent(p) {
+        if(p.present.checked == true) {
+            p.per_add.value = p.temp_address.value;
+            p.per_city.value = p.temp_city.value;
+            p.per_state.value = p.temp_state.value;
+            p.per_country.value = p.temp_country.value;
+            p.per_pin.value = p.temp_pin.value;
+        }
+    }
+</script> -->
+
+
+<script type="text/javascript">
+
+function copyBilling (f) {
+	var s, i = 0;
+	while (s = ['addr'][i++]) {f.elements['shipping_' + s].value = f.elements['bill_' + s].value};
+}
+</script>
+<label style="text-align:left"><input name="same" onclick="if (this.checked) copyBilling (this.form)" type="checkbox">&nbsp;Same as billing</label>
+<div class="form-group">
+                            <label>Shipping Address</label>
+                            <textarea class="form-control" name="shipping_addr"  id="shipping_addr"></textarea>
+                            
+                        </div>
+
+                        <div class="form-group">
                             <label>Total</label>
-            <input type="text" name="product_no" id="product_no" class="form-control" value="<?php echo $_POST['total'] ?>" readonly>
+            <input type="text" name="total" id="total" class="form-control" value="<?php echo $_POST['total']; ?>" readonly>
             
                             
                         </div>
+
+<?php
+$sub_total = $_POST['total'];
+$fulltotal = 100*$sub_total;
+
+?>
+                        
+    <!-- Note that the amount is in paise = 50 INR -->
+    <script
+        src="https://checkout.razorpay.com/v1/checkout.js"
+        data-key="<?php echo $razor_api_key; ?>"
+        data-amount="<?php echo $fulltotal; ?>"
+        data-buttontext="Pay with Razorpay"
+        data-name="Tilottama.Store"
+        data-description="<?php echo $orderId; ?>"
+        data-image="http://tilottama.tech/images/tech_logo_dark.jpg"
+        data-prefill.name=""
+        data-prefill.email=""
+        data-theme.color="#3d3d3d"
+    >
+        
+        
+    </script>
+
+<style>
+      .razorpay-payment-button {
+        color: #ffffff !important;
+        background-color: #7266ba;
+        border-color: #7266ba;
+        font-size: 14px;
+        padding: 10px;
+      }
+    </style>
+    <input type="hidden" value="Hidden Element" name="hidden">
+    
 
 
                      </div>
@@ -249,18 +331,7 @@ $priceListOfProduct = implode('--------and--------', $productPrice);
                      <div class="form-actions">
                      <a href="index.php" class="btn btn-info btn-outline">Cancel</a>
                      <a href="user_dashboard.php" class="btn btn-info btn-outline">Back</a>
-                     <?php
-                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<button type="submit" class="btn btn-success btn-outline" >
-                            Continue To Pay<i class="fa fa-sign-in"></i>
-                            </button>';
-                            
-                        } else {
-                            echo '<a href="user_login.php" class="btn btn-success btn-outline" style="float:center" role="button" aria-pressed="true">Login To Buy</a>';
-                        }
-                        ?>
-
-                        </div>
+                     <!--  -->
                     </form>
                     </div>
     </section>

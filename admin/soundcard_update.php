@@ -277,7 +277,7 @@ foreach ($rowProductSoundCard as $key => $value) {
 
           <div class="container">
   <h2>Component Details</h2>
-  <form action="sound_card.upl.php" method="post" enctype="multipart/form-data">
+  <form action="sound_card.upl.php#soundCard" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="c_name">Model name</label>
       <input type="text" class="form-control" id="c_name" placeholder="Enter Model Name" name="c_name" value="<?php echo $component_name; ?>">

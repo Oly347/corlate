@@ -271,7 +271,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
             <div class="col-lg-10">
 
               <!-- Circle Buttons -->
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="processor">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Processor</h6><a href="processor.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
@@ -333,7 +333,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 			  
 			  
 			  
-			  <div class="card shadow mb-4">
+			  <div class="card shadow mb-4" id="motherBoard">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Motherboard</h6><a href="motherboard.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
@@ -352,7 +352,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <th>Price</th>
                         <th>Image of Component</th>
                         <th>Status</th>
-                        <th>Attribute</th>
+                        
                         <th>Operation</th>
                       </tr>
                     </thead>
@@ -369,7 +369,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_mb_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_mb_component['component_image'];?>" height=50 width=80 /> </td>
                         <td><?php echo $row_mb_component['status'];?> </td>
-                        <td><?php echo $row_mb_component['atribute'];?> </td>
+                      
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="motherboard_update.php?id=<?php echo $row_mb_component['id'];?>" role="button">Update</a>
@@ -385,7 +385,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                   </table>
                 </div>
               </div>
-                    <div class="card shadow mb-4">
+                    <div class="card shadow mb-4" id="cabinetList">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Cabinet</h6><a href="cabinet.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
@@ -437,7 +437,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
               </div>
 
 <!-- table start -->
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="SMPS">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">SMPS</h6><a href="smps.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
@@ -488,7 +488,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                 </div>
               </div>
               <!-- table finish -->
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="hardDrive">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">HARD DRIVE</h6><a href="harddrive.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
@@ -498,7 +498,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                   </a>
                 </div>
                 <div class="card-body" style="overflow-x:auto;">
-                  <table class='table table-bordered table-striped'>
+                  <table class='table table-bordered table-striped' >
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -539,7 +539,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                 </div>
               </div>
 
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="memory_list">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Memory(RAM)</h6><a href="memory.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
@@ -590,7 +590,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                 </div>
               </div>
 
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="graphicList">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Graphic card</h6><a href="graphic_card.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
@@ -644,7 +644,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 
 
 
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="soundCard">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Sound card</h6><a href="sound_card.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
@@ -697,7 +697,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 
 
 
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="Dvd">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">DVD Drive</h6><a href="dvd_drive.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
@@ -749,7 +749,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
               </div>
 
 
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="wirelessAdaptor">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Wireless Adaptor</h6><a href="wireless_adapter.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">
@@ -803,7 +803,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 
 
 
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="SSD">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">SSD</h6><a href="ssd.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">

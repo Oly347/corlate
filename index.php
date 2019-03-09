@@ -91,7 +91,7 @@ $userReview = $obj_user->getReviewListFinal();
 $(window).on('load', function() { // makes sure the whole site is loaded 
   $('#status').fadeOut(); // will first fade out the loading animation 
   $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
-  $('body').delay(3500).css({'overflow':'visible'});
+  $('body').delay(350).css({'overflow':'visible'});
 })
     </script>
 
@@ -127,7 +127,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
                             echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
                             echo   $_SESSION['userName'];
-                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Dash Board</a>';
+                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">My Account</a>';
                         } else {
                             echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
                             

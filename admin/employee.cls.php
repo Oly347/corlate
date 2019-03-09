@@ -1567,6 +1567,23 @@ function component_inc()
 
 
 
+            public function InsertIntoOrderList($post_fileds)
+            {
+            $sSql="SELECT * FROM order_details WHERE id=-1";
+            $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+            if($insrt==0)
+             {
+              return false;
+              }
+              else
+              {
+              return true;
+              }
+                      
+              }  
+
+
+
         public function InsertIntoFinalReviewList($post_fileds)
           {
           $sSql="SELECT * FROM final_review_list WHERE id=-1";
