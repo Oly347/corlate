@@ -271,16 +271,35 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
             
           </tbody>
         </table>
+        <!-- <button type="button" id="cpuNext">Next</button> -->
+        <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
+
       </div>
+      <script>
+
+</script>
+
 
       <script>
 $(document).ready(function(){
+
   $("#myInput").on("keyup", function() {
     var value = $(this).val().toLowerCase();
     $("#myTable tr").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
+
+// $(document).on("click","#cpuNext",function(){
+// //alert();
+
+// //val cpu =true;
+// if(0){
+//   nextPrev(1);
+// }
+
+
+// });
 });
 </script>
 
@@ -340,7 +359,7 @@ $(document).ready(function(){
       
         
       </div>
-      <script>
+      <!-- <script>
 $(document).ready(function(){
   $("#myInput1").on("keyup", function() {
     var value = $(this).val().toLowerCase();
@@ -349,7 +368,7 @@ $(document).ready(function(){
     });
   });
 });
-</script>
+</script> -->
 
    
       <div class="tab tab1" style="overflow-x:auto;" >Choose Your SMPS
@@ -797,10 +816,37 @@ function nextPrev(n) {
   showTab(currentTab);
 }
 
+// function validateForm() {
+//   // This function deals with validation of the form fields
+  
+//        var cpu = document.getElementsByName('CPU');
+//        //var cab = document.getElementsByName('CAB');
+//         var genValue = false;
+
+//         for(var i=0; i<cpu.length;i++){
+//             if(cpu[i].checked == true){
+//                 genValue = true;    
+//             }
+//         }
+//         if(!genValue){
+//           sweetAlert("Oops...", "Please choose your option!", "error");
+//             return false;
+//         }
+
+//   if (genValue) {
+//     document.getElementsByClassName("step")[currentTab].className += " finish";
+//   }
+//   return genValue; // return the valid status
+// }
+
+
+
+
 function validateForm() {
   // This function deals with validation of the form fields
   
        var cpu = document.getElementsByName('CPU');
+       //var cab = document.getElementsByName('CAB');
         var genValue = false;
 
         for(var i=0; i<cpu.length;i++){
@@ -813,23 +859,6 @@ function validateForm() {
             return false;
         }
 
-
-        // var cab = document.getElementsByName('CAB');
-        // //var genValue = true;
-
-        // for(var i=0; i<cab.length;i++){
-        //     if(cab[i].checked == true){
-        //         genValue = true;    
-        //     }
-        // }
-        // if(!genValue){
-        //   sweetAlert("Oops...", "Please choose your option!", "error");
-        //     return false;
-        // }      
-
-
-
-  // If the valid status is true, mark the step as finished and valid:
   if (genValue) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }

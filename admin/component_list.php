@@ -311,7 +311,22 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_cpu_component['component_price'];?></td>
                         
                         <td><img src ="upload/<?php echo $row_cpu_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_cpu_component['status'];?> </td>
+                        <td>   
+                        <?php 
+                        if($row_cpu_component['status']==0){
+
+                          echo "Inactive";
+                        }else{
+                          echo "active";
+
+
+                        }
+                        
+                        ?>
+                        
+                        
+                        
+                         </td>
                       
                       
                       </td>
