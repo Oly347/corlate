@@ -271,221 +271,26 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
             
           </tbody>
         </table>
-        <button type="button"  id="cpuNext">Next</button>
+        <!-- <button type="button"  id="cpuNext">Next</button> -->
         <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
        
 
       </div>
-      <script>
 
-</script>
+      <div class="form-actions">
+      <button type="button"  id="cpuNext">Next</button>
+                      </div>
 
-
-      <!-- <script>
-$(document).ready(function(){
-
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-
-$(document).on("click","#cpuNext",function(){
-
-
-if(1){
-  nextPrev(1);
-}
-
-
-});
-
-
-
-$(document).on("click","#cabNext",function(){
-
-var cab = document.getElementsByName('CAB');
-var genValue = false;
-
-        for(var i=0; i<cab.length;i++){
-            if(cab[i].checked == true){
-                genValue = true;    
-            }
+                      <style>
+        .form-actions {
+            margin: 0;
+            background-color: transparent;
+            text-align: right;
         }
-        if(!genValue){
-          sweetAlert("Oops...", "Please choose your option!", "error");
-            return false;
-        }else{
-
-          nextPrev(1);
-        }
-
-// if(1){
-//   nextPrev(1);
-// }
+        </style>
+    
 
 
-});
-
-
-$(document).on("click","#smps",function(){
-
-var smps = document.getElementsByName('SMPS');
-var genValue = false;
-
-        for(var i=0; i<smps.length;i++){
-            if(smps[i].checked == true){
-                genValue = true;    
-            }
-        }
-        if(!genValue){
-          sweetAlert("Oops...", "Please choose your option!", "error");
-            return false;
-        }else{
-
-          nextPrev(1);
-        }
-
-// if(1){
-//   nextPrev(1);
-// }
-
-
-});
-$(document).on("click","#mbnext",function(){
-
-var smps = document.getElementsByName('MB');
-var genValue = false;
-
-        for(var i=0; i<smps.length;i++){
-            if(smps[i].checked == true){
-                genValue = true;    
-            }
-        }
-        if(!genValue){
-          sweetAlert("Oops...", "Please choose your option!", "error");
-            return false;
-        }else{
-
-          nextPrev(1);
-        }
-
-// if(1){
-//   nextPrev(1);
-// }
-
-
-});
-
-
-
-$(document).on("click","#hddnext",function(){
-
-var smps = document.getElementsByName('HDD');
-var genValue = false;
-
-        for(var i=0; i<smps.length;i++){
-            if(smps[i].checked == true){
-                genValue = true;    
-            }
-        }
-        if(!genValue){
-          sweetAlert("Oops...", "Please choose your option!", "error");
-            return false;
-        }else{
-
-          nextPrev(1);
-        }
-
-// if(1){
-//   nextPrev(1);
-// }
-
-
-});
-
-
-$(document).on("click","#ramnext",function(){
-
-var smps = document.getElementsByName('RAM');
-var genValue = false;
-
-        for(var i=0; i<smps.length;i++){
-            if(smps[i].checked == true){
-                genValue = true;    
-            }
-        }
-        if(!genValue){
-          sweetAlert("Oops...", "Please choose your option!", "error");
-            return false;
-        }else{
-
-          nextPrev(1);
-        }
-
-// if(1){
-//   nextPrev(1);
-// }
-
-
-});
-
-
-$(document).on("click","#gcardnext",function(){
-
-var smps = document.getElementsByName('GCARD');
-var genValue = false;
-
-        for(var i=0; i<smps.length;i++){
-            if(smps[i].checked == true){
-                genValue = true;    
-            }
-        }
-        if(!genValue){
-          sweetAlert("Oops...", "Please choose your option!", "error");
-            return false;
-        }else{
-
-          nextPrev(1);
-        }
-
-// if(1){
-//   nextPrev(1);
-// }
-
-
-});
-
-
-
-
-
-});
-</script> -->
-
-<!-- function validateForm() {
-  // This function deals with validation of the form fields
-  
-       var cpu = document.getElementsByName('CPU');
-       //var cab = document.getElementsByName('CAB');
-        var genValue = false;
-
-        for(var i=0; i<cpu.length;i++){
-            if(cpu[i].checked == true){
-                genValue = true;    
-            }
-        }
-        if(!genValue){
-          sweetAlert("Oops...", "Please choose your option!", "error");
-            return false;
-        }
-
-  if (genValue) {
-    document.getElementsByClassName("step")[currentTab].className += " finish";
-  }
-  return genValue; // return the valid status
-} -->
       
     </div>
     <div class="tab tab1" style="overflow-x:auto;" >Choose Your Cabenet
