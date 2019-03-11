@@ -320,7 +320,27 @@ $rowProductPCList = $obj_comp->getProductPCList()
 
                     <tr>
                       <td><?php echo $row_product_pc_list['id'];?></td>
-                      <td><?php echo $row_product_pc_list['status'];?></td>
+                      <td><?php 
+                        if($row_product_pc_list['status']==0){
+
+                          echo '<a href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </a>';
+                        }else{
+                          echo '<a href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </a>';
+
+
+                        }
+                        
+                        ?> </td>
                       <td><?php echo $row_product_pc_list['product_no'];?></td>
                       <td><?php echo $row_product_pc_list['product_price'];?></td>
                       <td><img src ="upload/<?php echo $row_product_pc_list['product_img'];?>" height=50 width=80 /> </td>
@@ -337,7 +357,7 @@ $rowProductPCList = $obj_comp->getProductPCList()
                       <td><?php echo $row_product_pc_list['g_card'];?></td>
                       <td><?php echo $row_product_pc_list['additional_information'];?></td>
                       <td>
-        <a class="btn btn-danger" href="delete.php?id=<?php echo $row_product_pc_list['id'];?>" role="button">Delete</a>
+        
         <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
 
 

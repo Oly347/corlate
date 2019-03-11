@@ -308,7 +308,7 @@ foreach ($rowProductPCList as $key => $value) {
     </div>
     <div class="form-group">
       <label for="product_img">Product Image</label>
-      <input type="text" class="form-control" value="old img- <?php echo $product_img; ?>" disabled> 
+     
       <input type="file" class="form-control" id="product_img"  name="product_img" value="<?php echo $product_img; ?>">
     </div>
     <div class="form-group">

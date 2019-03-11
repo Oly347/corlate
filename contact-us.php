@@ -120,12 +120,47 @@ session_start();
     <div class="page-title" style="background-image: url(images/page-title.png)">
         <h1>Contact us</h1>
     </div>
+<style>
 
+.responsive-map-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: 1px solid #95d819;
+}
+
+.responsive-map-container iframe,   
+.responsive-map-container object,  
+.responsive-map-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+</style>
     <section id="contact-page">
         <div class="container">
+
+        <div class="row">
+                <div class="col-md-6">
+                <div class="large-title text-center">        
+                <h2>Find Us</h2>
+                <!-- <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p> -->
+
+            </div> 
+                    <div class="about-img responsive-map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.9512033174706!2d88.39190031541726!3d22.46846794244612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027154fc43ac05%3A0x59415dbc3e2810bb!2sTilottama.Online!5e0!3m2!1sen!2sin!4v1552293151484" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
             <div class="large-title text-center">        
                 <h2>Drop Your Message</h2>
-                <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p>
+                <!-- <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p> -->
             </div> 
 
             <p id="demo"></p>
@@ -164,6 +199,9 @@ session_start();
                         </div>
                     </div>
                 </form> 
+            </div>
+            </div>
+            
             </div><!--/.row-->
         </div><!--/.container-->
     </section><!--/#contact-page-->

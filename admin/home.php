@@ -112,7 +112,7 @@ foreach ($userlistDetails as $key => $value) {
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</div>
+        <div class="sidebar-brand-text mx-3">Tilottama.Tech <sup>ADMIN</div>
       </a>
 
       <!-- Divider -->

@@ -33,9 +33,11 @@ $insert_array=  array(
 
 $insert= $obj_user->InsertIntoOrderList($insert_array);
      if ($insert) {
+
+        // header('Location:cart.del.php');
         
         echo "<script type='text/javascript'>alert('Thanks For Shopping ');
-        window.location='user_dashboard.php';
+        window.location='cart.del.php';
         </script>";
         exit();
 

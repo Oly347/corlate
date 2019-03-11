@@ -4,20 +4,20 @@ include ('admin/system/database.php');
 include ('admin/employee.cls.php');
 session_start();
 
-require('textlocal.class.php');
+// require('textlocal.class.php');
 
-$textlocal = new Textlocal(false,false,API_KEY,);
+// $textlocal = new Textlocal(false,false,API_KEY,);
 
-$numbers = $_SESSION['phonenumber'];
-$sender = 'Textlocal';
-$message = 'This is a message';
+// $numbers = $_SESSION['phonenumber'];
+// $sender = 'Textlocal';
+// $message = 'This is a message';
 
-try {
-    $result = $textlocal->sendSms($numbers, $message, $sender);
-    print_r($result);
-} catch (Exception $e) {
-    die('Error: ' . $e->getMessage());
-}
+// try {
+//     $result = $textlocal->sendSms($numbers, $message, $sender);
+//     print_r($result);
+// } catch (Exception $e) {
+//     die('Error: ' . $e->getMessage());
+// }
 
 ?>
 

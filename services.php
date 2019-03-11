@@ -271,8 +271,9 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
             
           </tbody>
         </table>
-        <!-- <button type="button" id="cpuNext">Next</button> -->
+        <button type="button"  id="cpuNext">Next</button>
         <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
+       
 
       </div>
       <script>
@@ -280,7 +281,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 </script>
 
 
-      <script>
+      <!-- <script>
 $(document).ready(function(){
 
   $("#myInput").on("keyup", function() {
@@ -290,20 +291,201 @@ $(document).ready(function(){
     });
   });
 
-// $(document).on("click","#cpuNext",function(){
-// //alert();
+$(document).on("click","#cpuNext",function(){
 
-// //val cpu =true;
-// if(0){
+
+if(1){
+  nextPrev(1);
+}
+
+
+});
+
+
+
+$(document).on("click","#cabNext",function(){
+
+var cab = document.getElementsByName('CAB');
+var genValue = false;
+
+        for(var i=0; i<cab.length;i++){
+            if(cab[i].checked == true){
+                genValue = true;    
+            }
+        }
+        if(!genValue){
+          sweetAlert("Oops...", "Please choose your option!", "error");
+            return false;
+        }else{
+
+          nextPrev(1);
+        }
+
+// if(1){
 //   nextPrev(1);
 // }
 
 
-// });
 });
-</script>
 
-    
+
+$(document).on("click","#smps",function(){
+
+var smps = document.getElementsByName('SMPS');
+var genValue = false;
+
+        for(var i=0; i<smps.length;i++){
+            if(smps[i].checked == true){
+                genValue = true;    
+            }
+        }
+        if(!genValue){
+          sweetAlert("Oops...", "Please choose your option!", "error");
+            return false;
+        }else{
+
+          nextPrev(1);
+        }
+
+// if(1){
+//   nextPrev(1);
+// }
+
+
+});
+$(document).on("click","#mbnext",function(){
+
+var smps = document.getElementsByName('MB');
+var genValue = false;
+
+        for(var i=0; i<smps.length;i++){
+            if(smps[i].checked == true){
+                genValue = true;    
+            }
+        }
+        if(!genValue){
+          sweetAlert("Oops...", "Please choose your option!", "error");
+            return false;
+        }else{
+
+          nextPrev(1);
+        }
+
+// if(1){
+//   nextPrev(1);
+// }
+
+
+});
+
+
+
+$(document).on("click","#hddnext",function(){
+
+var smps = document.getElementsByName('HDD');
+var genValue = false;
+
+        for(var i=0; i<smps.length;i++){
+            if(smps[i].checked == true){
+                genValue = true;    
+            }
+        }
+        if(!genValue){
+          sweetAlert("Oops...", "Please choose your option!", "error");
+            return false;
+        }else{
+
+          nextPrev(1);
+        }
+
+// if(1){
+//   nextPrev(1);
+// }
+
+
+});
+
+
+$(document).on("click","#ramnext",function(){
+
+var smps = document.getElementsByName('RAM');
+var genValue = false;
+
+        for(var i=0; i<smps.length;i++){
+            if(smps[i].checked == true){
+                genValue = true;    
+            }
+        }
+        if(!genValue){
+          sweetAlert("Oops...", "Please choose your option!", "error");
+            return false;
+        }else{
+
+          nextPrev(1);
+        }
+
+// if(1){
+//   nextPrev(1);
+// }
+
+
+});
+
+
+$(document).on("click","#gcardnext",function(){
+
+var smps = document.getElementsByName('GCARD');
+var genValue = false;
+
+        for(var i=0; i<smps.length;i++){
+            if(smps[i].checked == true){
+                genValue = true;    
+            }
+        }
+        if(!genValue){
+          sweetAlert("Oops...", "Please choose your option!", "error");
+            return false;
+        }else{
+
+          nextPrev(1);
+        }
+
+// if(1){
+//   nextPrev(1);
+// }
+
+
+});
+
+
+
+
+
+});
+</script> -->
+
+<!-- function validateForm() {
+  // This function deals with validation of the form fields
+  
+       var cpu = document.getElementsByName('CPU');
+       //var cab = document.getElementsByName('CAB');
+        var genValue = false;
+
+        for(var i=0; i<cpu.length;i++){
+            if(cpu[i].checked == true){
+                genValue = true;    
+            }
+        }
+        if(!genValue){
+          sweetAlert("Oops...", "Please choose your option!", "error");
+            return false;
+        }
+
+  if (genValue) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return genValue; // return the valid status
+} -->
       
     </div>
     <div class="tab tab1" style="overflow-x:auto;" >Choose Your Cabenet
@@ -351,6 +533,9 @@ $(document).ready(function(){
             
           </tbody>
           </table>
+
+          <button type="button" id="cabNext">Next</button>
+          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
         </div>
         
   
@@ -374,8 +559,9 @@ $(document).ready(function(){
       <div class="tab tab1" style="overflow-x:auto;" >Choose Your SMPS
           <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
           <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
+          <input class="form-control search_box" id="myInput2" type="text" placeholder="Search..">
           <div class="table-responsive">
-              <table class="table table-borderless">
+              <table class="table table-borderless" id="myTable2">
                 <thead>
                   <tr>
                     <th>SMPS Name</th>
@@ -407,6 +593,8 @@ $(document).ready(function(){
                         
                       </tbody>
               </table>
+              <button type="button" id="smps">Next</button>
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
             </div>
       
           
@@ -421,8 +609,10 @@ $(document).ready(function(){
           <div class="tab tab1" style="overflow-x:auto;" >Choose Your Motherboard
               <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
               <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
+
+              <input class="form-control search_box" id="myInput3" type="text" placeholder="Search..">
               <div class="table-responsive">
-                  <table class="table table-borderless">
+                  <table class="table table-borderless" id="myTable3">
                     <thead>
                       <tr>
                         <th>Mother Board Name</th>
@@ -455,6 +645,10 @@ $(document).ready(function(){
                         
                       </tbody>
                   </table>
+
+
+                  <button type="button" id="mbnext">Next</button>
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                 </div>
           
               
@@ -466,8 +660,9 @@ $(document).ready(function(){
               <div class="tab tab1" style="overflow-x:auto;" >Choose Your Hard Disk Drive
               <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
               <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
+              <input class="form-control search_box" id="myInput4" type="text" placeholder="Search..">
               <div class="table-responsive">
-                  <table class="table table-borderless">
+                  <table class="table table-borderless" id="myTable4">
                     <thead>
                       <tr>
                         <th>HDD Name</th>
@@ -499,7 +694,12 @@ $(document).ready(function(){
                         ?>
                         
                       </tbody>
+                     
                   </table>
+
+
+                  <button type="button" id="hddnext">Next</button>
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                 </div>
           
               
@@ -510,7 +710,8 @@ $(document).ready(function(){
               <div class="tab tab1" style="overflow-x:auto;" >Choose Your Memory(RAM) *  &nbsp; you can choose ram quantity in confirm page
               <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
               <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
-              <div class="table-responsive">
+              <input class="form-control search_box" id="myInput5" type="text" placeholder="Search..">
+              <div class="table-responsive" id="myTable5">
                   <table class="table table-borderless">
                     <thead>
                       <tr>
@@ -544,6 +745,9 @@ $(document).ready(function(){
                         
                       </tbody>
                   </table>
+
+                  <button type="button" id="ramnext">Next</button>
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                 </div>
           
               
@@ -555,8 +759,9 @@ $(document).ready(function(){
               <div class="tab tab1" style="overflow-x:auto;" >Choose Your Graphic card
               <!-- <p><input placeholder="First name..." oninput="this.className = ''" name="fname"></p>
               <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
+              <input class="form-control search_box" id="myInput6" type="text" placeholder="Search..">
               <div class="table-responsive">
-                  <table class="table table-borderless">
+                  <table class="table table-borderless" id="myTable6">
                     <thead>
                       <tr>
                         <th>Graphic Card Name</th>
@@ -589,6 +794,8 @@ $(document).ready(function(){
                         
                       </tbody>
                   </table>
+                  <button type="button" id="gcardnext">Next</button>
+                  <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                 </div>
           
               
@@ -603,13 +810,13 @@ $(document).ready(function(){
               </div> -->
 
 
-              <!-- <input type="hidden" name="temp_id"  class="form-control" value="<?php echo $_SESSION['session_id'];?>"></p> -->
+              <!-- <input type="hidden" name="temp_id"  class="form-control" value=""></p> -->
               
               
   <div style="overflow:auto;">
     <div style="float:right; margin-top: 10px;">
-      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-      <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+      <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)" style="display:none">Previous</button> -->
+      <button type="button" id="nextBtn" onclick="nextPrev(1)" style="display:none">Next</button>
     </div>
   </div>
   <!-- Circles which indicates the steps of the form: -->
@@ -877,6 +1084,7 @@ function fixStepIndicator(n) {
 </script>
 
     <script src="js/jquery.js"></script>
+    <script src="js/product_validation.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/owl.carousel.min.js"></script>

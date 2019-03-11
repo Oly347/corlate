@@ -1,5 +1,4 @@
 
-
 @import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
 
 #regForm {
@@ -69,15 +68,12 @@ input.invalid {
 }
 
 button {
-  background-color: #C70039 ;
-  color: #ffffff;
+  padding: 8px 20px;
+  background: #95d819;
+  color: #fff;
+  border-radius: 4px;
   border: none;
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 17px;
-  font-family: Raleway;
-  cursor: pointer;
-  border-radius: 10px;
+  margin-top: 10px;
 }
 .tab1{
   color: white;
@@ -86,12 +82,10 @@ button {
 	        box-shadow: 0 10px 6px -6px #777;
   border-radius: 5px;
   padding: 50px;
-  background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	background-size: 400% 400%;
-	-webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
-  
+  background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   
 }
 
@@ -176,7 +170,7 @@ button:hover {
 
 #prevBtn {
   background-color:  #18d6d6 ;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 /* Make circles that indicate the steps of the form: */

@@ -245,13 +245,13 @@ overflow-x: hidden;
 
                                     <div class="tab-pane fade active in hero-bkg-animated" id="tab1" >
 
-                                    <div class="col-md-6" style="border-right:1px solid #000; height:100px">
+                                    <div class="col-md-6 col-sm-12" style="border-right:1px solid #000; height:100px">
                                     <!-- <a class="btn btn-info edit_button" href="product_pc_item.php" role="button" style="margin:30px">Additional PC item</a> -->
                                     <a class="btn btn-info edit_button" href="#tab5" data-toggle="tab" class="tehnical" style="margin:30px; ">Buy PC From Cart</a>
 
                                         </div>
                                         <!-- <div style="border-left:1px solid #000; height:100px"></div> -->
-                                        <div class="col-md-6" style="margin-top:-30px">
+                                        <div class="col-md-6 col-sm-12" style="margin-top:-30px">
                                     <div class="wrapper">
   <a href="product_pc_item.php"> By Additional PC item<span class="arrow"><span></span></span></a>
 

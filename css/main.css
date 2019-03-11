@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
 
 @import url(https://fonts.googleapis.com/css?family=Orbitron);
 
@@ -1635,7 +1635,7 @@ section.pricing{
 
 .form-group .form-control {
     padding: 0 12px;
-    border-color: #f2f2f2;
+    border-color: #95d819;
     -webkit-box-shadow: none;
     box-shadow: none;
     height: 50px;
@@ -2535,25 +2535,32 @@ width: 100% !important;
 		background-position: 0% 50%
 	}
 }
+
+
+.dashboard_content{
+background: #95d819 !important;
+
+
+}
 .wrapper {
     
     width: 290px;
     height: 150px;
     position: relative;
     
-   margin-left: -60px;
+   margin-left: -150px;
     margin-top:-80px;
   }
   
   .wrapper a {
     position: relative;
-    background: #121212;
+    background: #95d819;
     bottom: 0;
     color: #fff;
     height: 45px;
     line-height: 45px;
     position: absolute;
-    width: 100%;
+    width: 90%;
     border-radius: 10px;
     /* padding: 0 0 0 20px; */
     font-size: 12px;

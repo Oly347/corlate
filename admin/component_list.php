@@ -7,7 +7,12 @@ include ('employee.cls.php');
 
 $obj_comp = new component_inc ;
 
-
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ==true) {
+  //echo "Welcome to the member's area, " . $_SESSION['userName'] . "!";
+  } 
+  else {
+  header('Location:index.php');
+  }
 //$rowPrice = $obj_emp->getPrice();
 
 $rowCPUComponent = $obj_comp->getComponentDetailsCPU();
@@ -43,14 +48,16 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Buttons</title>
+  <title>Tilottama.Tech Admin</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <link rel="shortcut icon" href="favicon.ico">
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -59,15 +66,14 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
   <div class="sidebar-brand-icon rotate-n-15">
     <i class="fas fa-laugh-wink"></i>
   </div>
-  <div class="sidebar-brand-text mx-3">SB Admin <sup>2</div>
+  <div class="sidebar-brand-text mx-3">Tilottama.Tech <sup>ADMIN</div>
 </a>
 
 <!-- Divider -->
@@ -92,20 +98,19 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
     <i class="fas fa-fw fa-cog"></i>
-    <span>Components</span>
+    <span>Components List</span>
   </a>
   <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-    <div class="bg-white py-2 collapse-inner rounded">
+  <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">List Components:</h6>
       <a class="collapse-item" href="component_list.php">System Unit:</a>
-            <a class="collapse-item" href="">Monitor and accessories:</a>
-      
+      <a class="collapse-item" href="accessories.php">Monitor and accessories:</a>
     </div>
   </div>
 </li>
 
 <!-- Nav Item - Utilities Collapse Menu -->
-<li class="nav-item">
+<!-- <li class="nav-item">
   <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
     <i class="fas fa-fw fa-wrench"></i>
     <span>Utilities</span>
@@ -119,6 +124,22 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
       <a class="collapse-item" href="utilities-other.html">Other</a>
     </div>
   </div>
+</li> -->
+
+
+
+<li class="nav-item">
+<a class="nav-link" href="product_pc_list.php">
+<i class="fas fa-fw fa-wrench"></i>
+<span>Full PC List</span></a>
+</li>
+
+
+
+<li class="nav-item">
+<a class="nav-link" href="add_pc.php">
+<i class="fas fa-fw fa-plus"></i>
+<span>Add PC</span></a>
 </li>
 
 <!-- Divider -->
@@ -130,49 +151,64 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 </div>
 
 <!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item active">
-  <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-    <i class="fas fa-fw fa-folder"></i>
-    <span>Component</span>
+<li class="nav-item">
+  <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+    <i class="fas fa-fw fa-plus"></i>
+    <span>Add Component </span>
   </a>
-  <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+  <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">System Unit:</h6>
       <a class="collapse-item" href="processor.php">Processor</a>
-            <a class="collapse-item" href="motherboard.php">Motherboard</a>
-            <a class="collapse-item" href="cabinet.php">Cabinet</a>
-            <a class="collapse-item" href="smps.php">SMPS</a>
-            <a class="collapse-item" href="harddrive.php">Hard Disk Drive</a>
-            <a class="collapse-item" href="memory.php">Memory</a>
-            <a class="collapse-item" href="ssd.php">SSD</a>
-            <a class="collapse-item" href="graphic_card.php">Graphic Card</a>
-            <!-- <a class="collapse-item" href="#">Video Card</a> -->
-            <a class="collapse-item" href="sound_card.php">Sound Card</a>
-            <a class="collapse-item" href="dvd_drive.php">DVD DRIVE</a>
-            <a class="collapse-item" href="wireless_adapter.php">Wireless Adapter</a>
-            <!-- <a class="collapse-item" href="#">Bluetooth Reciver</a> -->
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Monitor and accessories</h6>
-            <a class="collapse-item" href="#">Monitor</a>
-            <a class="collapse-item" href="#">Mouse & Keyboard</a>
-            <a class="collapse-item" href="#">Speaker</a>
-            <a class="collapse-item" href="#">Headphone</a>
+      <a class="collapse-item" href="motherboard.php">Motherboard</a>
+      <a class="collapse-item" href="cabinet.php">Cabinet</a>
+      <a class="collapse-item" href="smps.php">SMPS</a>
+      <a class="collapse-item" href="harddrive.php">Hard Disk Drive</a>
+      <a class="collapse-item" href="memory.php">Memory</a>
+      <a class="collapse-item" href="ssd">SSD</a>
+      <a class="collapse-item" href="graphic_card.php">Graphic Card</a>
+      <!-- <a class="collapse-item" href="#">Video Card</a> -->
+      <a class="collapse-item" href="sound_card.php">Sound Card</a>
+      <a class="collapse-item" href="dvd_drive.php">DVD DRIVE</a>
+      <a class="collapse-item" href="wireless_adapter.php">Wireless Adapter</a>
+      <!-- <a class="collapse-item" href="#">Bluetooth Reciver</a> -->
+      <div class="collapse-divider"></div>
+      <h6 class="collapse-header">Monitor and accessories</h6>
+      <a class="collapse-item" href="monitor.php">Monitor</a>
+      <a class="collapse-item" href="mouse_keyboard.php">Mouse & Keyboard</a>
+      <a class="collapse-item" href="speaker.php">Speaker</a>
+      <a class="collapse-item" href="headphone.php">Headphone</a>
     </div>
   </div>
 </li>
 
 <!-- Nav Item - Charts -->
-<li class="nav-item">
+<!-- <li class="nav-item">
   <a class="nav-link" href="charts.html">
     <i class="fas fa-fw fa-chart-area"></i>
     <span>Charts</span></a>
-</li>
+</li> -->
 
 <!-- Nav Item - Tables -->
 <li class="nav-item">
-  <a class="nav-link" href="tables.html">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Tables</span></a>
+<a class="nav-link" href="user_list.php">
+<i class="fas fa-fw fa-table"></i>
+<span>User List</span></a>
+</li>
+
+
+
+<li class="nav-item">
+<a class="nav-link" href="review_list.php">
+<i class="fas fa-fw fa-table"></i>
+<span>Review List</span></a>
+</li>
+
+
+<li class="nav-item">
+<a class="nav-link" href="contact_us_list.php">
+<i class="fas fa-fw fa-table"></i>
+<span>Contact us List</span></a>
 </li>
 
 <!-- Divider -->
@@ -183,8 +219,8 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
   <button class="rounded-circle border-0" id="sidebarToggle"></button>
 </div>
 
-</ul
-    <!-- End of Sidebar -->
+</ul>
+<!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -315,9 +351,19 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <?php 
                         if($row_cpu_component['status']==0){
 
-                          echo "Inactive";
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
                         }else{
-                          echo "active";
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
 
 
                         }
@@ -383,7 +429,27 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_mb_component['component_details'];?></td>
                         <td><?php echo $row_mb_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_mb_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_mb_component['status'];?> </td>
+                        <td><?php 
+                        if($row_mb_component['status']==0){
+
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
+                        }else{
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
+
+
+                        }
+                        
+                        ?> </td>
                       
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
@@ -434,7 +500,27 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_cab_component['component_details'];?></td>
                         <td><?php echo $row_cab_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_cab_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_cab_component['status'];?></td>
+                        <td><?php 
+                        if($row_cab_component['status']==0){
+
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
+                        }else{
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
+
+
+                        }
+                        
+                        ?> </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="cabinet_update.php?id=<?php echo $row_cab_component['id'];?>" role="button">Update</a>
@@ -486,7 +572,27 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_smps_component['component_details'];?></td>
                         <td><?php echo $row_smps_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_smps_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_smps_component['status'];?></td>
+                        <td><?php 
+                        if($row_smps_component['status']==0){
+
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
+                        }else{
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
+
+
+                        }
+                        
+                        ?> </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="smps_update.php?id=<?php echo $row_smps_component['id'];?>" role="button">Update</a>
@@ -537,7 +643,27 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_hdd_component['component_details'];?></td>
                         <td><?php echo $row_hdd_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_hdd_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_hdd_component['status'];?></td>
+                        <td><?php 
+                        if($row_hdd_component['status']==0){
+
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
+                        }else{
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
+
+
+                        }
+                        
+                        ?> </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="harddrive_update.php?id=<?php echo $row_hdd_component['id'];?>" role="button">Update</a>
@@ -588,7 +714,27 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_memory_component['component_details'];?></td>
                         <td><?php echo $row_memory_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_memory_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_memory_component['status'];?></td>
+                        <td><?php 
+                        if($row_memory_component['status']==0){
+
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
+                        }else{
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
+
+
+                        }
+                        
+                        ?> </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="memory_update.php?id=<?php echo $row_memory_component['id'];?>" role="button">Update</a>
@@ -639,7 +785,27 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_graphic_component['component_details'];?></td>
                         <td><?php echo $row_graphic_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_graphic_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_graphic_component['status'];?></td>
+                        <td><?php 
+                        if($row_graphic_component['status']==0){
+
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
+                        }else{
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
+
+
+                        }
+                        
+                        ?> </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="graphiccard_update.php?id=<?php echo $row_graphic_component['id'];?>" role="button">Update</a>
@@ -693,7 +859,27 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_sound_component['component_details'];?></td>
                         <td><?php echo $row_sound_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_sound_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_sound_component['status'];?></td>
+                        <td><?php 
+                        if($row_sound_component['status']==0){
+
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
+                        }else{
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
+
+
+                        }
+                        
+                        ?> </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="soundcard_update.php?id=<?php echo $row_sound_component['id'];?>" role="button">Update</a>
@@ -746,7 +932,27 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_dvd_component['component_details'];?></td>
                         <td><?php echo $row_dvd_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_dvd_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_dvd_component['status'];?></td>
+                        <td><?php 
+                        if($row_dvd_component['status']==0){
+
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
+                        }else{
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
+
+
+                        }
+                        
+                        ?> </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="dvd_update.php?id=<?php echo $row_dvd_component['id'];?>" role="button">Update</a>
@@ -798,7 +1004,27 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_wireless_adapter_component['component_details'];?></td>
                         <td><?php echo $row_wireless_adapter_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_wireless_adapter_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_wireless_adapter_component['status'];?></td>
+                        <td><?php 
+                        if($row_wireless_adapter_component['status']==0){
+
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
+                        }else{
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
+
+
+                        }
+                        
+                        ?> </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="wireless_update.php?id=<?php echo $row_wireless_adapter_component['id'];?>" role="button">Update</a>
@@ -852,7 +1078,27 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <td><?php echo $row_ssd_component['component_details'];?></td>
                         <td><?php echo $row_ssd_component['component_price'];?></td>
                         <td><img src ="upload/<?php echo $row_ssd_component['component_image'];?>" height=50 width=80 /> </td>
-                        <td><?php echo $row_ssd_component['status'];?></td>
+                        <td><?php 
+                        if($row_ssd_component['status']==0){
+
+                          echo '<button href="#" class="btn btn-danger btn-icon-split">
+                          <span class="icon text-white-50">
+                          <i class="fas fa-exclamation-triangle"></i>
+                          </span>
+                          <span class="text">Inactive</span>
+                        </button>';
+                        }else{
+                          echo '<button href="#" class="btn btn-success btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-check"></i>
+                          </span>
+                          <span class="text">Active</span>
+                        </button>';
+
+
+                        }
+                        
+                        ?> </td>
                         <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
                         <a class="btn btn-info" href="ssd_update.php?id=<?php echo $row_ssd_component['id'];?>" role="button">Update</a>

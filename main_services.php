@@ -79,8 +79,8 @@ $_SESSION['userName']= "Guest";
 
 <body>
 
-    <header id="header">
-    <div class="top-bar">
+<header id="header">
+         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4 col-xs-12">
@@ -111,10 +111,10 @@ $_SESSION['userName']= "Guest";
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
                             echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
                             echo   $_SESSION['userName'];
-                            echo '<a href="#" class="btn btn-imfo   active" role="button" aria-pressed="true">Dash Board</a>';
+                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">My Account</a>';
                         } else {
-                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a> &nbsp;';
-                            echo   $_SESSION['userName'];
+                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
+                            
                         }
                         ?>
                         <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
@@ -136,16 +136,16 @@ $_SESSION['userName']= "Guest";
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="150"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
                 </div>
 
-                <div class="collapse navbar-collapse navbar-right">
+                <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
                         <li ><a href="index.php">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#">Assemble PC</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
+                        <li><a href="services.php">Assemble PC</a></li>
                         <li><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="#">Make your Home smart</a></li>
+                        <li><a href="smart_home.php">Make your Home smart</a></li>
                         <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -155,14 +155,15 @@ $_SESSION['userName']= "Guest";
                             </ul>
                         </li> -->
                         <!-- <li><a href="blog.html">Blog</a></li> -->
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="contact-us.php">Contact</a></li>
                        
                     </ul>
                 </div>
             </div>
             <!--/.container-->
-        </nav><!--/nav-->
-        
+        </nav>
+        <!--/nav-->
+
     </header><!--/header-->
 
 
@@ -214,6 +215,99 @@ $_SESSION['userName']= "Guest";
                             <h3 class="media-heading">Make Your Home Smart</h3>
                             <p>Hydroderm is the highly desired anti-aging cream on</p>
                             <a href="#" class="btn btn-success btn-outline  " role="button" aria-pressed="true">Learn More <i class="fa fa-arrow-circle-right"></i></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-sm-6 col-md-4">
+                    <div class="media services-wrap fadeInDown">
+                        <div class="pull-left">
+                            <img class="img-responsive" src="images/services/mobile-ui.svg">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Mobile UI/UX</h3>
+                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="media services-wrap fadeInDown">
+                        <div class="pull-left">
+                            <img class="img-responsive" src="images/services/web-app.svg">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Web Applications</h3>
+                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="media services-wrap fadeInDown">
+                        <div class="pull-left">
+                            <img class="img-responsive" src="images/services/mobile-ui.svg">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">SEO Marketing</h3>
+                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </section>
+
+
+
+
+    <section id="services" class="service-item">
+        <div class="container">
+            <div class="center fadeInDown">
+                <h2>Product </h2>
+                
+            </div>
+
+            <div class="row">
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="media services-wrap fadeInDown">
+                        <div class="pull-left">
+                        <img class="img-responsive" src="images/services/mobile-ui.svg">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Pre-assambled PC Product</h3>
+                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <a href="product_pc.php" class="btn btn-success btn-outline " role="button" aria-pressed="true">Learn More <i class="fa fa-arrow-circle-right"></i></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="media services-wrap fadeInDown">
+                        <div class="pull-left">
+                        <img class="img-responsive" src="images/services/web-app.svg">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Monitor & Accessories</h3>
+                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <a href="product_monitor.php" class="btn btn-success btn-outline  " role="button" aria-pressed="true">Learn More <i class="fa fa-arrow-circle-right"></i></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="media services-wrap fadeInDown">
+                        <div class="pull-left">
+                        <img class="img-responsive" src="images/services/mobile-ui.svg">
+                        </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">Additional PC Product</h3>
+                            <p>Hydroderm is the highly desired anti-aging cream on</p>
+                            <a href="product_pc_item.php" class="btn btn-success btn-outline  " role="button" aria-pressed="true">Learn More <i class="fa fa-arrow-circle-right"></i></i></a>
                         </div>
                     </div>
                 </div>

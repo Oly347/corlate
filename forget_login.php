@@ -33,7 +33,42 @@ $l=count($forgetLoginUser);
 if ($l==1) {
 
 
-header('Location:forget_otp.php');
+    require('textlocal.class.php');
+    require('credit.php');
+    
+    $textlocal = new Textlocal(false, false, API_KEY);
+    
+    $numbers = array($_SESSION['phonenumber']);
+    $sender = 'TXTLCL';
+    $otp = mt_rand(100000, 999999);
+    $message = "Hello" .$otp;
+    
+    try {
+        $result = $textlocal->sendSms($numbers, $message, $sender);
+        
+         setcookie('otp',$otp);
+         $_SESSION['success'] = "Successfully Send OTP";;
+    } 
+    catch (Exception $e) 
+    {
+        die('Error: ' . $e->getMessage());
+    }
+    
+    if(isset($_POST['otp_login'])){
+
+        $otp= $_POST['otp'];
+    
+        if($_COOKIE['otp'] == $otp){
+    
+            echo "Successfully Verified";
+        }else
+        {
+            echo "fail";
+        }
+    }
+        
+    
+    
 }
 else {
 $_SESSION['errMsg'] = "Invalid Email Id";
@@ -192,6 +227,30 @@ $_SESSION['errMsg'] = "Invalid Email Id";
             <?php if(!empty($_SESSION['errMsg'])) { echo $_SESSION['errMsg']; } ?>
         </div>
         <?php unset($_SESSION['errMsg']); ?>
+
+
+        <div id="success">
+            <?php if(!empty($_SESSION['success'])) { echo $_SESSION['success']; } ?>
+        </div>
+        <?php unset($_SESSION['success']); ?>
+  </form>
+
+
+
+  <form class="form-signin" action = "" method = "post" enctype="multipart/form-data"><span class="reauth-email"> </span>
+        <input class="form-control" type="text"  name="otp_login" required="" placeholder="Enter OTP" autofocus="" id="inputEmail">
+
+       
+        <!-- <input class="form-control" type="password" name="password" required="" placeholder="Password" id="inputPassword"> -->
+            <!-- <div class="checkbox">
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"></div>
+    </div> -->
+    <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Submit</button>
+    <button class="btn btn-info btn-block btn-lg btn-signin" type="button" id="proceed" style="display: none;">Resend OTP</button>
+ 
+
+
+        
   </form>
   <!-- <a href="user_register.php"  class="btn btn-primary btn-outline" >I'm New <i class="fa fa-user-plus"></i></a>
 

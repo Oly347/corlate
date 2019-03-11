@@ -266,6 +266,7 @@ $contactList = $obj_user->getContactList();
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                   <tr>
+                  <th>ID</th>
                     <th>Name</th>
                       <th>Email ID</th>
                       <th>Phone Number</th>
@@ -276,6 +277,7 @@ $contactList = $obj_user->getContactList();
                   </thead>
                   <tfoot>
                   <tr>
+                  <th>ID</th>
                     <th>Name</th>
                       <th>Email ID</th>
                       <th>Phone Number</th>
@@ -293,6 +295,7 @@ $contactList = $obj_user->getContactList();
 
 
                     <tr>
+                    <td><?php echo $contact_list['id'];?></td>
                       <td><?php echo $contact_list['name'];?></td>
                       <td><?php echo $contact_list['email'];?></td>
                       <td><?php echo $contact_list['phone_number'];?></td>

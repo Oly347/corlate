@@ -3,7 +3,12 @@
 
 
  session_start();
-
+ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ==true) {
+  //echo "Welcome to the member's area, " . $_SESSION['userName'] . "!";
+  } 
+  else {
+  header('Location:index.php');
+  }
 // //create a session and assign a value
 // $_SESSION['session_id'] =rand(10,1000);
 
@@ -39,14 +44,16 @@ $obj_comp = new component_inc ;
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Blank</title>
+  <title>Tilottama.Tech Admin</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <link rel="shortcut icon" href="favicon.ico">
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -63,7 +70,7 @@ $obj_comp = new component_inc ;
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</div>
+        <div class="sidebar-brand-text mx-3">Tilottama.Tech <sup>ADMIN</div>
       </a>
 
       <!-- Divider -->
@@ -88,19 +95,19 @@ $obj_comp = new component_inc ;
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <span>Components List</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
+        <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">List Components:</h6>
             <a class="collapse-item" href="component_list.php">System Unit:</a>
-            <a class="collapse-item" href="cards.html">Monitor and accessories:</a>
+            <a class="collapse-item" href="accessories.php">Monitor and accessories:</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Utilities</span>
@@ -114,7 +121,23 @@ $obj_comp = new component_inc ;
             <a class="collapse-item" href="utilities-other.html">Other</a>
           </div>
         </div>
-      </li>
+      </li> -->
+
+
+
+      <li class="nav-item">
+  <a class="nav-link" href="product_pc_list.php">
+  <i class="fas fa-fw fa-wrench"></i>
+    <span>Full PC List</span></a>
+</li>
+
+
+
+<li class="nav-item">
+  <a class="nav-link" href="add_pc.php">
+  <i class="fas fa-fw fa-plus"></i>
+    <span>Add PC</span></a>
+</li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -125,50 +148,65 @@ $obj_comp = new component_inc ;
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item active">
-        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Component</span>
+      <li class="nav-item">
+        <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-plus"></i>
+          <span>Add Component </span>
         </a>
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">System Unit:</h6>
-            <a class="collapse-item active" href="processor.php">Processor</a>
-            <a class="collapse-item" href="#">Motherboard</a>
-            <a class="collapse-item" href="#">Cabinet</a>
-            <a class="collapse-item" href="#">SMPS</a>
-            <a class="collapse-item" href="#">Hard Disk Drive</a>
-            <a class="collapse-item" href="#">Memory</a>
-            <a class="collapse-item" href="#">SSD</a>
-            <a class="collapse-item" href="#">Graphic Card</a>
-            <a class="collapse-item" href="#">Video Card</a>
-            <a class="collapse-item" href="#">Sound Card</a>
-            <a class="collapse-item" href="#">DVD DRIVE</a>
-            <a class="collapse-item" href="#">WIFI Reciver</a>
-            <a class="collapse-item" href="#">Bluetooth Reciver</a>
+            <a class="collapse-item" href="processor.php">Processor</a>
+            <a class="collapse-item" href="motherboard.php">Motherboard</a>
+            <a class="collapse-item" href="cabinet.php">Cabinet</a>
+            <a class="collapse-item" href="smps.php">SMPS</a>
+            <a class="collapse-item" href="harddrive.php">Hard Disk Drive</a>
+            <a class="collapse-item" href="memory.php">Memory</a>
+            <a class="collapse-item" href="ssd">SSD</a>
+            <a class="collapse-item" href="graphic_card.php">Graphic Card</a>
+            <!-- <a class="collapse-item" href="#">Video Card</a> -->
+            <a class="collapse-item" href="sound_card.php">Sound Card</a>
+            <a class="collapse-item" href="dvd_drive.php">DVD DRIVE</a>
+            <a class="collapse-item" href="wireless_adapter.php">Wireless Adapter</a>
+            <!-- <a class="collapse-item" href="#">Bluetooth Reciver</a> -->
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Monitor and accessories</h6>
-            <a class="collapse-item" href="#">Monitor</a>
-            <a class="collapse-item" href="#">Mouse & Keyboard</a>
-            <a class="collapse-item" href="#">Speaker</a>
-            <a class="collapse-item" href="#">Headphone</a>
+            <a class="collapse-item" href="monitor.php">Monitor</a>
+            <a class="collapse-item" href="mouse_keyboard.php">Mouse & Keyboard</a>
+            <a class="collapse-item" href="speaker.php">Speaker</a>
+            <a class="collapse-item" href="headphone.php">Headphone</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Charts -->
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
-      </li>
+      </li> -->
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
+  <a class="nav-link" href="user_list.php">
+    <i class="fas fa-fw fa-table"></i>
+    <span>User List</span></a>
+</li>
+
+
+
+<li class="nav-item">
+  <a class="nav-link" href="review_list.php">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Review List</span></a>
+</li>
+
+
+<li class="nav-item">
+  <a class="nav-link" href="contact_us_list.php">
+    <i class="fas fa-fw fa-table"></i>
+    <span>Contact us List</span></a>
+</li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -180,7 +218,6 @@ $obj_comp = new component_inc ;
 
     </ul>
     <!-- End of Sidebar -->
-
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
