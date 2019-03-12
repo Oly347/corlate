@@ -15,7 +15,7 @@ header('Location:user_login.php');
 $obj_user = new user_inc ;
 $userDetailsById = $obj_user->getUserById($_SESSION['userName']);
 
-
+$userOrderDetails = $obj_user->getOrderByUser($_SESSION['userName']);
 
 $obj_comp = new component_inc ;
 $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
@@ -207,7 +207,7 @@ overflow-x: hidden;
                             <div class="parrent pull-left">
                                 <ul class="nav nav-tabs nav-stacked">
                                     <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Dashboard</a></li>
-                                    <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Order</a></li>
+                                    <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Order List</a></li>
                                     <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Download</a></li>
                                     <!-- <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Address</a></li> -->
                                     <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Account Details</a></li>
@@ -270,7 +270,7 @@ overflow-x: hidden;
                     <div class="tab-pane fade" id="tab5" style="overflow-x:auto;">
                     <form id="regForm" action="ultimate_checkout.php" method="post">
                    
-                    <table class='table table-bordered '>
+                    <table class='table table-borderless '>
                     <thead>
                       <tr>
                      
@@ -304,7 +304,7 @@ overflow-x: hidden;
                       
                         <td style="display:none"><?php echo $user_cart_item['id'];?></td>
                         <td> <input class="form-control" type="text"  name="process[]" value="<?php echo $user_cart_item['txn_id'];?>" readonly></td>
-                        <td> <input class="form-control" type="text"  name="details[]" value="<?php echo $user_cart_item['details'];?>" readonly></td>
+                        <td> <Textarea class="form-control" type="text"  name="details[]" value="" readonly><?php echo $user_cart_item['details'];?></Textarea>
                         
                         <td> <input class="form-control" type="text"  name="price[]" value="<?php echo $user_cart_item['product_price'];?>" readonly></td>
                         
@@ -359,7 +359,112 @@ overflow-x: hidden;
                                     </div>
 
                                     <div class="tab-pane fade" id="tab2">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,</p>
+
+                                    <h2 >Your Order List </h2>
+                                    <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                  <tr>
+                  <th>Order id </th>
+                     
+                     <th>Process Ids</th>
+                     <th>Details</th>
+                     <th>Product Price</th>
+                     <th>Billing Address</th>
+                     <th>Shipping Address</th>
+                     <th>Total</th>
+                     <th>Order time</th>
+                     <th>Status</th>
+                     <th>Note</th>
+                     <th>Invoice</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                  <tr>
+                     
+                      <th>Order id </th>
+                     
+                      <th>Process Ids</th>
+                      <th>Details</th>
+                      <th>Product Price List</th>
+                      <th>Billing Address</th>
+                      <th>Shipping Address</th>
+                      <th>Total Price</th>
+                      <th>Order time</th>
+                      <th>Status</th>
+                      <th>Note</th>
+                      <th>Invoice</th>
+                      
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                  <?php
+                
+                foreach ($userOrderDetails as  $contact_list) {
+                                   
+                ?>
+
+
+                    <tr>
+                      
+                      <td><?php echo $contact_list['order_id'];?></td>
+                      
+                      <td><?php echo $contact_list['txn_id'];?></td>
+                      <td><?php echo $contact_list['details'];?></td>
+                      <td><?php echo $contact_list['product_price'];?></td>
+                      <td><?php echo $contact_list['bill_addr'];?></td>
+                      <td><?php echo $contact_list['shipping_addr'];?></td>
+                      <td><?php echo $contact_list['total'];?></td>
+                      <td><?php echo $contact_list['order_time'];?></td>
+                      
+                      <td><?php 
+                        if($contact_list['status']==0){
+
+                          echo '<h4 class="cancel_order">Cancel Order</h4>';
+                        }elseif($contact_list['status']==1){
+                          echo '<h4 class="accept_order">Order Accept</h4>';
+
+
+                        }
+                        else{
+                            echo '<h4 class="confirm_order">Confirm Order</h4>';
+  
+  
+                          }
+                        
+                        ?> </td>
+                       
+
+
+<td><?php 
+                        if($contact_list['status']==0){
+
+                          echo '<h4>Order Cancel </h4>';
+                        }elseif($contact_list['status']==1){
+                          echo '<h4 >Order accepted- we will confirm after verification from our end</h4>';
+
+
+                        }
+                        else{
+                            echo '<h4 >Confirm Order- your order successfully confirm</h4>';
+  
+  
+                          }
+                        
+                        ?> </td>
+                        <td><a class="btn btn-info edit_download_btn" href="admin/upload/<?php echo $contact_list['invoice']?>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+Download Invoice </a></td>
+                      
+                      
+                    </tr>
+                    
+                    <?php
+                       }
+                
+                      ?>
+                  </tbody>
+                </table>
+                    </div>
                                     </div>
                                 </div>
                                 <!--/.tab-content-->

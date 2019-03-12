@@ -1584,6 +1584,50 @@ function component_inc()
 
 
 
+              function SetUpdateOrder($post_fields,$id)
+              {
+                  $sSql="SELECT * FROM order_details WHERE id='".$id."' ";
+                  
+                  
+                   $update=$this->db_con->RowUpdate($post_fields,$sSql);
+                  if($update==0)
+                  {
+                      return false;
+                  }
+                  else
+                  {
+                      return true;
+                  }
+          }
+            function getOrderList(){
+                $sSql = "SELECT * FROM order_details";
+                 $rows = $this->db_con->GetAllRows($sSql);
+                 return $rows;
+             }
+
+            function getUserlastOrder($id){
+                $sSql="SELECT * FROM order_details  WHERE username='".$id."'  ORDER BY id DESC LIMIT 0, 1";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+            }
+
+
+            function getOrderById($id){
+                $sSql="SELECT * FROM order_details  WHERE id ='".$id."' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+            }
+
+
+            function getOrderByUser($id){
+                $sSql="SELECT * FROM order_details  WHERE username  ='".$id."' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+            }
+
+
+
+
         public function InsertIntoFinalReviewList($post_fileds)
           {
           $sSql="SELECT * FROM final_review_list WHERE id=-1";

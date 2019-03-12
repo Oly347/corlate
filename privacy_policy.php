@@ -1,29 +1,12 @@
 <?php
 
-
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
 session_start();
 
-$obj_user = new user_inc ;
-$userProfileUpdate = $obj_user->getUserUpdateById($_SESSION['userName']);
 
 
-
-// print_r($userProfileUpdate);
-
-foreach ($userProfileUpdate as $key => $value) {
-    $name=$value['name'];
-    $phone_number=$value['phone_number'];
-    $address=$value['address'];
-    $profile_pic=$value['profile_pic'];
-    
-  
-}
-  
 ?>
-
-
 
 
 
@@ -46,42 +29,30 @@ foreach ($userProfileUpdate as $key => $value) {
     <link href="css/icomoon.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/style_edit.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/Google-Style-Login.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-   
-  
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-    <style>
-    body {
-overflow-x: hidden;
-}  
-
-
-    </style>
 </head>
 <!--/head-->
 
 
 <body>
 
-    <header id="header">
-    <div class="top-bar">
+<header id="header">
+         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4 col-xs-12">
                         <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p>
+                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-12">
@@ -105,9 +76,12 @@ overflow-x: hidden;
 
                         <?php
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-info   active" role="button" aria-pressed="true">Logout</a>';
+                            echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
+                            echo   $_SESSION['userName'];
+                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">My Account</a>';
                         } else {
                             echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
+                            
                         }
                         ?>
                         <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
@@ -119,6 +93,7 @@ overflow-x: hidden;
             
         </div>
         <!--/.top-bar-->
+
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -128,160 +103,109 @@ overflow-x: hidden;
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="120" hight="80"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
                 </div>
-                
-                <div class="collapse navbar-collapse navbar-right">
+
+                <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
-                    <ul class="nav navbar-nav">
-                    <li ><a href="index.php">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#">Assemble PC</a></li>
-                        <li ><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="#">Make your Home smart</a></li>
-                        <li><a href="#">Contact</a></li>
-                        
-                    </ul>                      
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
+                        <li><a href="services.php">Assemble PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home security</a></li>
+                        <li><a href="smart_home.php">Make your Home smart</a></li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-item.html">Blog Single</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="404.html">404</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                        <li><a href="contact-us.php">Contact</a></li>
+                       
                     </ul>
                 </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
-        
+            </div>
+            <!--/.container-->
+        </nav>
+        <!--/nav-->
+
     </header><!--/header-->
 
 
     <div class="page-title" style="background-image: url(images/page-title.png)">
-        <h1>User Register</h1>
+        <h1>Privacy Policy
+
+        </h1>
     </div>
-    
     
     <section class="pricing">
-    <div class="cotainer">
-        
-        <div class="row justify-content-center ">
-            <div class="col-md-6 col-md-offset-3 edit_register_div" style="padding: 40px;">
-                    <div class="card">
-                        
-                        <div class="card-body">
-                            <form name="my-form" onsubmit="return validform()" action="user_update.dml.php" method="post" enctype="multipart/form-data">
-                                <div class="form-group row">
-                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full_name" value="<?php echo $name; ?>">
-                                        <input type="hidden" name="user_id"  class="form-control" value="<?php echo $_SESSION['userName']; ?>">
-                                    </div>
-                                </div>
+    <div class="container">
 
-                                
-
-                               
-
-                                <div class="form-group row">
-                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="phone_number" class="form-control" name="phone_number" value="<?php echo $phone_number; ?>">
-                                    </div>
-                                </div>
-
-                                <!-- <div class="form-group row">
-                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Present Address</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control">
-                                    </div>
-                                </div> -->
-
-                                <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Address</label>
-                                    <div class="col-md-6">
-                                    <textarea id="permanent_address" class="form-control" name="permanent_address"  ><?php echo $address; ?></textarea>
-                                    </div>
-                                </div>
-
-
-                               
-                                <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right"></label>
-                                    <div class="col-md-6">
-                                    <img id="blah" src="admin/upload/<?php echo $profile_pic; ?>" style="box-sizing: content-box; 
-        width: 150px; height: 200px; align-content: center; border: 1px;">
-
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group row">
-                                    <label for="profile_pic" class="col-md-4 col-form-label text-md-right" >Profile Picture</label>
-                                    <div class="upload-btn-wrapper">
-  <button class="btn edit_button">Upload Profile Picture</button>
-  <input type="file" name="profile_pic" id="profile_pic" onchange="readURL(this);" />
+<div class="page-header">
+    <h1>Tilottama.Tech<small> Privacy Policy</small></h1>
 </div>
-                                </div>
-<style>
-.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
+<!-- <h1>Terms & Conditions</h1> -->
+<p>
+This Privacy Policy applies to buildpc.in</p><p>
+<b>tilottama.tech</b> recognizes the importance of maintaining your privacy. We value your privacy and appreciate your trust in us. This Policy describes how we treat user information we collect on tilottama.tech and other offline sources. This Privacy Policy applies to current and former visitors to our website and to our online customers. By visiting and/or using our website, you agree to this Privacy Policy.</p><p>
+<b>tilottama.tech </b> is a property of tilottama.online, an Indian Company registered under the Companies Act, 2013 having its registered office at M-108<sup></sup> , Yojangandha Co-operative Housing Society, Garagachha, Baishnabghata Patuli Twp, Garia, Kolkata, West Bengal 700094</p><p><b>
+Information we collect
+</b></p><p>
+Contact information. We might collect your name, email, mobile number, phone number, street, city, state, pincode, country and IP address.</p><p>
+Payment and billing information. We might collect your billing name, billing address and payment method when you buy a product. We NEVER collect your credit card number or credit card expiry date or other details pertaining to your credit card on our website. Credit card information will be obtained and processed by our online payment partner CC Avenue.
+</p><p>
+The information you post. We collect information you post in a public space on our website or on a third-party social media site belonging to buildpc.in</p><p>
+Demographic information. We may collect demographic information about you, events you like, events you intend to participate in, tickets you buy, or any other information provided by your during the use of our website. We might collect this as a part of a survey also.
+</p><p>
+Other information. If you use our website, we may collect information about your IP address and the browser you're using. We might look at what site you came from, duration of time spent on our website, pages accessed or what site you visit when you leave us. We might also collect the type of mobile device you are using, or the version of the operating system your computer or device is running.
+</p><p><b>We collect information in different ways.
+</b></p><p>
+We collect information directly from you. We collect information directly from you when you register for an event or buy a product. We also collect information if you post a comment on our websites or ask us a question through phone or email.
+</p><p>
+We collect information from you passively. We use tracking tools like Google Analytics, Google Webmaster, browser cookies and web beacons for collecting information about your usage of our website.
+</p><p>
+We get information about you from third parties. For example, if you use an integrated social media feature on our websites. The third-party social media site will give us certain information about you. This could include your name and email address.
+</p><p><b>
+Use of your personal information
+</b></p><p>
+We use the information to contact you: We might use the information you provide to contact you for confirmation of a purchase on our website or for other promotional purposes.
+</p><p>
+We use the information to respond to your requests or questions. We might use your information to confirm your registration for an event or contest.</p><p>
+We use the information to improve our products and services. We might use your information to customize your experience with us. This could include displaying content based on your preferences.</p><p>
+We use the information to look at site trends and customer interests. We may use your information to make our website and products better. We may combine information we get from you with information about you we get from third parties.</p><p>
+We use information for security purposes. We may use the information to protect our company, our customers, or our websites.
+</p><p>
+We use information for marketing purposes. We might send you information about special promotions or offers. We might also tell you about new features or products. These might be our own offers or products, or third-party offers or products we think you might find interesting. Or, for example, if you buy tickets from us we'll enroll you in our newsletter.</p><p>
+We use the information to send you transactional communications. We might send you emails or SMS about your account or a ticket purchase.
+</p><p>
+We use information as otherwise permitted by law.
+</p><p><b>
+Sharing of information with third-parties
+</b></p><p>
+We will share information with third parties who perform services on our behalf. We share information with vendors who help us manage our online registration process or payment processors or transactional message processors. Some vendors may be located outside of India.
+</p><p>
+We will share information with our business partners. This includes a third party who provide or sponsor an event, or who operates a venue where we hold events. Our partners use the information we give them as described in their privacy policies.
+</p><p>
+We may share information if we think we have to in order to comply with the law or to protect ourselves. We will share information to respond to a court order or subpoena. We may also share it if a government agency or investigatory body requests. Or, we might also share information when we are investigating potential fraud.
+</p><p>
+We may share information with any successor to all or part of our business. For example, if part of our business is sold we may give our customer list as part of that transaction.
+</p><p>
+We may share your information for reasons not described in this policy. We will tell you before we do this.
+</p><p><b>
+Email Opt-Out
+</b></p><p>
+You can opt out of receiving our marketing emails. To stop receiving our promotional emails, please email <b>support@tilottama.tech</b> It may take about ten days to process your request. Even if you opt out of getting marketing messages, we will still be sending you transactional messages through email and SMS about your purchases.</p><p><b>
+Third party sites</b></p><p>
+If you click on one of the links to third party websites, you may be taken to websites we do not control. This policy does not apply to the privacy practices of those websites. Read the privacy policy of other websites carefully. We are not responsible for these third-party sites.
+</p>
+<!-- Bootstrap FAQ - START -->
+<div>
+  
+    
+    </section>
 
-.edit_button {
-  border: 2px solid gray;
-  color: gray;
-  background-color: white;
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.upload-btn-wrapper input[type=file] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-</style>
-                                
-
-                                
-<div class="form-actions">
-                                        <button type="submit" class="btn btn-success btn-outline" >
-                                        Update Profile<i class="fa fa-sign-in"></i>
-                                        </button>
-                                        
-</div>
-                                        
-                                    
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-                    </section>
-                    <script type="text/javascript">
-    function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-</script>
-
-<style>
-        .form-actions {
-            margin: 0;
-            background-color: transparent;
-            text-align: center;
-        }
-        </style>
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
@@ -382,48 +306,13 @@ overflow-x: hidden;
         </div>
     </footer>
     <!--/#footer-->
-    <script>
-        
 
-        function validform() {
-        
-        var a = document.forms["my-form"]["full_name"].value;
-        
-       
-        var d = document.forms["my-form"]["phone_number"].value;
-        var e = document.forms["my-form"]["permanent_address"].value;
-        var f = document.forms["my-form"]["profile_pic"].value;
-        
-        
-        
-        if (a==null || a=="")
-        {
-            sweetAlert("Oops...", "Please enter your Name!", "error");
-            return false;
-        }else if (d==null || d=="")
-        {
-            sweetAlert("Oops...", "Please enter your Phone number!", "error");
-            return false;
-        }else if (e==null || e=="")
-        {
-            sweetAlert("Oops...", "Please enter your Address!", "error");
-            return false;
-        }else if (f==null || f=="")
-        {
-            sweetAlert("Oops...", "Please Upload Profile picture", "error");
-            return false;
-        }
-        
-        }
-        
-        </script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-    
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

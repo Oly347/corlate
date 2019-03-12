@@ -5,8 +5,15 @@ include ('admin/employee.cls.php');
 $obj_user = new user_inc ;
 
 
+if(function_exists('date_default_timezone_set')) {
+    date_default_timezone_set("Asia/Kolkata");
+}
 
+// then use the date functions, not the other way around
+// $date = date("d/m/Y");
+// $date1 =  date("H:i a");
 
+// $mydate= $date ."-".$date1;
 
 
 $insert_array=  array(
@@ -18,13 +25,7 @@ $insert_array=  array(
 'bill_addr' => $_POST['bill_addr'],
 'shipping_addr' => $_POST['shipping_addr'],
 'total' => $_POST['total'],
-
-
-
-
-
-   
-	
+'order_time' =>date('Y-m-d H:i:s'),
 	
     
 
@@ -34,11 +35,11 @@ $insert_array=  array(
 $insert= $obj_user->InsertIntoOrderList($insert_array);
      if ($insert) {
 
-        // header('Location:cart.del.php');
+        header('Location:order_msg.php');
         
-        echo "<script type='text/javascript'>alert('Thanks For Shopping ');
-        window.location='cart.del.php';
-        </script>";
+        // echo "<script type='text/javascript'>alert('Thanks For Shopping ');
+        // window.location='order_msg.php';
+        // </script>";
         exit();
 
        

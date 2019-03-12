@@ -1,29 +1,12 @@
 <?php
 
-
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
 session_start();
 
-$obj_user = new user_inc ;
-$userProfileUpdate = $obj_user->getUserUpdateById($_SESSION['userName']);
 
 
-
-// print_r($userProfileUpdate);
-
-foreach ($userProfileUpdate as $key => $value) {
-    $name=$value['name'];
-    $phone_number=$value['phone_number'];
-    $address=$value['address'];
-    $profile_pic=$value['profile_pic'];
-    
-  
-}
-  
 ?>
-
-
 
 
 
@@ -46,42 +29,30 @@ foreach ($userProfileUpdate as $key => $value) {
     <link href="css/icomoon.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
-    <link href="css/style_edit.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/Google-Style-Login.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-   
-  
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-    <style>
-    body {
-overflow-x: hidden;
-}  
-
-
-    </style>
 </head>
 <!--/head-->
 
 
 <body>
 
-    <header id="header">
-    <div class="top-bar">
+<header id="header">
+         <div class="top-bar">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-4 col-xs-12">
                         <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p>
+                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-12">
@@ -105,9 +76,12 @@ overflow-x: hidden;
 
                         <?php
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-info   active" role="button" aria-pressed="true">Logout</a>';
+                            echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
+                            echo   $_SESSION['userName'];
+                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">My Account</a>';
                         } else {
                             echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
+                            
                         }
                         ?>
                         <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
@@ -119,6 +93,7 @@ overflow-x: hidden;
             
         </div>
         <!--/.top-bar-->
+
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -128,160 +103,76 @@ overflow-x: hidden;
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo" width="120" hight="80"></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
                 </div>
-                
-                <div class="collapse navbar-collapse navbar-right">
+
+                <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
-                    <ul class="nav navbar-nav">
-                    <li ><a href="index.php">Home</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#">Assemble PC</a></li>
-                        <li ><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="#">Make your Home smart</a></li>
-                        <li><a href="#">Contact</a></li>
-                        
-                    </ul>                      
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about-us.php">About Us</a></li>
+                        <li><a href="services.php">Assemble PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home security</a></li>
+                        <li><a href="smart_home.php">Make your Home smart</a></li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-item.html">Blog Single</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="404.html">404</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                        <li><a href="contact-us.php">Contact</a></li>
+                       
                     </ul>
                 </div>
-            </div><!--/.container-->
-        </nav><!--/nav-->
-        
+            </div>
+            <!--/.container-->
+        </nav>
+        <!--/nav-->
+
     </header><!--/header-->
 
 
     <div class="page-title" style="background-image: url(images/page-title.png)">
-        <h1>User Register</h1>
+        <h1>Refund Policy
+            
+        </h1>
     </div>
-    
     
     <section class="pricing">
-    <div class="cotainer">
-        
-        <div class="row justify-content-center ">
-            <div class="col-md-6 col-md-offset-3 edit_register_div" style="padding: 40px;">
-                    <div class="card">
-                        
-                        <div class="card-body">
-                            <form name="my-form" onsubmit="return validform()" action="user_update.dml.php" method="post" enctype="multipart/form-data">
-                                <div class="form-group row">
-                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="full_name" class="form-control" name="full_name" value="<?php echo $name; ?>">
-                                        <input type="hidden" name="user_id"  class="form-control" value="<?php echo $_SESSION['userName']; ?>">
-                                    </div>
-                                </div>
+    <div class="container">
 
-                                
-
-                               
-
-                                <div class="form-group row">
-                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Phone Number</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="phone_number" class="form-control" name="phone_number" value="<?php echo $phone_number; ?>">
-                                    </div>
-                                </div>
-
-                                <!-- <div class="form-group row">
-                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Present Address</label>
-                                    <div class="col-md-6">
-                                        <input type="text" id="present_address" class="form-control">
-                                    </div>
-                                </div> -->
-
-                                <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right">Address</label>
-                                    <div class="col-md-6">
-                                    <textarea id="permanent_address" class="form-control" name="permanent_address"  ><?php echo $address; ?></textarea>
-                                    </div>
-                                </div>
-
-
-                               
-                                <div class="form-group row">
-                                    <label for="permanent_address" class="col-md-4 col-form-label text-md-right"></label>
-                                    <div class="col-md-6">
-                                    <img id="blah" src="admin/upload/<?php echo $profile_pic; ?>" style="box-sizing: content-box; 
-        width: 150px; height: 200px; align-content: center; border: 1px;">
-
-                                    </div>
-                                </div>
-
-
-                                <div class="form-group row">
-                                    <label for="profile_pic" class="col-md-4 col-form-label text-md-right" >Profile Picture</label>
-                                    <div class="upload-btn-wrapper">
-  <button class="btn edit_button">Upload Profile Picture</button>
-  <input type="file" name="profile_pic" id="profile_pic" onchange="readURL(this);" />
+<div class="page-header">
+    <h1>Tilottama.Tech<small> Refund Policy</small></h1>
 </div>
-                                </div>
-<style>
-.upload-btn-wrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-}
+<!-- <h1>Terms & Conditions</h1> -->
+<ul><li>It is hereby informed "Tilottama.Tech" or its parent concern "Tilottama.Tech" is a marketing and distribution company and is not a manufacturer.
+</li><li>
+We hereby certify that my/our registration certificate under the Companies Act 2013 is in force on the date on which the sale of the goods specified in this Bill / Cash Memo / Invoice has been affected by us in the regular course of our business.
+</li><li>Goods once sold will not be taken back or exchanged. Once invoice made cannot be modified or canceled for any reasons thereof.</li><li>Refunds are issued only in case of complete loss of shipment&nbsp;</li><li>It is also the duty of the buyer to immediately check the physical condition of the purchased goods on receipt. Any transit damage should be reported within 1-2 days of receiving the shipment.</li><li>Any products purchased from us for any special usage in abnormal environment i.e. Other than normal usage should be informed to us at the time of purchase otherwise the warranty is void and null.<br></li><li>No Customer can waive responsibility on grounds of ignorance of terms &amp; conditions.</li><li>
+Physical damage/mishandling of products / Tampering of warranty stickers - do not cover warranty. All product sold by us require technically qualified PC Hardware engineer for installation.</li><li>
+The court at Pune, Maharashtra shall have exclusive jurisdiction for deciding any disputes arising out of this sale contract.
+</li></ul>
+<h2>Warranty Terms:</h2>
+<ul><li>
+All products sold by us carry an only carry-in warranty. Shipping charges (To &amp; Fro) to service center has to be borne by the customer.
+</li><li>Where the words “Direct Warranty” or “Manufacturer Warranty” are mentioned it means warranty is direct from Manufacturer / Distributor.
+</li><li>We request the customer to send the copy of our invoice and delivery challan for warranty purposes, whenever there is a service problem for products. Shipping will be paid by the customer for the same.
+</li><li>Goods once sold will be accepted for warranty repair/replacement only if they are in good physical condition. Products with broken/burnt pins, pen/pencil markings, cracks, missing / tampered components/warranty stickers damaged will be rejected and considered warranty void in above conditions.
+</li><li>Warranty clause stand void for damage caused due to mishandling of equipment for any reasons causing damage of the products like lack of knowledge, improper handling, electricity problem etc., on the basis that under normal condition there would have been no damage of the product.
+</li><li>Warranty is against manufacturing defects only, and as per manufacturers warranty policy. In case manufacturer has local service center then for warranty the customer has to approach the service center directly with the purchase details.
+</li><li>Products under warranty will either be repaired or replaced as per manufacturer/ supplier warranty policy.
+</li><li>We reserve the right to reject material received for warranty without accessories, manuals, Software CD’s / DVD’s &amp; outer box packing.
+</li><li>Any service litigation or problems have to address directly to manufacturers/distributor/company direct dealer address only. We are not responsible for any litigation thereof.
+</li><li>Warranty service will be given only where the full payment is made on the due date.
+</li></ul>
+<!-- Bootstrap FAQ - START -->
+<div>
+  
+    
+    </section>
 
-.edit_button {
-  border: 2px solid gray;
-  color: gray;
-  background-color: white;
-  padding: 8px 20px;
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.upload-btn-wrapper input[type=file] {
-  font-size: 100px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-</style>
-                                
-
-                                
-<div class="form-actions">
-                                        <button type="submit" class="btn btn-success btn-outline" >
-                                        Update Profile<i class="fa fa-sign-in"></i>
-                                        </button>
-                                        
-</div>
-                                        
-                                    
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-                    </section>
-                    <script type="text/javascript">
-    function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-</script>
-
-<style>
-        .form-actions {
-            margin: 0;
-            background-color: transparent;
-            text-align: center;
-        }
-        </style>
     <section id="bottom">
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
@@ -382,48 +273,13 @@ overflow-x: hidden;
         </div>
     </footer>
     <!--/#footer-->
-    <script>
-        
 
-        function validform() {
-        
-        var a = document.forms["my-form"]["full_name"].value;
-        
-       
-        var d = document.forms["my-form"]["phone_number"].value;
-        var e = document.forms["my-form"]["permanent_address"].value;
-        var f = document.forms["my-form"]["profile_pic"].value;
-        
-        
-        
-        if (a==null || a=="")
-        {
-            sweetAlert("Oops...", "Please enter your Name!", "error");
-            return false;
-        }else if (d==null || d=="")
-        {
-            sweetAlert("Oops...", "Please enter your Phone number!", "error");
-            return false;
-        }else if (e==null || e=="")
-        {
-            sweetAlert("Oops...", "Please enter your Address!", "error");
-            return false;
-        }else if (f==null || f=="")
-        {
-            sweetAlert("Oops...", "Please Upload Profile picture", "error");
-            return false;
-        }
-        
-        }
-        
-        </script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-    
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

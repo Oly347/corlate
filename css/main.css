@@ -430,7 +430,70 @@ input.search-form:hover {
     color: #fff;
     font-family: 'Orbitron';
 }
+.faqHeader {
+    font-size: 27px;
+    margin: 20px;
+}
 
+.panel-heading [data-toggle="collapse"]:after {
+    font-family: 'Glyphicons Halflings';
+    content: "\e072"; /* "play" icon */
+    float: right;
+    color: #95d819;
+    font-size: 15px;
+    line-height: 22px;
+    /* rotate "play" icon from > (right arrow) to down arrow */
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.cancel_order{
+color: red;
+
+}
+.accept_order{
+color:  #5dade2;
+}
+
+
+
+.confirm_order{
+color:  #2ecc71 ;
+    
+}
+
+
+.edit_download_btn{
+font-weight: bold;
+background-color: white;
+border: 1px solid #95d819;
+color: #95d819;
+-webkit-box-shadow: 0 10px 6px -6px #777;
+-moz-box-shadow: 0 10px 6px -6px #777;
+     box-shadow: 0 10px 6px -6px #777;
+}  
+
+
+
+.edit_download_btn:hover{
+    
+    background-color: #95d819;
+    color:white;
+    border: 1px solid white;
+    
+    
+}  
+.panel-heading [data-toggle="collapse"].collapsed:after {
+    /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    color: #95d819;
+}
 
 .edit_heading{
 color:  #95d819;
