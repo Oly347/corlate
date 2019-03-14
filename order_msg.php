@@ -66,7 +66,7 @@ foreach ($userlastOrder as $key => $value) {
  
  <script type="text/javascript">
   
- setTimeout(function () { swal("Thanks!!","Your Order <?php echo $order ?> is confirm!","success")
+ setTimeout(function () { swal("Thanks!!","Your Order <?php echo $order ?> is Accepted!","success")
   
 }, 500);</script>;
   

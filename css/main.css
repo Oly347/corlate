@@ -457,11 +457,18 @@ color: red;
 color:  #5dade2;
 }
 
+.user_reguster{
+    background-image: url(../images/slider/andrej-lisakov-679177-unsplash.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+   
 
+}
 
 .confirm_order{
 color:  #2ecc71 ;
-    
+   
 }
 
 

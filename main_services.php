@@ -464,45 +464,45 @@ $_SESSION['userName']= "Guest";
         <div class="container fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
                 <div class="col-md-2">
-                    <a href="#" class="footer-logo">
-                        <img src="images/logo-black.png" alt="logo">
+                    <a href="index.php" class="footer-logo">
+                        <img src="images/tech_logo_dark.jpg" alt="logo" width="100">
                     </a>
                 </div>
                 <div class="col-md-10">
                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-4">
                             <div class="widget">
                                 <h3>Company</h3>
                                 <ul>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">We are hiring</a></li>
-                                    <li><a href="#">Meet the team</a></li>
-                                    <li><a href="#">Copyright</a></li>
-                                    <li><a href="#">Terms of use</a></li>
-                                    <li><a href="#">Privacy policy</a></li>
-                                    <li><a href="#">Contact us</a></li>
+                                    <li><a href="about-us.php">About us</a></li>
+                                    <!-- <li><a href="#">We are hiring</a></li> -->
+                                    <!-- <li><a href="#">Meet the team</a></li> -->
+                                    <!-- <li><a href="#">Copyright</a></li> -->
+                                    <li><a href="terms_and_conditions.php">Terms of use</a></li>
+                                    <li><a href="privacy_policy.php">Privacy policy</a></li>
+                                    <li><a href="contact-us.php">Contact us</a></li>
                                 </ul>
                             </div>
                         </div>
                         <!--/.col-md-3-->
 
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-4">
                             <div class="widget">
                                 <h3>Support</h3>
                                 <ul>
-                                    <li><a href="#">Faq</a></li>
-                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="faq.php">Faq</a></li>
+                                    <!-- <li><a href="#">Blog</a></li>
                                     <li><a href="#">Forum</a></li>
-                                    <li><a href="#">Documentation</a></li>
-                                    <li><a href="#">Refund policy</a></li>
-                                    <li><a href="#">Ticket system</a></li>
-                                    <li><a href="#">Billing system</a></li>
+                                    <li><a href="#">Documentation</a></li> -->
+                                    <li><a href="refund_policy.php">Refund policy</a></li>
+                                    <li><a href="#">Enquery</a></li>
+                                    <li><a href="main_services">Services</a></li>
                                 </ul>
                             </div>
                         </div>
                         <!--/.col-md-3-->
 
-                        <div class="col-md-3 col-sm-6">
+                        <!-- <div class="col-md-3 col-sm-6">
                             <div class="widget">
                                 <h3>Developers</h3>
                                 <ul>
@@ -515,20 +515,20 @@ $_SESSION['userName']= "Guest";
                                     <li><a href="#">Article Writing</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                         <!--/.col-md-3-->
 
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-4">
                             <div class="widget">
                                 <h3>Our Partners</h3>
                                 <ul>
-                                    <li><a href="#">Adipisicing Elit</a></li>
-                                    <li><a href="#">Eiusmod</a></li>
-                                    <li><a href="#">Tempor</a></li>
-                                    <li><a href="#">Veniam</a></li>
-                                    <li><a href="#">Exercitation</a></li>
+                                    <li><a href="#">DELL</a></li>
+                                    <li><a href="#">Amazon</a></li>
+                                    <li><a href="#">Intel</a></li>
+                                    <li><a href="#">Tp-LinK</a></li>
+                                    <!-- <li><a href="#">Exercitation</a></li>
                                     <li><a href="#">Ullamco</a></li>
-                                    <li><a href="#">Laboris</a></li>
+                                    <li><a href="#">Laboris</a></li> -->
                                 </ul>
                             </div>
                         </div>

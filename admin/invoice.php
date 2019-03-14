@@ -1,8 +1,102 @@
+<?php
+// Include config file
 
+
+ session_start();
+
+// //create a session and assign a value
+// $_SESSION['session_id'] =rand(10,1000);
+
+
+
+//print session
+// print($_SESSION['session_id']);
+//remove/destroy particular session or
+// unset($_SESSION['session_name']);
+// //destroy all the sessions'
+// // remove all session variables
+// session_unset();
+// // destroy the session
+// session_destroy();
+
+include ('system/database.php');
+include ('employee.cls.php');
+
+$obj_user = new user_inc ;
+$obj_comp = new component_inc ;
+$orderRow = $obj_user->getOrderById($_GET['id']);
+
+$today = date("Ymd");
+$rand = strtoupper(substr(uniqid(sha1(time())),0,4));
+$transaction = 'TS' . $today . $rand ;
+
+// $invoiceid = $order_id. $today  ;
+$today_date = date("Y/m/d");
+
+
+
+
+
+foreach ($orderRow as $key => $value) {
+  $order_id=$value['order_id'];
+  $username=$value['username'];
+  $txn_id=$value['txn_id'];
+  $details=$value['details'];
+  $product_price=$value['product_price'];
+  $bill_addr=$value['bill_addr'];
+  $shipping_addr=$value['shipping_addr'];
+  $total=$value['total'];
+  $order_time=$value['order_time'];
+  
+
+}
+$userDetailsById = $obj_user->getUserById($username);
+
+foreach ($userDetailsById as $key => $value) {
+	$name=$value['name'];
+    $phone_number=$value['phone_number'];
+    $address=$value['address'];
+    $profile_pic=$value['profile_pic'];
+    $email_id=$value['email_id'];
+    $id=$value['id'];
+
+	
+  
+}
+
+
+
+
+$invoiceid = $_GET['id']."-". $today  ;
+
+
+
+
+// $stamp = imagecreatefrompng('stamp.png');
+// $im = imagecreatefromjpeg('tech_logo_dark.jpg');
+
+// // Set the margins for the stamp and get the height/width of the stamp image
+// $marge_right = 10;
+// $marge_bottom = 10;
+// $sx = imagesx($stamp);
+// $sy = imagesy($stamp);
+
+// // Copy the stamp image onto our photo using the margin offsets and the photo 
+// // width to calculate positioning of the stamp. 
+// imagecopy($im, $stamp, imagesx($im) - $sx - $marge_right, imagesy($im) - $sy - $marge_bottom, 0, 0, imagesx($stamp), imagesy($stamp));
+
+// // Output and free memory
+// header('Content-type: image/png');
+// imagepng($im);
+// imagedestroy($im)
+
+
+
+?>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Invoice</title>
+		<title>Invoice-tilottama.tech</title>
 		<link rel="stylesheet" href="style.css">
 		<link rel="license" href="https://www.opensource.org/licenses/mit-license/">
 		<script src="script.js"></script>
@@ -24,7 +118,17 @@
 	padding: 0;
 	text-decoration: none;
 	vertical-align: top;
+	/* background-image: url(tech_logo_dark.jpg);
+	background-size: 10%;
+    background-position:  center;
+	background-attachment: fixed;
+	background-repeat: no-repeat; */
+
+	
 }
+
+
+
 
 /* content editable */
 
@@ -62,9 +166,24 @@ body { background: #FFF; border-radius: 1px; box-shadow: 0 0 1in -0.25in rgba(0,
 header { margin: 0 0 3em; }
 header:after { clear: both; content: ""; display: table; }
 
-header h1 { background: #000; border-radius: 0.25em; color: #FFF; margin: 0 0 1em; padding: 0.5em 0; }
+header h1 { 
+	
+	background: #95d819; 
+	border-radius: 0.25em; 
+	color: #000; 
+	margin: 0 0 1em; 
+	padding: 0.5em 0; 
+}
 header address { float: left; font-size: 75%; font-style: normal; line-height: 1.25; margin: 0 1em 1em 0; }
-header address p { margin: 0 0 0.25em; }
+header address p { margin: 0 0 0.25em; 
+
+}
+header address h3 { 
+	
+font-size:20px;
+font-weight:bold;
+
+}
 header span, header img { display: block; float: right; }
 header span { margin: 0 0 1em 1em; max-height: 25%; max-width: 60%; position: relative; }
 header img { max-height: 100%; max-width: 100%; }
@@ -75,6 +194,8 @@ header input { cursor: pointer; -ms-filter:"progid:DXImageTransform.Microsoft.Al
 article, article address, table.meta, table.inventory { margin: 0 0 3em; }
 article:after { clear: both; content: ""; display: table; }
 article h1 { clip: rect(0 0 0 0); position: absolute; }
+
+
 
 article address { float: left; font-size: 125%; font-weight: bold; }
 
@@ -87,6 +208,11 @@ table.meta:after, table.balance:after { clear: both; content: ""; display: table
 
 table.meta th { width: 40%; }
 table.meta td { width: 60%; }
+.address_dtl{
+	float: left; font-size: 75%; font-style: normal; line-height: 1.25; margin: 1em 2em 1em -10em; 
+	width: 20%;
+}
+
 
 /* table items */
 
@@ -153,91 +279,122 @@ tr:hover .cut { opacity: 1; }
 	.add, .cut { display: none; }
 }
 
-@page { margin: 0; }
-		</style>
+@page { margin: 0; 
+}
+
+
+.terms_con{
+
+margin-bottom:15px;
+}
+
+
+.terms_con p{
+
+font-size:10px
+}
+
+</style>
 		
 	</head>
 	<body>
+
+
+
+
 		<header>
 			<h1>Invoice</h1>
 			<address >
-				<p>SUN RISE HOTEL,</p>
-				<p>New Kalmunani Road,<br>Battialoa,<br>Sri Lanka.</p>
-				<p>(+94) 65 222 44 55</p>
+				<h3>Tilottama.Tech</h3>
+				<p>M 108, Yojangandha Co-operative Housing Society, Garagachha,</p>
+				<p>Baishnabghata Patuli Twp, Garia, Kolkata, West Bengal 700094</p>
+				<p>(+91)82408 68110</p>
 			</address>
-			<span><img alt="" src="assets/img/sun.png"></span>
+			<span><img alt="" src="tech_logo_dark.jpg" width="150"></span>
 		</header>
 		<article>
 			<h1>Recipient</h1>
 			<address >
-				<p><?php echo $title.$fname." ".$lname ?> <br></p>
-			</address>
+				<p><?php echo "Mr. $name" ?> </p>
+
+			
+			</address><br>
+
+
+			<div class="address_dtl" >
+				<p><?php echo "Mr. $shipping_addr" ?> <br></p>
+
+			
+</div>
 			<table class="meta">
 				<tr>
 					<th><span >Invoice #</span></th>
-					<td><span ><?php echo $id; ?></span></td>
+					<td><span ><?php echo $invoiceid; ?></span></td>
 				</tr>
 				<tr>
 					<th><span >Date</span></th>
-					<td><span ><?php echo $cout; ?> </span></td>
+					<td><span ><?php echo $today_date ; ?> </span></td>
 				</tr>
 				
 			</table>
+
+
+			
 			<table class="inventory">
 				<thead>
 					<tr>
-						<th><span >Item</span></th>
-						<th><span >No of Days</span></th>
-						<th><span >Rate</span></th>
-						<th><span >Quantity</span></th>
-						<th><span >Price</span></th>
+						<th><span >Order Id</span></th>
+						<th><span >Order Details</span></th>
+						<th><span >Product Price list</span></th>
+						<th><span >Total</span></th>
+						<!-- <th><span >Price</span></th> -->
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td><span ><?php echo $troom; ?></span></td>
-						<td><span ><?php echo $days; ?> </span></td>
-						<td><span data-prefix>$</span><span ><?php  echo $type_of_room;?></span></td>
-						<td><span ><?php echo $nroom;?> </span></td>
-						<td><span data-prefix>$</span><span><?php echo $ttot; ?></span></td>
+						<td><span ><?php echo $order_id; ?></span></td>
+						<td><span ><?php echo $details; ?> </span></td>
+						<td><span ><?php  echo $product_price;?></span></td>
+						<td><span ><span data-prefix>&#x20b9;</span><?php echo $total;?> </span></td>
+						
 					</tr>
-					<tr>
-						<td><span ><?php echo $bed; ?>  Bed </span></td>
-						<td><span ><?php echo $days; ?></span></td>
-						<td><span data-prefix>$</span><span ><?php  echo $type_of_bed;?></span></td>
-						<td><span ><?php echo $nroom;?> </span></td>
-						<td><span data-prefix>$</span><span><?php echo $btot; ?></span></td>
-					</tr>
-					<tr>
-						<td><span ><?php echo $meal; ?>  </span></td>
-						<td><span ><?php echo $days; ?></span></td>
-						<td><span data-prefix>$</span><span ><?php  echo $type_of_meal?></span></td>
-						<td><span ><?php echo $nroom;?> </span></td>
-						<td><span data-prefix>$</span><span><?php echo $mepr; ?></span></td>
-					</tr>
+					
+					
 				</tbody>
 			</table>
 			
 			<table class="balance">
 				<tr>
 					<th><span >Total</span></th>
-					<td><span data-prefix>$</span><span><?php echo $fintot; ?></span></td>
+					<td><span data-prefix>&#x20b9;</span><span><?php echo $total; ?></span></td>
 				</tr>
 				<tr>
 					<th><span >Amount Paid</span></th>
-					<td><span data-prefix>$</span><span >0.00</span></td>
+					<td><span data-prefix>&#x20b9;</span><span ><?php echo $total; ?></span></td>
 				</tr>
 				<tr>
 					<th><span >Balance Due</span></th>
-					<td><span data-prefix>$</span><span><?php echo $fintot; ?></span></td>
+					<td><span data-prefix>&#x20b9;</span><span></span>0.00</td>
 				</tr>
 			</table>
 		</article>
+
+
+
+
+		<div class="terms_con">
+		<p >Terms & condition: <i>Put yourself in the shoes of your clients’ customers and understand that they’re not all familiar with industry jargon and even accounting terms, such as “net 30.” Keep the language in your terms and conditions simple and user-friendly.</i> </p>
+</div>
 		<aside>
 			<h1><span >Contact us</span></h1>
 			<div >
-				<p align="center">Email :- info@sunrise.com || Web :- www.sunrise.com || Phone :- +94 65 222 44 55 </p>
+				<p align="center">Email :- support@tilottama.tech || Web :-tilottama.tech || Phone :- (+91)82408 68110 </p>
 			</div>
 		</aside>
+
+	
+
+
+
 	</body>
 </html>
