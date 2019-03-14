@@ -31,7 +31,7 @@ $rand = strtoupper(substr(uniqid(sha1(time())),0,4));
 $transaction = 'TS' . $today . $rand ;
 
 // $invoiceid = $order_id. $today  ;
-$today_date = date("Y/m/d");
+$today_date = date("d/m/Y");
 
 
 
@@ -99,7 +99,8 @@ $invoiceid = $_GET['id']."-". $today  ;
 		<title>Invoice-tilottama.tech</title>
 		<link rel="stylesheet" href="style.css">
 		<link rel="license" href="https://www.opensource.org/licenses/mit-license/">
-		<script src="script.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Sniglet' rel='stylesheet'>
 		<style>
 		/* reset */
 
@@ -108,7 +109,7 @@ $invoiceid = $_GET['id']."-". $today  ;
 	border: 0;
 	box-sizing: content-box;
 	color: inherit;
-	font-family: inherit;
+	font-family: 'Sniglet';
 	font-size: inherit;
 	font-style: inherit;
 	font-weight: inherit;
@@ -118,6 +119,7 @@ $invoiceid = $_GET['id']."-". $today  ;
 	padding: 0;
 	text-decoration: none;
 	vertical-align: top;
+	/* height:100%; */
 	/* background-image: url(tech_logo_dark.jpg);
 	background-size: 10%;
     background-position:  center;
@@ -125,6 +127,12 @@ $invoiceid = $_GET['id']."-". $today  ;
 	background-repeat: no-repeat; */
 
 	
+}
+
+body{
+
+
+	height:100%;
 }
 
 
@@ -174,7 +182,7 @@ header h1 {
 	margin: 0 0 1em; 
 	padding: 0.5em 0; 
 }
-header address { float: left; font-size: 75%; font-style: normal; line-height: 1.25; margin: 0 1em 1em 0; }
+header address { float: left; font-size: 15px; font-style: normal; max-width: 40%; line-height: 1.25; margin: 0 1em 1em 0; }
 header address p { margin: 0 0 0.25em; 
 
 }
@@ -207,23 +215,25 @@ table.meta:after, table.balance:after { clear: both; content: ""; display: table
 /* table meta */
 
 table.meta th { width: 40%; }
-table.meta td { width: 60%; }
+table.meta td { width: 60%;  }
 .address_dtl{
-	float: left; font-size: 75%; font-style: normal; line-height: 1.25; margin: 1em 2em 1em -10em; 
+	float: left; font-style: normal; line-height: 1.25; margin: 1em 2em 1em -10em; 
 	width: 20%;
+
+	font-size: 15px;
 }
 
 
 /* table items */
 
 table.inventory { clear: both; width: 100%; }
-table.inventory th { font-weight: bold; text-align: center; }
+table.inventory th { font-weight: bold; text-align: center;  }
 
-table.inventory td:nth-child(1) { width: 26%; }
-table.inventory td:nth-child(2) { width: 38%; }
-table.inventory td:nth-child(3) { text-align: right; width: 12%; }
-table.inventory td:nth-child(4) { text-align: right; width: 12%; }
-table.inventory td:nth-child(5) { text-align: right; width: 12%; }
+table.inventory td:nth-child(1) { width: 26%; font-size: 12px;}
+table.inventory td:nth-child(2) { width: 38%; font-size: 12px; }
+table.inventory td:nth-child(3) { text-align: right; width: 12%; font-size: 12px;}
+table.inventory td:nth-child(4) { text-align: right; width: 12%;font-size: 12px; }
+table.inventory td:nth-child(5) { text-align: right; width: 12%; font-size: 12px; }
 
 /* table balance */
 
@@ -294,13 +304,49 @@ margin-bottom:15px;
 font-size:10px
 }
 
+
+#background{
+    position:absolute;
+    z-index:0;
+    /* background:white; */
+    display:block;
+    min-height:50%; 
+    min-width:50%;
+    color:yellow;
+
+		margin-top: 356px;
+		margin-left: 285px;
+}
+
+/* #content{
+    position:absolute;
+    z-index:1;
+} */
+
+#bg-text
+{
+    color:lightgrey;
+    font-size:50px;
+    transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
+}
+
+
+.water_img{
+opacity:0.1;
+
+}
 </style>
 		
 	</head>
 	<body>
 
 
+	<div id="background">
+  <!-- <p id="bg-text">Background</p> -->
 
+	<img alt="" src="tech_logo_dark.jpg" id="bg-text" class="water_img" width="150">
+	</div>
 
 		<header>
 			<h1>Invoice</h1>
@@ -315,14 +361,14 @@ font-size:10px
 		<article>
 			<h1>Recipient</h1>
 			<address >
-				<p><?php echo "Mr. $name" ?> </p>
+				<p><?php echo  $name ?> </p>
 
 			
 			</address><br>
 
 
 			<div class="address_dtl" >
-				<p><?php echo "Mr. $shipping_addr" ?> <br></p>
+				<p><?php echo  $shipping_addr ?> <br></p>
 
 			
 </div>
@@ -355,7 +401,7 @@ font-size:10px
 						<td><span ><?php echo $order_id; ?></span></td>
 						<td><span ><?php echo $details; ?> </span></td>
 						<td><span ><?php  echo $product_price;?></span></td>
-						<td><span ><span data-prefix>&#x20b9;</span><?php echo $total;?> </span></td>
+						<td><span ><span data-prefix><i class="fa fa-inr" aria-hidden="true"></i></span><?php echo $total;?> </span></td>
 						
 					</tr>
 					
@@ -366,15 +412,16 @@ font-size:10px
 			<table class="balance">
 				<tr>
 					<th><span >Total</span></th>
-					<td><span data-prefix>&#x20b9;</span><span><?php echo $total; ?></span></td>
+					<td><span data-prefix><i class="fa fa-inr" aria-hidden="true"></i></span><span><?php echo $total; ?></span></td>
 				</tr>
 				<tr>
 					<th><span >Amount Paid</span></th>
-					<td><span data-prefix>&#x20b9;</span><span ><?php echo $total; ?></span></td>
+					<td><span data-prefix><i class="fa fa-inr" aria-hidden="true"></i></span><span ><?php echo $total; ?></span></td>
 				</tr>
 				<tr>
 					<th><span >Balance Due</span></th>
-					<td><span data-prefix>&#x20b9;</span><span></span>0.00</td>
+					<td><span data-prefix><i class="fa fa-inr" aria-hidden="true"></i>
+</span><span>0.00</span></td>
 				</tr>
 			</table>
 		</article>
