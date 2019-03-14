@@ -303,7 +303,7 @@ $obj_comp = new component_inc ;
 
           <div class="container">
   <h2>Component Details</h2>
-  <form action="cabinet.dml.php" method="post" enctype="multipart/form-data">
+  <form action="cabinet.dml.php#cabinetList" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="c_name">Model name</label>
       <input type="text" class="form-control" id="c_name" placeholder="Enter Model Name" name="c_name">
