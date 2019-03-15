@@ -18,7 +18,7 @@ $insert_array=  array(
 'component_details' => $_POST['c_dis'],
 'component_price' => $_POST['c_price'],
 'component_image' => $randomFileName,
-'status' => $_POST['status'],
+// 'status' => $_POST['status'],
    
 	
 	

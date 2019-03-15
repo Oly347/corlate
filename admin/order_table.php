@@ -353,7 +353,7 @@ $userlastOrder = $obj_user->getOrderList();
                         ?> </td>
                         <td><?php echo $contact_list['invoice'];?><br><a class="btn btn-info" href="upload/<?php echo $contact_list['invoice']?>"><i class="fa fa-file-pdf" aria-hidden="true"></i>
 Download File </a>
-<a class="btn btn-info" href="invoice.php?id=<?php echo $contact_list['id'];?>" role="button">Invoice</a>
+<a class="btn btn-info" href="invoice.php?id=<?php echo $contact_list['id'];?>" role="button" >Invoice</a>
 
 </td>
                       <td>

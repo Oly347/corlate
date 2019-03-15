@@ -32,7 +32,7 @@ move_uploaded_file($t,$path);
 
 $insert_array=  array(
     'name' => $_POST['full_name'],
-    'password' => $_POST['password'],
+    'password' => SHA1($_POST['password']),
     'phone_number' => $_POST['phone_number'],
     'email_id' => $_POST['email_address'],
     'address' => $_POST['permanent_address'],

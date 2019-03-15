@@ -1162,6 +1162,10 @@ function component_inc()
     public function InsertIntoComponentDetailsMonitor($post_fileds)
       {
       $sSql="SELECT * FROM component_details_monitor WHERE id=-1";
+
+    //   print_r($sSql);
+
+    //   exit;
       $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
       if($insrt==0)
        {

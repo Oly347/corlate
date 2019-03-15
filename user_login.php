@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-$loginUser = $obj_user->checkLogin($_POST['email_id'],$_POST['password']);
+$loginUser = $obj_user->checkLogin($_POST['email_id'],SHA1($_POST['password']));
 $l=count($loginUser);
 if ($l==1) {
 foreach ($loginUser as $key => $value) {

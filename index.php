@@ -538,7 +538,7 @@ $('#myCarousel').carousel({
                                     <div class="tab-pane fade active in text-right" id="tab2">
                                         <div class="video-box">
                                             <img src="images/tab-video-bg.png" alt="video">
-                                            <a class="video-icon" href="http://www.youtube.com/watch?v=cH6kxtzovew" rel="prettyPhoto"><i class="fa fa-play"></i></a>
+                                            <a class="video-icon" href="https://www.youtube.com/watch?v=F9RAYRUR9FM" rel="prettyPhoto"><i class="fa fa-play"></i></a>
                                         </div>
                                     </div>
 
@@ -683,7 +683,7 @@ for($i=0; $i<$rating; $i++) {
                                     <li><a href="#">Documentation</a></li> -->
                                     <li><a href="refund_policy.php">Refund policy</a></li>
                                     <li><a href="#">Enquery</a></li>
-                                    <li><a href="main_services">Services</a></li>
+                                    <li><a href="main_services.php">Services</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -733,8 +733,8 @@ for($i=0; $i<$rating; $i++) {
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2019 <a  href="index.php" title="Free Twitter Bootstrap WordPress Themes and HTML templates"><b>Tilottama.Tech</b></a> All Rights Reserved
-                    | Developed By <a  href="#" title="Free Twitter Bootstrap WordPress Themes and HTML templates"><i>Tilottama.Online</i></a>
+                    &copy; 2019 <a  href="index.php" title="Tilottama.Tech"><b>Tilottama.Tech</b></a> All Rights Reserved
+                    | Developed By <a  href="#" title="Best Digital Marketing Company in Midnapore and Kolkata. we are specialised in Digital Marketing, Graphic Design and Web Design"><i>Tilottama.Online</i></a>
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

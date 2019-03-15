@@ -532,7 +532,7 @@ $rowSpeakerComponent = $obj_comp->getComponentDetailsSpeaker();
 
 
 
-              <div class="card shadow mb-4">
+              <div class="card shadow mb-4" id="speaker">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Speaker</h6><a href="speaker.php" class="btn btn-success btn-icon-split">
                     <span class="icon text-white-50">

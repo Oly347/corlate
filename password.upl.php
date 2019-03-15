@@ -21,7 +21,7 @@ $obj_user = new user_inc ;
 
 $update_array=  array(
 
-'password' => $_POST['password'],
+'password' => SHA1($_POST['password']),
 
 
 );
