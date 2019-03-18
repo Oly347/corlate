@@ -84,7 +84,7 @@ $userReview = $obj_user->getReviewListFinal();
 
 <body class="homepage">
 
-<div id="preloader">
+<!-- <div id="preloader">
   <div id="status"></div>
 </div>
 <script>
@@ -93,7 +93,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
   $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
   $('body').delay(350).css({'overflow':'visible'});
 })
-    </script>
+    </script> -->
 
     <header id="header">
          <div class="top-bar">
@@ -101,17 +101,20 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                 <div class="row">
                     <div class="col-sm-4 col-xs-12">
                         <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
+                            <p><i class="fa fa-phone-square" title="Tilottama.Tech"></i> +91 8240868110 &nbsp; &nbsp;<i class="fa fa-envelope-square" ></i> <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">support@tilottama.tech</a></p> 
+                            <!-- <p><i class="fa fa-phone-square"></i> +91 8240868110</p>  -->
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-12">
                         <div class="social">
                             <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook" title="Tilottama.Tech"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube" title="Tilottama.Tech"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" title="Tilottama.Tech"></i></a></li>
+                                <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                                <!-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li> -->
                                 <!-- <li><a class="btn-slide animation animated-item-3" href="#">Learn More</a><li> -->
                             </ul>
                             <div class="search">
@@ -158,10 +161,11 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
-                        <li><a href="about-us.php">About Us</a></li>
-                        <li><a href="services.php">Assemble PC</a></li>
-                        <li><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="smart_home.php">Make your Home smart</a></li>
+                        
+                        <li><a href="services.php">Assemble Your PC</a></li>
+                        <li><a href="product_pc.php">Buy A PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home Security</a></li>
+                        <li><a href="smart_home.php">Make Your Home Smart</a></li>
                         <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -171,7 +175,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                             </ul>
                         </li> -->
                         <!-- <li><a href="blog.html">Blog</a></li> -->
-                        <li><a href="contact-us.php">Contact</a></li>
+                        <!-- <li><a href="contact-us.php">Contact</a></li> -->
                        
                     </ul>
                 </div>

@@ -183,12 +183,13 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
-                    <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">
                         <li ><a href="index.php">Home</a></li>
-                        <li><a href="about-us.php">About Us</a></li>
-                        <li class="active"><a href="services.php">Assemble PC</a></li>
-                        <li><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="smart_home.php">Make your Home smart</a></li>
+                        
+                        <li class="active"><a href="services.php">Assemble Your PC</a></li>
+                        <li><a href="product_pc.php">Buy A PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home Security</a></li>
+                        <li><a href="smart_home.php">Make Your Home Smart</a></li>
                         <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -198,7 +199,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                             </ul>
                         </li> -->
                         <!-- <li><a href="blog.html">Blog</a></li> -->
-                        <li><a href="contact-us.php">Contact</a></li>
+                        <!-- <li><a href="contact-us.php">Contact</a></li> -->
                        
                     </ul>
                 </div>
