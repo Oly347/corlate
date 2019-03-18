@@ -177,7 +177,7 @@ $rowProductPCList = $obj_comp->getComponentDetailsPCProductForUser();
                                 <li class="product_li">Hard Drive Size-- <?php echo $row_product_pc_list['hard_disk_size'];?></li>
                                 <li class="product_li">Graphic Card-- <?php echo $row_product_pc_list['g_card'];?></li>
                                 <li class="product_li">Operating system-- <?php echo $row_product_pc_list['operating_system'];?></li>
-                                <li class="product_li">Graphic Card-- <?php echo $row_product_pc_list['g_card'];?></li>
+                                
                                 <li>Processor Brand-- <?php echo $row_product_pc_list['processor_brand'];?></li>
                                 <li>RAM Type-- <?php echo $row_product_pc_list['ram_type'];?></li>
                                 <li>Weight-- <?php echo $row_product_pc_list['product_weight'];?></li>

@@ -182,13 +182,10 @@ $(window).on('load', function() { // makes sure the whole site is loaded
 
     </header>
     <!--/header-->
-<!-- <script>
-$('#myCarousel').carousel({
-  interval: 3000,
-  cycle: true
-}); 
+<!--  -->
 
-</script> -->
+
+
     <section id="main-slider" class="no-margin">
         <div class="carousel slide"  data-ride="carousel" data-interval="5000">
             <ol class="carousel-indicators">
@@ -503,8 +500,8 @@ $('#myCarousel').carousel({
         </div>
         <!--/.container-->
     </section>
-   
 
+    
     <section id="content">
         <div class="container">
             <div class="row">
@@ -513,9 +510,9 @@ $('#myCarousel').carousel({
                         <div class="media">
                             <div class="parrent pull-left">
                                 <ul class="nav nav-tabs nav-stacked">
-                                    <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Responsive Web Design</a></li>
-                                    <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02">Premium Plugin Included</a></li>
-                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Predefine Layout</a></li>
+                                    <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">PC Assamble</a></li>
+                                    <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02"> Make your Home Smart </a></li>
+                                    <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Smart Security</a></li>
                                     <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Our Philosopy</a></li>
                                     <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">What We Do?</a></li>
                                 </ul>
@@ -537,13 +534,18 @@ $('#myCarousel').carousel({
 
                                     <div class="tab-pane fade active in text-right" id="tab2">
                                         <div class="video-box">
-                                            <img src="images/tab-video-bg.png" alt="video">
-                                            <a class="video-icon" href="https://www.youtube.com/watch?v=F9RAYRUR9FM" rel="prettyPhoto"><i class="fa fa-play"></i></a>
+                                        
+                                            <img src="images/thomas-kolnowski-723280-unsplash.jpg" alt="video">
+                                            <a title="Smart Home Setup" class="video-icon" href="https://www.youtube.com/watch?v=F9RAYRUR9FM" rel="prettyPhoto"><i class="fa fa-play"></i></a>
                                         </div>
                                     </div>
 
-                                    <div class="tab-pane fade" id="tab3">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+                                    <div class="tab-pane fade text-right" id="tab3">
+                                    <div class="video-box">
+                                    
+                                            <img src="images/thomas-kolnowski-723280-unsplash.jpg" alt="video">
+                                            <a title="Smart Security Setup" class="video-icon" href="https://www.youtube.com/watch?v=f07OoChF2Mw" rel="prettyPhoto"><i class="fa fa-play"></i></a>
+                                        </div>
                                     </div>
 
                                     <div class="tab-pane fade" id="tab4">

@@ -19,7 +19,7 @@ $forgetLoginUser = $obj_user->forgetLogin($_POST['email_id']);
  foreach ($forgetLoginUser as $key => $value) {
     $_SESSION['user_name']=$value['email_id'];
     $_SESSION['phonenumber']=$value['phone_number'];
-    
+    $_SESSION['forget_login']=true;
     
 
 }
@@ -31,41 +31,41 @@ $forgetLoginUser = $obj_user->forgetLogin($_POST['email_id']);
 
 $l=count($forgetLoginUser);
 if ($l==1) {
+header("Location: forget_otp.php");
 
-
-    require('textlocal.class.php');
-    require('credit.php');
+    // require('textlocal.class.php');
+    // require('credit.php');
     
-    $textlocal = new Textlocal(false, false, API_KEY);
+    // $textlocal = new Textlocal(false, false, API_KEY);
     
-    $numbers = array($_SESSION['phonenumber']);
-    $sender = 'TXTLCL';
-    $otp = mt_rand(100000, 999999);
-    $message = "Hello" .$otp;
+    // $numbers = array($_SESSION['phonenumber']);
+    // $sender = 'TXTLCL';
+    // $otp = mt_rand(100000, 999999);
+    // $message = "Hello" .$otp;
     
-    try {
-        $result = $textlocal->sendSms($numbers, $message, $sender);
+    // try {
+    //     $result = $textlocal->sendSms($numbers, $message, $sender);
         
-         setcookie('otp',$otp);
-         $_SESSION['success'] = "Successfully Send OTP";;
-    } 
-    catch (Exception $e) 
-    {
-        die('Error: ' . $e->getMessage());
-    }
+    //      setcookie('otp',$otp);
+    //      $_SESSION['success'] = "Successfully Send OTP";;
+    // } 
+    // catch (Exception $e) 
+    // {
+    //     die('Error: ' . $e->getMessage());
+    // }
     
-    if(isset($_POST['otp_login'])){
+    // if(isset($_POST['otp_login'])){
 
-        $otp= $_POST['otp'];
+    //     $otp= $_POST['otp'];
     
-        if($_COOKIE['otp'] == $otp){
+    //     if($_COOKIE['otp'] == $otp){
     
-            echo "Successfully Verified";
-        }else
-        {
-            echo "fail";
-        }
-    }
+    //         echo "Successfully Verified";
+    //     }else
+    //     {
+    //         echo "fail";
+    //     }
+    // }
         
     
     
@@ -214,9 +214,11 @@ $_SESSION['errMsg'] = "Invalid Email Id";
     </div>
     
     <section class="pricing">
+
+    <div id="form_container">
     <div class="login-card" ><img src="assets/img/avatar_2x.png" class="profile-img-card">
         <p class="profile-name-card"> </p>
-        <form class="form-signin" action = "" method = "post" enctype="multipart/form-data"><span class="reauth-email"> </span>
+        <form class="form-signin" action = "#" method = "post" enctype="multipart/form-data"><span class="reauth-email"> </span>
         <input class="form-control" type="email"  name="email_id" required="" placeholder="Email address" autofocus="" id="inputEmail">
         <!-- <input class="form-control" type="password" name="password" required="" placeholder="Password" id="inputPassword"> -->
             <!-- <div class="checkbox">
@@ -237,27 +239,17 @@ $_SESSION['errMsg'] = "Invalid Email Id";
 
 
 
-  <form class="form-signin" action = "" method = "post" enctype="multipart/form-data"><span class="reauth-email"> </span>
-        <input class="form-control" type="text"  name="otp_login" required="" placeholder="Enter OTP" autofocus="" id="inputEmail">
 
-       
-        <!-- <input class="form-control" type="password" name="password" required="" placeholder="Password" id="inputPassword"> -->
-            <!-- <div class="checkbox">
-                <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"></div>
-    </div> -->
-    <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Submit</button>
-    <button class="btn btn-info btn-block btn-lg btn-signin" type="button" id="proceed" style="display: none;">Resend OTP</button>
- 
-
-
-        
-  </form>
-  <!-- <a href="user_register.php"  class="btn btn-primary btn-outline" >I'm New <i class="fa fa-user-plus"></i></a>
-
- <a href="#"  class="btn btn-success btn-outline" style="float:right">forget Password <i class="fa fa-key" aria-hidden="true"></i></a> -->
+  <!-- <form id="forgot">
+    <input type="text" placeholder="Name"/>
+    <input type="email" placeholder="E-mail"/>
+    <input type="button" value="Recover Password">
+  </form> -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 
+
+</div>
 
 </div>
     </section>

@@ -3,21 +3,18 @@
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
 session_start();
-
-// require('textlocal.class.php');
-
-// $textlocal = new Textlocal(false,false,API_KEY,);
-
-// $numbers = $_SESSION['phonenumber'];
-// $sender = 'Textlocal';
-// $message = 'This is a message';
-
-// try {
-//     $result = $textlocal->sendSms($numbers, $message, $sender);
-//     print_r($result);
-// } catch (Exception $e) {
-//     die('Error: ' . $e->getMessage());
+// if(1){
+    
+//     header('Location:change_password.php');
+// }else
+// {
+//     echo "fail";
 // }
+
+
+
+
+   
 
 ?>
 
@@ -45,6 +42,9 @@ session_start();
     <link rel="stylesheet" href="assets/css/Google-Style-Login.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -57,7 +57,54 @@ session_start();
 </head>
 <!--/head-->
 
+<?php
+    require('textlocal.class.php');
+    require('credit.php');
+    
+    $textlocal = new Textlocal(false, false, API_KEY);
+    
+    $numbers = array($_SESSION['phonenumber']);
+    $sender = 'TXTLCL';
+    $otp = mt_rand(100000, 999999);
+    $message = "Your requested OTP for reset password " .$otp ."- Tilottama.Tech. *Dont Share the OTP with anyone";
+    
+    try {
+        $result = $textlocal->sendSms($numbers, $message, $sender);
+        
+         setcookie('otp',$otp);
+         
+ 
+         echo '<script type="text/javascript">';
+          
+         echo 'setTimeout(function () { swal("Successfully send the OTP","success");';
+          
+         echo '}, 500);</script>';
+          
+         
+    } 
+    catch (Exception $e) 
+    {
+        die('Error: ' . $e->getMessage());
+    }
+    
+    if(isset($_POST['otp_login']))
+    {
 
+        $otp= $_POST['otp'];
+    
+        if($_COOKIE['otp'] == $otp){
+    
+            header('Location:change_password.php');
+        }else
+        {
+            echo '<script type="text/javascript">';
+          
+            echo 'setTimeout(function () { swal("Retry OTP","error");';
+             
+            echo '}, 500);</script>';
+        }
+    }
+?>
 <body>
 
 <header id="header">
@@ -173,7 +220,7 @@ session_start();
                 <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-5"></div>
     </div> -->
     <button class="btn btn-primary btn-block btn-lg btn-signin" type="submit">Submit</button>
-    <button class="btn btn-info btn-block btn-lg btn-signin" type="button" id="proceed" style="display: none;">Resend OTP</button>
+    <!-- <button class="btn btn-info btn-block btn-lg btn-signin" type="button" id="proceed" style="display: none;">Resend OTP</button> -->
     <div id="errMsg">
             <?php if(!empty($_SESSION['errMsg'])) { echo $_SESSION['errMsg']; } ?>
         </div>

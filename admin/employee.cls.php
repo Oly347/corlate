@@ -996,6 +996,24 @@ function component_inc()
     }
             
     }    
+
+
+
+
+    public function InsertIntoactivetyDetails($post_fileds)
+    {
+    $sSql="SELECT * FROM activety_log WHERE id=-1";
+    $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+    if($insrt==0)
+     {
+      return false;
+      }
+      else
+      {
+      return true;
+      }
+              
+      }  
     
     
     public function InsertIntoComponentDetailsMotherBoard($post_fileds)

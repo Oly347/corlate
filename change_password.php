@@ -7,9 +7,19 @@ session_start();
 if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
     
 } 
-else {
-header('Location:user_login.php');
+elseif (isset($_SESSION['forget_login']) && $_SESSION['forget_login'] ==true) {
+
+$_GET['id']= $_SESSION['user_name'];
 }
+
+else{
+
+header('Location:user_login.php');
+
+}
+
+
+
 
 $obj_user = new user_inc ;
 
