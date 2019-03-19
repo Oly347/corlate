@@ -37,52 +37,10 @@ session_start();
 <body>
 
 <header id="header">
-         <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                <!-- <li><a class="btn-slide animation animated-item-3" href="#">Learn More</a><li> -->
-                            </ul>
-                            <div class="search">
-                            <!-- <a href="#" class="btn btn-primary  active" role="button" aria-pressed="true">Primary link</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12" >
-
-                    <div class="top-number " style="float:right">
 
 
-                        <?php
-                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-info   active" role="button" aria-pressed="true">Logout</a>';
-                            
-                        } else {
-                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
-                            
-                        }
-                        ?>
-                        <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
-                        </div>
-                        
-                    </div>
-
-                </div>
-            </div>
-            
-        </div>
+    <?php require('topbar.php'); ?>
+         
         <!--/.top-bar-->
 
         <nav class="navbar navbar-inverse" role="banner">
@@ -100,12 +58,21 @@ session_start();
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
                         <li ><a href="index.php">Home</a></li>
-                        <li ><a href="about-us.php">About Us</a></li>
-                        <li><a href="services.php">Assemble PC</a></li>
-                        <li><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li ><a href="smart_home.php">Make your Home smart</a></li>
                         
-                        <li><a href="contact-us.php">Contact</a></li>
+                        <li><a href="services.php">Assemble Your PC</a></li>
+                        <li><a href="product_pc.php">Buy A PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home Security</a></li>
+                        <li><a href="smart_home.php">Make Your Home Smart</a></li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-item.html">Blog Single</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="404.html">404</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                        <!-- <li><a href="contact-us.php">Contact</a></li> -->
                        
                     </ul>
                 </div>
@@ -157,7 +124,7 @@ session_start();
             <p id="demo"></p>
             <div class="row contact-wrap"> 
                 <!-- <div class="status alert alert-success" style="display: none"></div> -->
-                <form  action="#"  class="contact-form"  method="post"  enctype="multipart/form-data" >
+                <form  action="request_pc.dml.php"  class="contact-form"  method="post"  enctype="multipart/form-data" >
                     
                         <div class="form-group">
                             <label>Name *</label>
@@ -173,30 +140,35 @@ session_start();
                         </div>
                         <div class="form-group">
                             <label>Pocesser</label>
-                            <input type="text" name="company_name" class="form-control">
+                            <input type="text" name="processer" class="form-control">
                         </div>  
                         <div class="form-group">
                             <label>Mother Board</label>
-                            <input type="text" name="company_name" class="form-control">
+                            <input type="text" name="motherboard" class="form-control">
                         </div> <div class="form-group">
                             <label>Cabinet</label>
-                            <input type="text" name="company_name" class="form-control">
+                            <input type="text" name="cabinet" class="form-control">
                         </div> <div class="form-group">
                             <label>RAM</label>
-                            <input type="text" name="company_name" class="form-control">
+                            <input type="text" name="ram" class="form-control">
                         </div> <div class="form-group">
                             <label>SMPS</label>
-                            <input type="text" name="company_name" class="form-control">
+                            <input type="text" name="smps" class="form-control">
                         </div> <div class="form-group">
                             <label>SSD</label>
-                            <input type="text" name="company_name" class="form-control">
+                            <input type="text" name="ssd" class="form-control">
                         </div> <div class="form-group">
                             <label>Graphic Card</label>
-                            <input type="text" name="company_name" class="form-control">
+                            <input type="text" name="graphic_card" class="form-control">
+                        </div> 
+
+                        <div class="form-group">
+                            <label>Others</label>
+                            <input type="text" name="others" class="form-control">
                         </div> 
                         <div class="form-group">
                             <label>Budget</label>
-                            <input type="text" name="company_name" class="form-control">
+                            <input type="text" name="budget" class="form-control">
                         </div>
                         
                         

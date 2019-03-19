@@ -35,7 +35,9 @@ $_SESSION['userName']= "Guest";
 }
 
 
+$obj_user = new user_inc ;
 
+$userReview = $obj_user->getReviewListFinal();
 
 
 ?>
@@ -80,51 +82,10 @@ $_SESSION['userName']= "Guest";
 <body>
 
 <header id="header">
-         <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                <!-- <li><a class="btn-slide animation animated-item-3" href="#">Learn More</a><li> -->
-                            </ul>
-                            <div class="search">
-                            <!-- <a href="#" class="btn btn-primary  active" role="button" aria-pressed="true">Primary link</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12" >
-                        <div class="top-number " style="float:right">
 
 
-                        <?php
-                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
-                            echo   $_SESSION['userName'];
-                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">My Account</a>';
-                        } else {
-                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
-                            
-                        }
-                        ?>
-                        <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            
-        </div>
+    <?php require('topbar.php'); ?>
+         
         <!--/.top-bar-->
 
         <nav class="navbar navbar-inverse" role="banner">
@@ -136,16 +97,17 @@ $_SESSION['userName']= "Guest";
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="130" style="margin-top: -20px;margin-bottom: 5px;" ></a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
                         <li ><a href="index.php">Home</a></li>
-                        <li><a href="about-us.php">About Us</a></li>
-                        <li><a href="services.php">Assemble PC</a></li>
-                        <li><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="smart_home.php">Make your Home smart</a></li>
+                        
+                        <li><a href="services.php">Assemble Your PC</a></li>
+                        <li><a href="product_pc.php">Buy A PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home Security</a></li>
+                        <li><a href="smart_home.php">Make Your Home Smart</a></li>
                         <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -155,7 +117,7 @@ $_SESSION['userName']= "Guest";
                             </ul>
                         </li> -->
                         <!-- <li><a href="blog.html">Blog</a></li> -->
-                        <li><a href="contact-us.php">Contact</a></li>
+                        <!-- <li><a href="contact-us.php">Contact</a></li> -->
                        
                     </ul>
                 </div>
@@ -186,9 +148,9 @@ $_SESSION['userName']= "Guest";
                             <img class="img-responsive" src="images/services/ux.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Assemble PC & Buy Accessories</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
-                            <a href="#" class="btn btn-success btn-outline " role="button" aria-pressed="true">Learn More <i class="fa fa-arrow-circle-right"></i></i></a>
+                            <h3 class="media-heading">Assemble Personal Computer</h3>
+                            <p>You Can custome assemble your PC in Easy & Affordable</p>
+                            <a href="services.php" class="btn btn-success btn-outline " role="button" aria-pressed="true">Learn More <i class="fa fa-arrow-circle-right"></i></i></a>
                         </div>
                     </div>
                 </div>
@@ -200,8 +162,8 @@ $_SESSION['userName']= "Guest";
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Smart Home Security</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
-                            <a href="#" class="btn btn-success btn-outline  " role="button" aria-pressed="true">Learn More <i class="fa fa-arrow-circle-right"></i></i></a>
+                            <p>Make your home smart with smart home Devices</p>
+                            <a href="smart_security_home.php" class="btn btn-success btn-outline  " role="button" aria-pressed="true">Learn More <i class="fa fa-arrow-circle-right"></i></i></a>
                         </div>
                     </div>
                 </div>
@@ -213,8 +175,8 @@ $_SESSION['userName']= "Guest";
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Make Your Home Smart</h3>
-                            <p>Hydroderm is the highly desired anti-aging cream on</p>
-                            <a href="#" class="btn btn-success btn-outline  " role="button" aria-pressed="true">Learn More <i class="fa fa-arrow-circle-right"></i></i></a>
+                            <p>Enable latest & smart security devices in your home</p>
+                            <a href="smart_home.php" class="btn btn-success btn-outline  " role="button" aria-pressed="true">Learn More <i class="fa fa-arrow-circle-right"></i></i></a>
                         </div>
                     </div>
                 </div>
@@ -360,70 +322,41 @@ $_SESSION['userName']= "Guest";
         <div class="container">
             <div class="center fadeInDown">
                 <h2>Testimonials</h2>
-                <h4 class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</h4>
+                <p class="lead">What our clients say about Tilottama.Tech</p>
             </div>
+                
             <div class="testimonial-slider owl-carousel">
+            <?php
+                
+                foreach ($userReview as  $row_monitor_list) {
+                                   
+                ?>
                 <div class="single-slide">
-                    <div class="slide-img">
+                    <!-- <div class="slide-img">
                         <img src="images/client1.jpg" alt="">
-                    </div>
+                    </div> -->
                     <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
+
+                    
+                       <h2><?php $rating = $row_monitor_list['star'];
+for($i=0; $i<$rating; $i++) {
+    echo '<i class="fa fa-star" aria-hidden="true"></i>';
+}
+
+?></h2>
+                        <p><?php echo $row_monitor_list['review'];?></p>
+                        <h4>-<?php echo $row_monitor_list['name'];?></h4>
                     </div>
                 </div>
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client2.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client3.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client2.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client1.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
-                <div class="single-slide">
-                    <div class="slide-img">
-                        <img src="images/client3.jpg" alt="">
-                    </div>
-                    <div class="content">
-                        <img src="images/review.png" alt="">
-                        <p>If you are looking at blank cassettes on the web, you may be very confused at the difference in price.</p>
-                        <h4>- Charlotte Daniels</h4>
-                    </div>
-                </div>
+
+                <?php
+                        }
+                    
+                        ?>     
+               
             </div>
+            
+
         </div>
     </section>
 
@@ -431,26 +364,27 @@ $_SESSION['userName']= "Guest";
     <section id="partner">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Our Partners</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>We use thesre Product</h2>
+                <hr class="hr_syle">
+                <!-- <p class="lead edit_p_partner" style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
             </div>
 
             <div class="partners">
                 <ul>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/brand-1.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/400px-Dell_logo.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/brand-2.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/Amazon Alexa_0.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/brand-3.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/TPLINK.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/brand-4.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/Nvidia_logo.png"></a>
                     </li>
                     <li>
-                        <a href="#"><img class="img-responsive fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/brand-5.png"></a>
+                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/58568d224f6ae202fedf2720.png"></a>
                     </li>
                 </ul>
             </div>

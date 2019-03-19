@@ -3,6 +3,17 @@ include ('admin/system/database.php');
 include ('admin/employee.cls.php');
 
 session_start();
+
+
+if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+    
+} 
+else {
+  echo "<script type='text/javascript'>alert('Please Login To Continue!!!');
+  window.location='user_login.php';
+  </script>";
+}
+
 $obj_comp = new component_inc ;
 $obj_emp = new employee_inc ;
 

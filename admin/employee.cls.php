@@ -465,6 +465,16 @@ function component_inc()
         return $rows;
    } 
 
+
+
+
+   function getRequestPCList(){
+    $sSql = "SELECT * FROM pc_request";
+        $rows = $this->db_con->GetAllRows($sSql);
+        return $rows;
+   } 
+
+
   function getProductKeyboardMouse($id){
     $sSql="SELECT * FROM component_details_keyboardmouse WHERE id ='".$id."' ";
     $rows = $this->db_con->GetAllRows($sSql);
@@ -1570,6 +1580,24 @@ function component_inc()
             }
                     
             }  
+
+
+
+
+            public function InsertIntoRequestPC($post_fileds)
+          {
+          $sSql="SELECT * FROM pc_request WHERE id=-1";
+          $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+          if($insrt==0)
+           {
+            return false;
+            }
+            else
+            {
+            return true;
+            }
+                    
+            } 
 
 
             public function InsertIntoReviewList($post_fileds)

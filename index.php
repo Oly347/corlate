@@ -57,7 +57,7 @@ $userReview = $obj_user->getReviewListFinal();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | Corlate</title>
+    <title>Tilottama.Tech - One stop solution for your Smart Home & PC</title>
 
     <!-- core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -96,54 +96,10 @@ $(window).on('load', function() { // makes sure the whole site is loaded
     </script> -->
 
     <header id="header">
-         <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="top-number">
-                            <p><i class="fa fa-phone-square" title="Tilottama.Tech"></i> +91 8240868110 &nbsp; &nbsp;<i class="fa fa-envelope-square" ></i> <a href="mailto:someone@example.com?Subject=Hello%20again" target="_top">support@tilottama.tech</a></p> 
-                            <!-- <p><i class="fa fa-phone-square"></i> +91 8240868110</p>  -->
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook" title="Tilottama.Tech"></i></a></li>
-                                <li><a href="#"><i class="fa fa-youtube" title="Tilottama.Tech"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram" title="Tilottama.Tech"></i></a></li>
-                                <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
-                                <!-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li> -->
-                                <!-- <li><a class="btn-slide animation animated-item-3" href="#">Learn More</a><li> -->
-                            </ul>
-                            <div class="search">
-                            <!-- <a href="#" class="btn btn-primary  active" role="button" aria-pressed="true">Primary link</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12" >
-                        <div class="top-number " style="float:right">
 
 
-                        <?php
-                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
-                            echo   $_SESSION['userName'];
-                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">My Account</a>';
-                        } else {
-                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
-                            
-                        }
-                        ?>
-                        <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            
-        </div>
+    <?php require('topbar.php'); ?>
+         
         <!--/.top-bar-->
 
         <nav class="navbar navbar-inverse" role="banner">
@@ -155,7 +111,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="130" style="margin-top: -20px;margin-bottom: 5px;" ></a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
@@ -199,7 +155,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
             </ol>
             <div class="carousel-inner">
 
-                <div class="item active" style="background-image: url(images/slider/kevin-bhagat-461951-unsplash.jpg)">
+                <div class="item active" style="background-image: url(images/slider/smart-security.jpg)">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-7">
@@ -218,12 +174,12 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                 </div>
                 <!--/.item-->
 
-                <div class="item" style="background-image: url(images/slider/bg2.jpg)">
+                <div class="item" style="background-image: url(images/slider/assemble.jpg)">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-7">
                                 <div class="carousel-content">
-                                    <h1 class="animation animated-item-1">Custome<span class="edit_heading"> Assamble</span> your personal computer</h1>
+                                    <h1 class="animation animated-item-1">Custom<span class="edit_heading1"> Assemble</span> your personal computer</h1>
                                     <div class="animation animated-item-2">
                                         Every new computer that’s brought home from the store has an operating system installed onto it.
                                     </div>
@@ -236,7 +192,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                         </div>
                     </div>
                 </div>
-                <div class="item" style="background-image: url(images/slider/ben-kolde-408308-unsplash.jpg)">
+                <div class="item" style="background-image: url(images/slider/smart-home.jpg)">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-7">
@@ -273,18 +229,28 @@ $(window).on('load', function() { // makes sure the whole site is loaded
         <div class="container">
             <div class="center fadeInDown">
                 <h2>We offer</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <p class="lead">A fully customised interface to assemble your Personal Computer Unit. We also provide Smart Home  <br> Security & Smart Home features with appliances and service. We are here to make your Home <br> Smart, Secure & Efficient.</p>
             </div>
 
             <div class="row">
                 <div class="features">
+
+                <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <div class="icon">
+                                <i class="fa fa-bullhorn"></i>
+                            </div>
+                            <h2>Cheap</h2>
+                            <p>Our services & products are not only cheap, but also premium in class.</p>
+                        </div>
+                    </div>
                     <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
                             <div class="icon">
                                 <i class="fa fa-rocket"></i>
                             </div>
-                            <h2>Fast</h2>
-                            <p>Having a baby can be a nerve wracking experience for new</p>
+                            <h2>Smart</h2>
+                            <p>Be it a responsibility of a PC or you Home, we'll make it smart for sure.</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -294,19 +260,11 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                                 <i class="fa fa-check"></i>
                             </div>
                             <h2>Easy</h2>
-                            <p>If you are looking for a new way to promote your business that</p>
+                            <p>Assembling your PC was never like that easy before.</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
-                    <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <div class="icon">
-                                <i class="fa fa-bullhorn"></i>
-                            </div>
-                            <h2>Cheap</h2>
-                            <p>Okay, you’ve decided you want to make money with Affiliate</p>
-                        </div>
-                    </div>
+                    
                     <!--/.col-md-3-->
                     <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                         <div class="feature-wrap">
@@ -314,7 +272,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                             <i class="fa fa-edit"></i>
                             </div>
                             <h2>Customizable</h2>
-                            <p>You Can cuntome you pc here, with easy steps</p>
+                            <p>We have taken the word Customisable to a new height, just check our PC assembling page.</p>
                         </div>
                     </div>
                     <!--/.col-md-3-->
@@ -330,18 +288,18 @@ $(window).on('load', function() { // makes sure the whole site is loaded
     <section id="recent-works">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Our Smart Gedgets</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>Smart Gadgets We Use</h2>
+                <p class="lead">We use the best smart gadgets from the world renowned companies such as Amazon or Google. <br> We integrate all the smart appliances to your home such a way that you will never have to press a switch again.</p>
             </div>
 
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-4 single-work">
                     <div class="recent-work-wrap">
-                       <img class="img-responsive" src="images/portfolio/item-1.png"  alt="">
+                       <img class="img-responsive" src="images/portfolio/a.jpg"  alt="">
                         <div class="overlay">
                             <div class="recent-work-inner">
-                            <p>This is the Description</p>
-                                <a title="This is the Description" class="preview" href="images/portfolio/item-1.png" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            <p>Google Home</p>
+                                <a title="Google Home" class="preview" href="images/portfolio/a.jpg" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -349,11 +307,11 @@ $(window).on('load', function() { // makes sure the whole site is loaded
 
                 <div class="col-xs-12 col-sm-6 col-md-4 single-work">
                     <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/item-2.png" alt="">
+                        <img class="img-responsive" src="images/portfolio/b.jpg" alt="">
                         <div class="overlay">
                             <div class="recent-work-inner">
-                            <p>This is the Description</p>
-                                <a title="This is the Description" class="preview" href="images/portfolio/item-2.png" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            <p>Amazon Echo</p>
+                                <a title="Amazon Echo" class="preview" href="images/portfolio/b.jpg" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -361,11 +319,11 @@ $(window).on('load', function() { // makes sure the whole site is loaded
 
                 <div class="col-xs-12 col-sm-6 col-md-4 single-work">
                     <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/item-3.png" alt="">
+                        <img class="img-responsive" src="images/portfolio/c.jpg" alt="">
                         <div class="overlay">
                             <div class="recent-work-inner">
-                            <p>This is the Description</p>
-                                <a title="This is the Description" class="preview" href="images/portfolio/item-3.png" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            <p>Philips Hue</p>
+                                <a title="Philips Hue" class="preview" href="images/portfolio/c.jpg" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -373,11 +331,11 @@ $(window).on('load', function() { // makes sure the whole site is loaded
 
                 <div class="col-xs-12 col-sm-6 col-md-4 single-work">
                     <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/item-4.png" alt="">
+                        <img class="img-responsive" src="images/portfolio/d.jpg" alt="">
                         <div class="overlay">
                             <div class="recent-work-inner">
-                            <p>This is the Description</p>
-                                <a title="This is the Description" class="preview" href="images/portfolio/item-4.png" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            <p>Amazon Echo Dot & Echo Look</p>
+                                <a title="Amazon Echo Dot & Echo Look" class="preview" href="images/portfolio/d.jpg" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -385,11 +343,11 @@ $(window).on('load', function() { // makes sure the whole site is loaded
 
                 <div class="col-xs-12 col-sm-6 col-md-4 single-work">
                     <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/item-5.png" alt="">
+                        <img class="img-responsive" src="images/portfolio/e.jpg" alt="">
                         <div class="overlay">
                             <div class="recent-work-inner">
-                            <p>This is the Description</p>
-                                <a title="This is the Description" class="preview" href="images/portfolio/item-5.png" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            <p>Nest Thermostat</p>
+                                <a title="Nest Thermostat" class="preview" href="images/portfolio/e.jpg" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
@@ -397,22 +355,25 @@ $(window).on('load', function() { // makes sure the whole site is loaded
 
                 <div class="col-xs-12 col-sm-6 col-md-4 single-work">
                     <div class="recent-work-wrap">
-                        <img class="img-responsive" src="images/portfolio/item-6.png" alt="">
+                        <img class="img-responsive" src="images/portfolio/f.jpg" alt="">
                         <div class="overlay">
                             <div class="recent-work-inner">
-                            <p>This is the Description</p>
-                                <a title="This is the Description" class="preview" href="images/portfolio/item-6.png" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            <p>Google Home Mini</p>
+                                <a title="Google Home Mini" class="preview" href="images/portfolio/f.jpg" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
+            
             <!--/.row-->
-            <div class="clearfix text-center">
+            <!-- <div class="clearfix text-center">
                 <br>
                 <br>
                 <a href="#" class="btn btn-primary">Show More</a>
-            </div>
+            </div> -->
         </div>
         <!--/.container-->
     </section>
@@ -421,8 +382,8 @@ $(window).on('load', function() { // makes sure the whole site is loaded
     <section id="services" class="service-item">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Our Service</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>Our Services</h2>
+                <p class="lead">From custom assembled PC to making your home smart, we provide best <br> in class services in all these fields.</p>
             </div>
 
             <div class="row">
@@ -433,8 +394,8 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                             <img class="img-responsive" src="images/services/web-app.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Custome Assamble PC</h3>
-                            <p>You Can custome assamble your PC Easy & Affordable</p>
+                            <h3 class="media-heading">Custom Assemble PC</h3>
+                            <p>You Can custome assemble your PC in Easy & Affordable</p>
                         </div>
                     </div>
                 </div>
@@ -446,7 +407,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Smart Home Configuration</h3>
-                            <p>Make your home smart & smartest With gedgets</p>
+                            <p>Make your home smart with smart home Devices</p>
                         </div>
                     </div>
                 </div>
@@ -458,7 +419,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                         </div>
                         <div class="media-body">
                             <h3 class="media-heading">Smart Security Configuration</h3>
-                            <p>Enable latest security configuration in your home</p>
+                            <p>Enable latest & smart security devices in your home</p>
                         </div>
                     </div>
                 </div>
@@ -517,7 +478,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                                     <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">PC Assamble</a></li>
                                     <li class=""><a href="#tab2" data-toggle="tab" class="analistic-02"> Make your Home Smart </a></li>
                                     <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Smart Security</a></li>
-                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Our Philosopy</a></li>
+                                    <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Buy A PC</a></li>
                                     <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">What We Do?</a></li>
                                 </ul>
                             </div>
@@ -527,10 +488,10 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                                     <div class="tab-pane fade" id="tab1">
                                         <div class="media">
                                             <div class="pull-left">
-                                                <img class="img-responsive" src="images/tab2.png">
+                                                <img class="img-responsive" src="images/5c901411824eb.png">
                                             </div>
                                             <div class="media-body">
-                                                <h2>Adipisicing elit</h2>
+                                                <h2>PC Assemble</h2>
                                                 <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use.</p>
                                             </div>
                                         </div>
@@ -553,7 +514,15 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                                     </div>
 
                                     <div class="tab-pane fade" id="tab4">
-                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words</p>
+                                        <div class="media">
+                                            <div class="pull-left">
+                                                <img class="img-responsive" src="images/5c9013f8a6c98.png">
+                                            </div>
+                                            <div class="media-body">
+                                                <h2>Buy A PC</h2>
+                                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use.</p>
+                                            </div>
+                                        </div>
                                     </div>
 
                                     <div class="tab-pane fade" id="tab5">
@@ -583,7 +552,7 @@ $(window).on('load', function() { // makes sure the whole site is loaded
         <div class="container">
             <div class="center fadeInDown">
                 <h2>Testimonials</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <p class="lead">What our clients say about Tilottama.Tech</p>
             </div>
                 
             <div class="testimonial-slider owl-carousel">
@@ -624,8 +593,9 @@ for($i=0; $i<$rating; $i++) {
     <section id="partner">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Our Partners</h2>
-                <p class="lead edit_p_partner" style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>We use thesre Product</h2>
+                <hr class="hr_syle">
+                <!-- <p class="lead edit_p_partner" style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
             </div>
 
             <div class="partners">
@@ -736,22 +706,9 @@ for($i=0; $i<$rating; $i++) {
     <!--/#bottom-->
 
     <footer id="footer" class="midnight-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2019 <a  href="index.php" title="Tilottama.Tech"><b>Tilottama.Tech</b></a> All Rights Reserved
-                    | Developed By <a  href="#" title="Best Digital Marketing Company in Midnapore and Kolkata. we are specialised in Digital Marketing, Graphic Design and Web Design"><i>Tilottama.Online</i></a>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="about-us.php">About Us</a></li>
-                        <li><a href="faq.php">Faq</a></li>
-                        <li><a href="contact-us.php">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
+    <?php require('footer.php'); ?>
+        
     </footer>
     <!--/#footer-->
 

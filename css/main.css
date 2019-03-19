@@ -57,12 +57,12 @@ a {
 
 a:hover,
 a:focus {
-    color: #95d819;
+    color: #3B5998 !important;
 }
 
 hr {
     border-top: 1px solid #e5e5e5;
-    border-bottom: 1px solid #fff;
+    /* border-bottom: 1px solid #fff; */
 }
 
 .btn-primary {
@@ -506,6 +506,15 @@ color: #95d819;
 .edit_heading{
 color:  #95d819;
 
+}
+
+.hr_syle{
+border-top: 3px solid black;
+max-width: 100px;
+}
+.edit_heading1{
+    color:  #df1549;
+    
 }
 #main-slider .carousel .btn-slide {
     padding: 0 30px;

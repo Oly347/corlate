@@ -84,52 +84,7 @@ $obj_user = new user_inc ;
 <body>
 
 <header id="header">
-         <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                <!-- <li><a class="btn-slide animation animated-item-3" href="#">Learn More</a><li> -->
-                            </ul>
-                            <div class="search">
-                            <!-- <a href="#" class="btn btn-primary  active" role="button" aria-pressed="true">Primary link</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12" >
-
-                    <div class="top-number " style="float:right">
-
-
-                        <?php
-                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
-                            
-                        } else {
-                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
-                            
-                        }
-                        ?>
-                        <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
-                        </div>
-                        
-                    </div>
-
-                </div>
-            </div>
-            
-        </div>
+<?php require('topbar.php'); ?>
         <!--/.top-bar-->
 
         <nav class="navbar navbar-inverse" role="banner">
@@ -147,12 +102,12 @@ $obj_user = new user_inc ;
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
                         <li ><a href="index.php">Home</a></li>
-                        <li class="active"><a href="about-us.php">About Us</a></li>
-                        <li><a href="services.php">Assemble PC</a></li>
-                        <li><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="smart_home.php">Make your Home smart</a></li>
                         
-                        <li><a href="contact-us.php">Contact</a></li>
+                        <li><a href="services.php">Assemble Your PC</a></li>
+                        <li><a href="product_pc.php">Buy A PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home Security</a></li>
+                        <li><a href="smart_home.php">Make Your Home Smart</a></li>
+                       
                        
                     </ul>
                 </div>
@@ -231,7 +186,7 @@ $obj_user = new user_inc ;
         <div class="container">
             <div class="center fadeInDown">
                 <h2>Our Service</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <p class="lead">From custom assembled PC to making your home smart, we provide best in class services in all these fields.</p>
             </div>
             <div class="row">
                 <!-- <div class="col-md-4 col-sm-6 single-team">
@@ -293,12 +248,12 @@ $obj_user = new user_inc ;
                         <div class="team-content">
                             <h4>Custome PC Assamble</h4>
                             <span class="desg">Buy PC & Accessories  </span>
-                            <div class="team-social">
+                            <!-- <div class="team-social">
                                 <a class="fa fa-shopping-cart" href="#"></a>
                                 <a class="fa fa-plus" href="#"></a>
                                 <a class="fa fa-phone" href="#"></a>
                                 
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -310,11 +265,11 @@ $obj_user = new user_inc ;
                         <div class="team-content">
                             <h4>Your Smart Home</h4>
                             <span class="desg">Smart Home Configuration</span>
-                            <div class="team-social">
+                            <!-- <div class="team-social">
                             <a class="fa fa-shopping-cart" href="#"></a>
                                 <a class="fa fa-plus" href="#"></a>
                                 <a class="fa fa-phone" href="#"></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -326,11 +281,11 @@ $obj_user = new user_inc ;
                         <div class="team-content">
                             <h4>Smart Home security</h4>
                             <span class="desg">Install Home Security</span>
-                            <div class="team-social">
+                            <!-- <div class="team-social">
                             <a class="fa fa-shopping-cart" href="#"></a>
                                 <a class="fa fa-plus" href="#"></a>
                                 <a class="fa fa-phone" href="#"></a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
