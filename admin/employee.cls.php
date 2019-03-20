@@ -1360,6 +1360,14 @@ function component_inc()
 
 
 
+             function getReturnList(){
+                $sSql = "SELECT * FROM return_list";
+                 $rows = $this->db_con->GetAllRows($sSql);
+                 return $rows;
+             }
+
+
+
              function getTotalUserList(){
                 $sSql = "SELECT COUNT(id) FROM user";
                  $rows = $this->db_con->GetAllRows($sSql);
@@ -1386,6 +1394,22 @@ function component_inc()
                 $rows = $this->db_con->GetAllRows($sSql);
                 return $rows;
             }
+
+
+            function getReturnRequestById($id){
+                $sSql="SELECT * FROM return_list WHERE id='".$id."' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+            }
+
+
+
+            function getOrderById($id){
+                $sSql="SELECT * FROM order_details WHERE id='".$id."' ";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+            }
+
            
            
                function getEmployeeById($id){
@@ -1484,6 +1508,26 @@ function component_inc()
                          return true;
                      }
                   } 
+
+
+
+
+
+                  function SetUpdateReturnProduct($post_fields,$id)
+                  {
+                  $sSql="SELECT * FROM return_list WHERE id='".$id."' ";
+                      
+                      
+                 $update=$this->db_con->RowUpdate($post_fields,$sSql);
+                   if($update==0)
+                   {
+                          return false;
+                   }
+                      else
+                      {
+                          return true;
+                      }
+                   } 
 
 
                 
@@ -1634,6 +1678,24 @@ function component_inc()
 
 
 
+              public function InsertIntoReturnList($post_fileds)
+            {
+            $sSql="SELECT * FROM return_list WHERE id=-1";
+            $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+            if($insrt==0)
+             {
+              return false;
+              }
+              else
+              {
+              return true;
+              }
+                      
+              }  
+
+
+
+
               function SetUpdateOrder($post_fields,$id)
               {
                   $sSql="SELECT * FROM order_details WHERE id='".$id."' ";
@@ -1662,11 +1724,11 @@ function component_inc()
             }
 
 
-            function getOrderById($id){
-                $sSql="SELECT * FROM order_details  WHERE id ='".$id."' ";
-                $rows = $this->db_con->GetAllRows($sSql);
-                return $rows;
-            }
+            // function getOrderById($id){
+            //     $sSql="SELECT * FROM order_details  WHERE id ='".$id."' ";
+            //     $rows = $this->db_con->GetAllRows($sSql);
+            //     return $rows;
+            // }
 
 
             function getOrderByUser($id){

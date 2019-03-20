@@ -135,7 +135,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="130" style="margin-top: -20px;margin-bottom: 5px;" ></a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 

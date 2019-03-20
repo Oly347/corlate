@@ -167,6 +167,8 @@ if(!empty($_FILES['product_img']['name'])) //new image uploaded
         'operating_system' => $_POST['operating_system'],
         'g_card' => $_POST['g_card'],
         'additional_information' => $_POST['additional_information'],   
+
+        'tag' => $_POST['tag'],
         'status' => $_POST['status'],
         );//save to DB with new image name
 }
@@ -190,6 +192,7 @@ else // no image uploaded
     'g_card' => $_POST['g_card'],
     'additional_information' => $_POST['additional_information'],   
     'status' => $_POST['status'],
+    'tag' => $_POST['tag'],
     );
 
 

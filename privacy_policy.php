@@ -59,7 +59,7 @@ session_start();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="130" style="margin-top: -20px;margin-bottom: 5px;" ></a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
@@ -96,15 +96,15 @@ session_start();
 </div>
 <!-- <h1>Terms & Conditions</h1> -->
 <p>
-This Privacy Policy applies to buildpc.in</p><p>
+This Privacy Policy applies to tilottama.tech</p><p>
 <b>tilottama.tech</b> recognizes the importance of maintaining your privacy. We value your privacy and appreciate your trust in us. This Policy describes how we treat user information we collect on tilottama.tech and other offline sources. This Privacy Policy applies to current and former visitors to our website and to our online customers. By visiting and/or using our website, you agree to this Privacy Policy.</p><p>
 <b>tilottama.tech </b> is a property of tilottama.online, an Indian Company registered under the Companies Act, 2013 having its registered office at M-108<sup></sup> , Yojangandha Co-operative Housing Society, Garagachha, Baishnabghata Patuli Twp, Garia, Kolkata, West Bengal 700094</p><p><b>
 Information we collect
 </b></p><p>
 Contact information. We might collect your name, email, mobile number, phone number, street, city, state, pincode, country and IP address.</p><p>
-Payment and billing information. We might collect your billing name, billing address and payment method when you buy a product. We NEVER collect your credit card number or credit card expiry date or other details pertaining to your credit card on our website. Credit card information will be obtained and processed by our online payment partner CC Avenue.
+Payment and billing information. We might collect your billing name, billing address and payment method when you buy a product. We NEVER collect your credit card number or credit card expiry date or other details pertaining to your credit card on our website. Credit card information will be obtained and processed by our online payment partner Razorpay.
 </p><p>
-The information you post. We collect information you post in a public space on our website or on a third-party social media site belonging to buildpc.in</p><p>
+The information you post. We collect information you post in a public space on our website or on a third-party social media site belonging to tilottama.tech</p><p>
 Demographic information. We may collect demographic information about you, events you like, events you intend to participate in, tickets you buy, or any other information provided by your during the use of our website. We might collect this as a part of a survey also.
 </p><p>
 Other information. If you use our website, we may collect information about your IP address and the browser you're using. We might look at what site you came from, duration of time spent on our website, pages accessed or what site you visit when you leave us. We might also collect the type of mobile device you are using, or the version of the operating system your computer or device is running.
@@ -126,7 +126,7 @@ We use the information to look at site trends and customer interests. We may use
 We use information for security purposes. We may use the information to protect our company, our customers, or our websites.
 </p><p>
 We use information for marketing purposes. We might send you information about special promotions or offers. We might also tell you about new features or products. These might be our own offers or products, or third-party offers or products we think you might find interesting. Or, for example, if you buy tickets from us we'll enroll you in our newsletter.</p><p>
-We use the information to send you transactional communications. We might send you emails or SMS about your account or a ticket purchase.
+We use the information to send you transactional communications. We might send you emails or SMS about your account.
 </p><p>
 We use information as otherwise permitted by law.
 </p><p><b>
@@ -184,13 +184,13 @@ If you click on one of the links to third party websites, you may be taken to we
                             <div class="widget">
                                 <h3>Support</h3>
                                 <ul>
-                                    <li><a href="faq.php">Faq</a></li>
+                                    <li><a href="faq.php">FAQ</a></li>
                                     <!-- <li><a href="#">Blog</a></li>
                                     <li><a href="#">Forum</a></li>
                                     <li><a href="#">Documentation</a></li> -->
                                     <li><a href="refund_policy.php">Refund policy</a></li>
-                                    <li><a href="#">Enquery</a></li>
-                                    <li><a href="main_services">Services</a></li>
+                                    <li><a href="request_pc.php">Enquiry</a></li>
+                                    <li><a href="main_services.php">Services</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -247,7 +247,7 @@ If you click on one of the links to third party websites, you may be taken to we
                     <ul class="pull-right">
                         <li><a href="index.php">Home</a></li>
                         <li><a href="about-us.php">About Us</a></li>
-                        <li><a href="faq.php">Faq</a></li>
+                        <li><a href="faq.php">FAQ</a></li>
                         <li><a href="contact-us.php">Contact Us</a></li>
                     </ul>
                 </div>

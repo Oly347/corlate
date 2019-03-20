@@ -122,51 +122,10 @@ $_SESSION['errMsg'] = "Invalid Email Id";
 <body>
 
 <header id="header">
-         <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                <!-- <li><a class="btn-slide animation animated-item-3" href="#">Learn More</a><li> -->
-                            </ul>
-                            <div class="search">
-                            <!-- <a href="#" class="btn btn-primary  active" role="button" aria-pressed="true">Primary link</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12" >
-                        <div class="top-number " style="float:right">
 
 
-                        <?php
-                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
-                            echo   $_SESSION['userName'];
-                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Dash Board</a>';
-                        } else {
-                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
-                            
-                        }
-                        ?>
-                        <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            
-        </div>
+    <?php require('topbar.php'); ?>
+         
         <!--/.top-bar-->
 
         <nav class="navbar navbar-inverse" role="banner">
@@ -178,16 +137,17 @@ $_SESSION['errMsg'] = "Invalid Email Id";
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="130" style="margin-top: -20px;margin-bottom: 5px;" ></a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
                     <ul class="nav navbar-nav">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="about-us.php">About Us</a></li>
-                        <li><a href="services.php">Assemble PC</a></li>
-                        <li><a href="smart_security_home.php">Smart Home security</a></li>
-                        <li><a href="smart_home.php">Make your Home smart</a></li>
+                        <li ><a href="index.php">Home</a></li>
+                        
+                        <li><a href="services.php">Assemble Your PC</a></li>
+                        <li><a href="product_pc.php">Buy A PC</a></li>
+                        <li><a href="smart_security_home.php">Smart Home Security</a></li>
+                        <li><a href="smart_home.php">Make Your Home Smart</a></li>
                         <!-- <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -197,7 +157,7 @@ $_SESSION['errMsg'] = "Invalid Email Id";
                             </ul>
                         </li> -->
                         <!-- <li><a href="blog.html">Blog</a></li> -->
-                        <li><a href="contact-us.php">Contact</a></li>
+                        <!-- <li><a href="contact-us.php">Contact</a></li> -->
                        
                     </ul>
                 </div>

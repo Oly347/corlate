@@ -300,8 +300,8 @@ session_start();
                                     <li><a href="#">Forum</a></li>
                                     <li><a href="#">Documentation</a></li> -->
                                     <li><a href="refund_policy.php">Refund policy</a></li>
-                                    <li><a href="#">Enquery</a></li>
-                                    <li><a href="main_services">Services</a></li>
+                                    <li><a href="request_pc.php">Enquery</a></li>
+                                    <li><a href="main_services.php">Services</a></li>
                                 </ul>
                             </div>
                         </div>

@@ -100,20 +100,23 @@ overflow-x: hidden;
 <header id="header">
          <div class="top-bar">
             <div class="container">
-                <div class="row">
+            <div class="row">
                     <div class="col-sm-4 col-xs-12">
                         <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
+                            <p><i class="fa fa-phone-square" title="Tilottama.Tech"></i><a href="tel:+918240868110"> +91 8240868110</a> &nbsp; &nbsp;<i class="fa fa-envelope-square" ></i> <a href="mailto:support@tilottama.tech?Subject=Hello%20again" target="_top">support@tilottama.tech</a></p> 
+                            <!-- <p><i class="fa fa-phone-square"></i> +91 8240868110</p>  -->
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-12">
                         <div class="social">
                             <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook" title="Tilottama.Tech"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube" title="Tilottama.Tech"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram" title="Tilottama.Tech"></i></a></li>
+                                <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                                <!-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                                 <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li> -->
                                 <!-- <li><a class="btn-slide animation animated-item-3" href="#">Learn More</a><li> -->
                             </ul>
                             <div class="search">
@@ -362,7 +365,7 @@ overflow-x: hidden;
                                     <div class="tab-pane fade" id="tab2">
 
                                     <h2 >Your Order List </h2>
-                                    <div class="table-responsive">
+                                    <div class="table-responsive" style="overflow-x:auto;">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                   <tr>
@@ -377,7 +380,8 @@ overflow-x: hidden;
                      <th>Order time</th>
                      <th>Status</th>
                      <th>Note</th>
-                     <th>Invoice</th>
+                     <th>Action</th>
+                     <th>Status</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -394,7 +398,8 @@ overflow-x: hidden;
                       <th>Order time</th>
                       <th>Status</th>
                       <th>Note</th>
-                      <th>Invoice</th>
+                      <th>Action</th>
+                      <th>Status</th>
                       
                     </tr>
                   </tfoot>
@@ -453,8 +458,52 @@ overflow-x: hidden;
                           }
                         
                         ?> </td>
-                        <td><a class="btn btn-info edit_download_btn" href="admin/upload/<?php echo $contact_list['invoice']?>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>
-Download Invoice </a></td>
+                        <td>
+                         <!--  -->
+                        
+                        
+                        <a class="btn btn-info edit_download_btn" href="admin/upload/<?php echo $contact_list['invoice']?>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+Download Invoice </a>
+<br>
+
+
+
+<a class="btn btn-warning btn_rtn"  href="product_return.php?id=<?php echo $contact_list['id']; ?>"><i class="fa fa-undo" aria-hidden="true"></i>
+                        Ask FOR Return </a> 
+
+      
+
+
+
+
+
+</td>
+
+
+
+<td>
+                         <!--  -->
+                        
+                        
+                       
+<?php 
+
+
+                        if($contact_list['note']==1)
+                        {
+
+                          echo '<a class="btn btn-info btn_rtn" href="#"><i class="fa fa-undo" aria-hidden="true"></i>
+                          Return request sumbited </a>';
+
+
+                        }
+      ?>
+
+
+
+
+
+</td>
                       
                       
                     </tr>
@@ -519,8 +568,8 @@ Download Invoice </a></td>
                                     <li><a href="#">Forum</a></li>
                                     <li><a href="#">Documentation</a></li> -->
                                     <li><a href="refund_policy.php">Refund policy</a></li>
-                                    <li><a href="#">Enquery</a></li>
-                                    <li><a href="main_services">Services</a></li>
+                                    <li><a href="request_pc.php">Enquery</a></li>
+                                    <li><a href="main_services.php">Services</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -567,22 +616,7 @@ Download Invoice </a></td>
     <!--/#bottom-->
 
     <footer id="footer" class="midnight-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2019 <a  href="index.php" title="Free Twitter Bootstrap WordPress Themes and HTML templates"><b>Tilottama.Tech</b></a> All Rights Reserved
-                    | Developed By <a  href="#" title="Free Twitter Bootstrap WordPress Themes and HTML templates"><i>Tilottama.Online</i></a>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="about-us.php">About Us</a></li>
-                        <li><a href="faq.php">Faq</a></li>
-                        <li><a href="contact-us.php">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <?php require('footer.php'); ?>
     </footer>
     <!--/#footer-->
 

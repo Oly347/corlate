@@ -269,6 +269,7 @@ $rowProductPCList = $obj_comp->getProductPCList()
                   <thead>
                   <tr>
                       <th>Id</th>
+                      <th>Tag</th>
                       <th>Status</th>
                       <th>Product No</th>
                       <th>Product Price</th>
@@ -292,6 +293,7 @@ $rowProductPCList = $obj_comp->getProductPCList()
                     <tr>
                       <th>Id</th>
                       <th>Status</th>
+                      <th>Tag</th>
                       <th>Product No</th>
                       <th>Product Price</th>
                       <th>Product Image</th>
@@ -320,6 +322,7 @@ $rowProductPCList = $obj_comp->getProductPCList()
 
                     <tr>
                       <td><?php echo $row_product_pc_list['id'];?></td>
+                      <td><?php echo $row_product_pc_list['tag'];?></td>
                       <td><?php 
                         if($row_product_pc_list['status']==0){
 

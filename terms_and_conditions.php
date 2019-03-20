@@ -47,7 +47,10 @@ session_start();
 <body>
 
 <header id="header">
-<?php require('topbar.php'); ?>
+
+
+    <?php require('topbar.php'); ?>
+         
         <!--/.top-bar-->
 
         <nav class="navbar navbar-inverse" role="banner">
@@ -59,18 +62,27 @@ session_start();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="130" style="margin-top: -20px;margin-bottom: 5px;" ></a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
-                <ul class="nav navbar-nav">
-                        <li ><a href="index.php">Home</a></li>
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.php">Home</a></li>
                         
                         <li><a href="services.php">Assemble Your PC</a></li>
                         <li><a href="product_pc.php">Buy A PC</a></li>
                         <li><a href="smart_security_home.php">Smart Home Security</a></li>
                         <li><a href="smart_home.php">Make Your Home Smart</a></li>
-                       
+                        <!-- <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="blog-item.html">Blog Single</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="404.html">404</a></li>
+                            </ul>
+                        </li> -->
+                        <!-- <li><a href="blog.html">Blog</a></li> -->
+                        <!-- <li><a href="contact-us.php">Contact</a></li> -->
                        
                     </ul>
                 </div>
@@ -95,28 +107,28 @@ session_start();
 <!-- <h1>Terms & Conditions</h1> -->
 <p>PLEASE READ THIS DOCUMENT CAREFULLY! IT CONTAINS VERY IMPORTANT INFORMATION ABOUT YOUR TERMS AND CONDITIONS OF SALE ("SALE AGREEMENT"), RIGHTS AND OBLIGATIONS, AS WELL AS LIMITATIONS AND EXCLUSIONS THAT MAY APPLY TO YOU. THE CUSTOMER AGREES TO BE BOUND BY THE AGREEMENT BELOW AND ACCEPTS ITS TERMS AND CONDITIONS. </p>
 <h2>Terms and Conditions of Sale </h2>
-<p>This Standard Terms and Conditions for Sale Agreement (“Agreement”) contains the terms and conditions that apply to any order, purchase, receipt, delivery, use of any Computer system(s) and/or any related buildpc products and/or services and support sold in the United States ("Product") from buildpc Corporation and or any of its subsidiaries or affiliates (collectively, “buildpc”), and is also a. legal contract between Customer and buildpc. The customer by accepting delivery of the product(s) purchased from buildpc and described on your invoice, you agree to be bound by and accept the following terms and conditions. Any attempt to alter, supplement or amend this document or to enter an order for a product(s) that is subject to additional or altered terms and conditions will be null and void unless otherwise agreed to in a written agreement signed by both you and buildpc. These terms and conditions are subject to change without prior written notice at any time, in buildpc's sole discretion. </p>
-<p>This Sale Agreement constitutes the entire agreement between the Customer and buildpc relating to the purchase or sale of goods or services on the Site. The Sale Agreement may only be modified or terminated with regard to goods or services that have been purchased or sold on the Site in a writing signed by buildpc. Electronic records (including signatures), that are otherwise valid, shall be accepted under the Sale Agreement. </p>
-<p>buildpc may at any time revise these terms and conditions of Use and or are by subject to change without prior written notice at any time, in buildpc's sole discretion. By using this Site, you agree to be bound by any and all such revisions and should therefore periodically visit this page to determine the then current Terms and conditions set forth to which you are bound. </p>
+<p>This Standard Terms and Conditions for Sale Agreement (“Agreement”) contains the terms and conditions that apply to any order, purchase, receipt, delivery, use of any Computer system(s) and/or any related Tilottama.Tech products and/or services and support sold in INDIA ("Product") from Tilottama.Tech Corporation and or any of its subsidiaries or affiliates (collectively, “Tilottama.Tech”), and is also a. legal contract between Customer and Tilottama.Tech. The customer by accepting delivery of the product(s) purchased from Tilottama.Tech and described on your invoice, you agree to be bound by and accept the following terms and conditions. Any attempt to alter, supplement or amend this document or to enter an order for a product(s) that is subject to additional or altered terms and conditions will be null and void unless otherwise agreed to in a written agreement signed by both you and Tilottama.Tech. These terms and conditions are subject to change without prior written notice at any time, in Tilottama.Tech's sole discretion. </p>
+<p>This Sale Agreement constitutes the entire agreement between the Customer and Tilottama.Tech relating to the purchase or sale of goods or services on the Site. The Sale Agreement may only be modified or terminated with regard to goods or services that have been purchased or sold on the Site in a writing signed by Tilottama.Tech. Electronic records (including signatures), that are otherwise valid, shall be accepted under the Sale Agreement. </p>
+<p>Tilottama.Tech may at any time revise these terms and conditions of Use and or are by subject to change without prior written notice at any time, in Tilottama.Tech's sole discretion. By using this Site, you agree to be bound by any and all such revisions and should therefore periodically visit this page to determine the then current Terms and conditions set forth to which you are bound. </p>
 <ul><li>
 Definitions. </li>
-<li> “We”, “us” and/or “our” means buildpc.</li>
+<li> “We”, “us” and/or “our” means Tilottama.Tech.</li>
 <li> “You” or “your” means the individual or entity named on the invoice. </li>
 <li> Orders; Payment Terms; Taxes ,Quotes; Interest.
-Payment Terms, Orders, and Interest. Advertised prices are in U.S. dollars and, unless otherwise noted, exclude shipping, handling and any taxes that may be imposed by the legal authority that governs the jurisdiction in which you reside. Orders are not binding upon buildpc until payments were authorized by credit card issuer or other financial institution. Terms of payment are within buildpc's sole discretion, and unless otherwise agreed to in writing by buildpc, payment must be received by buildpc before buildpc's acceptance of an order. Payment for the products will be made by credit card, or some other prearranged payment method unless credit terms have been agreed to by buildpc. Invoice amounts are due and payable within the period noted on the invoice, measured from the date of the invoice. buildpc may invoice parts of an order separately. You agree to pay interest on all past-due sums at the highest rate allowed by law. Your order is subject to cancellation by buildpc, at buildpc's sole discretion. Unless you and buildpc have agreed to a different discount, buildpc's standard pricing policy for buildpc-branded systems, which include both hardware and services in one discounted price, allocates the discount off list price applicable to the service portion of the system to be equal to the overall calculated percentage discount off list price on the entire system. buildpc is not responsible for pricing, typographical or other errors in any offer by buildpc and we reserve the unilateral right to cancel any orders resulting from such errors. </li>
+Payment Terms, Orders, and Interest. Advertised prices are in U.S. dollars and, unless otherwise noted, exclude shipping, handling and any taxes that may be imposed by the legal authority that governs the jurisdiction in which you reside. Orders are not binding upon Tilottama.Tech until payments were authorized by credit card issuer or other financial institution. Terms of payment are within Tilottama.Tech's sole discretion, and unless otherwise agreed to in writing by Tilottama.Tech, payment must be received by Tilottama.Tech before Tilottama.Tech's acceptance of an order. Payment for the products will be made by credit card, or some other prearranged payment method unless credit terms have been agreed to by Tilottama.Tech. Invoice amounts are due and payable within the period noted on the invoice, measured from the date of the invoice. Tilottama.Tech may invoice parts of an order separately. You agree to pay interest on all past-due sums at the highest rate allowed by law. Your order is subject to cancellation by Tilottama.Tech, at Tilottama.Tech's sole discretion. Unless you and Tilottama.Tech have agreed to a different discount, Tilottama.Tech's standard pricing policy for Tilottama.Tech-branded systems, which include both hardware and services in one discounted price, allocates the discount off list price applicable to the service portion of the system to be equal to the overall calculated percentage discount off list price on the entire system. Tilottama.Tech is not responsible for pricing, typographical or other errors in any offer by Tilottama.Tech and we reserve the unilateral right to cancel any orders resulting from such errors. </li>
 <li> Taxes
 Unless otherwise indicated on the face of the invoice, you are responsible for paying all taxes associated with your order. </li>
 <li> OWNERSHIP OF MATERIALS
-Materials are copyrighted and are protected by worldwide copyright laws and treaty provisions. They may not be copied, reproduced, modified, published, uploaded, posted, transmitted, or distributed in any way, without buildpc's prior written permission. Except as expressly provided herein, buildpc and its suppliers do not grant any express or implied right to you under any patents, copyrights, trademarks, trade secret or any other intellectual property or proprietary right. </li>
+Materials are copyrighted and are protected by worldwide copyright laws and treaty provisions. They may not be copied, reproduced, modified, published, uploaded, posted, transmitted, or distributed in any way, without Tilottama.Tech's prior written permission. Except as expressly provided herein, Tilottama.Tech and its suppliers do not grant any express or implied right to you under any patents, copyrights, trademarks, trade secret or any other intellectual property or proprietary right. </li>
 <li> LIMITATION OF LIABILITY
-buildpc DOES NOT ACCEPT LIABILITY BEYOND THE REMEDIES SET FORTH HEREIN, INCLUDING ANY LIABILITY FOR PRODUCTS NOT BEING AVAILABLE FOR USE, FOR LOST OR CORRUPTED DATA OR SOFTWARE, OR THE PROVISION OF SERVICES AND SUPPORT. buildpc WILL NOT BE LIABLE FOR LOST PROFITS, LOSS OF BUSINESS OR OTHER CONSEQUENTIAL, SPECIAL, INDIRECT OR PUNITIVE DAMAGES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM BY ANY THIRD PARTY EXCEPT AS EXPRESSLY PROVIDED HEREIN. YOU AGREE THAT FOR ANY LIABILITY RELATED TO THE PURCHASE OF PRODUCTS OR SERVICES BUNDLED WITH THE PRODUCTS, buildpc IS NOT LIABLE OR RESPONSIBLE FOR ANY AMOUNT OF DAMAGES ABOVE THE AGGREGATE DOLLAR AMOUNT YOU PAID FOR THE PURCHASE GOVERNED BY THIS AGREEMENT. </li>
+Tilottama.Tech DOES NOT ACCEPT LIABILITY BEYOND THE REMEDIES SET FORTH HEREIN, INCLUDING ANY LIABILITY FOR PRODUCTS NOT BEING AVAILABLE FOR USE, FOR LOST OR CORRUPTED DATA OR SOFTWARE, OR THE PROVISION OF SERVICES AND SUPPORT. Tilottama.Tech WILL NOT BE LIABLE FOR LOST PROFITS, LOSS OF BUSINESS OR OTHER CONSEQUENTIAL, SPECIAL, INDIRECT OR PUNITIVE DAMAGES, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, OR FOR ANY CLAIM BY ANY THIRD PARTY EXCEPT AS EXPRESSLY PROVIDED HEREIN. YOU AGREE THAT FOR ANY LIABILITY RELATED TO THE PURCHASE OF PRODUCTS OR SERVICES BUNDLED WITH THE PRODUCTS, Tilottama.Tech IS NOT LIABLE OR RESPONSIBLE FOR ANY AMOUNT OF DAMAGES ABOVE THE AGGREGATE DOLLAR AMOUNT YOU PAID FOR THE PURCHASE GOVERNED BY THIS AGREEMENT. </li>
 <li> Software
-All software is provided subject to the license agreement that is part of the package you receive from buildpc. You agree to be bound by the license agreement once the package is opened or its seal is broken. buildpc does not warrant any software under this Agreement. </li>
+All software is provided subject to the license agreement that is part of the package you receive from Tilottama.Tech. You agree to be bound by the license agreement once the package is opened or its seal is broken. Tilottama.Tech does not warrant any software under this Agreement. </li>
 </ul>
 <ul><li>
-All information displayed, transmitted or carried on buildpc.in is protected by copyright and other intellectual property laws.</li><li>
+All information displayed, transmitted or carried on Tilottama.Tech.in is protected by copyright and other intellectual property laws.</li><li>
 This site is updated and maintained independently by Tilottama.Tech The content is owned by Tilottama.Tech You may not modify, publish, transmit, transfer, sell, reproduce, create derivative work from, distribute, re-post, perform, display or in any way commercially exploit any of the content.
-</li><li>Tilottama.Tech disclaims all warranties or conditions, whether expressed or implied, (including without limitation implied, warranties or conditions of information and context). We consider ourselves and intend to be subject to the jurisdiction only of the courts of Hyderabad, India.
+</li><li>Tilottama.Tech disclaims all warranties or conditions, whether expressed or implied, (including without limitation implied, warranties or conditions of information and context). We consider ourselves and intend to be subject to the jurisdiction only of the courts of Kolkata, India.
 </li><li>Tilottama.Tech reserves the right, in its sole discretion, to suspend or cancel the service at any time if a computer virus, bug, or other technical problem corrupts the security or proper administration of the service.</li><li>
 Tilottama.Tech values the privacy of information pertaining to its associates. We do not use or disclose information about your individual visits to our website or any information that you may give us, such as your name, address, email address or telephone number, to any outside sources.
 </li><li>Tilottama.Tech reserves the right to refuse service to anyone at any time.
@@ -171,8 +183,8 @@ Tilottama.Tech and their respective publishers, authors, agents, and employees m
                                     <li><a href="#">Forum</a></li>
                                     <li><a href="#">Documentation</a></li> -->
                                     <li><a href="refund_policy.php">Refund policy</a></li>
-                                    <li><a href="#">Enquery</a></li>
-                                    <li><a href="main_services">Services</a></li>
+                                    <li><a href="request_pc.php">Enquery</a></li>
+                                    <li><a href="main_services.php">Services</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -219,22 +231,7 @@ Tilottama.Tech and their respective publishers, authors, agents, and employees m
     <!--/#bottom-->
 
     <footer id="footer" class="midnight-blue">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    &copy; 2019 <a  href="index.php" title="Free Twitter Bootstrap WordPress Themes and HTML templates"><b>Tilottama.Tech</b></a> All Rights Reserved
-                    | Developed By <a  href="#" title="Free Twitter Bootstrap WordPress Themes and HTML templates"><i>Tilottama.Online</i></a>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="pull-right">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="about-us.php">About Us</a></li>
-                        <li><a href="faq.php">Faq</a></li>
-                        <li><a href="contact-us.php">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <?php require('footer.php'); ?>
     </footer>
     <!--/#footer-->
 

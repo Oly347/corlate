@@ -7,7 +7,11 @@ include ('employee.cls.php');
 
 $obj_comp = new component_inc ;
 
-$rowProductPCList = $obj_comp->getRequestPCList()
+$rowProductPCList = $obj_comp->getRequestPCList();
+
+// print_r($rowProductPCList);
+
+// exit;
 
 ?>
 
@@ -256,12 +260,12 @@ $rowProductPCList = $obj_comp->getRequestPCList()
           <div class="card shadow mb-4">
             <div class="card-header py-3">
               <h6 class="m-0 font-weight-bold text-primary">ALL PC list</h6>
-              <a href="add_pc.php" class="btn btn-info btn-icon-split">
+              <!-- <a href="add_pc.php" class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fa fa-plus"></i>
                     </span>
                     <span class="text">Add PC-Product</span>
-                  </a>
+                  </a> -->
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -269,106 +273,79 @@ $rowProductPCList = $obj_comp->getRequestPCList()
                   <thead>
                   <tr>
                       <th>Id</th>
-                      <th>Status</th>
-                      <th>Product No</th>
-                      <th>Product Price</th>
-                      <th>Product Image</th>
-                      <th>Cabinet</th>
-                      <th>Product Weight</th>
-                      <th>Product Dimensions</th>
-                      <th>Processor Brand</th>
-                      <th>Processor Type</th>
-                      <th>RAM Size</th>
-                      <th>RAM Type</th>
-                      <th>Hard disk Size</th>
-                      <th>Hard disk Technology</th>
-                      <th>Operating System</th>
-                      <th>Graphic Card</th>
-                      <th>Additional Information</th>
-                      <th>Action</th>
+                      <th>Name </th>
+                      <th>Email </th>
+                      <th>Phone Number</th>
+                      <th>Processer </th>
+                      <th>Motherboard </th>
+                      <th>Cabinet </th>
+                      <th>RAM</th>
+                      <th>SMPS</th>
+                      <th>SSD</th>
+                      <th>Graphic_card</th>
+                      <th>Others</th>
+                      <th>Budget </th>
+                      <th>Time </th>
+                    
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Id</th>
-                      <th>Status</th>
-                      <th>Product No</th>
-                      <th>Product Price</th>
-                      <th>Product Image</th>
-                      <th>Cabinet</th>
-                      <th>Product Weight</th>
-                      <th>Product Dimensions</th>
-                      <th>Processor Brand</th>
-                      <th>Processor Type</th>
-                      <th>RAM Size</th>
-                      <th>RAM Type</th>
-                      <th>Hard disk Size</th>
-                      <th>Hard disk Technology</th>
-                      <th>Operating System</th>
-                      <th>Graphic Card</th>
-                      <th>Additional Information</th>
-                      <th>Action</th>
+                    <th>Id</th>
+                      <th>Name </th>
+                      <th>Email </th>
+                      <th>Phone Number</th>
+                      <th>Processer </th>
+                      <th>Motherboard </th>
+                      <th>Cabinet </th>
+                      <th>RAM</th>
+                      <th>SMPS</th>
+                      <th>SSD</th>
+                      <th>Graphic_card</th>
+                      <th>Others</th>
+                      <th>Budget </th>
+                      <th>Time </th>
+                    
                     </tr>
                   </tfoot>
                   <tbody>
                   <?php
                 
                 foreach ($rowProductPCList as  $row_product_pc_list) {
-                                   
+                                
                 ?>
+
+
+               
 
 
                     <tr>
                       <td><?php echo $row_product_pc_list['id'];?></td>
-                      <td><?php 
-                        if($row_product_pc_list['status']==0){
-
-                          echo '<a href="#" class="btn btn-danger btn-icon-split">
-                          <span class="icon text-white-50">
-                          <i class="fas fa-exclamation-triangle"></i>
-                          </span>
-                          <span class="text">Inactive</span>
-                        </a>';
-                        }else{
-                          echo '<a href="#" class="btn btn-success btn-icon-split">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-check"></i>
-                          </span>
-                          <span class="text">Active</span>
-                        </a>';
-
-
-                        }
-                        
-                        ?> </td>
-                      <td><?php echo $row_product_pc_list['product_no'];?></td>
-                      <td><?php echo $row_product_pc_list['product_price'];?></td>
-                      <td><img src ="upload/<?php echo $row_product_pc_list['product_img'];?>" height=50 width=80 /> </td>
-                      <td><?php echo $row_product_pc_list['cabinet'];?></td>
-                      <td><?php echo $row_product_pc_list['product_weight'];?></td>
-                      <td><?php echo $row_product_pc_list['product_dimensions'];?></td>
-                      <td><?php echo $row_product_pc_list['processor_brand'];?></td>
-                      <td><?php echo $row_product_pc_list['processor_type'];?></td>
-                      <td><?php echo $row_product_pc_list['ram_size'];?></td>
-                      <td><?php echo $row_product_pc_list['ram_type'];?></td>
-                      <td><?php echo $row_product_pc_list['hard_disk_size'];?></td>
-                      <td><?php echo $row_product_pc_list['hard_disk_tech'];?></td>
-                      <td><?php echo $row_product_pc_list['operating_system'];?></td>
-                      <td><?php echo $row_product_pc_list['g_card'];?></td>
-                      <td><?php echo $row_product_pc_list['additional_information'];?></td>
-                      <td>
-        
-        <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
-
-
-        <a class="btn btn-info" href="edit_pc.php?id=<?php echo $row_product_pc_list['id'];?>" role="button">Update</a>
-        </td>
                       
-                    </tr>
+                      <td><?php echo $row_product_pc_list['name'];?></td>
+                      <td><?php echo $row_product_pc_list['email'];?></td>
+                      
+                      <td><?php echo $row_product_pc_list['phone_number'];?></td>
+                      <td><?php echo $row_product_pc_list['processer'];?></td>
+                      <td><?php echo $row_product_pc_list['motherboard'];?></td>
+                      <td><?php echo $row_product_pc_list['cabinet'];?></td>
+                      <td><?php echo $row_product_pc_list['ram'];?></td>
+                      <td><?php echo $row_product_pc_list['smps'];?></td>
+                      <td><?php echo $row_product_pc_list['ssd'];?></td>
+                      <td><?php echo $row_product_pc_list['graphic_card'];?></td>
+                      <td><?php echo $row_product_pc_list['others'];?></td>
+                      <td><?php echo $row_product_pc_list['budget'];?></td>
+                      <td><?php echo $row_product_pc_list['time'];?></td>
+                </tr>
+                  <!-- <?php
+               
+                  
+                  ?> -->
                     
                     <?php
+                       
                        }
-                
+                       
                       ?>
                   </tbody>
                 </table>

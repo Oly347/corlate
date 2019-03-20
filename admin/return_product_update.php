@@ -3,12 +3,7 @@
 
 
  session_start();
- if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ==true) {
-  //echo "Welcome to the member's area, " . $_SESSION['userName'] . "!";
-  } 
-  else {
-  header('Location:index.php');
-  }
+
 // //create a session and assign a value
 // $_SESSION['session_id'] =rand(10,1000);
 
@@ -28,8 +23,23 @@ include ('system/database.php');
 include ('employee.cls.php');
 
 
-$obj_comp = new component_inc ;
+$obj_user = new user_inc ;
 
+//$motherBoardRow = $obj_comp->getMotherBoardById($_GET['id']);
+$reviewRow = $obj_user->getReturnRequestById($_GET['id']);
+// print_r($reviewRow);
+// exit;
+
+
+foreach ($reviewRow as $key => $value) {
+  $component_name=$value['order_id'];
+  $component_details=$value['username'];
+  $component_price=$value['order_time'];
+  $component_image=$value['action'];
+  $component_status=$value['issue'];
+  
+
+}
 
 ?>
 
@@ -44,16 +54,14 @@ $obj_comp = new component_inc ;
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Tilottama.Tech Admin</title>
+  <title>SB Admin 2 - Blank</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <link rel="shortcut icon" href="favicon.ico">
+  <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -70,7 +78,7 @@ $obj_comp = new component_inc ;
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Tilottama.Tech <sup>ADMIN</div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</div>
       </a>
 
       <!-- Divider -->
@@ -95,19 +103,19 @@ $obj_comp = new component_inc ;
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
           <i class="fas fa-fw fa-cog"></i>
-          <span>Components List</span>
+          <span>Components</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
+          <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">List Components:</h6>
             <a class="collapse-item" href="component_list.php">System Unit:</a>
-            <a class="collapse-item" href="accessories.php">Monitor and accessories:</a>
+            <a class="collapse-item" href="cards.html">Monitor and accessories:</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Utilities</span>
@@ -121,23 +129,7 @@ $obj_comp = new component_inc ;
             <a class="collapse-item" href="utilities-other.html">Other</a>
           </div>
         </div>
-      </li> -->
-
-
-
-      <li class="nav-item">
-  <a class="nav-link" href="product_pc_list.php">
-  <i class="fas fa-fw fa-wrench"></i>
-    <span>Full PC List</span></a>
-</li>
-
-
-
-<li class="nav-item">
-  <a class="nav-link" href="add_pc.php">
-  <i class="fas fa-fw fa-plus"></i>
-    <span>Add PC</span></a>
-</li>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -148,10 +140,10 @@ $obj_comp = new component_inc ;
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link " href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-plus"></i>
-          <span>Add Component </span>
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Component</span>
         </a>
         <div id="collapsePages" class="collapse " aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -162,7 +154,7 @@ $obj_comp = new component_inc ;
             <a class="collapse-item" href="smps.php">SMPS</a>
             <a class="collapse-item" href="harddrive.php">Hard Disk Drive</a>
             <a class="collapse-item" href="memory.php">Memory</a>
-            <a class="collapse-item" href="ssd">SSD</a>
+            <a class="collapse-item" href="ssd.php">SSD</a>
             <a class="collapse-item" href="graphic_card.php">Graphic Card</a>
             <!-- <a class="collapse-item" href="#">Video Card</a> -->
             <a class="collapse-item" href="sound_card.php">Sound Card</a>
@@ -171,42 +163,27 @@ $obj_comp = new component_inc ;
             <!-- <a class="collapse-item" href="#">Bluetooth Reciver</a> -->
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Monitor and accessories</h6>
-            <a class="collapse-item" href="monitor.php">Monitor</a>
-            <a class="collapse-item" href="mouse_keyboard.php">Mouse & Keyboard</a>
-            <a class="collapse-item" href="speaker.php">Speaker</a>
-            <a class="collapse-item" href="headphone.php">Headphone</a>
+            <a class="collapse-item" href="#">Monitor</a>
+            <a class="collapse-item" href="#">Mouse & Keyboard</a>
+            <a class="collapse-item" href="#">Speaker</a>
+            <a class="collapse-item" href="#">Headphone</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Charts -->
-      <!-- <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
-      </li> -->
+      </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-  <a class="nav-link" href="user_list.php">
-    <i class="fas fa-fw fa-table"></i>
-    <span>User List</span></a>
-</li>
-
-
-
-<li class="nav-item">
-  <a class="nav-link" href="review_list.php">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Review List</span></a>
-</li>
-
-
-<li class="nav-item">
-  <a class="nav-link" href="contact_us_list.php">
-    <i class="fas fa-fw fa-table"></i>
-    <span>Contact us List</span></a>
-</li>
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
@@ -218,6 +195,7 @@ $obj_comp = new component_inc ;
 
     </ul>
     <!-- End of Sidebar -->
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -296,79 +274,48 @@ $obj_comp = new component_inc ;
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Add Product=>PC(without monitor & accessories)</h1>
+          <h1 class="h3 mb-4 text-gray-800">Review approved Pannel</h1>
 
 
           <div class="container">
-  <h2>Component Details</h2>
-  <form action="add_pc.dml.php" method="post" enctype="multipart/form-data">
+  <h2>Review  Details</h2>
+  <form action="return.upl.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="product_no">Product Number</label>
-      <input type="text" class="form-control" id="product_no" placeholder="Enter Product Number" name="product_no">
+      <label for="c_name">Order Id</label>
+      <input type="text" class="form-control" id="time" placeholder="Enter Model Name" name="time" value="<?php echo $component_name; ?>" readonly>
+
+      <input type="hidden" name="review_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
     </div>
 
-    <div class="form-group">
-      <label for="product_price">Product Image</label>
-      <input type="text" class="form-control" id="product_price" placeholder="Enter Product Price" name="product_price">
-    </div>
-    <div class="form-group">
-      <label for="product_img">Product Image</label>
-      <input type="file" class="form-control" id="product_img"  name="product_img">
-    </div>
 
     <div class="form-group">
-      <label for="product_img">Tag</label>
-      <input type="text" class="form-control" id="tag"  name="tag" placeholder="Enter Product Tag">
-    </div>
-    <div class="form-group">
-      <label for="cabinet">Cabinet</label>
-      <input type="text" class="form-control" id="cabinet" placeholder="Enter Cabinet Name" name="cabinet">
-    </div>
-    <div class="form-group">
-      <label for="product_weight">Product Weight</label>
-      <input type="text" class="form-control" id="product_weight" placeholder="Enter Product Weight" name="product_weight">
-    </div>
-    <div class="form-group">
-      <label for="product_dimensions">Product Dimensions</label>
-      <input type="text" class="form-control" id="product_dimensions" placeholder="Enter Product Dimensions" name="product_dimensions">
-    </div>
-    <div class="form-group">
-      <label for="processor_brand">Processor Brand</label>
-      <input type="text" class="form-control" id="processor_brand" placeholder="Enter Processor Brand" name="processor_brand">
-    </div>
-    <div class="form-group">
-      <label for="processor_type">Processor Type</label>
-      <input type="text" class="form-control" id="processor_type" placeholder="Enter Processor Type" name="processor_type">
-    </div>
-    <div class="form-group">
-      <label for="product_no">RAM Size</label>
-      <input type="ram_size" class="form-control" id="ram_size" placeholder="Enter RAM size" name="ram_size">
-    </div>
-    <div class="form-group">
-      <label for="ram_type">RAM Type</label>
-      <input type="text" class="form-control" id="ram_type" placeholder="Enter RAM Type" name="ram_type">
-    </div>
-    <div class="form-group">
-      <label for="hard_disk_size">Hard Drive Size</label>
-      <input type="text" class="form-control" id="hard_disk_size" placeholder="Enter Hard Drive Size" name="hard_disk_size">
-    </div>
-    <div class="form-group">
-      <label for="hard_disk_tech">Hard Disk Technology</label>
-      <input type="text" class="form-control" id="hard_disk_tech" placeholder="Ennter Hard Disk Technology" name="hard_disk_tech">
-    </div>
-    <div class="form-group">
-      <label for="operating_system">Operating System</label>
-      <input type="text" class="form-control" id="operating_system" placeholder="Enter Operating sytem" name="operating_system">
-    </div>
-    <div class="form-group">
-      <label for="g_card">Graphic Card</label>
-      <input type="text" class="form-control" id="g_card" placeholder="Enter Graphic card Details" name="g_card">
+      <label for="c_dis">User Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Discription" name="name" value="<?php echo $component_details; ?>" readonly>
     </div>
 
+
     <div class="form-group">
-      <label for="additional_information">Additional Information</label>
-      <input type="text" class="form-control" id="additional_information" placeholder="Enter Additional Information" name="additional_information">
+      <label for="c_price">Request Time</label>
+      <input type="text" class="form-control" id="review" placeholder="Enter Price" name="review" value="<?php echo $component_price; ?>" readonly>
     </div>
+
+
+
+    <div class="form-group">
+      <label for="c_price">Issue</label>
+      <input type="text" class="form-control" id="star" placeholder="Enter Price" name="star" value="<?php echo $component_status; ?>" readonly>
+    </div>
+
+
+    <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="status" >
+      <option value="3" >Approved</option>
+      <option value="0">Reject</option>
+      <option value="2">On Hold</option>
+      
+    </select>
+  </div>
     
 
 

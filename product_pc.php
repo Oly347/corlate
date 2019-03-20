@@ -2,14 +2,14 @@
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
 session_start();
-if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
+// if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
     
-} 
-else {
-  echo "<script type='text/javascript'>alert('Please Login To Continue!!!');
-  window.location='user_login.php';
-  </script>";
-}
+// } 
+// else {
+//   echo "<script type='text/javascript'>alert('Please Login To Continue!!!');
+//   window.location='user_login.php';
+//   </script>";
+// }
 
 $obj_comp = new component_inc ;
 
@@ -58,51 +58,7 @@ $rowProductPCList = $obj_comp->getComponentDetailsPCProductForUser();
 <body>
 
 <header id="header">
-         <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="top-number">
-                            <p><i class="fa fa-phone-square"></i> +0123 456 70 90</p> 
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12">
-                        <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                                <!-- <li><a class="btn-slide animation animated-item-3" href="#">Learn More</a><li> -->
-                            </ul>
-                            <div class="search">
-                            <!-- <a href="#" class="btn btn-primary  active" role="button" aria-pressed="true">Primary link</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-12" >
-                        <div class="top-number " style="float:right">
-
-
-                        <?php
-                        if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Logout</a>';
-                            echo   $_SESSION['userName'];
-                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">Dash Board</a>';
-                        } else {
-                            echo '<a href="user_login.php" class="btn btn-info  active" role="button" aria-pressed="true">Login</a>';
-                            
-                        }
-                        ?>
-                        <!-- <a href="#" class="btn btn-primary   active" role="button" aria-pressed="true">Primary link</a> -->
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            
-        </div>
+<?php require('topbar.php'); ?>
         <!--/.top-bar-->
 
         <nav class="navbar navbar-inverse" role="banner">
@@ -150,7 +106,13 @@ $rowProductPCList = $obj_comp->getComponentDetailsPCProductForUser();
         <h1>Prooduct List</h1>
     </div>
     
-    
+    <style>
+    body {
+overflow-x: hidden;
+}  
+
+
+    </style>
 
 
 
@@ -162,13 +124,18 @@ $rowProductPCList = $obj_comp->getComponentDetailsPCProductForUser();
         <div class="container edit_product_container">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 text-center">
+
+                
                 <?php
                 
                 foreach ($rowProductPCList as  $row_product_pc_list) {
                                    
                 ?>
                     <div class="single-pricing">
+                    <h3 class="ribbon"><?php echo $row_product_pc_list['tag'];?></h3>
+
                     
+
                         <span><?php echo $row_product_pc_list['product_no'];?></span>
                         <span style="display:none"><?php echo $row_product_pc_list['id'];?></span><br>
                         <h1>
@@ -177,6 +144,8 @@ $rowProductPCList = $obj_comp->getComponentDetailsPCProductForUser();
                             
                         </h1>
                         <div class="clearfix">
+
+                        
                             <ul>
                                 <li><img class="product_view_image" src ="admin/upload/<?php echo $row_product_pc_list['product_img'];?>" height=100 width=100 /> </li>
                                 <li class="product_li">Cabinet-- <?php echo $row_product_pc_list['cabinet'];?></li>
@@ -201,7 +170,7 @@ $rowProductPCList = $obj_comp->getComponentDetailsPCProductForUser();
                             </ul>
                         </div>
 
-                        
+                        <!-- <h2 class="ribbon">The Code Block</h2> -->
 
                         
                         <a href="buy_product.php?id=<?php echo $row_product_pc_list['id'];?>" role="button">BUY</a>
@@ -258,8 +227,8 @@ $rowProductPCList = $obj_comp->getComponentDetailsPCProductForUser();
                                     <li><a href="#">Forum</a></li>
                                     <li><a href="#">Documentation</a></li> -->
                                     <li><a href="refund_policy.php">Refund policy</a></li>
-                                    <li><a href="#">Enquery</a></li>
-                                    <li><a href="main_services">Services</a></li>
+                                    <li><a href="repuest_pc.php">Enquery</a></li>
+                                    <li><a href="main_services.php">Services</a></li>
                                 </ul>
                             </div>
                         </div>

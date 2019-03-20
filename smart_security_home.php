@@ -41,7 +41,10 @@ session_start();
 <body>
 
 <header id="header">
-<?php require('topbar.php'); ?>
+
+
+    <?php require('topbar.php'); ?>
+         
         <!--/.top-bar-->
 
         <nav class="navbar navbar-inverse" role="banner">
@@ -53,15 +56,15 @@ session_start();
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="150" style="margin-top: -22px;" ></a>
+                    <a class="navbar-brand" href="index.php"><img src="images/tech-logo-for-dark.png" alt="logo" width="130" style="margin-top: -20px;margin-bottom: 5px;" ></a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right" style="margin-top: 40px;"> 
-                <ul class="nav navbar-nav">
+                    <ul class="nav navbar-nav">
                         <li ><a href="index.php">Home</a></li>
                         
                         <li><a href="services.php">Assemble Your PC</a></li>
-                        <li ><a href="product_pc.php">Buy A PC</a></li>
+                        <li><a href="product_pc.php">Buy A PC</a></li>
                         <li class="active"><a href="smart_security_home.php">Smart Home Security</a></li>
                         <li><a href="smart_home.php">Make Your Home Smart</a></li>
                         <!-- <li class="dropdown">
@@ -346,7 +349,7 @@ View, save, and share clips safely, and know that when you’re home you can twi
                 <h2>For Configuration Please contact us</h2>
                 
             
-                <a href="#" class="btn btn-info btn-lg " role="button" aria-disabled="true">Contact us</a>
+                <a href="contact-us.php" class="btn btn-info btn-lg " role="button" aria-disabled="true">Contact us</a>
                 
             </div>
         </div>

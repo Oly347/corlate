@@ -364,7 +364,7 @@ for($i=0; $i<$rating; $i++) {
     <section id="partner">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>We use thesre Product</h2>
+                <h2>We use these Product</h2>
                 <hr class="hr_syle">
                 <!-- <p class="lead edit_p_partner" style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
             </div>
@@ -429,8 +429,8 @@ for($i=0; $i<$rating; $i++) {
                                     <li><a href="#">Forum</a></li>
                                     <li><a href="#">Documentation</a></li> -->
                                     <li><a href="refund_policy.php">Refund policy</a></li>
-                                    <li><a href="#">Enquery</a></li>
-                                    <li><a href="main_services">Services</a></li>
+                                    <li><a href="request_pc.php">Enquery</a></li>
+                                    <li><a href="main_services.php">Services</a></li>
                                 </ul>
                             </div>
                         </div>

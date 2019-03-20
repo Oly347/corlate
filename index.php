@@ -394,8 +394,8 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                             <img class="img-responsive" src="images/services/web-app.svg">
                         </div>
                         <div class="media-body">
-                            <h3 class="media-heading">Custom Assemble PC</h3>
-                            <p>You Can custome assemble your PC in Easy & Affordable</p>
+                            <h3 class="media-heading">Assemble Personal Computer</h3>
+                            <p>You Can custom assemble your PC in Easy & Affordable</p>
                         </div>
                     </div>
                 </div>
@@ -590,33 +590,21 @@ for($i=0; $i<$rating; $i++) {
         </div>
     </section>
 
-    <section id="partner">
+    <section >
         <div class="container">
-            <div class="center fadeInDown">
-                <h2>We use thesre Product</h2>
-                <hr class="hr_syle">
-                <!-- <p class="lead edit_p_partner" style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
-            </div>
+        <div class="col-md-12">
+                    <div class="center fadeInDown">
+                            <!-- <a href="#" class="blog_cat">UI/UX DESIGN</a> -->
+                            <h1>Consequat bibendum quam liquam viverra</h1>
 
-            <div class="partners">
-                <ul>
-                    <li>
-                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="300ms" src="images/partners/400px-Dell_logo.png"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="600ms" src="images/partners/Amazon Alexa_0.png"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="900ms" src="images/partners/TPLINK.png"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="1200ms" src="images/partners/Nvidia_logo.png"></a>
-                    </li>
-                    <li>
-                        <a href="#"><img class="img-responsive fadeInDown edit_imgs" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/58568d224f6ae202fedf2720.png"></a>
-                    </li>
-                </ul>
-            </div>
+                            <h3>Consequat bibendum quam liquam viverra</h3>
+                            <br>
+                            <h5>Curabitur quis libero leo, pharetra mattis eros. Praesent consequat libero eget dolor convallis vel rhoncus magna scelerisque. Donec nisl ante, elementum eget posuere a, consectetur a metus. Proin a adipiscing sapien. Suspendisse vehicula porta lectus vel semper. Nullam sapien elit, lacinia eu tristique non.posuere at mi. Morbi at turpis id urna ullamcorper ullamcorper.</h5>
+                            <!-- <a class="readmore" href="blog-item.html">Read More <i class="fa fa-long-arrow-right"></i></a> -->
+                        </div>
+                    
+                   
+                </div>
         </div>
         <!--/.container-->
     </section>
@@ -653,12 +641,12 @@ for($i=0; $i<$rating; $i++) {
                             <div class="widget">
                                 <h3>Support</h3>
                                 <ul>
-                                    <li><a href="faq.php">Faq</a></li>
+                                    <li><a href="faq.php">FAQ</a></li>
                                     <!-- <li><a href="#">Blog</a></li>
                                     <li><a href="#">Forum</a></li>
                                     <li><a href="#">Documentation</a></li> -->
                                     <li><a href="refund_policy.php">Refund policy</a></li>
-                                    <li><a href="#">Enquery</a></li>
+                                    <li><a href="request_pc.php">Enquiry</a></li>
                                     <li><a href="main_services.php">Services</a></li>
                                 </ul>
                             </div>
@@ -683,7 +671,7 @@ for($i=0; $i<$rating; $i++) {
 
                         <div class="col-md-4 col-sm-4">
                             <div class="widget">
-                                <h3>Our Partners</h3>
+                                <h3>Devices We Use</h3>
                                 <ul>
                                     <li><a href="#">DELL</a></li>
                                     <li><a href="#">Amazon</a></li>

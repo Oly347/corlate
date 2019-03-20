@@ -50,6 +50,7 @@ foreach ($rowProductPCList as $key => $value) {
   $operating_system=$value['operating_system'];
   $g_card=$value['g_card'];
   $additional_information=$value['additional_information'];
+  $tag=$value['tag'];
 
 
 
@@ -310,6 +311,13 @@ foreach ($rowProductPCList as $key => $value) {
       <label for="product_img">Product Image</label>
      
       <input type="file" class="form-control" id="product_img"  name="product_img" value="<?php echo $product_img; ?>">
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="product_img">Tag</label>
+      <input type="text" class="form-control" id="tag"  name="tag" value="<?php echo $tag; ?>">
     </div>
     <div class="form-group">
       <label for="cabinet">Cabinet</label>
