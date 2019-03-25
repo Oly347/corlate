@@ -1241,6 +1241,24 @@ function component_inc()
     } 
 
 
+
+
+    public function InsertIntoCpuMboardLink($post_fileds)
+    {
+    $sSql="SELECT * FROM m_board_cpu WHERE id=-1";
+    $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+    if($insrt==0)
+     {
+      return false;
+      }
+      else
+      {
+      return true;
+      }
+              
+  } 
+
+
     public function InsertIntoComponentDetailsSpeaker($post_fileds)
       {
       $sSql="SELECT * FROM component_details_speaker WHERE id=-1";

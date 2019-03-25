@@ -4,9 +4,9 @@
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
 
-
+require_once "config_g.php";
 $obj_user = new user_inc;
-
+$loginURL = $gClient->createAuthUrl();
 
 ?>
 
@@ -117,10 +117,19 @@ overflow-x: hidden;
     <div class="cotainer">
         
         <div class="row justify-content-center ">
+
+        
             <div class="col-md-6 col-md-offset-3 edit_register_div" style="padding: 40px;">
                     <div class="card">
                         
                         <div class="card-body">
+
+                        <div class="form-actions" style="margin-bottom:20px">
+                        <a href="#"  class="btn btn-primary"><i class="fa fa-facebook"></i> Signup With Facebook 
+</a>
+                                        <a href="#"  class="btn btn-danger" onclick="window.location = '<?php echo $loginURL ?>';" > <i class="fa fa-google"></i> Signup With google 
+</a>
+</div>
                             <form name="my-form" onsubmit="return validform()" action="user.dml.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group row">
                                     <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>

@@ -140,7 +140,7 @@ overflow-x: hidden;
 
                             
                             
-                            <li><a href="logout.php">logout.php</a></li>
+                            <li><a href="logout.php">logout</a></li>
                             </ul>
                             </div>
                         

@@ -65,14 +65,14 @@ hr {
     /* border-bottom: 1px solid #fff; */
 }
 
-.btn-primary {
+/* .btn-primary {
     padding: 8px 20px;
     background: #95d819;
     color: #fff;
     border-radius: 4px;
     border: none;
     margin-top: 10px;
-}
+} */
 
 .btn-primary:hover,
 .btn-primary:focus {
@@ -458,7 +458,7 @@ color:  #5dade2;
 }
 
 .user_reguster{
-    background-image: url(../images/slider/andrej-lisakov-679177-unsplash.jpg);
+    /* background-image: url(../images/slider/andrej-lisakov-679177-unsplash.jpg); */
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
