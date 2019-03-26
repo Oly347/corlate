@@ -306,6 +306,7 @@ $contactList = $obj_user->getReturnList();
                   <tr>
                       
                     <th>User Name</th>
+                    <th>Ticket Number</th>
                       <th>Order Id</th>
                       <th>Request Time</th>
                       <th>Issue</th>
@@ -317,6 +318,7 @@ $contactList = $obj_user->getReturnList();
                   <tr>
                   
                   <th>User Name</th>
+                     <th>Ticket Number</th>
                       <th>Order Id</th>
                       <th>Request Time</th>
                       <th>Issue</th>
@@ -334,13 +336,14 @@ $contactList = $obj_user->getReturnList();
 
                     <tr>
                     <td><?php echo $contact_list['username'];?></td>
+                    <td><?php echo $contact_list['ticket_no'];?></td>
                       <td><?php echo $contact_list['order_id'];?></td>
                       <td><?php echo $contact_list['order_time'];?></td>
                       <td><?php echo $contact_list['issue'];?></td>
                      
                       <td>
                         <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
-                        <a class="btn btn-info" href="return_product_update.php?id=<?php echo $contact_list['id'];?>" role="button">Action</a>
+                        <a class="btn btn-info" href="return_product_update.php?id=<?php echo $contact_list['id'];?>" role="button">Take Action</a>
                         </td>
                         <td><?php 
                         if($contact_list['status']==0){
@@ -367,6 +370,15 @@ $contactList = $obj_user->getReturnList();
                               <i class="fas fa-check"></i>
                             </span>
                             <span class="text">Approved</span>
+                          </a>';
+  
+  
+                          } elseif($contact_list['status']==4){
+                            echo '<a href="#" class="btn btn-light btn-icon-split">
+                            <span class="icon text-gray-600">
+                              <i class="fas fa-arrow-right"></i>
+                            </span>
+                            <span class="text">Completed</span>
                           </a>';
   
   

@@ -25,13 +25,17 @@ $orderId = 'ORD' . $today . $rand ;
 $obj_user = new user_inc ;
 $userDetailsById = $obj_user->getUserById($_SESSION['userName']);
 
+// print_r($userDetailsById);
 
+
+// exit;
 
 foreach ($userDetailsById as $key => $value) {
     $name=$value['name'];
     $phone_number=$value['phone_number'];
     $address=$value['address'];
     $profile_pic=$value['profile_pic'];
+    $phone_number=$value['phone_number'];
     
   
 }
@@ -187,6 +191,20 @@ $priceListOfProduct = implode('--------and--------', $productPrice);
                             
                                             
                                         </div>
+                                        <div class="form-group">
+                                            <label>Name</label>
+                            <input type="text" name="name" id="name" class="form-control" value="<?php echo $name ?>" readonly>
+                            
+                                            
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label>Contact Number</label>
+                            <input type="text" name="contact_number" id="contact_number" class="form-control" value="<?php echo $phone_number ?>" readonly>
+                            
+                                            
+                                        </div>
 
 
                                         <div class="form-group">
@@ -270,7 +288,7 @@ $fulltotal = 100*$sub_total;
     <script
         src="https://checkout.razorpay.com/v1/checkout.js"
         data-key="<?php echo $razor_api_key; ?>"
-        data-amount="<?php echo $fulltotal; ?>"
+        data-amount="100"
         data-buttontext="Pay with Razorpay"
         data-name="Tilottama.Tech"
         data-description="<?php echo $orderId; ?>"

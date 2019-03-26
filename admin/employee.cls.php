@@ -1742,6 +1742,13 @@ function component_inc()
             }
 
 
+            function getUserlastReturnlist($id){
+                $sSql="SELECT * FROM return_list  WHERE username='".$id."'  ORDER BY id DESC LIMIT 0, 1";
+                $rows = $this->db_con->GetAllRows($sSql);
+                return $rows;
+            }
+
+
             // function getOrderById($id){
             //     $sSql="SELECT * FROM order_details  WHERE id ='".$id."' ";
             //     $rows = $this->db_con->GetAllRows($sSql);

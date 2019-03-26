@@ -313,6 +313,7 @@ foreach ($reviewRow as $key => $value) {
       <option value="3" >Approved</option>
       <option value="0">Reject</option>
       <option value="2">On Hold</option>
+      <option value="4">Return Completed</option>
       
     </select>
   </div>

@@ -306,7 +306,10 @@ $userlastOrder = $obj_user->getOrderList();
                   <tr>
                       <th>ID</th>
                       <th>Order id </th>
-                      <th>user Name</th>
+                      <th>Email Id</th>
+                      <th>Customer Name</th>
+                      <th>Contact Number</th>
+                      
                       <th>Process Ids</th>
                       <th>Details</th>
                       <th>Product Price</th>
@@ -324,7 +327,9 @@ $userlastOrder = $obj_user->getOrderList();
                   <tr>
                       <th>ID</th>
                       <th>Order id </th>
-                      <th>user Name</th>
+                      <th>Email Id</th>
+                      <th>Customer Name</th>
+                      <th>Contact Number</th>
                       <th>Process Ids</th>
                       <th>Details</th>
                       <th>Product Price</th>
@@ -350,6 +355,8 @@ $userlastOrder = $obj_user->getOrderList();
                       <td><?php echo $contact_list['id'];?></td>
                       <td><?php echo $contact_list['order_id'];?></td>
                       <td><?php echo $contact_list['username'];?></td>
+                      <td><?php echo $contact_list['name'];?></td>
+                      <td><?php echo $contact_list['contact_number'];?></td>
                       <td><?php echo $contact_list['txn_id'];?></td>
                       <td><?php echo $contact_list['details'];?></td>
                       <td><?php echo $contact_list['product_price'];?></td>
@@ -363,35 +370,63 @@ $userlastOrder = $obj_user->getOrderList();
 
                           echo '<button href="#" class="btn btn-danger btn-icon-split">
                           <span class="icon text-white-50">
-                          <i class="fas fa-exclamation-triangle"></i>
+                            <i class="fas fa-trash"></i>
                           </span>
-                          <span class="text">Order cancel</span>
+                          <span class="text">Order Cancel</span>
                         </button>';
                         }elseif($contact_list['status']==1){
-                          echo '<button href="#" class="btn btn-info btn-icon-split">
+                          echo '<button href="#" class="btn btn-secondary btn-icon-split">
                           <span class="icon text-white-50">
-                            <i class="fas fa-info-circle"></i>
+                            <i class="fas fa-arrow-right"></i>
                           </span>
-                          <span class="text">Order Accept</span>
+                          <span class="text">Order Accepted</span>
                         </button>';
 
 
                         }
-                        else{
-                          echo '<button href="#" class="btn btn-success btn-icon-split">
+
+
+                        elseif($contact_list['status']==2){
+                          echo '<a href="#" class="btn btn-success btn-icon-split">
                           <span class="icon text-white-50">
                             <i class="fas fa-check"></i>
                           </span>
                           <span class="text">Order Confirm</span>
+                        </a>';
+
+
+                        }
+                        elseif($contact_list['status']==3){
+                          echo '<a href="#" class="btn btn-light btn-icon-split">
+                          <span class="icon text-gray-600">
+                            <i class="fas fa-arrow-right"></i>
+                          </span>
+                          <span class="text">Order Completed</span>
+                        </a>';
+
+
+                        }
+                        elseif($contact_list['status']==4){
+                          echo '<button href="#" class="btn btn-warning btn-icon-split">
+                          <span class="icon text-white-50">
+                            <i class="fas fa-info-circle"></i>
+                          </span>
+                          <span class="text">Order On Hold</span>
                         </button>';
 
 
                         }
                         
                         ?> </td>
-                        <td><?php echo $contact_list['invoice'];?><br><a class="btn btn-info" href="upload/<?php echo $contact_list['invoice']?>"><i class="fa fa-file-pdf" aria-hidden="true"></i>
-Download File </a>
-<a class="btn btn-info" href="invoice.php?id=<?php echo $contact_list['id'];?>" role="button" >Invoice</a>
+                        <td><?php echo $contact_list['invoice'];?><br>
+                        
+                        <a class="btn btn-primary" href="invoice.php?id=<?php echo $contact_list['id'];?>" role="button" ><i class="fa fa-file-pdf" aria-hidden="true"></i> Genarate Invoice</a>
+                        
+                        <a class="btn btn-info" href="upload/<?php echo $contact_list['invoice']?>" style="margin-top:10px"><i class="fa fa-download" aria-hidden="true"></i>
+
+
+Download Invoice </a>
+
 
 </td>
                       <td>

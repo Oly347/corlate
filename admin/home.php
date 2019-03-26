@@ -125,6 +125,9 @@ foreach ($userlistDetails as $key => $value) {
           <span>Dashboard</span></a>
       </li>
 
+
+      
+
       <!-- Divider -->
       <hr class="sidebar-divider">
 
@@ -256,6 +259,13 @@ foreach ($userlistDetails as $key => $value) {
   <a class="nav-link" href="order_table.php">
     <i class="fas fa-fw fa-table"></i>
     <span> Order List</span></a>
+</li>
+
+
+<li class="nav-item">
+  <a class="nav-link" href="return_list.php">
+    <i class="fas fa-fw fa-table"></i>
+    <span> Return Request</span></a>
 </li>
 
       <!-- Divider -->

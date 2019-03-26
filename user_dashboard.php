@@ -492,7 +492,7 @@ Download Invoice </a>
                         if($contact_list['note']==1)
                         {
 
-                          echo '<a class="btn btn-info btn_rtn" href="#"><i class="fa fa-undo" aria-hidden="true"></i>
+                          echo '<a class="btn btn-info btn_rtn" href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>
                           Return request sumbited </a>';
 
 

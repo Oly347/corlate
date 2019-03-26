@@ -26,6 +26,8 @@ $insert_array=  array(
 'shipping_addr' => $_POST['shipping_addr'],
 'total' => $_POST['total'],
 'order_time' =>date('Y-m-d H:i:s'),
+'name' => $_POST['name'],
+'contact_number' => $_POST['contact_number'],
 	
     
 

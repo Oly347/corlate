@@ -313,6 +313,8 @@ foreach ($orderRow as $key => $value) {
       <option value="0" >Cancel</option>
       <option value="1">Accept</option>
       <option value="2">Confirm</option>
+      <option value="3">Completed</option>
+      <option value="4">On Hold</option>
     </select>
   </div>
 
