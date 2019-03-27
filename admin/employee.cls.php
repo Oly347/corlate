@@ -1729,6 +1729,25 @@ function component_inc()
                       return true;
                   }
           }
+
+
+
+
+          function SetUpdateReturnOrder($post_fields,$id)
+              {
+                  $sSql="SELECT * FROM order_details WHERE order_id ='".$id."' ";
+                  
+                  
+                   $update=$this->db_con->RowUpdate($post_fields,$sSql);
+                  if($update==0)
+                  {
+                      return false;
+                  }
+                  else
+                  {
+                      return true;
+                  }
+          }
             function getOrderList(){
                 $sSql = "SELECT * FROM order_details";
                  $rows = $this->db_con->GetAllRows($sSql);

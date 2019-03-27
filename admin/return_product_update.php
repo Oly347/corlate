@@ -282,7 +282,7 @@ foreach ($reviewRow as $key => $value) {
   <form action="return.upl.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="c_name">Order Id</label>
-      <input type="text" class="form-control" id="time" placeholder="Enter Model Name" name="time" value="<?php echo $component_name; ?>" readonly>
+      <input type="text" class="form-control" id="order_id" placeholder="Enter Model Name" name="order_id" value="<?php echo $component_name; ?>" readonly>
 
       <input type="hidden" name="review_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
     </div>

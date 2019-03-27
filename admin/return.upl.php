@@ -18,7 +18,16 @@ $update_array=  array(
 
 );
 
+$update_order_array=  array(
 
+    
+    'note' => $_POST['status'],  
+    
+    );
+     
+
+
+$update_order= $obj_user->SetUpdateReturnOrder($update_order_array,$_POST['order_id']);
      
 
 

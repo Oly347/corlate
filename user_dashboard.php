@@ -294,9 +294,27 @@ overflow-x: hidden;
                       </tr>
                     </thead>
                     <tbody>
+
+
+
+
+
                     <?php
+
+
+
                 $total=0;
-                //$product=NULL;
+                if (empty($userCartItem)){
+
+                  echo  '<tr>
+                  <td>
+                  <h3>Your Cart is empty. Continue To <a class="btn btn-info" href="product_pc.php" role="button">Shop&nbsp;<i class="fa fa-shopping-bag"></i>
+
+                  </a> </h3>
+                  </td
+
+                   </tr>' ;
+                    }else{
 
             
                     foreach ($userCartItem as  $user_cart_item) {
@@ -305,7 +323,14 @@ overflow-x: hidden;
                               //$product+=$user_cart_item['details'];
                     ?>
                       <tr>
-                      
+                      <?php 
+
+
+// if (empty($user_cart_item)){
+
+//  echo "No item In Cart"; 
+// }else{
+                      ?>
                         <td style="display:none"><?php echo $user_cart_item['id'];?></td>
                         <td> <input class="form-control" type="text"  name="process[]" value="<?php echo $user_cart_item['txn_id'];?>" readonly></td>
                         <td> <Textarea class="form-control" type="text"  name="details[]" value="" readonly><?php echo $user_cart_item['details'];?></Textarea>
@@ -315,10 +340,9 @@ overflow-x: hidden;
                         <td><a class="btn btn-danger" href="delete.php?id=<?php echo $user_cart_item['id'];?>" role="button">Delete&nbsp;<i class="fa fa-trash" aria-hidden="true"></i>
 
 </a>
-                        <!-- <a class="btn btn-info" href="final_checkout.php?id=<?php echo $user_cart_item['id'];?>" role="button">Checkout<i class="fas fa-shopping-cart"></i></a> -->
+                        
                         </td>
-                        
-                        
+                     
                         <!-- <td>
                         <a class="btn btn-danger" href="" role="button">Delete</a>
                         <a class="btn btn-info" href="" role="button">Update</a>
@@ -327,7 +351,7 @@ overflow-x: hidden;
                  
                       <?php
                        }
-                
+                    }
                       ?>
                       
                     </tbody>
@@ -379,9 +403,9 @@ overflow-x: hidden;
                      <th>Total</th>
                      <th>Order time</th>
                      <th>Status</th>
-                     <th>Note</th>
+                     
                      <th>Action</th>
-                     <th>Status</th>
+                     <th>Return Status</th>
                     </tr>
                   </thead>
                   <tfoot>
@@ -397,9 +421,9 @@ overflow-x: hidden;
                       <th>Total Price</th>
                       <th>Order time</th>
                       <th>Status</th>
-                      <th>Note</th>
+                      
                       <th>Action</th>
-                      <th>Status</th>
+                      <th>Retrurn Status</th>
                       
                     </tr>
                   </tfoot>
@@ -431,33 +455,26 @@ overflow-x: hidden;
                           echo '<h4 class="accept_order">Order Accept</h4>';
 
 
-                        }
-                        else{
-                            echo '<h4 class="confirm_order">Confirm Order</h4>';
+                        }elseif($contact_list['status']==2){
+                            echo '<h4 class="accept_order">Order Confirm</h4>';
+  
+  
+                          }elseif($contact_list['status']==3){
+                            echo '<h4 class="accept_order">Order Delivered</h4>';
+  
+  
+                          }elseif($contact_list['status']==4){
+                            echo '<h4 class="accept_order">Order Onhold</h4>';
   
   
                           }
+                       
                         
                         ?> </td>
                        
 
 
-<td><?php 
-                        if($contact_list['status']==0){
 
-                          echo '<h4>Order Cancel </h4>';
-                        }elseif($contact_list['status']==1){
-                          echo '<h4 >Order accepted- we will confirm after verification from our end</h4>';
-
-
-                        }
-                        else{
-                            echo '<h4 >Confirm Order- your order successfully confirm</h4>';
-  
-  
-                          }
-                        
-                        ?> </td>
                         <td>
                          <!--  -->
                         
@@ -465,14 +482,32 @@ overflow-x: hidden;
                         <a class="btn btn-info edit_download_btn" href="admin/upload/<?php echo $contact_list['invoice']?>"><i class="fa fa-file-pdf-o" aria-hidden="true"></i>
 Download Invoice </a>
 <br>
+<?php
+if($contact_list['note']==0)
+                        {
 
-
-
+?>                            
 <a class="btn btn-warning btn_rtn"  href="product_return.php?id=<?php echo $contact_list['id']; ?>"><i class="fa fa-undo" aria-hidden="true"></i>
                         Ask FOR Return </a> 
+                          
+       <?php
+
+                        }else{
+
+                        ?>
+
+
+<button class="btn btn-info btn_rtn" href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>
+                          Return request sumbited </button>
+
+
 
       
+<?php
 
+}
+
+?>
 
 
 
@@ -482,23 +517,35 @@ Download Invoice </a>
 
 
 <td>
-                         <!--  -->
-                        
-                        
-                       
+
 <?php 
+                        if($contact_list['note']==0){
+
+                          echo '<h4 >Return rejected</h4>';
+                        }elseif($contact_list['note']==1){
+                          echo '<h4 >Return Accept</h4>';
 
 
-                        if($contact_list['note']==1)
-                        {
-
-                          echo '<a class="btn btn-info btn_rtn" href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i>
-                          Return request sumbited </a>';
-
-
-                        }
-      ?>
-
+                        }elseif($contact_list['note']==2){
+                            echo '<h4 >Request On Hold</h4>';
+  
+  
+                          }elseif($contact_list['note']==3){
+                            echo '<h4 >Request Approved</h4>';
+  
+  
+                          }elseif($contact_list['note']==4){
+                            echo '<h4 >Return Completed</h4>';
+  
+  
+                          }else{
+                            echo '<h4 >No Status</h4>';
+  
+  
+                          }
+                       
+                        
+                        ?>
 
 
 
@@ -563,7 +610,7 @@ Download Invoice </a>
                             <div class="widget">
                                 <h3>Support</h3>
                                 <ul>
-                                    <li><a href="faq.php">Faq</a></li>
+                                    <li><a href="faq.php">FAQ</a></li>
                                     <!-- <li><a href="#">Blog</a></li>
                                     <li><a href="#">Forum</a></li>
                                     <li><a href="#">Documentation</a></li> -->
@@ -593,7 +640,7 @@ Download Invoice </a>
 
                         <div class="col-md-4 col-sm-4">
                             <div class="widget">
-                                <h3>Our Partners</h3>
+                                <h3>Product We Use</h3>
                                 <ul>
                                     <li><a href="#">DELL</a></li>
                                     <li><a href="#">Amazon</a></li>

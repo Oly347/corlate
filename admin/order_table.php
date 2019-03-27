@@ -291,13 +291,13 @@ $userlastOrder = $obj_user->getOrderList();
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Contact us List</h1>
+          <h1 class="h3 mb-2 text-gray-800">All Order List</h1>
           
 
           <!-- DataTales Example -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">Contact us list</h6>
+              <h6 class="m-0 font-weight-bold text-primary">Order Table</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -305,7 +305,7 @@ $userlastOrder = $obj_user->getOrderList();
                   <thead>
                   <tr>
                       <th>ID</th>
-                      <th>Order id </th>
+                      <th>Order Number </th>
                       <th>Email Id</th>
                       <th>Customer Name</th>
                       <th>Contact Number</th>
@@ -326,7 +326,7 @@ $userlastOrder = $obj_user->getOrderList();
                   <tfoot>
                   <tr>
                       <th>ID</th>
-                      <th>Order id </th>
+                      <th>Order Number </th>
                       <th>Email Id</th>
                       <th>Customer Name</th>
                       <th>Contact Number</th>
