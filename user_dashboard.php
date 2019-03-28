@@ -22,7 +22,11 @@ $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
 
 $userCartItem = $obj_comp->getUserCartItem($_SESSION['userName']);
 
+if (empty($userCartItem)){
+$cartValue = 0;
 
+
+}else{
 
 foreach ($userDetailsById as $key => $value) {
     $name=$value['name'];
@@ -35,7 +39,7 @@ foreach ($userDetailsById as $key => $value) {
     
   
 }
-
+}
 
 
 // echo "$name" ;
@@ -305,7 +309,7 @@ overflow-x: hidden;
 
                 $total=0;
                 if (empty($userCartItem)){
-
+                    // $userCartItem = 0
                   echo  '<tr>
                   <td>
                   <h3>Your Cart is empty. Continue To <a class="btn btn-info" href="product_pc.php" role="button">Shop&nbsp;<i class="fa fa-shopping-bag"></i>
@@ -357,6 +361,16 @@ overflow-x: hidden;
                     </tbody>
                   </table>
                   Total cart value:<input class="form-control" type="text"   name="total" value="<?php echo $total ?>" readonly>
+
+
+
+
+                  <?php  
+
+if (empty($userCartItem)){
+   
+}else{
+                  ?>
                   <button type="submit" class="btn btn-success btn-outline" >
                             Checkout<i class="fa fa-shopping-cart"></i>
 
@@ -364,23 +378,12 @@ overflow-x: hidden;
 
 </a>
                   </form>
+<?php
 
-                  
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    </div>
+?>
+                       </div>
 
                                     <div class="tab-pane fade" id="tab3">
                                         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words</p>

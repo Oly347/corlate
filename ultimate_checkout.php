@@ -179,21 +179,21 @@ $priceListOfProduct = implode('--------and--------', $productPrice);
     <form  action="order.dml.php" method="post" id="employeeForm" >
 
     <div class="form-group">
-                                            <label>Order Id</label>
-                            <input type="text" name="order_id" id="order_id" class="form-control" value="<?php echo $orderId ?>" readonly>
+                                            <!-- <label>Order Id</label> -->
+                            <input type="hidden" name="order_id" id="order_id" class="form-control" value="<?php echo $orderId ?>" readonly>
                             
                                             
                                         </div>
 
                     <div class="form-group">
-                                            <label>User Name</label>
+                                            <label>Email Id</label>
                             <input type="text" name="username" id="username" class="form-control" value="<?php echo $_SESSION['userName']; ?>" readonly>
                             
                                             
                                         </div>
                                         <div class="form-group">
                                             <label>Name</label>
-                            <input type="text" name="name" id="name" class="form-control" value="<?php echo $name ?>" readonly>
+                            <input type="text" name="name" id="name" class="form-control" value="<?php echo $name ?>" >
                             
                                             
                                         </div>
@@ -201,7 +201,7 @@ $priceListOfProduct = implode('--------and--------', $productPrice);
 
                                         <div class="form-group">
                                             <label>Contact Number</label>
-                            <input type="text" name="contact_number" id="contact_number" class="form-control" value="<?php echo $phone_number ?>" readonly>
+                            <input type="text" name="contact_number" id="contact_number" class="form-control" value="<?php echo $phone_number ?>" >
                             
                                             
                                         </div>
@@ -239,7 +239,7 @@ $priceListOfProduct = implode('--------and--------', $productPrice);
 
                         <div class="form-group">
                             <label>Billing Address</label>
-                            <textarea class="form-control" name="bill_addr"  id="bill_addr" readonly><?php echo $address ?></textarea>
+                            <textarea class="form-control" name="bill_addr"  id="bill_addr" ><?php echo $address ?></textarea>
                             
                         </div>
 
@@ -288,7 +288,7 @@ $fulltotal = 100*$sub_total;
     <script
         src="https://checkout.razorpay.com/v1/checkout.js"
         data-key="<?php echo $razor_api_key; ?>"
-        data-amount="100"
+        data-amount="<?php echo $fulltotal; ?>"
         data-buttontext="Pay with Razorpay"
         data-name="Tilottama.Tech"
         data-description="<?php echo $orderId; ?>"
@@ -304,10 +304,11 @@ $fulltotal = 100*$sub_total;
 <style>
       .razorpay-payment-button {
         color: #ffffff !important;
-        background-color: #7266ba;
-        border-color: #7266ba;
+        background-color: #95d819;
+        border-color: #95d819;
         font-size: 14px;
         padding: 10px;
+        border-radius: 8px;
       }
     </style>
     <input type="hidden" value="Hidden Element" name="hidden">
