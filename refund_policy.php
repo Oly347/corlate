@@ -107,27 +107,20 @@ session_start();
     <h1>Tilottama.Tech<small> Refund Policy</small></h1>
 </div>
 <!-- <h1>Terms & Conditions</h1> -->
-<ul><li>It is hereby informed "Tilottama.Tech" or its parent concern "Tilottama.Tech" is a marketing and distribution company and is not a manufacturer.
-</li><li>
-We hereby certify that my/our registration certificate under the Companies Act 2013 is in force on the date on which the sale of the goods specified in this Bill / Cash Memo / Invoice has been affected by us in the regular course of our business.
-</li><li>Goods once sold will not be taken back or exchanged. Once invoice made cannot be modified or canceled for any reasons thereof.</li><li>Refunds are issued only in case of complete loss of shipment&nbsp;</li><li>It is also the duty of the buyer to immediately check the physical condition of the purchased goods on receipt. Any transit damage should be reported within 1-2 days of receiving the shipment.</li><li>Any products purchased from us for any special usage in abnormal environment i.e. Other than normal usage should be informed to us at the time of purchase otherwise the warranty is void and null.<br></li><li>No Customer can waive responsibility on grounds of ignorance of terms &amp; conditions.</li><li>
-Physical damage/mishandling of products / Tampering of warranty stickers - do not cover warranty. All product sold by us require technically qualified PC Hardware engineer for installation.</li><li>
-The court at Pune, Maharashtra shall have exclusive jurisdiction for deciding any disputes arising out of this sale contract.
-</li></ul>
-<h2>Warranty Terms:</h2>
-<ul><li>
-All products sold by us carry an only carry-in warranty. Shipping charges (To &amp; Fro) to service center has to be borne by the customer.
-</li><li>Where the words “Direct Warranty” or “Manufacturer Warranty” are mentioned it means warranty is direct from Manufacturer / Distributor.
-</li><li>We request the customer to send the copy of our invoice and delivery challan for warranty purposes, whenever there is a service problem for products. Shipping will be paid by the customer for the same.
-</li><li>Goods once sold will be accepted for warranty repair/replacement only if they are in good physical condition. Products with broken/burnt pins, pen/pencil markings, cracks, missing / tampered components/warranty stickers damaged will be rejected and considered warranty void in above conditions.
-</li><li>Warranty clause stand void for damage caused due to mishandling of equipment for any reasons causing damage of the products like lack of knowledge, improper handling, electricity problem etc., on the basis that under normal condition there would have been no damage of the product.
-</li><li>Warranty is against manufacturing defects only, and as per manufacturers warranty policy. In case manufacturer has local service center then for warranty the customer has to approach the service center directly with the purchase details.
-</li><li>Products under warranty will either be repaired or replaced as per manufacturer/ supplier warranty policy.
-</li><li>We reserve the right to reject material received for warranty without accessories, manuals, Software CD’s / DVD’s &amp; outer box packing.
-</li><li>Any service litigation or problems have to address directly to manufacturers/distributor/company direct dealer address only. We are not responsible for any litigation thereof.
-</li><li>Warranty service will be given only where the full payment is made on the due date.
-</li></ul>
-<!-- Bootstrap FAQ - START -->
+<b>Can items be returned after the time period mentioned in the seller's Returns Policy?</b><br>
+No, we will not be able to accept returns after the time period mentioned in the Replacement Policy.
+<br><br>
+<b>Do I have to return the freebie when I return a product?</b><br>
+Yes, the freebie has to be returned along with the product.
+<br><br>
+<b>How do returns work?</b><br>
+You can raise a request to return your items with these simple steps:<br>
+1. Log into your Tilottama.Tech account<br>
+2. Go to My Orders<br>
+3. Click on 'Ask For Return' against the item you wish to return<br>
+4. Fill in the details and raise a return request<br>
+If the request is approved, the item will be picked up after which you will get a replacement.<br>
+
 <div>
   
     

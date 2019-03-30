@@ -140,13 +140,13 @@ $obj_user = new user_inc ;
             <div class="row">
                 <div class="col-md-7">
                     <div class="about-img">
-                        <img src="images/about-img.png" alt="">
+                        <img src="images/about-img01.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-5">
                     <div class="about-content">
                         <h2>Who we are</h2>
-                        <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
+                        <p style="text-align:justify">Tilottama Tech is first of its kind. We believe in technology as much as we love artificial intelligence. We offer service like custom PC Assembling by yourself. You will choose every part of your PC and we will assemble it at your place in front of you. We also offer Smart Home Security service in which we install and integrate Smart Home Security Devices in your home to make it secure and smart. We also offer Smart Home service where we install smart devices all over your place so that you don't have to press any switch again. your voice will work. From Televisions to Water Heaters to Room Lights, everything will automatically work on your voice. We offer these Great Services that no one does in our City. Come and experience our service.</p>
                     </div>
                 </div>
             </div>
@@ -162,11 +162,11 @@ $obj_user = new user_inc ;
             <div class="col-md-5">
                     <div class="about-content">
                         <h2>What we are</h2>
-                        <p>Photographs are a way of preserving a moment in our lives for the rest of our lives. Many of us have at least been tempted at the flashy array of photo printers which seemingly leap off the shelves at even the least tech-savvy. It surely seems old fashioned to talk about 35mm film and non-digital cameras in today’s day and age.</p>
+                        <p style="text-align:justify">Tilottama Tech is first of its kind. We believe in technology as much as we love artificial intelligence. We offer service like custom PC Assembling by yourself. You will choose every part of your PC and we will assemble it at your place in front of you. We also offer Smart Home Security service in which we install and integrate Smart Home Security Devices in your home to make it secure and smart. We also offer Smart Home service where we install smart devices all over your place so that you don't have to press any switch again. your voice will work. From Televisions to Water Heaters to Room Lights, everything will automatically work on your voice. We offer these Great Services that no one does in our City. Come and experience our service.</p>
                     </div>
                 </div>
                 <div class="col-md-7">
-                    <div class="about-img">
+                    <div class="about-img1">
                         <img src="images/about-img.png" alt="">
                     </div>
                 </div>
@@ -174,7 +174,7 @@ $obj_user = new user_inc ;
         </div>
     </section>
 
-    <section id="about-us">
+    <!-- <section id="about-us">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
@@ -190,7 +190,7 @@ $obj_user = new user_inc ;
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     
     <!--/#middle-->
     

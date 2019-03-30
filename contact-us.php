@@ -109,7 +109,7 @@ session_start();
 
             </div> 
                     <div class="about-img responsive-map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.9512033174706!2d88.39190031541726!3d22.46846794244612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027154fc43ac05%3A0x59415dbc3e2810bb!2sTilottama.Online!5e0!3m2!1sen!2sin!4v1552293151484" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14747.804360045919!2d88.3940848!3d22.4684722!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc762e5642c3a4a5c!2sTilottama.Tech!5e0!3m2!1sen!2sin!4v1553948758691!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="col-md-6">
