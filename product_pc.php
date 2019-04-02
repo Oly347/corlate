@@ -102,7 +102,7 @@ $rowProductPCList = $obj_comp->getComponentDetailsPCProductForUser();
     </header><!--/header-->
 
 
-    <div class="page-title" style="background-image: url(images/page-title.png)">
+    <div class="page-title" >
         <h1>Prooduct List</h1>
     </div>
     
@@ -132,7 +132,7 @@ overflow-x: hidden;
                                    
                 ?>
                     <div class="single-pricing">
-                    <h3 class="ribbon"><?php echo $row_product_pc_list['tag'];?></h3>
+                    
 
                     
 
@@ -147,7 +147,18 @@ overflow-x: hidden;
 
                         
                             <ul>
-                                <li><img class="product_view_image" src ="admin/upload/<?php echo $row_product_pc_list['product_img'];?>" height=100 width=100 /> </li>
+                                <li><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_product_pc_list['product_img'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_product_pc_list['tag'];?>" class="preview" href="admin/upload/<?php echo $row_product_pc_list['product_img'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                     </li>
                                 <li class="product_li">Cabinet-- <?php echo $row_product_pc_list['cabinet'];?></li>
                                 
                                 <li class="product_li">Processor Type-- <?php echo $row_product_pc_list['processor_type'];?></li>

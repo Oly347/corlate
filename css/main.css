@@ -125,6 +125,7 @@ body>section {
 .center {
     text-align: center;
     padding-bottom: 55px;
+    
 }
 
 
@@ -182,6 +183,10 @@ body>section {
 
 .page-title{
     padding: 80px 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+background-image: url(../images/page-title.png);
+/* background-attachment: fixed; */
 }
 
 .page-title h1{
@@ -813,7 +818,97 @@ max-width: 100px;
     line-height: 50px;
 }
 
+
+
+.recent-work-wrap .overlay .editpreview {
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    background-color: #95d819;
+    
+    display: inline-block;
+    line-height: 50px;
+}
+
 .recent-work-wrap:hover .overlay {
+    opacity: 1;
+}
+
+
+
+
+
+.recent-work-wrap .overlayo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    opacity: 0;
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    vertical-align: middle;
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
+    padding: 30px;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+
+
+
+.page-title{
+
+
+
+}
+.recent-work-wrap .overlayo .preview {
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    background-color: #95d819;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 50px;
+}
+
+.inner-div
+{
+  margin: 0 auto;
+  max-width: 700px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+.edit_banner_list{
+
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.recent-work-wrap .overlayo .editpreview {
+    color: #fff;
+    height: 50px;
+    width: 50px;
+    background-color: #95d819;
+    
+    display: inline-block;
+    line-height: 50px;
+}
+
+.recent-work-wrap:hover .overlayo {
     opacity: 1;
 }
 
@@ -1210,7 +1305,7 @@ padding: 20px;
 }
 
 /* #partner {
-    background-image: url(../images/kevin-bhagat-461951-unsplash.jpg);
+    
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -2192,7 +2287,11 @@ ul.pagination>li:last-child > a{
 .widget.search form button i{
     color: #95d819;
 }
-
+/* table { border-collapse:separate; 
+  border-spacing: 0 1em;}
+td, th { padding-left: 16px; min-width: 170px; text-align: left; }
+tr { display: block; }
+tr:hover { box-shadow: 0px 2px 18px 0px rgba(0,0,0,0.5); cursor: pointer; } */
 .search_box {
     background-image: url("../images/search_icon.png");
     background-position: 410px 15px;
@@ -2202,8 +2301,22 @@ ul.pagination>li:last-child > a{
     outline: medium none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    background-color: #95d819;
+}
+.edit_pro_img{
+
+
+height: 100px !important;
+width: 100px !important;
 }
 
+table { border-collapse:separate; border-spacing: 0 1em;}
+.edit_main_table tr { 
+    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+    height:100px;
+
+}
 
 ::-webkit-input-placeholder { /* Chrome */
     color: white;
@@ -2557,9 +2670,10 @@ shortcodes page css
     display: inline-block;
 }
 #bottom {
-    background: #f5f5f5;
+    background: #505050;
     border-bottom: 5px solid #95d819;
     font-size: 14px;
+    color: white;
 }
 
 #bottom h3 {
@@ -2567,7 +2681,7 @@ shortcodes page css
     margin-bottom: 15px;
     text-transform: uppercase;
     font-size: 14px;
-    color: #000;
+    color: white;
     font-weight: 700;
 }
 
@@ -2583,12 +2697,12 @@ shortcodes page css
 }
 
 #bottom ul li a {
-    color: #808080;
+    color: #95d819;
     font-weight: 300;
 }
 
 #bottom ul li a:hover {
-    color: #95d819;
+    color: white !important;
 }
 
 #bottom .widget {
@@ -2604,6 +2718,18 @@ shortcodes page css
     font-weight: 300;
 }
 
+
+
+.footer-logo img {
+height: 168px;
+width: 150px;
+}
+
+.edit_textarea{
+
+height: 170px !important;
+}
+
 #footer a {
     color: #fff;
 }
@@ -2611,18 +2737,28 @@ shortcodes page css
 #footer a:hover {
     color: #95d819;
 }
+.coupon_applied{
 
+    color: #95d819 !important;
+
+}
 #footer ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
+/* input[readonly] {
+    background-color: #95d819 !important;
+} */
 #footer ul>li {
     display: inline-block;
     margin-left: 15px;
 }
+.btn_dlt{
 
+    background-color: #95d819 !important;
+    border: #95d819 !important;
+}
 
 .banner_smart_home{
     margin-top: 30px;

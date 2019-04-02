@@ -1,6 +1,5 @@
 <?php
-//    include("config.php");
-//    session_start();
+
 include ('admin/system/database.php');
 include ('admin/employee.cls.php');
 session_start();
@@ -15,6 +14,10 @@ header('Location:user_login.php');
 $obj_user = new user_inc ;
 $userDetailsById = $obj_user->getUserById($_SESSION['userName']);
 
+// print_r($userDetailsById);
+// exit;
+
+
 $userOrderDetails = $obj_user->getOrderByUser($_SESSION['userName']);
 
 $obj_comp = new component_inc ;
@@ -22,11 +25,12 @@ $userSavedItem = $obj_comp->getUserSavedItem($_SESSION['userName']);
 
 $userCartItem = $obj_comp->getUserCartItem($_SESSION['userName']);
 
-if (empty($userCartItem)){
-$cartValue = 0;
+// if (empty($userCartItem)){
+// $cartValue = 0;
 
 
-}else{
+// }
+
 
 foreach ($userDetailsById as $key => $value) {
     $name=$value['name'];
@@ -39,7 +43,7 @@ foreach ($userDetailsById as $key => $value) {
     
   
 }
-}
+
 
 
 // echo "$name" ;
@@ -136,7 +140,7 @@ overflow-x: hidden;
 
                    
                             <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">My Account
+                            <button class="btn btn-info login_button_top dropdown-toggle" type="button" data-toggle="dropdown">My Account
                             <span class="caret"></span></button>
                             <ul class="dropdown-menu">
                             <li>&nbsp; &nbsp;<img src ="admin/upload/<?php echo $profile_pic ?>" height=50px width=50px  style=" border-radius: 50%; border: 1px solid black; padding:1px"/> </li>
@@ -336,12 +340,12 @@ overflow-x: hidden;
 // }else{
                       ?>
                         <td style="display:none"><?php echo $user_cart_item['id'];?></td>
-                        <td> <input class="form-control" type="text"  name="process[]" value="<?php echo $user_cart_item['txn_id'];?>" readonly></td>
-                        <td> <Textarea class="form-control" type="text"  name="details[]" value="" readonly><?php echo $user_cart_item['details'];?></Textarea>
+                        <td> <input class="form-control edit_textarea" type="text"  name="process[]" value="<?php echo $user_cart_item['txn_id'];?>" readonly></td>
+                        <td> <Textarea class="form-control edit_textarea" type="text"  name="details[]" value="" readonly><?php echo $user_cart_item['details'];?></Textarea>
                         
-                        <td> <input class="form-control" type="text"  name="price[]" value="<?php echo $user_cart_item['product_price'];?>" readonly></td>
+                        <td> <input class="form-control edit_textarea" type="text"  name="price[]" value="<?php echo $user_cart_item['product_price'];?>" readonly></td>
                         
-                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $user_cart_item['id'];?>" role="button">Delete&nbsp;<i class="fa fa-trash" aria-hidden="true"></i>
+                        <td><a class="btn btn-danger btn_dlt" href="delete.php?id=<?php echo $user_cart_item['id'];?>" role="button"><i class="fa fa-trash" aria-hidden="true"></i>
 
 </a>
                         
@@ -360,7 +364,67 @@ overflow-x: hidden;
                       
                     </tbody>
                   </table>
-                  Total cart value:<input class="form-control" type="text"   name="total" value="<?php echo $total ?>" readonly>
+
+                  <?php  
+
+if (empty($userCartItem)){
+   
+}else{
+                  
+           
+                  
+                  ?>
+
+<div class="form-group">
+    <h4 class="text-warning">*Optional</h4>
+    <label>Coupon Code</label>
+    <input class="form-control" type="text" id="coupon"/>
+    <input type="hidden" value="<?php echo $total ?>" id="price"/>
+    <div id="result"></div>
+    <br style="clear:both;"/>
+    <a class="btn btn-primary" type= "button" id="activate">Apply Coupon</a>
+</div>    
+
+<?php
+
+}
+
+?>
+
+
+                  
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script>
+	$(document).ready(function(){
+		$('#activate').on('click', function(){
+			var coupon = $('#coupon').val();
+			var price = $('#price').val();
+			if(coupon == ""){
+				sweetAlert("Oops...", "Please Apply coupon ", "error");
+			}else{
+				$.post('get_discount.php', {coupon: coupon, price: price}, function(data){
+					if(data == "error"){
+						sweetAlert("Oops...", "Invalid Coupon Code or Shound Match Minimum amount", "error");
+						$('#total').val(price);
+						$('#result').html('');
+                    }
+                    
+                    else{
+                        var json = JSON.parse(data);
+						$('#result').html("<h4 class='pull-right coupon_applied'>You applied &nbsp;"+json.discount+" RS.  Off</h4>");
+						$('#total').val(json.price);
+
+
+						
+					}
+				});
+			}
+		});
+	});
+</script>
+                  Total cart value:<input class="form-control" type="text"  id="total"  name="total" value="<?php echo $total ?>" readonly>
 
 
 
@@ -371,6 +435,8 @@ if (empty($userCartItem)){
    
 }else{
                   ?>
+
+
                   <button type="submit" class="btn btn-success btn-outline" >
                             Checkout<i class="fa fa-shopping-cart"></i>
 

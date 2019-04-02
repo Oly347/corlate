@@ -682,7 +682,7 @@ Choose Ram Quantity
                                 <div class="form-group row">
                                 
                                     <div class="col-md-10">
-                                        Memory Price<input type="text" id="memory_price" class="form-control" name="memory_price" value="<?php echo $row_memory_component['component_price'];?> " readonly>
+                                       1 unit Memory Price<input type="text" id="memory_price" class="form-control" name="memory_price" value="<?php echo $row_memory_component['component_price'];?> " readonly>
                                     </div>
                                 </div>
 

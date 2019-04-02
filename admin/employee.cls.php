@@ -590,6 +590,17 @@ function component_inc()
   }
 
 
+
+  function getCoupondetailsByCouponName($id){
+    $sSql="SELECT * FROM cart_item WHERE code  ='".$id."' ";
+
+    //echo "$sSql" ;
+    $rows = $this->db_con->GetAllRows($sSql);
+    return $rows;
+  }
+
+
+
   function getProductPCById($id){
     $sSql="SELECT * FROM add_product_pc WHERE id ='".$id."' ";
     $rows = $this->db_con->GetAllRows($sSql);
@@ -1005,6 +1016,27 @@ function component_inc()
     return true;
     }
             
+    }   
+    
+    
+
+
+    public function InsertIntocp($post_fileds)
+  {
+  $sSql="SELECT * FROM coupon_code WHERE id=-1";
+  $insrt=$this->db_con->RowInsert($post_fileds,$sSql);
+
+//   print_r($insrt);
+//   exit;
+  if($insrt==0)
+   {
+    return false;
+    }
+    else
+    {
+    return true;
+    }
+            
     }    
 
 
@@ -1399,6 +1431,15 @@ function component_inc()
              }
 
 
+
+             function getCouponList(){
+                $sSql = "SELECT * FROM coupon_code";
+                 $rows = $this->db_con->GetAllRows($sSql);
+                 return $rows;
+             }
+
+
+
              function getReviewListFinal(){
                 $sSql = "SELECT * FROM customer_review WHERE status = 'approved' ";
                  $rows = $this->db_con->GetAllRows($sSql);
@@ -1450,6 +1491,14 @@ function component_inc()
                     $rows = $this->db_con->GetAllRows($sSql);
                     return $rows;
                 } 
+
+
+
+                // function checkCoupon($coupon_code){
+                //     $sSql="SELECT * FROM `coupon` WHERE `coupon_code` = '$coupon_code' && `status` = 'Valid'" ;
+                //     $rows = $this->db_con->GetAllRows($sSql);
+                //     return $rows;
+                // } 
 
 
 

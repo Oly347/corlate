@@ -210,8 +210,8 @@ foreach ($rowProductPC as $key => $value) {
                         </div>
                         <div class="form-group">
                             <label>Additional Information</label>
-                            <input type="text" name="additional_information" class="form-control" value="<?php echo $additional_information; ?>" readonly>
-                            
+                            <!-- <input type="text" name="additional_information" class="form-control" value="<?php echo $additional_information; ?>" readonly> -->
+                            <textarea class="form-control" name="additional_information"  id="additional_information" readonly><?php echo $additional_information; ?></textarea>
                         </div>
                         <div class="form-group">
                             <label>Product Price</label>

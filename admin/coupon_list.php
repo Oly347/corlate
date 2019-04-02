@@ -1,50 +1,22 @@
 <?php
-// Include config file
-
-
- session_start();
- if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ==true) {
-  //echo "Welcome to the member's area, " . $_SESSION['userName'] . "!";
-  } 
-  else {
-  header('Location:index.php');
-  }
-// //create a session and assign a value
-// $_SESSION['session_id'] =rand(10,1000);
-
-
-
-//print session
-// print($_SESSION['session_id']);
-//remove/destroy particular session or
-// unset($_SESSION['session_name']);
-// //destroy all the sessions'
-// // remove all session variables
-// session_unset();
-// // destroy the session
-// session_destroy();
+session_start();
 
 include ('system/database.php');
 include ('employee.cls.php');
 
 
-$obj_comp = new component_inc ;
-$cabinetRow = $obj_comp->getCABById($_GET['id']);
-//$motherBoardRow = $obj_comp->getMotherBoardById($_GET['id']);
-//print_r($motherBoardRow);
-//exit;
+$obj_user = new user_inc ;
 
+$couponList = $obj_user->getCouponList();
 
-foreach ($cabinetRow as $key => $value) {
-  $component_name=$value['component_name'];
-  $component_details=$value['component_details'];
-  $component_price=$value['component_price'];
-  $component_image=$value['component_image'];
-  
+// print_r($userReview);
 
-}
 
 ?>
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,29 +29,28 @@ foreach ($cabinetRow as $key => $value) {
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Tilottama.Tech Admin</title>
+  <title>SB Admin 2 - Tables</title>
 
-  <!-- Custom fonts for this template-->
+  <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Custom styles for this page -->
+  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
-
-  <!-- Page Wrapper -->
-  <div id="wrapper">
+<div id="wrapper">
 
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -91,7 +62,7 @@ foreach ($cabinetRow as $key => $value) {
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="home.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -221,6 +192,14 @@ foreach ($cabinetRow as $key => $value) {
     <span>Contact us List</span></a>
 </li>
 
+
+
+<li class="nav-item">
+  <a class="nav-link" href="order_table.php">
+    <i class="fas fa-fw fa-table"></i>
+    <span> Order List</span></a>
+</li>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -310,56 +289,78 @@ foreach ($cabinetRow as $key => $value) {
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Edit Cabinet</h1>
+          <h1 class="h3 mb-2 text-gray-800">Coupon List</h1>
+          
 
-
-          <div class="container">
-  <h2>Component Details</h2>
-  <form action="cabinet.upl.php#cabinetList" method="post" enctype="multipart/form-data">
-    <div class="form-group">
-      <label for="c_name">Model name</label>
-      <input type="text" class="form-control" id="c_name" placeholder="Enter Model Name" name="c_name" value="<?php echo $component_name; ?>">
-
-      <input type="hidden" name="processor_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
-    </div>
-
-
-    <div class="form-group">
-      <label for="c_dis">Discriptrion</label>
-      <input type="text" class="form-control" id="c_dis" placeholder="Enter Discription" name="c_dis" value="<?php echo $component_details; ?>">
-    </div>
-
-
-    <div class="form-group">
-      <label for="c_price">Price</label>
-      <input type="text" class="form-control" id="c_price" placeholder="Enter Price" name="c_price" value="<?php echo $component_price; ?>">
-    </div>
-    <div class="form-group">
-      <label for="c_price">Image of Component</label>
-      <input type="file" class="form-control" id="c_pic"  name="c_pic" value="<?php echo $component_image; ?>">
-    </div>
-
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Status select</label>
-    <select class="form-control" id="exampleFormControlSelect1" name="status" >
-      <option value="0" >Deactive</option>
-      <option value="1">Active</option>
-      
-    </select>
-  </div>
-
-
-    
-    
-    
-  <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
+          <!-- DataTales Example -->
+          
 
 
 
+          <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Coupon List</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                  <tr>
+                    <th>Coupon code</th>
+                      <th>Discount</th>
+                      <th>Discription</th>
+                      <th>Minimum Amount</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tfoot>
+                  <tr>
+                    <th>Coupon code</th>
+                      <th>Discount</th>
+                      <th>Discription</th>
+                      <th>Minimum Amount</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </tfoot>
+                  <tbody>
+                  <?php
+                
+                foreach ($couponList as  $row_review) {
+                                   
+                ?>
 
-        </div>
+
+                    <tr>
+                      <td><?php echo $row_review['code'];?></td>
+                      <td><?php echo $row_review['discount'];?></td>
+                      <td><?php echo $row_review['discription'];?></td>
+                      <td><?php echo $row_review['min_amt'];?></td>
+                      <td><?php echo $row_review['status'];?></td>
+                      
+                      <td>
+                        <!-- <a class="btn btn-danger" href="" role="button">Delete</a> -->
+                        <a class="btn btn-info" href="coupon_update.php?id=<?php echo $row_review['id'];?>" role="button">Update</a>
+                        </td>
+                      <!-- <a class="btn btn-danger" href="#" role="button">Delete <i class="fa fa-remove"></i></a></td> -->
+                    </tr>
+                    
+                    <?php
+                       }
+                
+                      ?>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+
+
+          
+
+        
         <!-- /.container-fluid -->
 
       </div>
@@ -399,7 +400,7 @@ foreach ($cabinetRow as $key => $value) {
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="logout.php">Logout</a>
+          <a class="btn btn-primary" href="login.html">Logout</a>
         </div>
       </div>
     </div>
@@ -414,6 +415,13 @@ foreach ($cabinetRow as $key => $value) {
 
   <!-- Custom scripts for all pages-->
   <script src="js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 

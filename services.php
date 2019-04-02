@@ -189,7 +189,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
   <div class="tab tab1" style="overflow-x:auto;" >Choose Your CPU
   <input class="form-control search_box" id="myInput" type="text" placeholder="Search..">
     <div class="table-responsive" style="padding: 10px;">
-        <table class="table  table-borderless  " id="myTable" style="margin-top:10px" >
+        <table class="table edit_main_table  table-borderless  " id="myTable" style="margin-top:10px" >
           <thead>
             <tr>
               <th>CPU Name</th>
@@ -210,7 +210,18 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
               <td><?php echo $row_cpu_component['component_name'];?></td>
               <td><?php echo $row_cpu_component['component_details'];?></td>
               
-              <td><img src ="admin/upload/<?php echo $row_cpu_component['component_image'];?>" height=50 width=80 /> </td>
+              <td>
+              <div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_cpu_component['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_cpu_component['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_cpu_component['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+            
+            </td>
               <td><?php echo $row_cpu_component['component_price'];?></td>
               <td><input type="radio" class="option-input radio" name="CPU"  value="<?php echo $row_cpu_component['id'];?>" /></td>
             </tr>
@@ -228,13 +239,13 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
             
           </tbody>
         </table>
-        <!-- <button type="button"  id="cpuNext">Next</button> -->
+        <button type="button"  id="cpuNext">Next</button>
         <!-- <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button> -->
        
 
       </div>
 
-      <div class="form-actions">
+      <!-- <div class="form-actions">
       <button type="button"  id="cpuNext">Next</button>
                       </div>
 
@@ -244,7 +255,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
             background-color: transparent;
             text-align: right;
         }
-        </style>
+        </style> -->
     
 
 
@@ -256,7 +267,7 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
 
       <input class="form-control search_box" id="myInput1" type="text" placeholder="Search..">
       <div class="table-responsive">
-          <table class="table table-borderless" id="myTable1">
+          <table class="table edit_main_table table-borderless " id="myTable1">
             <thead>
               <tr>
                 <th>Cabinat Name</th>
@@ -277,7 +288,15 @@ $rowSSDComponent = $obj_comp->getComponentDetailsSSD();
               <td><?php echo $row_cpu_component['component_name'];?></td>
               <td><?php echo $row_cpu_component['component_details'];?></td>
               
-              <td><img src ="admin/upload/<?php echo $row_cpu_component['component_image'];?>" height=50 width=80 /> </td>
+              <td><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_cpu_component['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_cpu_component['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_cpu_component['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div> </td>
               <td><?php echo $row_cpu_component['component_price'];?></td>
               <td><input type="radio" class="option-input radio" name="CAB"  value="<?php echo $row_cpu_component['id'];?>"  ></td>
             </tr>
@@ -323,7 +342,7 @@ $(document).ready(function(){
           <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
           <input class="form-control search_box" id="myInput2" type="text" placeholder="Search..">
           <div class="table-responsive">
-              <table class="table table-borderless" id="myTable2">
+              <table class="table edit_main_table table-striped table-borderless " id="myTable2">
                 <thead>
                   <tr>
                     <th>SMPS Name</th>
@@ -344,7 +363,15 @@ $(document).ready(function(){
                           <td><?php echo $row_smps_component['component_name'];?></td>
                           <td><?php echo $row_smps_component['component_details'];?></td>
                           
-                          <td><img src ="admin/upload/<?php echo $row_smps_component['component_image'];?>" height=50 width=80 /> </td>
+                          <td><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_smps_component['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_smps_component['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_smps_component['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></td>
                           <td><?php echo $row_smps_component['component_price'];?></td>
                           <td><input type="radio" class="option-input radio" name="SMPS"  value="<?php echo $row_smps_component['id'];?>" /></td>
                         </tr>
@@ -374,7 +401,7 @@ $(document).ready(function(){
 
               <input class="form-control search_box" id="myInput3" type="text" placeholder="Search..">
               <div class="table-responsive">
-                  <table class="table table-borderless" id="myTable3">
+                  <table class="table edit_main_table table-borderless " id="myTable3">
                     <thead>
                       <tr>
                         <th>Mother Board Name</th>
@@ -396,7 +423,15 @@ $(document).ready(function(){
                           <td><?php echo $row_motherboard_component['component_name'];?></td>
                           <td><?php echo $row_motherboard_component['component_details'];?></td>
                           
-                          <td><img src ="admin/upload/<?php echo $row_motherboard_component['component_image'];?>" height=50 width=80 /> </td>
+                          <td><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_motherboard_component['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_motherboard_component['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_motherboard_component['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></td>
                           <td><?php echo $row_motherboard_component['component_price'];?></td>
                           <td><input type="radio" class="option-input radio" name="MB"  value="<?php echo $row_motherboard_component['id'];?>" /></td>
                         </tr>
@@ -424,7 +459,7 @@ $(document).ready(function(){
               <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
               <input class="form-control search_box" id="myInput4" type="text" placeholder="Search..">
               <div class="table-responsive">
-                  <table class="table table-borderless" id="myTable4">
+                  <table class="table edit_main_table  table-borderless " id="myTable4">
                     <thead>
                       <tr>
                         <th>HDD Name</th>
@@ -446,7 +481,15 @@ $(document).ready(function(){
                           <td><?php echo $row_harddrive_component['component_name'];?></td>
                           <td><?php echo $row_harddrive_component['component_details'];?></td>
                           
-                          <td><img src ="admin/upload/<?php echo $row_harddrive_component['component_image'];?>" height=50 width=80 /> </td>
+                          <td><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_harddrive_component['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_harddrive_component['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_harddrive_component['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></td>
                           <td><?php echo $row_harddrive_component['component_price'];?></td>
                           <td><input type="radio" class="option-input radio" name="HDD"  value="<?php echo $row_harddrive_component['id'];?>" /></td>
                         </tr>
@@ -474,7 +517,7 @@ $(document).ready(function(){
               <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
               <input class="form-control search_box" id="myInput5" type="text" placeholder="Search..">
               <div class="table-responsive" id="myTable5">
-                  <table class="table table-borderless">
+                  <table class="table edit_main_table table-borderless ">
                     <thead>
                       <tr>
                         <th>RAM Name</th>
@@ -496,7 +539,15 @@ $(document).ready(function(){
                           <td><?php echo $row_memory_component['component_name'];?></td>
                           <td><?php echo $row_memory_component['component_details'];?></td>
                           
-                          <td><img src ="admin/upload/<?php echo $row_memory_component['component_image'];?>" height=50 width=80 /> </td>
+                          <td><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_memory_component['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_memory_component['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_memory_component['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></td>
                           <td><?php echo $row_memory_component['component_price'];?></td>
                           <td><input type="radio" class="option-input radio" name="RAM"  value="<?php echo $row_memory_component['id'];?>" /></td>
                         </tr>
@@ -523,7 +574,7 @@ $(document).ready(function(){
               <p><input placeholder="Last name..." oninput="this.className = ''" name="lname"></p> -->
               <input class="form-control search_box" id="myInput6" type="text" placeholder="Search..">
               <div class="table-responsive">
-                  <table class="table table-borderless" id="myTable6">
+                  <table class="table edit_main_table  table-borderless " id="myTable6">
                     <thead>
                       <tr>
                         <th>Graphic Card Name</th>
@@ -545,7 +596,15 @@ $(document).ready(function(){
                           <td><?php echo $row_graphic_component['component_name'];?></td>
                           <td><?php echo $row_graphic_component['component_details'];?></td>
                           
-                          <td><img src ="admin/upload/<?php echo $row_graphic_component['component_image'];?>" height=50 width=80 /> </td>
+                          <td><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_memory_component['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_memory_component['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_memory_component['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></td>
                           <td><?php echo $row_graphic_component['component_price'];?></td>
                           <td><input type="radio" class="option-input radio" name="GCARD"  value="<?php echo $row_graphic_component['id'];?>" /></td>
                         </tr>
@@ -607,8 +666,8 @@ $(document).ready(function(){
     <section id="partner">
         <div class="container">
             <div class="center fadeInDown">
-                <h2>Our Partners</h2>
-                <p class="lead edit_p_partner" style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <h2>The Products We Use</h2>
+                <!-- <p class="lead edit_p_partner" style="color: black;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> -->
             </div>
 
             <div class="partners">

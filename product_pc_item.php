@@ -47,6 +47,8 @@ $rowDvdDriveList = $obj_comp->getProductDVDDRIVEForUser();
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
@@ -109,8 +111,66 @@ $rowDvdDriveList = $obj_comp->getProductDVDDRIVEForUser();
     <div class="page-title" style="background-image: url(images/page-title.png)">
         <h1> PC Item</h1>
     </div>
+
+    <section id="feature">
+        <div class="container">
+            
+
+            <div class="row">
+                <div class="features">
+
+                <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="center feature-wrap">
+                            <div class="icon" style="display: inline-block; text-align: center;">
+                            <a href="#ssd"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <h2>Buy SSD</h2>
+                           
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="center feature-wrap">
+                            <div class="icon" style="display: inline-block; text-align: center;">
+                            <a href="#scard"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <h2>Buy Sound Card</h2>
+                            
+                        </div>
+                    </div>
+                    <!--/.col-md-3-->
+                    <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="center feature-wrap">
+                            <div class="icon" style="display: inline-block; text-align: center;">
+                            <a href="#wireless"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                             <h2>Buy Wireless Adaptor</h2>
+                            
+                        </div>
+                    </div>
+                    <!--/.col-md-3-->
+                    
+                    <!--/.col-md-3-->
+                    <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class=" center feature-wrap">
+                            <div class="icon" style="display: inline-block; text-align: center;">
+                            <a href="#dvd"><i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                            <h2>Buy DVD Drive</h2>
+                            
+                        </div>
+                    </div>
+                    <!--/.col-md-3-->
+                </div>
+                <!--/.services-->
+            </div>
+            <!--/.row-->
+        </div>
+        <!--/.container-->
+    </section>
+
+
     
-    <section class="pricing">
+    <section class="pricing" id="ssd">
         <div class="large-title text-center">        
             <h2>SSD List</h2>
             <!-- <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p> -->
@@ -134,7 +194,15 @@ $rowDvdDriveList = $obj_comp->getProductDVDDRIVEForUser();
                         </h1>
                         <div class="clearfix">
                             <ul>
-                                <li><img  src ="admin/upload/<?php echo $row_ssd_list['component_image'];?>" height=100 width=100 /> </li>
+                            <li><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_ssd_list['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_ssd_list['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_ssd_list['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></li>
                                 <li>SSD Name<?php echo $row_ssd_list['component_name'];?></li>
                                 <li>SSD Details<?php echo $row_ssd_list['component_details'];?></li>
                                 
@@ -171,7 +239,7 @@ $rowDvdDriveList = $obj_comp->getProductDVDDRIVEForUser();
 
 
 
-    <section class="pricing">
+    <section class="pricing" id="scard">
         <div class="large-title text-center">        
             <h2>SOUND Card List</h2>
             <!-- <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p> -->
@@ -195,7 +263,15 @@ $rowDvdDriveList = $obj_comp->getProductDVDDRIVEForUser();
                         </h1>
                         <div class="clearfix">
                             <ul>
-                                <li><img  src ="admin/upload/<?php echo $row_sound_card_list['component_image'];?>" height=100 width=100 /> </li>
+                            <li><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_sound_card_list['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_sound_card_list['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_sound_card_list['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></li>
                                 <li>Name-<?php echo $row_sound_card_list['component_name'];?></li>
                                 <li>Details-<?php echo $row_sound_card_list['component_details'];?></li>
                                 
@@ -226,7 +302,7 @@ $rowDvdDriveList = $obj_comp->getProductDVDDRIVEForUser();
     </section>
     <hr>
 
-    <section class="pricing">
+    <section class="pricing" id="wireless">
         <div class="large-title text-center">        
             <h2>Wireless Adaptor</h2>
             <!-- <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p> -->
@@ -250,7 +326,15 @@ $rowDvdDriveList = $obj_comp->getProductDVDDRIVEForUser();
                         </h1>
                         <div class="clearfix">
                             <ul>
-                                <li><img  src ="admin/upload/<?php echo $row_wireless_adaptor_list['component_image'];?>" height=100 width=100 /> </li>
+                            <li><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_wireless_adaptor_list['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_wireless_adaptor_list['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_wireless_adaptor_list['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></li>
                                 <li>Name-<?php echo $row_wireless_adaptor_list['component_name'];?></li>
                                 <li>Details-<?php echo $row_wireless_adaptor_list['component_details'];?></li>
                                 
@@ -282,7 +366,7 @@ $rowDvdDriveList = $obj_comp->getProductDVDDRIVEForUser();
 
     <hr>
 
-    <section class="pricing">
+    <section class="pricing" id="dvd">
         <div class="large-title text-center">        
             <h2>DVD Drive</h2>
             <!-- <p>All users on MySpace will know that there are millions of people out there. Every day <br> besides so many people joining this community.</p> -->
@@ -306,7 +390,15 @@ $rowDvdDriveList = $obj_comp->getProductDVDDRIVEForUser();
                         </h1>
                         <div class="clearfix">
                             <ul>
-                                <li><img  src ="admin/upload/<?php echo $row_dvd_drive_list['component_image'];?>" height=100 width=100 /> </li>
+                            <li><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_dvd_drive_list['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_dvd_drive_list['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_dvd_drive_list['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></li>
                                 <li>Name-<?php echo $row_dvd_drive_list['component_name'];?></li>
                                 <li>Details-<?php echo $row_dvd_drive_list['component_details'];?></li>
                                 

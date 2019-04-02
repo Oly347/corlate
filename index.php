@@ -236,8 +236,8 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                 <div class="features">
 
                 <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <div class="icon">
+                        <div class="center feature-wrap">
+                            <div class="icon" style="display: inline-block; text-align: center;">
                                 <i class="fa fa-bullhorn"></i>
                             </div>
                             <h2>Cheap</h2>
@@ -245,8 +245,8 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <div class="icon">
+                        <div class="center feature-wrap">
+                            <div class="icon" style="display: inline-block; text-align: center;">
                                 <i class="fa fa-rocket"></i>
                             </div>
                             <h2>Smart</h2>
@@ -255,8 +255,8 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                     </div>
                     <!--/.col-md-3-->
                     <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <div class="icon">
+                        <div class="center feature-wrap">
+                            <div class="icon" style="display: inline-block; text-align: center;">
                                 <i class="fa fa-check"></i>
                             </div>
                             <h2>Easy</h2>
@@ -267,8 +267,8 @@ $(window).on('load', function() { // makes sure the whole site is loaded
                     
                     <!--/.col-md-3-->
                     <div class="col-md-3 col-sm-4 fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="feature-wrap">
-                            <div class="icon">
+                        <div class=" center feature-wrap">
+                            <div class="icon" style="display: inline-block; text-align: center;">
                             <i class="fa fa-edit"></i>
                             </div>
                             <h2>Customizable</h2>

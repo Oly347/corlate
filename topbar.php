@@ -30,9 +30,9 @@
 
                         <?php
                         if (isset($_SESSION['user_loggedin']) && $_SESSION['user_loggedin'] ==true) {
-                            echo '<a href="logout.php" class="btn btn-info login_button_top  active" role="button" aria-pressed="true">Logout</a>';
-                            echo   $_SESSION['userName'];
-                            echo '<a href="user_dashboard.php" class="btn btn-imfo   active" role="button" aria-pressed="true">My Account</a>';
+                            echo '<a href="logout.php" class="btn btn-info login_button_top  active" role="button" aria-pressed="true">Logout</a> &nbsp;';
+                            
+                            echo ' &nbsp; <a href="user_dashboard.php" class="btn btn-info login_button_top  " role="button" aria-pressed="true">My Account</a>';
                         } else {
                             echo '<a href="user_login.php" class="btn btn-info login_button_top  active"  style="" role="button" aria-pressed="true">Login</a>';
                             

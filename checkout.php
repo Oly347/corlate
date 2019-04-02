@@ -162,8 +162,8 @@ $details=$_POST['cabinet'].",".$_POST['product_weight'].",".$_POST['product_dime
                                         
                         <div class="form-group">
                             <label>Product Details</label>
-            <input type="text" name="details" id="details" class="form-control" value="<?php echo $details ?>" readonly>
-            
+            <!-- <input type="text" name="details" id="details" class="form-control" value="<?php echo $details ?>" readonly> -->
+            <textarea class="form-control" name="details"  id="details" readonly><?php echo $details; ?></textarea>
                             
                         </div>
 

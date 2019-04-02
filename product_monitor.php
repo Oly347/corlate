@@ -131,7 +131,15 @@ $rowSpeakerList = $obj_comp->getComponentDetailsSpeakerForUser();
                         </h1>
                         <div class="clearfix">
                             <ul>
-                                <li><img  src ="admin/upload/<?php echo $row_monitor_list['component_image'];?>" height=100 width=100 /> </li>
+                            <li><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_monitor_list['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_monitor_list['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_monitor_list['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></li>
                                 <li>Monitor Name<?php echo $row_monitor_list['component_name'];?></li>
                                 <li>Monitor Details<?php echo $row_monitor_list['component_details'];?></li>
                                 
@@ -192,7 +200,15 @@ $rowSpeakerList = $obj_comp->getComponentDetailsSpeakerForUser();
                         </h1>
                         <div class="clearfix">
                             <ul>
-                                <li><img  src ="admin/upload/<?php echo $row_keyboard_mouse_list['component_image'];?>" height=100 width=100 /> </li>
+                            <li><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_keyboard_mouse_list['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_keyboard_mouse_list['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_keyboard_mouse_list['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></li>
                                 <li>Name-<?php echo $row_keyboard_mouse_list['component_name'];?></li>
                                 <li>Keyboard & mouse-<?php echo $row_keyboard_mouse_list['component_details'];?></li>
                                 
@@ -247,7 +263,15 @@ $rowSpeakerList = $obj_comp->getComponentDetailsSpeakerForUser();
                         </h1>
                         <div class="clearfix">
                             <ul>
-                                <li><img  src ="admin/upload/<?php echo $row_head_phone_list['component_image'];?>" height=100 width=100 /> </li>
+                            <li><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_head_phone_list['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_head_phone_list['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_head_phone_list['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></li>
                                 <li>Name-<?php echo $row_head_phone_list['component_name'];?></li>
                                 <li>Keyboard & mouse-<?php echo $row_head_phone_list['component_details'];?></li>
                                 
@@ -303,7 +327,15 @@ $rowSpeakerList = $obj_comp->getComponentDetailsSpeakerForUser();
                         </h1>
                         <div class="clearfix">
                             <ul>
-                                <li><img  src ="admin/upload/<?php echo $row_speaker_list['component_image'];?>" height=100 width=100 /> </li>
+                            <li><div class="recent-work-wrap">
+                       <img  src="admin/upload/<?php echo $row_speaker_list['component_image'];?>"   class= "edit_pro_img" alt="">
+                        <div class="overlayo">
+                            <div class="recent-work-inner">
+                            
+                                <a title="<?php echo $row_speaker_list['component_name'];?>" class="preview" href="admin/upload/<?php echo $row_speaker_list['component_image'];?>" rel="prettyPhoto"><i class="fa fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </div></li>
                                 <li>Name-<?php echo $row_speaker_list['component_name'];?></li>
                                 <li>Keyboard & mouse-<?php echo $row_speaker_list['component_details'];?></li>
                                 

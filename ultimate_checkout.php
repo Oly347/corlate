@@ -116,6 +116,8 @@ $priceListOfProduct = implode('--------and--------', $productPrice);
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+
+    <script src="js/jquery-3.2.1.min.js"></script>
 </head>
 <!--/head-->
 
@@ -270,13 +272,23 @@ function copyBilling (f) {
                             <textarea class="form-control" name="shipping_addr"  id="shipping_addr"></textarea>
                             
                         </div>
-
+                     
                         <div class="form-group">
                             <label>Total</label>
             <input type="text" name="total" id="total" class="form-control" value="<?php echo $_POST['total']; ?>" readonly>
             
                             
                         </div>
+
+                        <!-- <script>
+	
+    $(document).ready(function() {
+    $("#btnSubmit").click(function(){
+        alert("button");
+    }); 
+});
+	
+</script> -->
 
 <?php
 $sub_total = $_POST['total'];
@@ -300,6 +312,8 @@ $fulltotal = 100*$sub_total;
         
         
     </script>
+
+
 
 <style>
       .razorpay-payment-button {

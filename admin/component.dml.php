@@ -10,11 +10,11 @@ if(function_exists('date_default_timezone_set')) {
 }
 
 
-$f1=$_FILES['c_pic']['name'];
-$randomFileName = time().$f1;
-$path='upload/'.$randomFileName;
-$t=$_FILES['c_pic']['tmp_name'];
-move_uploaded_file($t,$path);
+// $f1=$_FILES['c_pic']['name'];
+// $randomFileName = time().$f1;
+// $path='upload/'.$randomFileName;
+// $t=$_FILES['c_pic']['tmp_name'];
+// move_uploaded_file($t,$path);
 
 $insert_array=  array(
 'component_name' => $_POST['c_name'],

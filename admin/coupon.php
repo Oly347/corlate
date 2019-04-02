@@ -29,20 +29,7 @@ include ('employee.cls.php');
 
 
 $obj_comp = new component_inc ;
-$cabinetRow = $obj_comp->getCABById($_GET['id']);
-//$motherBoardRow = $obj_comp->getMotherBoardById($_GET['id']);
-//print_r($motherBoardRow);
-//exit;
 
-
-foreach ($cabinetRow as $key => $value) {
-  $component_name=$value['component_name'];
-  $component_details=$value['component_details'];
-  $component_price=$value['component_price'];
-  $component_image=$value['component_image'];
-  
-
-}
 
 ?>
 
@@ -231,6 +218,7 @@ foreach ($cabinetRow as $key => $value) {
 
     </ul>
     <!-- End of Sidebar -->
+    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -310,40 +298,42 @@ foreach ($cabinetRow as $key => $value) {
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Edit Cabinet</h1>
+          <h1 class="h3 mb-4 text-gray-800">Add Coupon</h1>
 
 
           <div class="container">
-  <h2>Component Details</h2>
-  <form action="cabinet.upl.php#cabinetList" method="post" enctype="multipart/form-data">
+  <h2>Coupon Details</h2>
+  <form action="coupon.dml.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="c_name">Model name</label>
-      <input type="text" class="form-control" id="c_name" placeholder="Enter Model Name" name="c_name" value="<?php echo $component_name; ?>">
-
-      <input type="hidden" name="processor_id"  class="form-control" value="<?php echo $_GET['id']; ?>">
+      <label for="c_name">Coupon Code</label>
+      <input type="text" class="form-control" id="c_name" placeholder="Enter Coupon Code" name="c_name">
     </div>
 
+    <div class="form-group">
+      <label for="c_price">Discount</label>
+      <input type="text" class="form-control" id="c_price" placeholder="Enter Discount Amount" name="c_price">
+    </div>
 
     <div class="form-group">
       <label for="c_dis">Discriptrion</label>
-      <input type="text" class="form-control" id="c_dis" placeholder="Enter Discription" name="c_dis" value="<?php echo $component_details; ?>">
+      <input type="text" class="form-control" id="c_dis" placeholder="Enter Coupon Discription" name="c_dis">
     </div>
 
 
+    
     <div class="form-group">
-      <label for="c_price">Price</label>
-      <input type="text" class="form-control" id="c_price" placeholder="Enter Price" name="c_price" value="<?php echo $component_price; ?>">
-    </div>
-    <div class="form-group">
-      <label for="c_price">Image of Component</label>
-      <input type="file" class="form-control" id="c_pic"  name="c_pic" value="<?php echo $component_image; ?>">
+      <label for="c_amt">Minimum Amount</label>
+      <input type="text" class="form-control" id="c_amt" placeholder="Enter minimum Shopping amount" name="c_amt">
     </div>
 
+
+    
+
     <div class="form-group">
-    <label for="exampleFormControlSelect1">Status select</label>
+    <label for="exampleFormControlSelect1">Coupon Status</label>
     <select class="form-control" id="exampleFormControlSelect1" name="status" >
-      <option value="0" >Deactive</option>
-      <option value="1">Active</option>
+      <option value="Valid">Valid</option>
+      <option value="Invalid">Invalid</option>
       
     </select>
   </div>
